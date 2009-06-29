@@ -1,0 +1,753 @@
+#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass report
+\begin_preamble
+\usepackage{a4wide}
+\usepackage[left=4cm]{geometry}
+\end_preamble
+\options notitlepage
+\use_default_options false
+\language czech
+\inputencoding utf8
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\leftmargin 4cm
+\topmargin 3cm
+\rightmargin 25mm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language polish
+\papercolumns 1
+\papersides 1
+\paperpagestyle plain
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{titlepage}
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace 15mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+Univerzita Karlova v Praze
+\begin_inset Newline newline
+\end_inset
+
+Matematicko-fyzikální fakulta
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size larger
+BAKALÁŘSKÁ PRÁCE
+\begin_inset VSpace 10mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename logo.eps
+	scale 30
+
+\end_inset
+
+
+\begin_inset VSpace 15mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+Jiří Kunčar 
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size larger
+Informační systém pro jazykovou agenturu
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size large
+Ústav formální a aplikované lingvistiky
+\begin_inset VSpace 15mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\size large
+Vedoucí bakalářské práce: RNDr.
+ Miroslav Spousta 
+\begin_inset VSpace 1mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\size large
+Studijní program: informatika, správa počítačových systémů
+\begin_inset VSpace 20mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+2009
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{titlepage}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 10mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Děkuji panu RNDr.
+ Miroslavu Spoustovi za pomoc, připomínky, cenné rady a za odborné vedení
+ bakalářské práce.
+ Dále bych rád poděkoval firmě Primalingua s.r.o.
+ za poskytnutí prostředků na vývoj aplikace.
+ Speciální poděkování patří především paní majitelce Mgr.
+ Miluši Psotové a paní RNDr.
+ Jitce Kunčarové, která vývoj informačního systému iniciovala.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Prohlašuji, že jsem svou bakalářskou práci napsal(a) samostatně a výhradně
+ s použitím citovaných pramenů.
+ Souhlasím se zapůjčováním práce a jejím zveřejňováním.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+V Praze dne 6.8.2009 
+\begin_inset space \hfill{}
+\end_inset
+
+Jiří Kunčar
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Název práce: Informační systém pro jazykovou agenturu
+\begin_inset Newline newline
+\end_inset
+
+Autor: Jiří Kunčar
+\begin_inset Newline newline
+\end_inset
+
+Katedra (ústav): Ústav formální a aplikované lingvistiky
+\begin_inset Newline newline
+\end_inset
+
+Vedoucí bakalářské práce: RNDr.
+ Miroslav Spousta
+\begin_inset Newline newline
+\end_inset
+
+e-mail vedoucího: Miroslav.Spousta@mff.cuni.cz
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Abstrakt: Cílem práce je navrhnout a implementovat modulární informační
+ systém pro firmu zabývající se výukou jazyků.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Součástí informačního systému bude zejména:
+\end_layout
+
+\begin_layout Standard
+\noindent
+- modul pro nabídku a prodej kurzů pro veřejnost, individuální výuku, jazykovou
+ výuku pro podniky, překlady a tlumočení 
+\end_layout
+
+\begin_layout Standard
+\noindent
+- modul produkty (výuka, překlady, tlumočení), výuka (individuální výuka,
+ kurzy pro veřejnost, jazyková výuka pro podniky) 
+\end_layout
+
+\begin_layout Standard
+\noindent
+- modul pro News (hromadné rozesílání mailem), rozvrh výuky, třídní knihy,
+ studijní materiály 
+\end_layout
+
+\begin_layout Standard
+\noindent
+- modul dodavatelé (smlouvy s lektory, překladateli, tlumočníky, měsíční
+ výkazy odpracovaných hodin, měsíční přehledy nákladů na lektory, překladatele,
+ tlumočníky) 
+\end_layout
+
+\begin_layout Standard
+\noindent
+- modul odběratelé (zápisy do kurzů pro veřejnost, objednávky, smlouvy,
+ přílohy faktur za období od-do) 
+\end_layout
+
+\begin_layout Standard
+\noindent
+- modul pro testování znalostí (jednoduché testovací prostředí) 
+\end_layout
+
+\begin_layout Standard
+\noindent
+- modul pro správu IS (uživatelé, jejich práva, přehled změn).
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Klíčová slova: informační systém, PHP, MySQL 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 10mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Title: Information system of a language school
+\begin_inset Newline newline
+\end_inset
+
+Author: Jiří Kunčar
+\begin_inset Newline newline
+\end_inset
+
+Department: Institute of Formal and Applied Linguistics
+\begin_inset Newline newline
+\end_inset
+
+Supervisor: RNDr.
+ Miroslav Spousta
+\end_layout
+
+\begin_layout Standard
+\noindent
+Supervisor's e-mail address: Miroslav.Spousta@mff.cuni.cz
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Abstract: The goal of the thesis is to design and implement a modular informatio
+n system for a company involved in teaching of foreign languages.
+\end_layout
+
+\begin_layout Standard
+\noindent
+The main parts of the information system will include, particularly: 
+\end_layout
+
+\begin_layout Standard
+\noindent
+- a module for offer and sale of courses to the public and individuals,
+ language training for businesses, translation and interpretation 
+\end_layout
+
+\begin_layout Standard
+\noindent
+- a module of products (teaching, translation and interpretation), training
+ (individual training courses for the public, language classes for businesses)
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+- a module for News (sending bulk mail), the schedule of teaching, class
+ books, study material 
+\end_layout
+
+\begin_layout Standard
+\noindent
+- a module of suppliers (contracts with teachers, translators, interpreters,
+ monthly class-sheets, monthly reports on the cost of staff translators
+ and interpreters) 
+\end_layout
+
+\begin_layout Standard
+\noindent
+- a module of customers (registration in courses, orders, contracts, supplements
+ to invoices for "from-to" periods) 
+\end_layout
+
+\begin_layout Standard
+\noindent
+- a module for testing of knowledge levels (a simple testing environment)
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+- a module for managing the IS (users, their rights and a summary of changes)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Keywords: information system, PHP, MySQL
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Úvod
+\end_layout
+
+\begin_layout Standard
+Informační systémy hrají v rychle se rozvíjejícím prostředí svou nepostradatelou
+ roli a Internet jim poskytl výbornou platformu úmožňující další rozvoj.
+ S využíváním Internetu, ale zároveň rostou nároky na bezpečnost a dostupnost
+ uložených informací, které jsou pro chod firem životně důležité.
+\begin_inset Newline newline
+\end_inset
+
+Z původních jednoduchých aplikací na 
+\end_layout
+
+\begin_layout Section*
+Definice a upřesnění pojmů
+\end_layout
+
+\begin_layout Subsection*
+Infomační systém
+\end_layout
+
+\begin_layout Standard
+Informační systém (IS) je systém pro sběr, udržování, zpracování a poskytování
+ informací a dat
+\begin_inset CommandInset citation
+LatexCommand cite
+key "wikipedia"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Cíle práce
+\end_layout
+
+\begin_layout Standard
+Cílem práce je zhodnocení procesu fungování firmy bez a s informačního systému.
+ Návrh a implementace informačního systému za použití vhodných frameworků
+ usnadňujících vývoj v použitých programovacích jazycích.
+\end_layout
+
+\begin_layout Section*
+Obsah práce
+\end_layout
+
+\begin_layout Itemize
+Analýza úlohy
+\end_layout
+
+\begin_layout Itemize
+Požadavky
+\end_layout
+
+\begin_layout Itemize
+Existujicí implementace - IS na míru vs.
+ hotová řešení
+\end_layout
+
+\begin_layout Itemize
+Technologie a frameworky
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+http://en.wikipedia.org/wiki/Model-view-controller
+\end_layout
+
+\begin_layout Itemize
+PHP - CakePHP, jsMin, cssMini?
+\end_layout
+
+\begin_layout Itemize
+JS - Prototype, Livepipe, Script.aculo.us
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Návrh vlastní implementace
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+bezpečnost: Sanitize, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+SQL Injection, Cross Site Scripting
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+výkonnost (použití cache)
+\end_layout
+
+\begin_layout Itemize
+optimalizace GET/POST požadavků na stránku
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Programátorská dokumentace
+\end_layout
+
+\begin_layout Itemize
+Uživatelská dokumentace
+\end_layout
+
+\begin_layout Standard
+Ve druhé kapitole této práce je provedena analýza úlohy s ohledem na několik
+ motivačních praktických příkladů.
+ V této kapitole jsou mimo jiné stanoveny požadavky na řešení a je uveden
+ přehled obdobných existujících implementací.
+\end_layout
+
+\begin_layout Standard
+Ve třetí kapitole jsou stručně popsány technologie dále používané v této
+ práci a je ukázáno jejich použití.
+\end_layout
+
+\begin_layout Standard
+Čtvrtá kapitola popisuje návrh vlastní implementace s ohledem na požadavky
+ stanovené v kapitole druhé.
+ Jsou zde základní návrhová rozhodnutí a důvody pro volbu konkrétních řešení.
+\end_layout
+
+\begin_layout Standard
+Pátá kapitola obsahuje programátorskou dokumentaci.
+ Je zde popsáno technické řešení implementace a jsou nastíněny některé problémy,
+ které bylo při implementaci nutné řešit.
+\end_layout
+
+\begin_layout Standard
+Uživatelská dokumentace je obsažena v šesté kapitole.
+ Popisuje uživatelské rozhraní vytvořených aplikací a ukazuje jejich použití
+ na konkrétních příkladech.
+\end_layout
+
+\begin_layout Standard
+V závěru jsou přehledně shrnuty výsledky, kterých bylo při vývoji systému
+ dosaženo, a jsou naznačeny možnosti dalšího rozšíření.
+\end_layout
+
+\begin_layout Chapter
+Název druhé kapitoly
+\end_layout
+
+\begin_layout Section
+Název první podkapitoly v druhé kapitole
+\end_layout
+
+\begin_layout Section
+Název druhé podkapitoly v druhé kapitole
+\end_layout
+
+\begin_layout Chapter
+Uživatelská dokumentace
+\end_layout
+
+\begin_layout Standard
+Role v systému: administrator, editor, odběratel, dodavatel (zaměstnanec,
+ brigádník či jiný subjekt vykonávající zadanou práci) a student (účastník
+ kurzu).
+\end_layout
+
+\begin_layout Section
+Instalace
+\end_layout
+
+\begin_layout Standard
+Pro běh serverové aplikace je nutné mít sprovozněný program, který úmožnuje
+ zpracování zdrojových kódů a prezentaci výstupu protokolem HTTP popřípadě
+ HTTPS.
+ Nejznámějším volně dostupným programem je Apache [http://httpd.apache.org/],
+ který úmožnuje pomocí modulů [http://httpd.apache.org/modules/] přidat podporu
+ pro PHP.
+\end_layout
+
+\begin_layout Subsection
+Stažení a instalace Apache
+\end_layout
+
+\begin_layout Standard
+Ze stránek projektu [http://httpd.apache.org/download.cgi] vyberte odkaz vedoucí
+ na požadovaný balík zdrojových kódů nebo předkompilovanou aplikaci pro
+ Váš operační systém.
+ Pokud používáte některou z
+\begin_inset space ~
+\end_inset
+
+moderních linuxových distribucí, zkuste nejdříve projít repozitáře [@todo
+ vysvětlit], zda se zde nenachází již hotový balík upravený pro snadnější
+ instalaci a
+\begin_inset space ~
+\end_inset
+
+konfiguraci.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Debian a jemu podobní (Ubuntu, Kubuntu, ...):
+\end_layout
+
+\begin_layout Plain Layout
+apt-get install apache2
+\end_layout
+
+\begin_layout Plain Layout
+Gentoo
+\end_layout
+
+\begin_layout Plain Layout
+emerge apache2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Konfigurace Apache
+\end_layout
+
+\begin_layout Standard
+Pro správnou funkci aplikace je potřeba doinstalovat, popřípadě pouze povolit
+ následující moduly: 
+\shape italic
+mod_php5
+\shape default
+, 
+\shape italic
+mod_rewrite
+\shape default
+ a 
+\shape italic
+mod_ssl.
+
+\shape default
+ Pro správnou funkci zabezpečeného připojení [@todo definovat zabezpečené
+ připojení] je nutné vygenerovat certifikáty a upravit konfiguraci stránek.
+\end_layout
+
+\begin_layout Subsection
+Stažení a instalace MySQL serveru
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Section
+Administrátor
+\end_layout
+
+\begin_layout Standard
+Má standardně nastavena veškerá přístupová práva ke všem modulům systému.
+ 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "1"
+key "wikipedia"
+
+\end_inset
+
+Wikipedia: 
+\emph on
+Informační systém
+\emph default
+, 
+\begin_inset Newline newline
+\end_inset
+
+http://cs.wikipedia.org/wiki/Informační_systém
+\end_layout
+
+\end_body
+\end_document
