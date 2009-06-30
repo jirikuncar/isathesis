@@ -641,6 +641,27 @@ Výkazy
 \end_layout
 
 \begin_layout Chapter
+Programátorská dokumentace
+\end_layout
+
+\begin_layout Section
+Použité technologie a frameworky
+\end_layout
+
+\begin_layout Standard
+@todo Mozna jako samostatna kapitola
+\end_layout
+
+\begin_layout Standard
+Potřeba jednoduchého vývoje s minimálním rizikem lidských chyb.
+ Nám dává příležitost věnovat se návrhu schématu.
+\end_layout
+
+\begin_layout Standard
+Není potřeba psát již jednou napsané části kódu ...
+\end_layout
+
+\begin_layout Chapter
 Uživatelská dokumentace
 \end_layout
 
@@ -654,7 +675,7 @@ Pro běh serverové aplikace je nutné mít sprovozněný program, který úmož
  HTTPS.
  Nejznámějším volně dostupným programem je Apache [http://httpd.apache.org/],
  který úmožnuje pomocí modulů [http://httpd.apache.org/modules/] přidat podporu
- pro PHP.
+ pro jazyk PHP nutný k běhu IS.
 \end_layout
 
 \begin_layout Subsection
@@ -662,25 +683,7 @@ Stažení a instalace Apache
 \end_layout
 
 \begin_layout Standard
-Ze stránek projektu
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://httpd.apache.org/download.cgi"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- vyberte odkaz vedoucí na požadovaný balík zdrojových kódů nebo předkompilovanou
- aplikaci pro Váš operační systém.
- Pokud používáte některou z
+Pokud používáte některou z
 \begin_inset space ~
 \end_inset
 
@@ -694,7 +697,16 @@ konfiguraci.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Comment
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
 status open
 
 \begin_layout Plain Layout
@@ -716,6 +728,28 @@ emerge apache2
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Pokud jste požadovaný balík nenašli či používáte jiný operační systém, můžete
+ ze stránek projektu
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://httpd.apache.org/download.cgi"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ vybrat odkaz vedoucí na požadovaný balík zdrojových kódů nebo předkompilovanou
+ aplikaci pro Váš operační systém.
 \end_layout
 
 \begin_layout Subsection
@@ -743,6 +777,46 @@ mod_ssl.
 
 \begin_layout Subsection
 Stažení a instalace MySQL serveru
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Stažení-a-instalace"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+uživatelské jméno: isadb
+\begin_inset Newline newline
+\end_inset
+
+heslo: isapass
+\end_layout
+
+\begin_layout Section
+Umístění aplikace
+\end_layout
+
+\begin_layout Standard
+Pokud máme server správně nakonfigurovaný, zkopírujeme složku s aplikací
+ do adresáře určeného konfigurací Apache (obvykle /var/www či C:
+\backslash
+
+\backslash
+Program Files
+\backslash
+apache2
+\backslash
+www).
+ Dále je potřeba nastavit přihlašovací údaje k databázi podle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Stažení-a-instalace"
+
+\end_inset
+
+předchozí části.
 \end_layout
 
 \begin_layout Section
