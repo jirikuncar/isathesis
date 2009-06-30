@@ -1,0 +1,320 @@
+%% LyX 1.6.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[12pt,czech,notitlepage]{report}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\pagestyle{plain}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\usepackage{verbatim}
+\usepackage{graphicx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{a4wide}
+\usepackage[left=4cm]{geometry}
+
+\usepackage{babel}
+
+\begin{document}
+\begin{titlepage}\vspace{15mm}
+
+
+\begin{center}
+{\large Univerzita Karlova v Praze}\\
+{\large Matematicko-fyzikální fakulta\vspace{5mm}
+}
+\par\end{center}{\large \par}
+
+\begin{center}
+\textbf{\Large BAKALÁŘSKÁ PRÁCE\vspace{10mm}
+}
+\par\end{center}{\Large \par}
+
+\begin{center}
+\includegraphics[scale=0.3]{logo}\vspace{15mm}
+
+\par\end{center}
+
+\begin{center}
+{\Large Jiří Kunčar \vspace{5mm}
+}
+\par\end{center}{\Large \par}
+
+\begin{center}
+\textbf{\Large Informační systém pro jazykovou agenturu\vspace{5mm}
+}
+\par\end{center}{\Large \par}
+
+\begin{center}
+\textbf{\large Ústav formální a aplikované lingvistiky\vspace{15mm}
+}
+\par\end{center}{\large \par}
+
+\noindent \begin{center}
+{\large Vedoucí bakalářské práce: RNDr. Miroslav Spousta \vspace{1mm}
+}
+\par\end{center}{\large \par}
+
+\noindent \begin{center}
+{\large Studijní program: informatika, správa počítačových systémů\vspace{20mm}
+}
+\par\end{center}{\large \par}
+
+\begin{center}
+{\large 2009}
+\par\end{center}{\large \par}
+
+\end{titlepage}\setcounter{page}{2}
+
+\vspace{10mm}
+
+
+\noindent Děkuji panu RNDr. Miroslavu Spoustovi za pomoc, připomínky,
+cenné rady a za odborné vedení bakalářské práce. Dále bych rád poděkoval
+firmě Primalingua s.r.o. za poskytnutí prostředků na vývoj aplikace.
+Speciální poděkování patří především paní majitelce Mgr. Miluši Psotové
+a paní RNDr. Jitce Kunčarové, která vývoj informačního systému iniciovala.
+
+\vfill{}
+
+
+\noindent Prohlašuji, že jsem svou bakalářskou práci napsal(a) samostatně
+a výhradně s použitím citovaných pramenů. Souhlasím se zapůjčováním
+práce a jejím zveřejňováním.\bigskip{}
+
+
+\noindent V Praze dne 6.8.2009 \hfill{}Jiří Kunčar
+
+\tableofcontents{}
+
+\newpage{}
+
+\noindent Název práce: Informační systém pro jazykovou agenturu\\
+Autor: Jiří Kunčar\\
+Katedra (ústav): Ústav formální a aplikované lingvistiky\\
+Vedoucí bakalářské práce: RNDr. Miroslav Spousta\\
+e-mail vedoucího: Miroslav.Spousta@mff.cuni.cz\\
+
+
+\noindent Abstrakt: Cílem práce je navrhnout a implementovat modulární
+informační systém pro firmu zabývající se výukou jazyků.
+
+\noindent Součástí informačního systému bude zejména:
+
+\noindent - modul pro nabídku a prodej kurzů pro veřejnost, individuální
+výuku, jazykovou výuku pro podniky, překlady a tlumočení 
+
+\noindent - modul produkty (výuka, překlady, tlumočení), výuka (individuální
+výuka, kurzy pro veřejnost, jazyková výuka pro podniky) 
+
+\noindent - modul pro News (hromadné rozesílání mailem), rozvrh výuky,
+třídní knihy, studijní materiály 
+
+\noindent - modul dodavatelé (smlouvy s lektory, překladateli, tlumočníky,
+měsíční výkazy odpracovaných hodin, měsíční přehledy nákladů na lektory,
+překladatele, tlumočníky) 
+
+\noindent - modul odběratelé (zápisy do kurzů pro veřejnost, objednávky,
+smlouvy, přílohy faktur za období od-do) 
+
+\noindent - modul pro testování znalostí (jednoduché testovací prostředí) 
+
+\noindent - modul pro správu IS (uživatelé, jejich práva, přehled
+změn).\\
+
+
+\noindent Klíčová slova: informační systém, PHP, MySQL 
+
+\vspace{10mm}
+
+
+\noindent Title: Information system of a language school\\
+Author: Jiří Kunčar\\
+Department: Institute of Formal and Applied Linguistics\\
+Supervisor: RNDr. Miroslav Spousta
+
+\noindent Supervisor's e-mail address: Miroslav.Spousta@mff.cuni.cz\\
+
+
+\noindent Abstract: The goal of the thesis is to design and implement
+a modular information system for a company involved in teaching of
+foreign languages.
+
+\noindent The main parts of the information system will include, particularly: 
+
+\noindent - a module for offer and sale of courses to the public and
+individuals, language training for businesses, translation and interpretation 
+
+\noindent - a module of products (teaching, translation and interpretation),
+training (individual training courses for the public, language classes
+for businesses) 
+
+\noindent - a module for News (sending bulk mail), the schedule of
+teaching, class books, study material 
+
+\noindent - a module of suppliers (contracts with teachers, translators,
+interpreters, monthly class-sheets, monthly reports on the cost of
+staff translators and interpreters) 
+
+\noindent - a module of customers (registration in courses, orders,
+contracts, supplements to invoices for \textquotedbl{}from-to\textquotedbl{}
+periods) 
+
+\noindent - a module for testing of knowledge levels (a simple testing
+environment) 
+
+\noindent - a module for managing the IS (users, their rights and
+a summary of changes)\\
+
+
+\noindent Keywords: information system, PHP, MySQL
+
+\newpage{}
+
+
+\chapter*{Úvod}
+
+Informační systémy hrají v rychle se rozvíjejícím prostředí svou nepostradatelou
+roli a Internet jim poskytl výbornou platformu úmožňující další rozvoj.
+S využíváním Internetu, ale zároveň rostou nároky na bezpečnost a
+dostupnost uložených informací, které jsou pro chod firem životně
+důležité.\\
+Z původních jednoduchých aplikací na 
+
+
+\section*{Definice a upřesnění pojmů}
+
+
+\subsection*{Infomační systém}
+
+Informační systém (IS) je systém pro sběr, udržování, zpracování a
+poskytování informací a dat\cite{wikipedia}.
+
+
+\section*{Cíle práce}
+
+Cílem práce je zhodnocení procesu fungování firmy bez a s informačního
+systému. Návrh a implementace informačního systému za použití vhodných
+frameworků usnadňujících vývoj v použitých programovacích jazycích.
+
+
+\section*{Obsah práce}
+\begin{itemize}
+\item Analýza úlohy
+\item Požadavky
+\item Existujicí implementace - IS na míru vs. hotová řešení
+\item Technologie a frameworky
+
+\begin{itemize}
+\item http://en.wikipedia.org/wiki/Model-view-controller
+\item PHP - CakePHP, jsMin, cssMini?
+\item JS - Prototype, Livepipe, Script.aculo.us
+\end{itemize}
+\item Návrh vlastní implementace
+
+\begin{itemize}
+\item bezpečnost: Sanitize, 
+
+\begin{itemize}
+\item SQL Injection, Cross Site Scripting
+\end{itemize}
+\item výkonnost (použití cache)
+\item optimalizace GET/POST požadavků na stránku
+\end{itemize}
+\item Programátorská dokumentace
+\item Uživatelská dokumentace
+\end{itemize}
+Ve druhé kapitole této práce je provedena analýza úlohy s ohledem
+na několik motivačních praktických příkladů. V této kapitole jsou
+mimo jiné stanoveny požadavky na řešení a je uveden přehled obdobných
+existujících implementací.
+
+Ve třetí kapitole jsou stručně popsány technologie dále používané
+v této práci a je ukázáno jejich použití.
+
+Čtvrtá kapitola popisuje návrh vlastní implementace s ohledem na požadavky
+stanovené v kapitole druhé. Jsou zde základní návrhová rozhodnutí
+a důvody pro volbu konkrétních řešení.
+
+Pátá kapitola obsahuje programátorskou dokumentaci. Je zde popsáno
+technické řešení implementace a jsou nastíněny některé problémy, které
+bylo při implementaci nutné řešit.
+
+Uživatelská dokumentace je obsažena v šesté kapitole. Popisuje uživatelské
+rozhraní vytvořených aplikací a ukazuje jejich použití na konkrétních
+příkladech.
+
+V závěru jsou přehledně shrnuty výsledky, kterých bylo při vývoji
+systému dosaženo, a jsou naznačeny možnosti dalšího rozšíření.
+
+
+\chapter{Název druhé kapitoly}
+
+
+\section{Název první podkapitoly v druhé kapitole}
+
+
+\section{Název druhé podkapitoly v druhé kapitole}
+
+
+\chapter{Uživatelská dokumentace}
+
+Role v systému: administrator, editor, odběratel, dodavatel (zaměstnanec,
+brigádník či jiný subjekt vykonávající zadanou práci) a student (účastník
+kurzu).
+
+
+\section{Instalace}
+
+Pro běh serverové aplikace je nutné mít sprovozněný program, který
+úmožnuje zpracování zdrojových kódů a prezentaci výstupu protokolem
+HTTP popřípadě HTTPS. Nejznámějším volně dostupným programem je Apache
+{[}http://httpd.apache.org/{]}, který úmožnuje pomocí modulů {[}http://httpd.apache.org/modules/{]}
+přidat podporu pro PHP.
+
+
+\subsection{Stažení a instalace Apache}
+
+Ze stránek projektu {[}http://httpd.apache.org/download.cgi{]} vyberte
+odkaz vedoucí na požadovaný balík zdrojových kódů nebo předkompilovanou
+aplikaci pro Váš operační systém. Pokud používáte některou z~moderních
+linuxových distribucí, zkuste nejdříve projít repozitáře {[}@todo
+vysvětlit{]}, zda se zde nenachází již hotový balík upravený pro snadnější
+instalaci a~konfiguraci.
+
+%
+\begin{comment}
+Debian a jemu podobní (Ubuntu, Kubuntu, ...):
+
+apt-get install apache2
+
+Gentoo
+
+emerge apache2
+\end{comment}
+{}
+
+
+\subsection{Konfigurace Apache}
+
+Pro správnou funkci aplikace je potřeba doinstalovat, popřípadě pouze
+povolit následující moduly: \textit{mod\_php5}, \textit{mod\_rewrite}
+a \textit{mod\_ssl.} Pro správnou funkci zabezpečeného připojení {[}@todo
+definovat zabezpečené připojení{]} je nutné vygenerovat certifikáty
+a upravit konfiguraci stránek.
+
+
+\subsection{Stažení a instalace MySQL serveru}
+
+
+
+
+\section{Role v systému}
+
+Má standardně nastavena veškerá přístupová práva ke všem modulům systému. 
+\begin{thebibliography}{1}
+\bibitem[1]{wikipedia}Wikipedia: \emph{Informační systém}, \\
+http://cs.wikipedia.org/wiki/Informační\_systém
+\end{thebibliography}
+
+\end{document}
