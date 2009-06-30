@@ -610,29 +610,42 @@ V závěru jsou přehledně shrnuty výsledky, kterých bylo při vývoji systé
 \end_layout
 
 \begin_layout Chapter
-Název druhé kapitoly
+Požadavky klienta
+\end_layout
+
+\begin_layout Standard
+Na začátku stála žádost manažerky agentury zjednodušit proces zpracování
+ měsičních výkazů lektorů, překladatelů a tlumočníků tvořících podklady
+ pro mzdy a fakturaci služeb.
+ Tyto měsiční výkazy neměly jednotný vzor a ani nebylo jednoduše možné,
+ bez znalostí místních poměrů přiřadit vykázanou činnost k jednotlivým produktům.
 \end_layout
 
 \begin_layout Section
-Název první podkapitoly v druhé kapitole
+Zavedení jednotných identifikátorů
+\end_layout
+
+\begin_layout Standard
+Kvůli výše uvedným problémům se začalo s postupným zaváděním jednotných
+ identifikátorů závazných pro všechny zúčastněné strany.
+ Tento krok byl ze začátku velmi těžce snášen a trvalo několik měsíců, než
+ se tento proces tvorby ustálil a začal být všemi akceptován.
 \end_layout
 
 \begin_layout Section
-Název druhé podkapitoly v druhé kapitole
+Výkazy
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Chapter
 Uživatelská dokumentace
 \end_layout
 
-\begin_layout Standard
-Role v systému: administrator, editor, odběratel, dodavatel (zaměstnanec,
- brigádník či jiný subjekt vykonávající zadanou práci) a student (účastník
- kurzu).
-\end_layout
-
 \begin_layout Section
-Instalace
+Instalace serveru
 \end_layout
 
 \begin_layout Standard
@@ -649,9 +662,24 @@ Stažení a instalace Apache
 \end_layout
 
 \begin_layout Standard
-Ze stránek projektu [http://httpd.apache.org/download.cgi] vyberte odkaz vedoucí
- na požadovaný balík zdrojových kódů nebo předkompilovanou aplikaci pro
- Váš operační systém.
+Ze stránek projektu
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://httpd.apache.org/download.cgi"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ vyberte odkaz vedoucí na požadovaný balík zdrojových kódů nebo předkompilovanou
+ aplikaci pro Váš operační systém.
  Pokud používáte některou z
 \begin_inset space ~
 \end_inset
@@ -717,8 +745,14 @@ mod_ssl.
 Stažení a instalace MySQL serveru
 \end_layout
 
-\begin_layout Standard
+\begin_layout Section
+Inicializace databáze
+\end_layout
 
+\begin_layout Standard
+V souboru %CDROM%/app/config/sql/isa_init.sql se nachází MySQL 5.0+ kompatibilní
+ skript, který vytvoří tabulky a naplní je daty nutnými k prvnímu přihlášení
+ administrátora.
 \end_layout
 
 \begin_layout Section
@@ -726,8 +760,133 @@ Role v systému
 \end_layout
 
 \begin_layout Standard
+Tato sekce je rozdělena podle rolí definovaných v IS.
+\end_layout
+
+\begin_layout Description
+Administrátor: pověřený správce systému s plnými právy ke všem modulům systému.
+\end_layout
+
+\begin_layout Description
+Editor: osoba s omezenými právy k editaci vybraných modulů.
+\end_layout
+
+\begin_layout Description
+Dodavatelé: zaměstnanec, brigádník či jiný subjekt vykonávající zadanou
+ práci.
+\end_layout
+
+\begin_layout Description
+Odběratelé: @todo
+\end_layout
+
+\begin_layout Description
+Účastníci: studenti jednotlivých kurzu.
+ 
+\end_layout
+
+\begin_layout Standard
+Výše popsané role mohou být změněny či zakázány administrátorem systému.
+ Čtenáři je doporučeno číst pouze části, jenž se ho týkají.
+\end_layout
+
+\begin_layout Subsection
+Administrátor
+\end_layout
+
+\begin_layout Standard
 Má standardně nastavena veškerá přístupová práva ke všem modulům systému.
  
+\end_layout
+
+\begin_layout Subsubsection
+Uživatelé a skupiny
+\end_layout
+
+\begin_layout Subsubsection
+Produkty
+\end_layout
+
+\begin_layout Subsubsection
+Přihlášky 
+\end_layout
+
+\begin_layout Subsubsection
+Účastníci
+\end_layout
+
+\begin_layout Subsubsection
+Smlouvy
+\end_layout
+
+\begin_layout Subsubsection
+Výkazy
+\end_layout
+
+\begin_layout Subsection
+Editor
+\end_layout
+
+\begin_layout Standard
+Má standardně nastavena veškerá přístupová práva ke všem modulům systému.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Uživatelé a skupiny
+\end_layout
+
+\begin_layout Subsubsection
+Produkty
+\end_layout
+
+\begin_layout Subsubsection
+Přihlášky 
+\end_layout
+
+\begin_layout Subsubsection
+Účastníci
+\end_layout
+
+\begin_layout Subsubsection
+Smlouvy
+\end_layout
+
+\begin_layout Subsubsection
+Výkazy
+\end_layout
+
+\begin_layout Subsection
+Dodavatelé
+\end_layout
+
+\begin_layout Subsubsection
+Produkty
+\end_layout
+
+\begin_layout Subsubsection
+Přihlášky 
+\end_layout
+
+\begin_layout Subsubsection
+Účastníci
+\end_layout
+
+\begin_layout Subsubsection
+Smlouvy
+\end_layout
+
+\begin_layout Subsubsection
+Výkazy
+\end_layout
+
+\begin_layout Chapter*
+Závěr
+\end_layout
+
+\begin_layout Standard
+Zavedení informačního systému je běh na dlouhou trať ...
+ příprava dodavatelů i odběratelů na změny ve způsobu vykazování práce ...
 \end_layout
 
 \begin_layout Bibliography
