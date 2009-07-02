@@ -615,9 +615,9 @@ Požadavky klienta
 
 \begin_layout Standard
 Na začátku stála žádost manažerky agentury zjednodušit proces zpracování
- měsičních výkazů lektorů, překladatelů a tlumočníků tvořících podklady
+ měsíčních výkazů lektorů, překladatelů a tlumočníků tvořících podklady
  pro mzdy a fakturaci služeb.
- Tyto měsiční výkazy neměly jednotný vzor a ani nebylo jednoduše možné,
+ Tyto měsíční výkazy neměly jednotný vzor a ani nebylo jednoduše možné,
  bez znalostí místních poměrů přiřadit vykázanou činnost k jednotlivým produktům.
 \end_layout
 
@@ -633,11 +633,84 @@ Kvůli výše uvedným problémům se začalo s postupným zaváděním jednotn�
 \end_layout
 
 \begin_layout Section
-Výkazy
+Měsíční výkazy
 \end_layout
 
 \begin_layout Standard
+Vzhledem k velkým rozdílům mezi jednotlivými lektory, překladateli a tlumočníky,
+ bylo rozhodnuto, že se v první fázi začne s jednotým papírovým formulářem
+ [@todo odkaz na prilohu].
+ Ten bude následně zkontrolován administrativním pracovníkem a vložen do
+ systému, aby se předešlo chybám.
+\end_layout
 
+\begin_layout Section
+Podklady pro fakturaci
+\end_layout
+
+\begin_layout Standard
+Se vzrůstajícím objemem překladů a odučených hodin přestávalo být únosné
+ ruční vytváření měsíčních přehledů pro zákazníky.
+ Ti si přáli být informování nejen o počtu odučených hodit, ale i o všech
+ změnách zavedeném měsíčním rozvrhu a případném suplování.
+ 
+\end_layout
+
+\begin_layout Chapter
+Existující implementace
+\end_layout
+
+\begin_layout Standard
+Existujicí aplikace lze rozdělit na několik skupin, kde ovšem žádná nepokrývá
+ veškeré požadavky v plném rozsahu.
+ První se více zaměřuje na správu webového obsahu.
+ Označované anglickou zkratkou CMS - Content Management System, před kterou
+ se někdy přídává W označující webové systémy.
+ Tyto systémy lze rozdělit do podskupin podle způsobu, jakým prezentují
+ uložená data.
+\end_layout
+
+\begin_layout Description
+Offline
+\begin_inset space ~
+\end_inset
+
+zpracování Server vygeneruje statické HTML před samotnou publikací, proto
+ takové systémy nepořebují, aby server aplikoval šablony na data při každém
+ požadavku.
+ Výhody jsou zjevné pro vytížené CMS používané převážně pro čtení dat.
+ Naopak při častých změnách dat můžou být tyto systémy pomalé nebo neaktuální,
+ proto je nutné si jejich nasazení řádně rozmyslet.
+ Příkladem takového systému je například Vignette CMS
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.vignette.com/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Online
+\begin_inset space ~
+\end_inset
+
+zpracování Server generuje prezentační data až na základě požadavků klienta.
+ 
 \end_layout
 
 \begin_layout Chapter
