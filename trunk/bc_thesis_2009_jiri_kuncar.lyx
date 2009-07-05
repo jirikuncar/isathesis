@@ -468,21 +468,32 @@ Keywords: information system, PHP, MySQL
 
 \begin_layout Standard
 Informační systémy hrají v rychle se rozvíjejícím prostředí svou nepostradatelou
- roli a Internet jim poskytl výbornou platformu úmožňující další rozvoj.
- S využíváním Internetu, ale zároveň rostou nároky na bezpečnost a dostupnost
- uložených informací, které jsou pro chod firem životně důležité.
+ roli a Internet jim poskytl výbornou platformu úmožňující další rozvoj
+ v dříve nepříliš využívaném prostředí.
+ Úmožňují snadné a rychlé zpracování, vyhledávání a publikovaní informací,
+ které se díky němu stávají dostupné pro širší spektrum zákazníků, dodavatelů
+ i samotných zaměstanců.
  
 \end_layout
 
 \begin_layout Standard
+S využíváním Internetu, ale zároveň rostou nároky na funkce, bezpečnost
+ a dostupnost uložených informací, které jsou pro chod firem životně důležité.
+ Toto zvyšuje požadavky na robustnost řešení včetně nároků na nástroje použité
+ při implementaci systému.
+\end_layout
+
+\begin_layout Standard
 Před zavádění informačního systému je nutné stanovit, čeho chce firma s
- využitím daného  systému v daném čase dosáhnout.
+ využitím nového systému v daném čase dosáhnout.
  Tomu by měla pomoci důkladná analýza firemních procesů a jejich optimalizace.
  
 \end_layout
 
 \begin_layout Standard
 \align center
+
+\shape italic
 \begin_inset Quotes pld
 \end_inset
 
@@ -495,6 +506,15 @@ Kdo nepozná vlastní firemní procesy, nemůže je zlepšovat.
 
 \begin_layout Standard
 Z původních jednoduchých aplikací na 
+\end_layout
+
+\begin_layout Standard
+KARAT je komplexný podnikový informačný systém, ktorý využíva technológiu
+ Client/Server.
+ Je určený hlavne pre riadenie stredných a veľkých výrobných a obchodných
+ spoločností a tiež organizácií podnikajúcich v sektore služieb, ktoré majú
+ v úmysle skĺbiť účtovný, ekonomický, skladový a obchodný software do komplexnéh
+o riešenia na mieru.
 \end_layout
 
 \begin_layout Section*
@@ -765,6 +785,27 @@ zpracování Server generuje prezentační data až na základě požadavků kli
 \begin_layout Description
 E-learning ...
  Moodle
+\end_layout
+
+\begin_layout Description
+ciele:
+\end_layout
+
+\begin_layout Description
+* strategické (plánovanie investícií…) * taktické (vedenie, kontrola rozpočtu…)
+ * operatívne (každodenná rutina)
+\end_layout
+
+\begin_layout Description
+Dôležité sú tiež úlohy IS:
+\end_layout
+
+\begin_layout Description
+* manažérske (EIS - Executive IS) * taktické (DSS - Decision Support System)
+ * vedenie (MIS - Management IS) * expertné (KWS - Knowledge Work System)
+ * kancelárske (OIS - Office IS) * operatívne o TPS - transakčné (banky,
+ ...) o CRM - vzťahy so zákazníkmi o RIS - rezervačné systémy o CAM - konštrukčné
+ (CAD, ...) o GIS - geografické systémy
 \end_layout
 
 \begin_layout Chapter
@@ -1175,9 +1216,12 @@ V tomto modulu můžete přidávat a mazat uživatelské skupiny a oprávnění.
 \begin_layout Standard
 Při implicitní nastavení má každá ze systémových skupin práva definované
  a přiřazené oprávnění k prefixovaným akcím jednotlivých modulů.
- Tyto oprávnění vypadají tímto způsobem: *:customers_*, *:employees_*, *:provide
-rs_*, *:students_*, *:admin_* a říkají, že daná skupina může v libovolném
- modulu spouštět akce začínajícím jejich jménem.
+ Tyto oprávnění jsou definovány tímto způsobem: 
+\emph on
+*:customers_*, *:employees_*, *:providers_*, *:students_*, *:admin_*
+\emph default
+ a říkají, že daná skupina může v libovolném modulu spouštět akce začínajícím
+ jejich jménem.
  V příkladu byl použit expanzní znak 
 \begin_inset Quotes pld
 \end_inset
@@ -1223,6 +1267,28 @@ Každá skupina může může mít přiřazeno více definovaných oprávnění 
 \begin_layout Standard
 V této části se seznámíme se všemi číselníky, jejich funkcemi v systému
  a možností editace.
+ Všechy dále uvedené moduly obsahují automaticky generovaný číselný identifikáto
+r (dále jen 
+\emph on
+id
+\emph default
+), který slouží pro interní potřeby systému a není možné ho změnit.
+ Dále je potřeba upozornit na fakt, že vytvořené položky v číselníku, které
+ již byly v systému přizazeny nějakým záznamům, nelze vymazat.
+ Vymazání je umožněno až když je číselník u daných záznamů změněn.
+\end_layout
+
+\begin_layout Description
+Kategorie obsahuje název, zkratku, jednoduchý slovní popis a zašktávací
+ políčko určující, zda se produkty v této kategorii považují za veřejné
+ a má se zobrazovat jejich rozvh na webových stránkách.
+ Účel číselníku spočíva v rozčlenění množství produktů do skupin, podle
+ kterých lze vytvářet tiskové sestavy (přílohy faktur, rozvrhy, měsíční
+ přehledy nákladů, ...).
+\end_layout
+
+\begin_layout Description
+Místa obsahují název a adresu
 \end_layout
 
 \begin_layout Subsection
