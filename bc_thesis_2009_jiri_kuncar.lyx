@@ -237,7 +237,7 @@ Děkuji panu RNDr.
 
 \begin_layout Standard
 \noindent
-Prohlašuji, že jsem svou bakalářskou práci napsal(a) samostatně a výhradně
+Prohlašuji, že jsem svou bakalářskou práci napsal samostatně a výhradně
  s použitím citovaných pramenů.
  Souhlasím se zapůjčováním práce a jejím zveřejňováním.
 \begin_inset VSpace bigskip
@@ -718,6 +718,10 @@ Vzhledem ke složitým poměrům v agentuře bylo potřeba oddělit evidenci zak
 Evidence hodin, rozvrhy učeben
 \end_layout
 
+\begin_layout Section
+Definice
+\end_layout
+
 \begin_layout Chapter
 Existující implementace
 \end_layout
@@ -1023,7 +1027,7 @@ V souboru %CDROM%/app/config/sql/isa_init.sql se nachází MySQL 5.0+ kompatibil
 \end_layout
 
 \begin_layout Section
-Definice pojmů
+Upřesňující informace
 \end_layout
 
 \begin_layout Standard
@@ -1036,7 +1040,7 @@ Systémová
 \begin_inset space ~
 \end_inset
 
-skupina
+skupina je nutná pro správné fungování IS.
 \end_layout
 
 \begin_layout Standard
@@ -1103,6 +1107,13 @@ Tento modul obsahuje moduly pro nastavení jednotlivých částí systému, spr�
 
 \begin_layout Subsubsection
 Uživatelé (Users)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Uživatelé-(Users)"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1279,16 +1290,43 @@ id
 \end_layout
 
 \begin_layout Description
-Kategorie obsahuje název, zkratku, jednoduchý slovní popis a zašktávací
- políčko určující, zda se produkty v této kategorii považují za veřejné
- a má se zobrazovat jejich rozvh na webových stránkách.
+Kategorie
+\begin_inset CommandInset label
+LatexCommand label
+name "kategorie"
+
+\end_inset
+
+ obsahuje název, zkratku, jednoduchý slovní popis a zašktávací políčko určující,
+ zda se produkty v této kategorii považují za veřejné a má se zobrazovat
+ jejich rozvh na webových stránkách.
  Účel číselníku spočíva v rozčlenění množství produktů do skupin, podle
  kterých lze vytvářet tiskové sestavy (přílohy faktur, rozvrhy, měsíční
  přehledy nákladů, ...).
 \end_layout
 
 \begin_layout Description
-Místa obsahují název a adresu
+Místa
+\begin_inset CommandInset label
+LatexCommand label
+name "místa"
+
+\end_inset
+
+ obsahují název a adresu.
+ Slouží k odkazu na místo v událostech.
+\end_layout
+
+\begin_layout Description
+Štítky
+\begin_inset CommandInset label
+LatexCommand label
+name "stítky"
+
+\end_inset
+
+ obsahují název a odkaz na nadřazený štítek, pro možnost tvorby hierarchické
+ struktury článků.
 \end_layout
 
 \begin_layout Subsection
@@ -1301,23 +1339,157 @@ Modul
 Produkty
 \noun default
  je závislý na správně rozdělených uživatelích do systémových skupin.
- Rovněž je doporučeno předvyplnit číselník kategorií produktů (viz ).
+ Rovněž je doporučeno předvyplnit číselník kategorií produktů.
 \end_layout
 
-\begin_layout Subsection
-Dodavatelé
+\begin_layout Subsubsection
+Vytvoření nového produktu (jednoduchá verze)
 \end_layout
 
-\begin_layout Subsection
-Odběratelé
+\begin_layout Standard
+Vyberte kategorii a poskytovatele.
+ Dále vyplňte název produktu a infomaci o datu zahájení a předpokládaném
+ či žádaném datu ukončení prací.
+ Dále si řekněme, jak se vypočítá výsledná cena (bez DPH) pro zákazníka.
+ Od toho se bude odvíjet další vyplňování formuláře.
+\end_layout
+
+\begin_layout Standard
+Stanovte si, jak budete daný produkt nabízet a od čeho se odvíjí náklady.
+ V
+\begin_inset space ~
+\end_inset
+
+případě, že se náklady odvíjí od počtu participujících osob zašrtněte možnost
+ 
+\emph on
+Počítat účastníky
+\emph default
+.
+ Pokud nevíte dobředu kolik hodin bude odučeno či kolik normostran bude
+ účtováno a náklady na ně nejsou fixní, zaškrtněte možnost 
+\emph on
+Počítat množství
+\emph default
+.
+ Celková cena bude spočítána takto:
+\end_layout
+
+\begin_layout Itemize
+jednotková cena je vynásobena počtem účastníků pokud byla odpovídající volba
+ zaškrtnuta
+\end_layout
+
+\begin_layout Itemize
+mezisoučet je vynásoben součtem odpracovaných jednotek v událostech ve výkazech
+ přiřazených v produktu pokud byla volba 
+\emph on
+počítat množství
+\emph default
+ zaškrtnuta
+\end_layout
+
+\begin_layout Itemize
+@todo možná konverze
+\end_layout
+
+\begin_layout Standard
+Teď už zbývá doplnit zbývající povinné položky a to jednotku a jednotkovou
+ cenu.
 \end_layout
 
 \begin_layout Subsection
 Výkazy
 \end_layout
 
+\begin_layout Subsubsection
+Vytvoření
+\begin_inset space ~
+\end_inset
+
+a
+\begin_inset space ~
+\end_inset
+
+přiřazení
+\begin_inset space ~
+\end_inset
+
+výkazu
+\begin_inset space ~
+\end_inset
+
+k
+\begin_inset space ~
+\end_inset
+
+produktu 
+\end_layout
+
+\begin_layout Standard
+Vytvoření a přiřazení výkazu k produktu provádějte pouze pokud je produkt,
+ ke kterému chcete přidat výkaz, již vytvořen.
+ 
+\end_layout
+
+\begin_layout Standard
+V menu klikněte na položku 
+\emph on
+Přidat výkaz
+\emph default
+ a vyplňte následný přehledný formulář.
+ U dodavatele se rozlišuje se i typ smlouvy uvedený v závorce.
+ Sazba a jednotka jsou rovněž povinné položky.
+\end_layout
+
+\begin_layout Standard
+Jinou možností, jak přiřadit nový výkaz, je přes modul 
+\noun on
+Produkty
+\noun default
+ (nebo přes 
+\begin_inset Quotes pld
+\end_inset
+
+rychlé hledání
+\begin_inset Quotes prd
+\end_inset
+
+), kde lze snadno vyhledat daný produkt.
+ Zobrazte si detaily nalezeného produktu a ve skupině 
+\emph on
+Přiřazené výkazy
+\emph default
+ klikněte na odkaz 
+\emph on
+Přidat výkaz
+\emph default
+.
+\end_layout
+
+\begin_layout Subsubsection
+Přidání události k výkazu
+\end_layout
+
 \begin_layout Subsection
-Dodavatelé
+Tipy na urychlení práce
+\end_layout
+
+\begin_layout Standard
+Zvláštní formulář na přidání produktu spolu se zákazníkem i dodavatelem
+ úmožní rychlejší zadávání většího množství nových produktů.
+\end_layout
+
+\begin_layout Section
+Dodavatel
+\end_layout
+
+\begin_layout Standard
+zadávání výkazu,
+\end_layout
+
+\begin_layout Standard
+evidence docházky do kurzů
 \end_layout
 
 \begin_layout Chapter*
