@@ -471,9 +471,29 @@ Informační systémy hrají v rychle se rozvíjejícím prostředí svou nepost
  roli a Internet jim poskytl výbornou platformu úmožňující další rozvoj.
  S využíváním Internetu, ale zároveň rostou nároky na bezpečnost a dostupnost
  uložených informací, které jsou pro chod firem životně důležité.
-\begin_inset Newline newline
+ 
+\end_layout
+
+\begin_layout Standard
+Před zavádění informačního systému je nutné stanovit, čeho chce firma s
+ využitím daného  systému v daném čase dosáhnout.
+ Tomu by měla pomoci důkladná analýza firemních procesů a jejich optimalizace.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Quotes pld
 \end_inset
 
+Kdo nepozná vlastní firemní procesy, nemůže je zlepšovat.
+\begin_inset Quotes prd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Z původních jednoduchých aplikací na 
 \end_layout
 
@@ -502,9 +522,10 @@ Cíle práce
 \end_layout
 
 \begin_layout Standard
-Cílem práce je zhodnocení procesu fungování firmy bez a s informačního systému.
- Návrh a implementace informačního systému za použití vhodných frameworků
- usnadňujících vývoj v použitých programovacích jazycích.
+Cílem práce je návrh a implementace informačního systému za použití vhodných
+ opensource technologií a frameworků usnadňujících vývoj v použitých programovac
+ích jazycích.
+ Při návrhu databáze bude kladen důraz na zachycení všech vazeb mezi ...
 \end_layout
 
 \begin_layout Section*
@@ -610,6 +631,10 @@ V závěru jsou přehledně shrnuty výsledky, kterých bylo při vývoji systé
 \end_layout
 
 \begin_layout Chapter
+Analýza úlohy
+\end_layout
+
+\begin_layout Section
 Požadavky klienta
 \end_layout
 
@@ -621,7 +646,7 @@ Na začátku stála žádost manažerky agentury zjednodušit proces zpracován�
  bez znalostí místních poměrů přiřadit vykázanou činnost k jednotlivým produktům.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Zavedení jednotných identifikátorů
 \end_layout
 
@@ -632,7 +657,7 @@ Kvůli výše uvedným problémům se začalo s postupným zaváděním jednotn�
  se tento proces tvorby ustálil a začal být všemi akceptován.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Měsíční výkazy
 \end_layout
 
@@ -644,7 +669,7 @@ Vzhledem k velkým rozdílům mezi jednotlivými lektory, překladateli a tlumo�
  systému, aby se předešlo chybám.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Podklady pro fakturaci
 \end_layout
 
@@ -656,6 +681,23 @@ Se vzrůstajícím objemem překladů a odučených hodin přestávalo být úno
  
 \end_layout
 
+\begin_layout Subsection
+Oddělení firemních a ostatních aktivit
+\end_layout
+
+\begin_layout Standard
+Vzhledem ke složitým poměrům v agentuře bylo potřeba oddělit evidenci zakázek
+ vyřizovaných ve firmě a fyzickými osobami, jenž s agenturou úzce spolupracují.
+\end_layout
+
+\begin_layout Subsection
+Úzká provázanost s webem
+\end_layout
+
+\begin_layout Standard
+Evidence hodin, rozvrhy učeben
+\end_layout
+
 \begin_layout Chapter
 Existující implementace
 \end_layout
@@ -664,8 +706,15 @@ Existující implementace
 Existujicí aplikace lze rozdělit na několik skupin, kde ovšem žádná nepokrývá
  veškeré požadavky v plném rozsahu.
  První se více zaměřuje na správu webového obsahu.
- Označované anglickou zkratkou CMS - Content Management System, před kterou
- se někdy přídává W označující webové systémy.
+ Označované anglickou zkratkou CMS
+\begin_inset CommandInset label
+LatexCommand label
+name "CMS"
+
+\end_inset
+
+ - Content Management System, před kterou se někdy přídává W označující
+ webové systémy.
  Tyto systémy lze rozdělit do podskupin podle způsobu, jakým prezentují
  uložená data.
 \end_layout
@@ -741,6 +790,31 @@ Není potřeba psát již jednou napsané části kódu ...
 
 \begin_layout Chapter
 Uživatelská dokumentace
+\end_layout
+
+\begin_layout Standard
+Tato uživatelská dokumentace si klade za cíl stručně přiblížit čtenáři výhody
+ informačního systému a jeho záklaními způsoby ovládání.
+ Jednotlivých kapitolách je vysvětleno, jak má správce postupovat od úvodní
+ instalace, přes inicializaci databáze, uložení informací o uživatelích,
+ přidání produktů až po tisk účetních podkladů.
+ 
+\end_layout
+
+\begin_layout Standard
+Dodavatelům a zaměstnancům je názorně předvedeno, jak správně a včas vyplnit
+ měsíční výkazy a jak vést evidenci docházky účastníků kurzů.
+ 
+\end_layout
+
+\begin_layout Standard
+Zákazníkům je vysvětleno, jak jednoduše zjistit, kolik z objednaných služeb
+ již bylo zaplaceno a zkontrolovat průběh aktuálních kurzů či počet přeložených
+ stran překladu.
+\end_layout
+
+\begin_layout Standard
+Studenti
 \end_layout
 
 \begin_layout Section
@@ -908,7 +982,20 @@ V souboru %CDROM%/app/config/sql/isa_init.sql se nachází MySQL 5.0+ kompatibil
 \end_layout
 
 \begin_layout Section
-Role v systému
+Definice pojmů
+\end_layout
+
+\begin_layout Standard
+Pro další čtení manuálu je potřeba upřesnit několik důležitých pojmů, které
+ se budou dále vyskytovat.
+\end_layout
+
+\begin_layout Description
+Systémová
+\begin_inset space ~
+\end_inset
+
+skupina
 \end_layout
 
 \begin_layout Standard
@@ -916,7 +1003,7 @@ Tato sekce je rozdělena podle rolí definovaných v IS.
 \end_layout
 
 \begin_layout Description
-Správce: pověřený správce systému s plnými právy ke všem modulům systému.
+Správce: pověřený uživatel s plnými právy ke všem modulům systému.
 \end_layout
 
 \begin_layout Description
@@ -930,6 +1017,18 @@ Dodavatelé: zaměstnanec, brigádník či jiný subjekt vykonávající zadanou
 
 \begin_layout Description
 Odběratelé: @todo
+\end_layout
+
+\begin_layout Description
+Poskytovatelé: subjekty, které jsou vedeny 
+\begin_inset Quotes pld
+\end_inset
+
+pod jednou střechou
+\begin_inset Quotes prd
+\end_inset
+
+ a sdílí část informací.
 \end_layout
 
 \begin_layout Description
@@ -1070,15 +1169,15 @@ Skupiny a oprávnění
 \begin_layout Standard
 V tomto modulu můžete přidávat a mazat uživatelské skupiny a oprávnění.
  Pro zachování správného fungování systému nemažte tyto systémové skupiny:
- customers, employees, students a admin.
+ customers, employees, providers, students a admin.
 \end_layout
 
 \begin_layout Standard
-Při implicitní nastavení má každá ze skupin práva definované a přiřazené
- oprávnění k prefixovaným akcím jednotlivých modulů.
- Tyto oprávnění vypadají tímto způsobem: *:customers_*, *:employees_*, *:student
-s_*, *:admin_* a říkají, že daná skupina může v libovolném modulu spouštět
- akce začínajícím jejich jménem.
+Při implicitní nastavení má každá ze systémových skupin práva definované
+ a přiřazené oprávnění k prefixovaným akcím jednotlivých modulů.
+ Tyto oprávnění vypadají tímto způsobem: *:customers_*, *:employees_*, *:provide
+rs_*, *:students_*, *:admin_* a říkají, že daná skupina může v libovolném
+ modulu spouštět akce začínajícím jejich jménem.
  V příkladu byl použit expanzní znak 
 \begin_inset Quotes pld
 \end_inset
@@ -1117,8 +1216,26 @@ Každá skupina může může mít přiřazeno více definovaných oprávnění 
  správci, jak s nimi bude zacházet.
 \end_layout
 
+\begin_layout Subsubsection
+Číselníky
+\end_layout
+
+\begin_layout Standard
+V této části se seznámíme se všemi číselníky, jejich funkcemi v systému
+ a možností editace.
+\end_layout
+
 \begin_layout Subsection
 Produkty
+\end_layout
+
+\begin_layout Standard
+Modul 
+\noun on
+Produkty
+\noun default
+ je závislý na správně rozdělených uživatelích do systémových skupin.
+ Rovněž je doporučeno předvyplnit číselník kategorií produktů (viz ).
 \end_layout
 
 \begin_layout Subsection
@@ -1134,60 +1251,7 @@ Výkazy
 \end_layout
 
 \begin_layout Subsection
-Editor
-\end_layout
-
-\begin_layout Standard
-Má standardně nastavena veškerá přístupová práva ke všem modulům systému.
- 
-\end_layout
-
-\begin_layout Subsubsection
-Uživatelé a skupiny
-\end_layout
-
-\begin_layout Subsubsection
-Produkty
-\end_layout
-
-\begin_layout Subsubsection
-Přihlášky 
-\end_layout
-
-\begin_layout Subsubsection
-Účastníci
-\end_layout
-
-\begin_layout Subsubsection
-Smlouvy
-\end_layout
-
-\begin_layout Subsubsection
-Výkazy
-\end_layout
-
-\begin_layout Subsection
 Dodavatelé
-\end_layout
-
-\begin_layout Subsubsection
-Produkty
-\end_layout
-
-\begin_layout Subsubsection
-Přihlášky 
-\end_layout
-
-\begin_layout Subsubsection
-Účastníci
-\end_layout
-
-\begin_layout Subsubsection
-Smlouvy
-\end_layout
-
-\begin_layout Subsubsection
-Výkazy
 \end_layout
 
 \begin_layout Chapter*
@@ -1203,6 +1267,17 @@ Zavedení informačního systému je běh na dlouhou trať ...
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
 label "1"
+key "informační systémy"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "IS"
 key "wikipedia"
 
 \end_inset
