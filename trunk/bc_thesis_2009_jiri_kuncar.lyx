@@ -35,8 +35,8 @@
 \topmargin 3cm
 \rightmargin 25mm
 \bottommargin 3cm
-\secnumdepth 3
-\tocdepth 3
+\secnumdepth 1
+\tocdepth 1
 \paragraph_separation indent
 \defskip medskip
 \quotes_language polish
@@ -710,7 +710,12 @@ Online
 \end_inset
 
 zpracování Server generuje prezentační data až na základě požadavků klienta.
- 
+ Pro keše
+\end_layout
+
+\begin_layout Description
+E-learning ...
+ Moodle
 \end_layout
 
 \begin_layout Chapter
@@ -911,7 +916,7 @@ Tato sekce je rozdělena podle rolí definovaných v IS.
 \end_layout
 
 \begin_layout Description
-Administrátor: pověřený správce systému s plnými právy ke všem modulům systému.
+Správce: pověřený správce systému s plnými právy ke všem modulům systému.
 \end_layout
 
 \begin_layout Description
@@ -937,8 +942,8 @@ Výše popsané role mohou být změněny či zakázány administrátorem systé
  Čtenáři je doporučeno číst pouze části, jenž se ho týkají.
 \end_layout
 
-\begin_layout Subsection
-Administrátor
+\begin_layout Section
+Správce (hlavní manažer)
 \end_layout
 
 \begin_layout Standard
@@ -946,27 +951,185 @@ Má standardně nastavena veškerá přístupová práva ke všem modulům syst�
  
 \end_layout
 
-\begin_layout Subsubsection
-Uživatelé a skupiny
+\begin_layout Subsection
+Správa IS
+\end_layout
+
+\begin_layout Standard
+Tento modul obsahuje moduly pro nastavení jednotlivých částí systému, správu
+ uživatelů, skupin, práv a ostatních číselníků (daně, místnosti, kategorie
+ produktů).
 \end_layout
 
 \begin_layout Subsubsection
+Uživatelé (Users)
+\end_layout
+
+\begin_layout Standard
+Modul 
+\noun on
+Uživatelé
+\noun default
+ nabízí veškeré nastavení potřebné pro definování možností při užívání systému
+ osobami majícími vztah k IS.
+ Dále jsou zde uchovány veškeré osobní informace důvěrného charakteru.
+\end_layout
+
+\begin_layout Description
+Seznam
+\begin_inset space ~
+\end_inset
+
+uživatelů
+\begin_inset space ~
+\end_inset
+
+[/admin/Users/index]: V horní části se nachází odkazy na akce související
+ s uživately.
+ Filtry pro práci se seznamem uživatelů jsou umístěny nad hlavní tabulkou
+ a v hlavičce tabulky s funkcí 
+\begin_inset Quotes pld
+\end_inset
+
+našeptávače
+\begin_inset Quotes prd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Přidání
+\begin_inset space ~
+\end_inset
+
+uživatele
+\begin_inset space ~
+\end_inset
+
+[/admin/Users/add]: Jedinnou povinnou položkou je 
+\emph on
+zobrazovanné jméno
+\emph default
+, která slouží jako popisek ve všech výběrových filtrech.
+ Ostatní položky můžete vyplnit až při jejich potřebě ve výpisu.
+ Volba 
+\emph on
+Aktivní
+\emph default
+ slouží k aktivaci uživatelského účtu.
+ Uživatel je schopen se přihlásit pouze pokud je jeho účet aktivní.
+\end_layout
+
+\begin_layout Description
+Editace
+\begin_inset space ~
+\end_inset
+
+uživatele: Vyberte odpovídající skupinu k editaci a pro uložení změn použijte
+ tlačítko 
+\emph on
+Uložit
+\emph default
+.
+ V případě chybového hlášení zkontrolujte všechny skupiny údajů.
+\end_layout
+
+\begin_layout Description
+Zobrazení
+\begin_inset space ~
+\end_inset
+
+uživatele: @todo
+\end_layout
+
+\begin_layout Description
+Nastavení
+\begin_inset space ~
+\end_inset
+
+či
+\begin_inset space ~
+\end_inset
+
+změna
+\begin_inset space ~
+\end_inset
+
+hesla: V přehledu uživatele klikněte na odkaz Změnit heslo a vyplňte nové
+ heslo do obou kolonek.
+ Správce může editovat hesla všem uživatelům a měl by je o této změně informovat
+ zabezpečeným kanálem[@todo definovat zabezpeceny kanal], aby se předešlo
+ zneužití jejich účtu.
+\end_layout
+
+\begin_layout Subsubsection
+Skupiny a oprávnění
+\end_layout
+
+\begin_layout Standard
+V tomto modulu můžete přidávat a mazat uživatelské skupiny a oprávnění.
+ Pro zachování správného fungování systému nemažte tyto systémové skupiny:
+ customers, employees, students a admin.
+\end_layout
+
+\begin_layout Standard
+Při implicitní nastavení má každá ze skupin práva definované a přiřazené
+ oprávnění k prefixovaným akcím jednotlivých modulů.
+ Tyto oprávnění vypadají tímto způsobem: *:customers_*, *:employees_*, *:student
+s_*, *:admin_* a říkají, že daná skupina může v libovolném modulu spouštět
+ akce začínajícím jejich jménem.
+ V příkladu byl použit expanzní znak 
+\begin_inset Quotes pld
+\end_inset
+
+*
+\begin_inset Quotes prd
+\end_inset
+
+, který je možné používat k nahrazení libovoného počtu libovolných znaků,
+ a 
+\begin_inset Quotes pld
+\end_inset
+
+:
+\begin_inset Quotes prd
+\end_inset
+
+, jenž určuje hranici mezi modulem a akcí (např.
+ oprávnění 
+\emph on
+Users:*_view
+\emph default
+ úmožní zobrazit všechny prefixované akce 
+\emph on
+view
+\emph default
+ v modulu 
+\noun on
+Uživatelé
+\noun default
+).
+\end_layout
+
+\begin_layout Standard
+Každá skupina může může mít přiřazeno více definovaných oprávnění a je na
+ správci, jak s nimi bude zacházet.
+\end_layout
+
+\begin_layout Subsection
 Produkty
 \end_layout
 
-\begin_layout Subsubsection
-Přihlášky 
+\begin_layout Subsection
+Dodavatelé
 \end_layout
 
-\begin_layout Subsubsection
-Účastníci
+\begin_layout Subsection
+Odběratelé
 \end_layout
 
-\begin_layout Subsubsection
-Smlouvy
-\end_layout
-
-\begin_layout Subsubsection
+\begin_layout Subsection
 Výkazy
 \end_layout
 
