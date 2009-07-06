@@ -509,12 +509,8 @@ Z původních jednoduchých aplikací na
 \end_layout
 
 \begin_layout Standard
-KARAT je komplexný podnikový informačný systém, ktorý využíva technológiu
- Client/Server.
- Je určený hlavne pre riadenie stredných a veľkých výrobných a obchodných
- spoločností a tiež organizácií podnikajúcich v sektore služieb, ktoré majú
- v úmysle skĺbiť účtovný, ekonomický, skladový a obchodný software do komplexnéh
-o riešenia na mieru.
+Informačný systém, Client/Server.
+ 
 \end_layout
 
 \begin_layout Section*
@@ -565,24 +561,6 @@ Existujicí implementace - IS na míru vs.
  hotová řešení
 \end_layout
 
-\begin_layout Itemize
-Technologie a frameworky
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-http://en.wikipedia.org/wiki/Model-view-controller
-\end_layout
-
-\begin_layout Itemize
-PHP - CakePHP, jsMin, cssMini?
-\end_layout
-
-\begin_layout Itemize
-JS - Prototype, Livepipe, Script.aculo.us
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 Návrh vlastní implementace
 \end_layout
@@ -813,24 +791,83 @@ Dôležité sú tiež úlohy IS:
 \end_layout
 
 \begin_layout Chapter
-Programátorská dokumentace
+Návrh řešení
 \end_layout
 
-\begin_layout Section
+\begin_layout Chapter
 Použité technologie a frameworky
 \end_layout
 
 \begin_layout Standard
-@todo Mozna jako samostatna kapitola
+Potřeba jednoduchého vývoje aplikací s minimálním rizikem lidských chyb
+ dala vzniknout mnoha frameworkům na různými programovacími jazyky.
+ Tento webový informační systém využívá programovacího jazyka PHP [@todo
+ vysvetlit zkratku], který je oblíben pro svou vizuální podobu s jazykem
+ C[@todo].
+ 
 \end_layout
 
 \begin_layout Standard
-Potřeba jednoduchého vývoje s minimálním rizikem lidských chyb.
- Nám dává příležitost věnovat se návrhu schématu.
+Výhody a nevýhody PHP, vývoj, ...
 \end_layout
 
 \begin_layout Standard
-Není potřeba psát již jednou napsané části kódu ...
+MySQL
+\end_layout
+
+\begin_layout Standard
+xHTML 4.01
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Section
+CakePHP
+\end_layout
+
+\begin_layout Standard
+Nám dává příležitost věnovat se návrhu schématu.
+\end_layout
+
+\begin_layout Standard
+Odstínění od způsobu práce odlišnými zdroji dat.
+ mezi relačními databázemi a dokonce i definování vlastních zdrojů dat ať
+ už z lokálních zdrojů s přímým přístupem (formátované soubory např.
+ csv, xml) nebo za pomocí API k on-line službám (LDAP, twitter, IMAP).
+\end_layout
+
+\begin_layout Standard
+Díky množství napsaného a otestovaného kódu, není potřeba psát již jednou
+ napsané části, ale možné šetřit lidské zdroje na vývoj.
+ Tím není myšleno prosté lepení kusů posbíraného kódu, ale smysluplného
+ využívání dostupných knihoven a pluginů do programovacího jazyka nebo framework
+u.
+ 
+\end_layout
+
+\begin_layout Standard
+Díky těmto úsporám je možné se zaměřit na ergonomii dané aplikace a její
+ možnou optimalizaci, která je ovšem limitována výkonností použitých technologií.
+\end_layout
+
+\begin_layout Itemize
+http://en.wikipedia.org/wiki/Model-view-controller
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+PHP - CakePHP, jsMin, cssMini?
+\end_layout
+
+\begin_layout Itemize
+JS - Prototype, Livepipe, Script.aculo.us
+\end_layout
+
+\end_deeper
+\begin_layout Chapter
+Programátorská dokumentace
 \end_layout
 
 \begin_layout Chapter
