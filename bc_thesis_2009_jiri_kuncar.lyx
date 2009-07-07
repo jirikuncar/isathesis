@@ -514,33 +514,13 @@ Informačný systém, Client/Server.
 \end_layout
 
 \begin_layout Section*
-Definice a upřesnění pojmů
-\end_layout
-
-\begin_layout Subsection*
-Infomační systém
-\end_layout
-
-\begin_layout Standard
-Informační systém (IS) je systém pro sběr, udržování, zpracování a poskytování
- informací a dat
-\begin_inset CommandInset citation
-LatexCommand cite
-key "wikipedia"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Section*
 Cíle práce
 \end_layout
 
 \begin_layout Standard
-Cílem práce je návrh a implementace informačního systému za použití vhodných
- opensource technologií a frameworků usnadňujících vývoj v použitých programovac
-ích jazycích.
+Cílem práce je návrh a implementace informačního systému usnadňující činnost
+ a spolupráci více subjektů za použití vhodných opensource technologií a
+ frameworků v použitých programovacích jazycích.
  Při návrhu databáze bude kladen důraz na zachycení všech vazeb mezi ...
 \end_layout
 
@@ -680,12 +660,14 @@ Se vzrůstajícím objemem překladů a odučených hodin přestávalo být úno
 \end_layout
 
 \begin_layout Subsection
-Oddělení firemních a ostatních aktivit
+Oddělení reálných dat více agentur
 \end_layout
 
 \begin_layout Standard
 Vzhledem ke složitým poměrům v agentuře bylo potřeba oddělit evidenci zakázek
- vyřizovaných ve firmě a fyzickými osobami, jenž s agenturou úzce spolupracují.
+ vyřizovaných manažerem pro různé agentury a fyzické osoby, jenž s agenturami
+ úzce spolupracují.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -697,7 +679,27 @@ Evidence hodin, rozvrhy učeben
 \end_layout
 
 \begin_layout Section
-Definice
+Definice a upřesnění pojmů
+\end_layout
+
+\begin_layout Subsection
+Agentura
+\end_layout
+
+\begin_layout Subsection*
+Infomační systém
+\end_layout
+
+\begin_layout Standard
+Informační systém (IS) je systém pro sběr, udržování, zpracování a poskytování
+ informací a dat
+\begin_inset CommandInset citation
+LatexCommand cite
+key "wikipedia"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Chapter
@@ -799,10 +801,82 @@ Použité technologie a frameworky
 \end_layout
 
 \begin_layout Standard
-Potřeba jednoduchého vývoje aplikací s minimálním rizikem lidských chyb
- dala vzniknout mnoha frameworkům na různými programovacími jazyky.
- Tento webový informační systém využívá programovacího jazyka PHP [@todo
- vysvetlit zkratku], který je oblíben pro svou vizuální podobu s jazykem
+Tento webový informační systém využívá technologi PHP (jazyk, interpret
+ a knihovny), který vychází se skriptovacího víceúčelového jazyka, jenž
+ byl původně vyvinut pro vývoj dynamických webových stránek.
+ Z tohoto využití vznikla i zkatka z anglických slov 
+\emph on
+Personal Home Page
+\emph default
+, které byly nahrazeny slovy 
+\emph on
+PHP: Hypertext Preprocessor
+\emph default
+ dající vznik rekurzivní zkratce
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+http://cs.wikipedia.org/wiki/Rekurzivní_zkratka
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Zdrojové kódy aplikace jsou obvykle interpretovány na serveru při každém
+ požadavku na stránku a k uživateli se dostane až jejich výstup.
+ Tuto nepříjemnou vlastnost skriptovacích jazyků lze řešit předkompilací
+ zdrojových kódů, nebo vhodným využíváním 
+\begin_inset Quotes pld
+\end_inset
+
+keší
+\begin_inset Quotes prd
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+z anglického slova 
+\emph on
+cache
+\emph default
+, označuje vyrovnávací paměť
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Nevýhodou, která brzdí dalšímu rozvoji a rozšíření, je absence normy (k
+ datu vydání BP).
+ Jazyk je tak de facto standardizovaný interpretem a množstvím lidí, kteří
+ jej využívají.
+ I když existují mnohé polemiky a živé diskuze mezi jeho zastánci a odpůrci
+ o jeho výkonnosti, bezpečnosti a vhodnosti pro velké projekty, existují
+ vyjímky
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Facebook, YouTube, Wikipedia (MediaWiki) a další
+\end_layout
+
+\end_inset
+
+, které tyto názory vyvrací a zároveň přispívají k jeho větší výkonnosti
+ a bezpečnosti.
+\end_layout
+
+\begin_layout Standard
+[@todo vysvetlit zkratku], který je oblíben pro svou vizuální podobu s jazykem
  C[@todo].
  
 \end_layout
@@ -820,7 +894,9 @@ xHTML 4.01
 \end_layout
 
 \begin_layout Standard
-
+Potřeba jednoduchého vývoje aplikací s minimálním rizikem lidských chyb
+ dala vzniknout mnoha frameworkům na různými programovacími jazyky.
+ 
 \end_layout
 
 \begin_layout Section
