@@ -844,6 +844,35 @@ Použité technologie a frameworky
 \end_layout
 
 \begin_layout Standard
+Jelikož se jedná webovou aplikaci typu server-klient, je zapotřebí mít nainstalo
+vaný webový prohlížec podporující 
+\end_layout
+
+\begin_layout Standard
+LAMP
+\end_layout
+
+\begin_layout Standard
+Apache - 
+\end_layout
+
+\begin_layout Standard
+http://www.nexen.net/images/stories/phpversion/200810/evolution.global.en.png
+\end_layout
+
+\begin_layout Standard
+MySQL
+\end_layout
+
+\begin_layout Standard
+xHTML 4.01
+\end_layout
+
+\begin_layout Section
+Server
+\end_layout
+
+\begin_layout Standard
 Tento webový informační systém využívá technologi PHP (jazyk, interpret
  a knihovny), která vychází se skriptovacího víceúčelového jazyka, jenž
  byl původně vyvinut pro tvorbu dynamických webových stránek.
@@ -869,8 +898,8 @@ http://cs.wikipedia.org/wiki/Rekurzivní_zkratka
 \end_layout
 
 \begin_layout Standard
-Zdrojové kódy aplikace jsou obvykle interpretovány na serveru při každém
- požadavku na stránku a k uživateli se dostane až jejich výstup.
+Zdrojové kódy aplikace jsou obvykle interpretovány serverem při každém požadavku
+ na stránku a k uživateli se dostane až jejich výstup.
  Tuto nepříjemnou vlastnost skriptovacích jazyků lze řešit předkompilací
  zdrojových kódů, nebo vhodným využíváním 
 \begin_inset Quotes pld
@@ -900,8 +929,17 @@ cache
 \begin_layout Standard
 Nevýhodou, která brzdí dalšímu rozvoji a rozšíření, je absence normy (k
  datu vydání BP).
- Jazyk je tak de facto standardizovaný interpretem a množstvím lidí, kteří
- jej využívají.
+ Jazyk je tak de facto standardizovaný interpretem a množstvím lidí
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+dle statistiky na http://www.php.net/usage.php
+\end_layout
+
+\end_inset
+
+, kteří jej využívají.
  I když existují mnohé polemiky a živé diskuze mezi jeho zastánci a odpůrci
  o jeho výkonnosti, bezpečnosti a vhodnosti pro velké projekty, existují
  vyjímky
@@ -914,35 +952,68 @@ Facebook, YouTube, Wikipedia (MediaWiki) a další
 
 \end_inset
 
-, které tyto názory vyvrací a zároveň se podílejí na vývoji, a tak přispívají
- k jeho větší výkonnosti a bezpečnosti.
+, které tyto názory vyvrací a zároveň se podílejí na vývoji, a tak se snaží
+ přispět k jeho větší výkonnosti a bezpečnosti.
 \end_layout
 
 \begin_layout Standard
-[@todo vysvetlit zkratku], který je oblíben pro svou vizuální podobu s jazykem
- C[@todo].
+Vývoj jazyka sebou nese i stinné stránky.
+ Mezi ty nejpodstatnější patří úpravy API
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+anglická zkratka 
+\emph on
+Application Programming Interface
+\emph default
+, označuje sadu funkcí, procedur či tříd programu či knihovny, jenž mohou
+ být využívány programátorem 
+\end_layout
+
+\end_inset
+
+ některých vestavěných funkcí a změna syntaxe.
+ To může zapříčinit, že po aktualizaci interpretu jazyka, přestanou fungovat
+ některé části nebo celá aplikace.
+ Řešením ovšem není zůstávat na několik let staré verzi, ve které mohly
+ být objeveny chyby.
  
 \end_layout
 
 \begin_layout Standard
-Výhody a nevýhody PHP, vývoj, ...
+Pokud programátor nechce nebo nemůže přepisovat kód může využít služeb něktrého
+ z frameworků nad daným jazykem, který se snaží tyto rozdíly ve verzích
+ zakrýt.
+ Další nespornou výhodou používání frameworků spočívá jednodušším vývoji
+ aplikací a minimalizací rizika chyb v jinak ručně psaném jádru aplikace.
+ Toto je zajištěno pouze pokud má kvalitní a úplnou dokumentaci a je zastřešen
+ silnou komunitou nebo společností zajištující jeho vývoj.
 \end_layout
 
 \begin_layout Standard
-MySQL
+Při výběru byl proto důraz kladen hlavně na kvalitní dokumentaci, rozšířitelnost
+ a možnost práce s různými relačními databázemi.
+ Frameworky, které splňují vetšinu požadavků jsou Zend
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://framework.zend.com/"
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
-xHTML 4.01
+\end_inset
+
+, 
 \end_layout
 
-\begin_layout Standard
-Potřeba jednoduchého vývoje aplikací s minimálním rizikem lidských chyb
- dala vzniknout mnoha frameworkům na různými programovacími jazyky.
- 
-\end_layout
-
-\begin_layout Section
+\begin_layout Subsection
 CakePHP
 \end_layout
 
@@ -953,8 +1024,9 @@ Nám dává příležitost věnovat se návrhu schématu.
 
 \begin_layout Standard
 Odstínění od způsobu práce odlišnými zdroji dat.
- mezi relačními databázemi a dokonce i definování vlastních zdrojů dat ať
- už z lokálních zdrojů s přímým přístupem (formátované soubory např.
+ mezi relačními databázemi (MySQL, PostgreSQL, Oracle, MSSQL, ...) a dokonce
+ i definování vlastních zdrojů dat ať už z lokálních zdrojů s přímým přístupem
+ (formátované soubory např.
  csv, xml) nebo za pomocí API k on-line službám (LDAP, twitter, IMAP).
 \end_layout
 
@@ -1021,15 +1093,76 @@ target "http://csstidy.sourceforge.net/"
 \end_inset
 
 .
- ...
+\end_layout
+
+\begin_layout Section
+Klient
 \end_layout
 
 \begin_layout Standard
+Pro vlastní běh aplikační logiky je možné se spolehnout, že serverová část
+ aplikace bude zpracována jednou verzí PHP interpretu v uzavřeném a otestovaném
+ prostředí.
+ Naproti tomu klientská část bude prezentována na odlišných operačních systémech
+ v mnoha aplikacích nejrůznějších verzích.Klient musí umět zpracovávat XHTML
+ 1.0
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.w3.org/TR/xhtml1/"
+
+\end_inset
+
 
 \end_layout
 
+\end_inset
+
+.
+ Dále je doporučeno aby zvádal vykreslovat elementy stránky s kaskádovými
+ styly - CSS 2.1
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.w3.org/TR/CSS2/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ a podporoval JavaScript
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+JavaScript je dialektem ECMASriptu.
+ Minimálním implementovaným standardem by měl být ECMA-262, revize 3:
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.ecma-international.org/publications/standards/Ecma-262.htm"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Itemize
-JS - Prototype, Livepipe, Script.aculo.us
+JS - Prototype, Script.aculo.us, Livepipe
 \end_layout
 
 \begin_layout Chapter
