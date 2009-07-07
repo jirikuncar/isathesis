@@ -521,7 +521,13 @@ Cíle práce
 Cílem práce je návrh a implementace informačního systému usnadňující činnost
  a spolupráci více subjektů za použití vhodných opensource technologií a
  frameworků v použitých programovacích jazycích.
- Při návrhu databáze bude kladen důraz na zachycení všech vazeb mezi ...
+\end_layout
+
+\begin_layout Standard
+Cílem práce není vytvořit, vzhledem k náročným právním úpravám a častým
+ změnám, komplexní účetní program, ale systém úmožní vytvořit přehledy pro
+ účetní evidenci, které mohou být zavedeny do některého již existujícího
+ programu.
 \end_layout
 
 \begin_layout Section*
@@ -656,7 +662,10 @@ Se vzrůstajícím objemem překladů a odučených hodin přestávalo být úno
  ruční vytváření měsíčních přehledů pro zákazníky.
  Ti si přáli být informování nejen o počtu odučených hodit, ale i o všech
  změnách zavedeném měsíčním rozvrhu a případném suplování.
- 
+ Zárověn musely být v systému zachyceny vazby mezi produktem, zákazníkem
+ a vlastními účastníky tak, aby bylo možné stanovit výslednou cenu zakázky,
+ která může být závislá nejen od počtu odučených hodin či přeložených stran,
+ ale i od počtu účastníků.
 \end_layout
 
 \begin_layout Subsection
@@ -676,6 +685,16 @@ Vzhledem ke složitým poměrům v agentuře bylo potřeba oddělit evidenci zak
 
 \begin_layout Standard
 Evidence hodin, rozvrhy učeben
+\end_layout
+
+\begin_layout Subsection
+Vícejazykový systém
+\end_layout
+
+\begin_layout Standard
+Vzhledem k tomu, že je systém určen primárně pro jazykové agentury, kde
+ se počítá s komunikací se zákazníky v jiném než českém jazyce, bylo k tomu
+ přizpůsobit systém již od počátku.
 \end_layout
 
 \begin_layout Section
@@ -700,6 +719,18 @@ key "wikipedia"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Subsection
+Produkt
+\end_layout
+
+\begin_layout Subsection
+Zakázka
+\end_layout
+
+\begin_layout Standard
+CSS
 \end_layout
 
 \begin_layout Chapter
@@ -796,14 +827,26 @@ Dôležité sú tiež úlohy IS:
 Návrh řešení
 \end_layout
 
+\begin_layout Standard
+Evidence produktů
+\end_layout
+
+\begin_layout Standard
+Podklady pro fakturaci dodavatelům a mzdy
+\end_layout
+
+\begin_layout Standard
+Finanční vyrovnání subjektů v IS
+\end_layout
+
 \begin_layout Chapter
 Použité technologie a frameworky
 \end_layout
 
 \begin_layout Standard
 Tento webový informační systém využívá technologi PHP (jazyk, interpret
- a knihovny), který vychází se skriptovacího víceúčelového jazyka, jenž
- byl původně vyvinut pro vývoj dynamických webových stránek.
+ a knihovny), která vychází se skriptovacího víceúčelového jazyka, jenž
+ byl původně vyvinut pro tvorbu dynamických webových stránek.
  Z tohoto využití vznikla i zkatka z anglických slov 
 \emph on
 Personal Home Page
@@ -863,7 +906,7 @@ Nevýhodou, která brzdí dalšímu rozvoji a rozšíření, je absence normy (k
  o jeho výkonnosti, bezpečnosti a vhodnosti pro velké projekty, existují
  vyjímky
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Facebook, YouTube, Wikipedia (MediaWiki) a další
@@ -871,8 +914,8 @@ Facebook, YouTube, Wikipedia (MediaWiki) a další
 
 \end_inset
 
-, které tyto názory vyvrací a zároveň přispívají k jeho větší výkonnosti
- a bezpečnosti.
+, které tyto názory vyvrací a zároveň se podílejí na vývoji, a tak přispívají
+ k jeho větší výkonnosti a bezpečnosti.
 \end_layout
 
 \begin_layout Standard
@@ -905,6 +948,7 @@ CakePHP
 
 \begin_layout Standard
 Nám dává příležitost věnovat se návrhu schématu.
+ MVC - Model-View-Controller - http://en.wikipedia.org/wiki/Model-view-controller
 \end_layout
 
 \begin_layout Standard
@@ -917,7 +961,7 @@ Odstínění od způsobu práce odlišnými zdroji dat.
 \begin_layout Standard
 Díky množství napsaného a otestovaného kódu, není potřeba psát již jednou
  napsané části, ale možné šetřit lidské zdroje na vývoj.
- Tím není myšleno prosté lepení kusů posbíraného kódu, ale smysluplného
+ Tím není myšleno prosté skládání kusů posbíraného kódu, ale smysluplného
  využívání dostupných knihoven a pluginů do programovacího jazyka nebo framework
 u.
  
@@ -926,22 +970,68 @@ u.
 \begin_layout Standard
 Díky těmto úsporám je možné se zaměřit na ergonomii dané aplikace a její
  možnou optimalizaci, která je ovšem limitována výkonností použitých technologií.
+ Tato omezení lze, jak již bylo zmíněno víše, eliminovat udržováním částí
+ zpracovaného zdrojového kódu v paměti a kešováním nebo kompresí výstupu.
+ 
 \end_layout
 
-\begin_layout Itemize
-http://en.wikipedia.org/wiki/Model-view-controller
+\begin_layout Standard
+APC, Xcache, File
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-PHP - CakePHP, jsMin, cssMini?
+\begin_layout Standard
+Další možnou optimalizací, která sice přímo nesouvisí s CakePHP, ale je
+ v něm snadno implementovatelná, je snížení počtu požadavků na stránku.
+ S používáním pluginů a javascriptových knihoven se snadno může stát, že
+ počet vkládaných odkazů na skripty a kaskádové styly (CSS) se vyšplhá až
+ k desítkám a začne se neúměrně prodlužovat doba potřebná na stažení všech
+ potřebných částí.
+ Navíc se zvyšuje počet požadavků na server a díky režii protokolu HTTP
+ je tak ve výsledku stažen větší objem dat.
+ Tento problém úspěšně řeší projekty jsMin
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://code.google.com/p/jsmin-php/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ a CSSTidy
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://csstidy.sourceforge.net/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ ...
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Itemize
 JS - Prototype, Livepipe, Script.aculo.us
 \end_layout
 
-\end_deeper
 \begin_layout Chapter
 Programátorská dokumentace
 \end_layout
