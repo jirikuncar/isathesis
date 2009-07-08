@@ -624,6 +624,32 @@ V závěru jsou přehledně shrnuty výsledky, kterých bylo při vývoji systé
 Analýza úlohy
 \end_layout
 
+\begin_layout Standard
+Základním úkolem jazykové agentury je zajišťovat služby v oblasti jazykového
+ vzdělání, překladů a tlumočení pro široké spektrum firemních i individuálních
+ zákazníků.
+\end_layout
+
+\begin_layout Standard
+Podniky posílají poptávky bez ohledu na nabídku konkrétních kurzů.
+ Manažer vyřizuje zakázku elektronickou poštou, telefonicky nebo osobně.
+ Všechny získané informace musí být schopen zaznamenat pro pozdější zajišťování
+ vhodných dodavatelů .
+ 
+\end_layout
+
+\begin_layout Standard
+Veřejnost posílá zápisové listy s ohledem na nabídku kurzů pro veřejnost.
+ Manažer sestavuje skupiny podle zápisových listů a potvrzuje místo, termíny
+ a cenu výuky.
+ Současně probíhá zajišťování lektorů.
+\end_layout
+
+\begin_layout Standard
+Dále jsou v kapitole popsány specifické požadavky na systém a návrhy jejich
+ možného řešení.
+\end_layout
+
 \begin_layout Section
 Požadavky klienta
 \begin_inset CommandInset label
@@ -655,8 +681,11 @@ Kvůli výše uvedným problémům se začalo s postupným zaváděním jednotn�
 \end_layout
 
 \begin_layout Itemize
-V průběhu měsíce vkládá administrátor zadané překlady a nově zahájené kurzy.
- 
+V
+\begin_inset space ~
+\end_inset
+
+průběhu měsíce vkládá administrátor zadané překlady a nově zahájené kurzy.
 \end_layout
 
 \begin_layout Itemize
@@ -678,7 +707,7 @@ U kurzů vloží předpokládaný rozvh, kde jsou uvedeny dny, čas, lektor a u�
 \end_layout
 
 \begin_layout Standard
-Každé pondělí administrátor tiskne aktuální rozvrhy učeben, časy individuální
+Každé pondělí administrátor tiskne aktuální rozvrhy učeben, časy individuální
  výuky jsou pohyblivé, lektoři musí vědět, kdy je v učebnách volno, najdou
  to na dveřích učeben.
  
@@ -698,8 +727,18 @@ Vzhledem k velkým rozdílům mezi jednotlivými lektory, překladateli a tlumo�
 \begin_layout Itemize
 Každý měsíc si administrátor může z výkazů odpracovaných jednotek lektora,
  překladatele a tlumočníka zobrazit a vytiskout přehled, kde je souhrn toho,
- kolik jednotek opracoval v jednotlivých dnech a celkem u jednotlivých produktů.
+ kolik jednotek opracoval v jednotlivých dnech a celkem u jednotlivých produktů.
  
+\end_layout
+
+\begin_layout Itemize
+Podle potřeby potřebuje administrátor rychle řešit suplování a změny lektorů,
+ k
+\begin_inset space ~
+\end_inset
+
+tomu potřebuje aktuální stav.
+ Příležitostně je třeba zjistit vytížení překladatelů.
 \end_layout
 
 \begin_layout Subsection
@@ -719,7 +758,7 @@ Se vzrůstajícím objemem překladů a odučených hodin přestávalo být úno
 
 \begin_layout Itemize
 Před fakturací pro klienta si administrátor může sestavit seznam položek
- k fakturaci.
+ k fakturaci.
  
 \end_layout
 
@@ -729,7 +768,7 @@ Příloha za překlady a výuku se liší.
 \end_layout
 
 \begin_layout Subsection
-Správa karet lektorů a překladatelů
+Správa lektorů a překladatelů
 \end_layout
 
 \begin_layout Standard
@@ -739,7 +778,11 @@ Práce agentury spočívá mimo jiné i ve shromažďování kontaktů na osoby 
 \end_layout
 
 \begin_layout Itemize
-V průběhu měsíce průběžně administrátor vkládá nové dodavatele tj.
+V
+\begin_inset space ~
+\end_inset
+
+průběhu měsíce průběžně administrátor vkládá nové dodavatele tj.
  zájemce o spolupráci a aktualizuje změny u stávajících.
 \end_layout
 
@@ -795,47 +838,6 @@ Vícejazykový systém
 Vzhledem k tomu, že je systém určen primárně pro jazykové agentury, kde
  se počítá s komunikací se zákazníky v jiném než českém jazyce, bylo k tomu
  přizpůsobit systém již od počátku.
-\end_layout
-
-\begin_layout Standard
-UC04 Základní popis: 
-\end_layout
-
-\begin_layout Standard
-UC05 Tisk aktuálních přehledů učeben Základní popis: 
-\end_layout
-
-\begin_layout Standard
-UC06 Zjišťování volné kapacity lektora Základní popis: Podle potřeby a rychle
- administrátor řeší suplování a změny lektorů, k tomu potřebuje aktuální
- stav, příležitostně je třeba zjistit vytížení překladatelů.
- UC07 Tvorba rozvrhů Základní popis: V září, říjnu a únoru je zahajováno
- nejvíc nových kurzů, mění se lektoři, kteří administrátorovi oznámí volné
- kapacity, podniky také oznámí požadavky, administrátor hledá řešení 
-\end_layout
-
-\begin_layout Standard
-UC08 Rozesílání nabídek a News Základní popis: 
-\end_layout
-
-\begin_layout Standard
-UC09 Příprava předpřipravených kursů a jejich prezentace na webu Základní
- popis: Min.
- 4x ročně vzniká dávka kurzů: a)s novým obsahem i termíny b)se starým obsahem,
- ale novými termíny 
-\end_layout
-
-\begin_layout Standard
-UC21 Vyřizování nezávazných objednávek předpřipravených kursů Základní popis:
- Podniky posílají poptávky bez ohledu na nabídku konkrétních kurzů, adm.
- vyřizuje mailem , tel, osobně.
- Vkládá nový produkt, až zákazník potvrdí nabídku.
- Současně probíhá zajišťování lektorů .
- Veřejnost posílá zápisové listy s ohledem na nabídku kurzů pro veřejnost,
- adm.
- sestavuje skupinky podle zápisových listů a potvrzuje termíny výuky, zahájení
- výuky a cenu.
- Současně probíhá zajišťování lektorů .
 \end_layout
 
 \begin_layout Section
