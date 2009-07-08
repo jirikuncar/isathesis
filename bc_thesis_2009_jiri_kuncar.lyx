@@ -654,16 +654,52 @@ Kvůli výše uvedným problémům se začalo s postupným zaváděním jednotn�
  se tento proces tvorby ustálil a začal být všemi akceptován.
 \end_layout
 
+\begin_layout Itemize
+V průběhu měsíce vkládá administrátor zadané překlady a nově zahájené kurzy.
+ 
+\end_layout
+
+\begin_layout Itemize
+U produktu vloží poskytovatele, přiřadí zákazníka, studenty, lektora nebo
+ překladatele a dále cenu za jednotku.
+ 
+\end_layout
+
+\begin_layout Itemize
+U lektora či překladatele vloží jeho sazbu za jednotku.
+ 
+\end_layout
+
+\begin_layout Itemize
+U kurzů vloží předpokládaný rozvh, kde jsou uvedeny dny, čas, lektor a učebna.
+ Tento rozvrh slouží zároveň jako pomůcka pro stanovení předběžných nákladů
+ v budoucích měsících.
+ 
+\end_layout
+
+\begin_layout Standard
+Každé pondělí administrátor tiskne aktuální rozvrhy učeben, časy individuální
+ výuky jsou pohyblivé, lektoři musí vědět, kdy je v učebnách volno, najdou
+ to na dveřích učeben.
+ 
+\end_layout
+
 \begin_layout Subsection
 Měsíční výkazy
 \end_layout
 
 \begin_layout Standard
 Vzhledem k velkým rozdílům mezi jednotlivými lektory, překladateli a tlumočníky,
- bylo rozhodnuto, že se v první fázi začne s jednotým papírovým formulářem
- [@todo odkaz na prilohu].
+ bylo rozhodnuto, že se v první fázi začne s jednotým papírovým formulářem.
  Ten bude následně zkontrolován administrativním pracovníkem a vložen do
  systému, aby se předešlo chybám.
+\end_layout
+
+\begin_layout Itemize
+Každý měsíc si administrátor může z výkazů odpracovaných jednotek lektora,
+ překladatele a tlumočníka zobrazit a vytiskout přehled, kde je souhrn toho,
+ kolik jednotek opracoval v jednotlivých dnech a celkem u jednotlivých produktů.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -679,6 +715,57 @@ Se vzrůstajícím objemem překladů a odučených hodin přestávalo být úno
  a vlastními účastníky tak, aby bylo možné stanovit výslednou cenu zakázky,
  která může být závislá nejen od počtu odučených hodin či přeložených stran,
  ale i od počtu účastníků.
+\end_layout
+
+\begin_layout Itemize
+Před fakturací pro klienta si administrátor může sestavit seznam položek
+ k fakturaci.
+ 
+\end_layout
+
+\begin_layout Itemize
+Příloha za překlady a výuku se liší.
+ U překladů není uvedeno jméno překladatele.
+\end_layout
+
+\begin_layout Subsection
+Správa karet lektorů a překladatelů
+\end_layout
+
+\begin_layout Standard
+Práce agentury spočívá mimo jiné i ve shromažďování kontaktů na osoby zabývající
+ se výukou, překlady a tlumočením.
+ Musí být úmožněno rychlé vyhledání a jednoduchá editace.
+\end_layout
+
+\begin_layout Itemize
+V průběhu měsíce průběžně administrátor vkládá nové dodavatele tj.
+ zájemce o spolupráci a aktualizuje změny u stávajících.
+\end_layout
+
+\begin_layout Itemize
+Jedenkrát měsíčně odesílá administrátor minibuletin 
+\begin_inset Quotes pld
+\end_inset
+
+News
+\begin_inset Quotes prd
+\end_inset
+
+ vybraným lektorům a překladatelům.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes pld
+\end_inset
+
+News
+\begin_inset Quotes prd
+\end_inset
+
+ by měly být na webu přístupné pro lektory i překl., protože obsahují přílohy
+ platné pro celý rok.
 \end_layout
 
 \begin_layout Subsection
@@ -708,6 +795,47 @@ Vícejazykový systém
 Vzhledem k tomu, že je systém určen primárně pro jazykové agentury, kde
  se počítá s komunikací se zákazníky v jiném než českém jazyce, bylo k tomu
  přizpůsobit systém již od počátku.
+\end_layout
+
+\begin_layout Standard
+UC04 Základní popis: 
+\end_layout
+
+\begin_layout Standard
+UC05 Tisk aktuálních přehledů učeben Základní popis: 
+\end_layout
+
+\begin_layout Standard
+UC06 Zjišťování volné kapacity lektora Základní popis: Podle potřeby a rychle
+ administrátor řeší suplování a změny lektorů, k tomu potřebuje aktuální
+ stav, příležitostně je třeba zjistit vytížení překladatelů.
+ UC07 Tvorba rozvrhů Základní popis: V září, říjnu a únoru je zahajováno
+ nejvíc nových kurzů, mění se lektoři, kteří administrátorovi oznámí volné
+ kapacity, podniky také oznámí požadavky, administrátor hledá řešení 
+\end_layout
+
+\begin_layout Standard
+UC08 Rozesílání nabídek a News Základní popis: 
+\end_layout
+
+\begin_layout Standard
+UC09 Příprava předpřipravených kursů a jejich prezentace na webu Základní
+ popis: Min.
+ 4x ročně vzniká dávka kurzů: a)s novým obsahem i termíny b)se starým obsahem,
+ ale novými termíny 
+\end_layout
+
+\begin_layout Standard
+UC21 Vyřizování nezávazných objednávek předpřipravených kursů Základní popis:
+ Podniky posílají poptávky bez ohledu na nabídku konkrétních kurzů, adm.
+ vyřizuje mailem , tel, osobně.
+ Vkládá nový produkt, až zákazník potvrdí nabídku.
+ Současně probíhá zajišťování lektorů .
+ Veřejnost posílá zápisové listy s ohledem na nabídku kurzů pro veřejnost,
+ adm.
+ sestavuje skupinky podle zápisových listů a potvrzuje termíny výuky, zahájení
+ výuky a cenu.
+ Současně probíhá zajišťování lektorů .
 \end_layout
 
 \begin_layout Section
@@ -838,6 +966,16 @@ Dôležité sú tiež úlohy IS:
 
 \begin_layout Chapter
 Návrh řešení
+\end_layout
+
+\begin_layout Section
+Návrh databáze
+\end_layout
+
+\begin_layout Standard
+Návrh dobře strukturované relační databáze je nejnáročnějším prvkem celé
+ práce.
+ Vyžaduje jak 
 \end_layout
 
 \begin_layout Standard
@@ -1421,7 +1559,24 @@ Program Files
 \backslash
 apache2
 \backslash
-www).
+www - budeme označovat 
+\emph on
+ROOT
+\emph default
+).
+ Pro větší bezpečnost je doporučeno změnit 
+\begin_inset Quotes pld
+\end_inset
+
+webroot
+\begin_inset Quotes prd
+\end_inset
+
+ v konfiguraci apache na složku 
+\emph on
+ROOT
+\emph default
+/app/webroot.
  Dále je potřeba nastavit přihlašovací údaje k databázi podle 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1429,7 +1584,11 @@ reference "sub:Stažení-a-instalace"
 
 \end_inset
 
-předchozí části.
+předchozí části v souboru 
+\emph on
+ROOT
+\emph default
+/app/config/database.php .
 \end_layout
 
 \begin_layout Section
@@ -1437,9 +1596,12 @@ Inicializace databáze
 \end_layout
 
 \begin_layout Standard
-V souboru %CDROM%/app/config/sql/isa_init.sql se nachází MySQL 5.0+ kompatibilní
- skript, který vytvoří tabulky a naplní je daty nutnými k prvnímu přihlášení
- administrátora.
+V souboru 
+\emph on
+ROOT
+\emph default
+/app/config/sql/isa_init.sql se nachází MySQL 5.0+ kompatibilní skript, který
+ vytvoří tabulky a naplní je daty nutnými k prvnímu přihlášení administrátora.
 \end_layout
 
 \begin_layout Section
@@ -1502,6 +1664,32 @@ Výše popsané role mohou být změněny či zakázány administrátorem systé
  Čtenáři je doporučeno číst pouze části, jenž se ho týkají.
 \end_layout
 
+\begin_layout Description
+Poznámka: Text u odkazu na zobrazení, editaci nebo smazání záznamu mohou
+ být nahrazeny po řadě obrázky: 
+\begin_inset Graphics
+	filename more.gif
+	scale 80
+
+\end_inset
+
+,
+\begin_inset Graphics
+	filename edit.gif
+	scale 80
+
+\end_inset
+
+ a 
+\begin_inset Graphics
+	filename delete.gif
+	scale 80
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Section
 Správce (hlavní manažer)
 \end_layout
@@ -1543,7 +1731,11 @@ Uživatelé
 \end_layout
 
 \begin_layout Description
-Seznam
+Filtr
+\begin_inset space ~
+\end_inset
+
+seznam
 \begin_inset space ~
 \end_inset
 
@@ -1562,7 +1754,7 @@ našeptávače
 \begin_inset Quotes prd
 \end_inset
 
-.
+ a jejich zm
 \end_layout
 
 \begin_layout Description
@@ -1574,7 +1766,9 @@ uživatele
 \begin_inset space ~
 \end_inset
 
-[/admin/Users/add]: Jedinnou povinnou položkou je 
+[/admin/Users/add]: Odkaz na formulář je hlavním menu a v částech, které
+ na uživatelích závisí.
+ Jedinnou povinnou položkou je 
 \emph on
 zobrazovanné jméno
 \emph default
@@ -1593,8 +1787,10 @@ Editace
 \begin_inset space ~
 \end_inset
 
-uživatele: Vyberte odpovídající skupinu k editaci a pro uložení změn použijte
- tlačítko 
+uživatele: Uživatele vyhledejte přes filtr seznamů uživatelů nebo přes formulář
+ rychlého hledání.
+ V prním případě klikněte na Vyberte odpovídající skupinu k editaci a pro
+ uložení změn použijte tlačítko 
 \emph on
 Uložit
 \emph default
@@ -1920,7 +2116,6 @@ Zavedení informačního systému je běh na dlouhou trať ...
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-label "1"
 key "informační systémy"
 
 \end_inset
@@ -1931,7 +2126,6 @@ key "informační systémy"
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-label "IS"
 key "wikipedia"
 
 \end_inset
