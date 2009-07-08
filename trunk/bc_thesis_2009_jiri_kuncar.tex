@@ -4,16 +4,24 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \pagestyle{plain}
-\setcounter{secnumdepth}{3}
-\setcounter{tocdepth}{3}
-\usepackage{verbatim}
+\setcounter{secnumdepth}{1}
+\setcounter{tocdepth}{1}
+\usepackage{babel}
+
+\usepackage{url}
 \usepackage{graphicx}
+\usepackage[unicode=true, pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\newcommand{\noun}[1]{\textsc{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
 \usepackage{a4wide}
 \usepackage[left=4cm]{geometry}
-
-\usepackage{babel}
 
 \begin{document}
 \begin{titlepage}\vspace{15mm}
@@ -78,7 +86,7 @@ a paní RNDr. Jitce Kunčarové, která vývoj informačního systému inicioval
 \vfill{}
 
 
-\noindent Prohlašuji, že jsem svou bakalářskou práci napsal(a) samostatně
+\noindent Prohlašuji, že jsem svou bakalářskou práci napsal samostatně
 a výhradně s použitím citovaných pramenů. Souhlasím se zapůjčováním
 práce a jejím zveřejňováním.\bigskip{}
 
@@ -175,27 +183,39 @@ a summary of changes)\\
 \chapter*{Úvod}
 
 Informační systémy hrají v rychle se rozvíjejícím prostředí svou nepostradatelou
-roli a Internet jim poskytl výbornou platformu úmožňující další rozvoj.
-S využíváním Internetu, ale zároveň rostou nároky na bezpečnost a
-dostupnost uložených informací, které jsou pro chod firem životně
-důležité.\\
+roli a Internet jim poskytl výbornou platformu úmožňující další rozvoj
+v dříve nepříliš využívaném prostředí. Úmožňují snadné a rychlé zpracování,
+vyhledávání a publikovaní informací, které se díky němu stávají dostupné
+pro širší spektrum zákazníků, dodavatelů i samotných zaměstanců. 
+
+S využíváním Internetu, ale zároveň rostou nároky na funkce, bezpečnost
+a dostupnost uložených informací, které jsou pro chod firem životně
+důležité. Toto zvyšuje požadavky na robustnost řešení včetně nároků
+na nástroje použité při implementaci systému.
+
+Před zavádění informačního systému je nutné stanovit, čeho chce firma
+s využitím nového systému v daném čase dosáhnout. Tomu by měla pomoci
+důkladná analýza firemních procesů a jejich optimalizace. 
+
+\begin{center}
+\textit{,,Kdo nepozná vlastní firemní procesy, nemůže je zlepšovat.''}\textit{\emph{{[}citát{]}}}
+\par\end{center}
+
 Z původních jednoduchých aplikací na 
 
-
-\section*{Definice a upřesnění pojmů}
-
-
-\subsection*{Infomační systém}
-
-Informační systém (IS) je systém pro sběr, udržování, zpracování a
-poskytování informací a dat\cite{wikipedia}.
+Informačný systém, Client/Server. 
 
 
 \section*{Cíle práce}
 
-Cílem práce je zhodnocení procesu fungování firmy bez a s informačního
-systému. Návrh a implementace informačního systému za použití vhodných
-frameworků usnadňujících vývoj v použitých programovacích jazycích.
+Cílem práce je návrh a implementace informačního systému usnadňující
+činnost a spolupráci více subjektů za použití vhodných opensource
+technologií a frameworků v použitých programovacích jazycích.
+
+Cílem práce není vytvořit, vzhledem k náročným právním úpravám a častým
+změnám, komplexní účetní program, ale systém úmožní vytvořit přehledy
+pro účetní evidenci, které mohou být zavedeny do některého již existujícího
+programu.
 
 
 \section*{Obsah práce}
@@ -203,13 +223,6 @@ frameworků usnadňujících vývoj v použitých programovacích jazycích.
 \item Analýza úlohy
 \item Požadavky
 \item Existujicí implementace - IS na míru vs. hotová řešení
-\item Technologie a frameworky
-
-\begin{itemize}
-\item http://en.wikipedia.org/wiki/Model-view-controller
-\item PHP - CakePHP, jsMin, cssMini?
-\item JS - Prototype, Livepipe, Script.aculo.us
-\end{itemize}
 \item Návrh vlastní implementace
 
 \begin{itemize}
@@ -224,6 +237,8 @@ frameworků usnadňujících vývoj v použitých programovacích jazycích.
 \item Programátorská dokumentace
 \item Uživatelská dokumentace
 \end{itemize}
+Poznamky k prepsani....
+
 Ve druhé kapitole této práce je provedena analýza úlohy s ohledem
 na několik motivačních praktických příkladů. V této kapitole jsou
 mimo jiné stanoveny požadavky na řešení a je uveden přehled obdobných
@@ -248,51 +263,334 @@ V závěru jsou přehledně shrnuty výsledky, kterých bylo při vývoji
 systému dosaženo, a jsou naznačeny možnosti dalšího rozšíření.
 
 
-\chapter{Název druhé kapitoly}
+\chapter{Analýza úlohy}
 
 
-\section{Název první podkapitoly v druhé kapitole}
+\section{Požadavky klienta\label{sec:Po=00017Eadavky-klienta}}
+
+Na začátku stála žádost manažerky agentury zjednodušit proces zpracování
+měsíčních výkazů lektorů, překladatelů a tlumočníků tvořících podklady
+pro mzdy a fakturaci služeb. Tyto měsíční výkazy neměly jednotný vzor
+a ani nebylo jednoduše možné, bez znalostí místních poměrů přiřadit
+vykázanou činnost k jednotlivým produktům.
 
 
-\section{Název druhé podkapitoly v druhé kapitole}
+\subsection{Zavedení jednotných identifikátorů}
+
+Kvůli výše uvedným problémům se začalo s postupným zaváděním jednotných
+identifikátorů závazných pro všechny zúčastněné strany. Tento krok
+byl ze začátku velmi těžce snášen a trvalo několik měsíců, než se
+tento proces tvorby ustálil a začal být všemi akceptován.
+
+
+\subsection{Měsíční výkazy}
+
+Vzhledem k velkým rozdílům mezi jednotlivými lektory, překladateli
+a tlumočníky, bylo rozhodnuto, že se v první fázi začne s jednotým
+papírovým formulářem {[}@todo odkaz na prilohu{]}. Ten bude následně
+zkontrolován administrativním pracovníkem a vložen do systému, aby
+se předešlo chybám.
+
+
+\subsection{Podklady pro fakturaci}
+
+Se vzrůstajícím objemem překladů a odučených hodin přestávalo být
+únosné ruční vytváření měsíčních přehledů pro zákazníky. Ti si přáli
+být informování nejen o počtu odučených hodit, ale i o všech změnách
+zavedeném měsíčním rozvrhu a případném suplování. Zárověn musely být
+v systému zachyceny vazby mezi produktem, zákazníkem a vlastními účastníky
+tak, aby bylo možné stanovit výslednou cenu zakázky, která může být
+závislá nejen od počtu odučených hodin či přeložených stran, ale i
+od počtu účastníků.
+
+
+\subsection{Oddělení reálných dat více agentur}
+
+Vzhledem ke složitým poměrům v agentuře bylo potřeba oddělit evidenci
+zakázek vyřizovaných manažerem pro různé agentury a fyzické osoby,
+jenž s agenturami úzce spolupracují. 
+
+
+\subsection{Úzká provázanost s webem}
+
+Evidence hodin, rozvrhy učeben
+
+
+\subsection{Vícejazykový systém}
+
+Vzhledem k tomu, že je systém určen primárně pro jazykové agentury,
+kde se počítá s komunikací se zákazníky v jiném než českém jazyce,
+bylo k tomu přizpůsobit systém již od počátku.
+
+
+\section{Definice a upřesnění pojmů}
+
+
+\subsection{Agentura}
+
+
+\subsection*{Infomační systém}
+
+Informační systém (IS) je systém pro sběr, udržování, zpracování a
+poskytování informací a dat\cite{wikipedia}.
+
+
+\subsection{Produkt}
+
+
+\subsection{Zakázka}
+
+CSS
+
+
+\chapter{Existující implementace}
+
+Existujicí aplikace lze rozdělit na několik skupin, kde ovšem žádná
+nepokrývá veškeré požadavky v plném rozsahu. První se více zaměřuje
+na správu webového obsahu. Označované anglickou zkratkou CMS\label{CMS}
+- Content Management System, před kterou se někdy přídává W označující
+webové systémy. Tyto systémy lze rozdělit do podskupin podle způsobu,
+jakým prezentují uložená data.
+\begin{description}
+\item [{Offline~zpracování}] Server vygeneruje statické HTML před samotnou
+publikací, proto takové systémy nepořebují, aby server aplikoval šablony
+na data při každém požadavku. Výhody jsou zjevné pro vytížené CMS
+používané převážně pro čtení dat. Naopak při častých změnách dat můžou
+být tyto systémy pomalé nebo neaktuální, proto je nutné si jejich
+nasazení řádně rozmyslet. Příkladem takového systému je například
+Vignette CMS%
+\footnote{\url{http://www.vignette.com/}%
+}.
+\item [{Online~zpracování}] Server generuje prezentační data až na základě
+požadavků klienta. Pro keše
+\item [{E-learning}] ... Moodle
+\item [{ciele:}]~
+\item [{{*}}] strategické (plánovanie investícií…) {*} taktické (vedenie,
+kontrola rozpočtu…) {*} operatívne (každodenná rutina)
+\item [{Dôležité}] sú tiež úlohy IS:
+\item [{{*}}] manažérske (EIS - Executive IS) {*} taktické (DSS - Decision
+Support System) {*} vedenie (MIS - Management IS) {*} expertné (KWS
+- Knowledge Work System) {*} kancelárske (OIS - Office IS) {*} operatívne
+o TPS - transakčné (banky, ...) o CRM - vzťahy so zákazníkmi o RIS
+- rezervačné systémy o CAM - konštrukčné (CAD, ...) o GIS - geografické
+systémy
+\end{description}
+
+\chapter{Návrh řešení}
+
+Evidence produktů
+
+Podklady pro fakturaci dodavatelům a mzdy
+
+Finanční vyrovnání subjektů v IS
+
+
+\chapter{Použité technologie a frameworky}
+
+Použité technologie byly částečně determinovány požadavy klienta\ref{sec:Po=00017Eadavky-klienta}.
+Tím, že se mělo jednat o systém využívající výhradně open-souce technologie
+tak, aby nebyly zvyšovány náklady na nákup licencí.
+
+
+\section{Server}
+
+Tento webový informační systém využívá technologi PHP (jazyk, interpret
+a knihovny), která vychází se skriptovacího víceúčelového jazyka,
+jenž byl původně vyvinut pro tvorbu dynamických webových stránek.
+Z tohoto využití vznikla i zkatka z anglických slov \emph{Personal
+Home Page}, které byly nahrazeny slovy \emph{PHP: Hypertext Preprocessor}
+dající vznik rekurzivní zkratce%
+\footnote{http://cs.wikipedia.org/wiki/Rekurzivní\_zkratka%
+}.
+
+Výhodou použití PHP je existence interpretu pro různé operační systémy
+a podobnost jeho syntaxe s C, Javou.
+
+Nevýhodou, která brzdí dalšímu rozvoji a rozšíření, je absence normy
+(k datu vydání BP). Jazyk je tak de facto standardizovaný interpretem
+a množstvím lidí%
+\footnote{dle statistiky na http://www.php.net/usage.php%
+}, kteří jej využívají. I když existují mnohé polemiky a živé diskuze
+mezi jeho zastánci a odpůrci o jeho výkonnosti, bezpečnosti a vhodnosti
+pro velké projekty, existují vyjímky%
+\footnote{Facebook, YouTube, Wikipedia (MediaWiki) a další%
+}, které tyto názory vyvrací a zároveň se podílejí na vývoji, a tak
+se snaží přispět k jeho větší výkonnosti a bezpečnosti.
+
+Vývoj jazyka sebou nese i stinné stránky. Mezi ty nejpodstatnější
+patří úpravy API%
+\footnote{anglická zkratka \emph{Application Programming Interface}, označuje
+sadu funkcí, procedur či tříd programu či knihovny, jenž mohou být
+využívány programátorem %
+} některých vestavěných funkcí a změna syntaxe. To může zapříčinit,
+že po aktualizaci interpretu jazyka, přestanou fungovat některé části
+nebo celá aplikace. Řešením ovšem není zůstávat na několik let staré
+verzi, ve které mohly být objeveny chyby. 
+
+Pokud programátor nechce nebo nemůže přepisovat kód může využít služeb
+něktrého z frameworků nad daným jazykem, který se snaží tyto rozdíly
+ve verzích zakrýt. Další nespornou výhodou používání frameworků spočívá
+jednodušším vývoji aplikací a minimalizací rizika chyb v jinak ručně
+psaném jádru aplikace. Toto je zajištěno pouze pokud má kvalitní a
+úplnou dokumentaci a je zastřešen silnou komunitou nebo společností
+zajištující jeho vývoj.
+
+Při výběru byl proto důraz kladen hlavně na kvalitní dokumentaci,
+rozšířitelnost a možnost práce s různými relačními databázemi. Frameworky,
+které splňují vetšinu požadavků jsou Zend%
+\footnote{\href{http://framework.zend.com/}{http://framework.zend.com/}%
+}, Symfony a CakePHP.
+
+
+\subsection{CakePHP}
+
+Nám dává příležitost věnovat se návrhu schématu. MVC - Model-View-Controller
+- http://en.wikipedia.org/wiki/Model-view-controller
+
+Odstínění od způsobu práce odlišnými zdroji dat. mezi relačními databázemi
+(MySQL, PostgreSQL, Oracle, MSSQL, ...) a dokonce i definování vlastních
+zdrojů dat ať už z lokálních zdrojů s přímým přístupem (formátované
+soubory např. csv, xml) nebo za pomocí API k on-line službám (LDAP,
+twitter, IMAP).
+
+Díky množství napsaného a otestovaného kódu, není potřeba psát již
+jednou napsané části, ale možné šetřit lidské zdroje na vývoj. Tím
+není myšleno prosté skládání kusů posbíraného kódu, ale smysluplného
+využívání dostupných knihoven a pluginů do programovacího jazyka nebo
+frameworku. 
+
+Díky těmto úsporám je možné se zaměřit na ergonomii dané aplikace
+a její možnou optimalizaci, která je ovšem limitována výkonností použitého
+skriptovacího jazyka. Tato omezení lze, minimalizovat udržováním částí
+zpracovaného zdrojového kódu v paměti a kešováním%
+\footnote{z anglického slova \emph{cache}, označuje vyrovnávací paměť%
+} nebo kompresí výstupu. 
+
+Tuto nepříjemnou vlastnost skriptovacích jazyků lze řešit předkompilací
+zdrojových kódů, nebo vhodným využíváním ,,keší''.
+
+APC, Xcache, File
+
+Další možnou optimalizací, která sice přímo nesouvisí s CakePHP, ale
+je v něm snadno implementovatelná, je snížení počtu požadavků na stránku.
+S používáním javascriptových frameworků a knihoven se snadno může
+stát, že počet vkládaných odkazů na skripty a kaskádové styly (CSS)
+se vyšplhá až k desítkám a začne se neúměrně prodlužovat doba potřebná
+na stažení všech potřebných částí. Zvyšuje se tak počet požadavků
+na server a díky režii protokolu HTTP je ve výsledku stažen větší
+objem dat. Tento problém úspěšně řeší projekty \emph{jsMin}%
+\footnote{\href{http://code.google.com/p/jsmin-php/}{http://code.google.com/p/jsmin-php/}%
+} a \emph{CSSTidy}%
+\footnote{\href{http://csstidy.sourceforge.net/}{http://csstidy.sourceforge.net/}%
+}.
+
+
+\subsection{MySQL}
+
+
+\section{Klient}
+
+Pro vlastní běh aplikační logiky je možné se spolehnout, že serverová
+část aplikace bude zpracována jednou verzí PHP interpretu v uzavřeném
+a otestovaném prostředí. Naproti tomu klientská část bude prezentována
+na odlišných operačních systémech v mnoha prohlížečích nejrůznějších
+verzích. Základními požadavky kladené na prohlížeč jsou:
+\begin{itemize}
+\item XHTML 1.0%
+\footnote{\href{http://www.w3.org/TR/xhtml1/}{http://www.w3.org/TR/xhtml1/}%
+}
+\item CSS 2.1%
+\footnote{\href{http://www.w3.org/TR/CSS2/}{http://www.w3.org/TR/CSS2/}%
+}
+\item JavaScript%
+\footnote{JavaScript je dialektem ECMASriptu. Minimálním implementovaným standardem
+by měl být ECMA-262, revize 3:\href{http://www.ecma-international.org/publications/standards/Ecma-262.htm}{http://www.ecma-international.org/publications/standards/Ecma-262.htm}.%
+}
+\end{itemize}
+S XHTML a CSS prohlížeče problémy nemívají. Horší je to, ale s implementacemi
+Javascriptu. Toto bylo vyřešeno díky provázanosti CakePHP a javascriptového
+frameworku Prototype{[}@todo odkaz{]} a jeho rozšíření Script.aculo.us{[}@todo
+odkaz{]}, který se snaží zakrýt rozdíly mezi prohlížeči.
+
+Prototype není jediným či nejlepším frameworkem. Existují i jiné,
+které mají rozsáhlejší schopnosti v oblasti používaní dotazovacího
+jazyka XPath nebo tvorby GUI%
+\footnote{z anglických slov \emph{Graphical User Interface}, uživatelské prostředí,
+jenž úmožnuje uživateli ovládat aplikaci pomocí grafických ovládacích
+prvků%
+} 
+
+
+\subsection{Prototype a jeho rozšíření}
+
+Prototype úmožnuje 
+\begin{itemize}
+\item JS - Prototype, Script.aculo.us, Livepipe
+\end{itemize}
+
+\chapter{Programátorská dokumentace}
+
+V následující kapitole je popsáno a vysvětleno databázové schéma,
+základní adresářová struktura projektu, a metody použitých tříd.
+
+
+\section{Databázové schéma}
+
+Normalizace???
+
+
+\section{Adresářová struktura}
 
 
 \chapter{Uživatelská dokumentace}
 
-Role v systému: administrator, editor, odběratel, dodavatel (zaměstnanec,
-brigádník či jiný subjekt vykonávající zadanou práci) a student (účastník
-kurzu).
+Tato uživatelská dokumentace si klade za cíl stručně přiblížit čtenáři
+výhody informačního systému a jeho záklaními způsoby ovládání. Jednotlivých
+kapitolách je vysvětleno, jak má správce postupovat od úvodní instalace,
+přes inicializaci databáze, uložení informací o uživatelích, přidání
+produktů až po tisk účetních podkladů. 
+
+Dodavatelům a zaměstnancům je názorně předvedeno, jak správně a včas
+vyplnit měsíční výkazy a jak vést evidenci docházky účastníků kurzů. 
+
+Zákazníkům je vysvětleno, jak jednoduše zjistit, kolik z objednaných
+služeb již bylo zaplaceno a zkontrolovat průběh aktuálních kurzů či
+počet přeložených stran překladu.
+
+Studenti
 
 
-\section{Instalace}
+\section{Instalace serveru}
 
 Pro běh serverové aplikace je nutné mít sprovozněný program, který
 úmožnuje zpracování zdrojových kódů a prezentaci výstupu protokolem
 HTTP popřípadě HTTPS. Nejznámějším volně dostupným programem je Apache
 {[}http://httpd.apache.org/{]}, který úmožnuje pomocí modulů {[}http://httpd.apache.org/modules/{]}
-přidat podporu pro PHP.
+přidat podporu pro jazyk PHP nutný k běhu IS.
 
 
 \subsection{Stažení a instalace Apache}
 
-Ze stránek projektu {[}http://httpd.apache.org/download.cgi{]} vyberte
-odkaz vedoucí na požadovaný balík zdrojových kódů nebo předkompilovanou
-aplikaci pro Váš operační systém. Pokud používáte některou z~moderních
-linuxových distribucí, zkuste nejdříve projít repozitáře {[}@todo
-vysvětlit{]}, zda se zde nenachází již hotový balík upravený pro snadnější
-instalaci a~konfiguraci.
+Pokud používáte některou z~moderních linuxových distribucí, zkuste
+nejdříve projít repozitáře {[}@todo vysvětlit{]}, zda se zde nenachází
+již hotový balík upravený pro snadnější instalaci a~konfiguraci.
 
 %
-\begin{comment}
+\begin{minipage}[t]{1\columnwidth}%
 Debian a jemu podobní (Ubuntu, Kubuntu, ...):
 
 apt-get install apache2
 
 Gentoo
 
-emerge apache2
-\end{comment}
-{}
+emerge apache2%
+\end{minipage}
+
+Pokud jste požadovaný balík nenašli či používáte jiný operační systém,
+můžete ze stránek projektu%
+\footnote{\href{http://httpd.apache.org/download.cgi}{http://httpd.apache.org/download.cgi}%
+} vybrat odkaz vedoucí na požadovaný balík zdrojových kódů nebo předkompilovanou
+aplikaci pro Váš operační systém.
 
 
 \subsection{Konfigurace Apache}
@@ -304,16 +602,205 @@ definovat zabezpečené připojení{]} je nutné vygenerovat certifikáty
 a upravit konfiguraci stránek.
 
 
-\subsection{Stažení a instalace MySQL serveru}
+\subsection{Stažení a instalace MySQL serveru\label{sub:Sta=00017Een=0000ED-a-instalace}}
+
+uživatelské jméno: isadb\\
+heslo: isapass
 
 
+\section{Umístění aplikace}
+
+Pokud máme server správně nakonfigurovaný, zkopírujeme složku s aplikací
+do adresáře určeného konfigurací Apache (obvykle /var/www či C:\textbackslash{}\textbackslash{}Program
+Files\textbackslash{}apache2\textbackslash{}www). Dále je potřeba
+nastavit přihlašovací údaje k databázi podle \ref{sub:Sta=00017Een=0000ED-a-instalace}předchozí
+části.
 
 
-\section{Role v systému}
+\section{Inicializace databáze}
+
+V souboru \%CDROM\%/app/config/sql/isa\_init.sql se nachází MySQL
+5.0+ kompatibilní skript, který vytvoří tabulky a naplní je daty nutnými
+k prvnímu přihlášení administrátora.
+
+
+\section{Upřesňující informace}
+
+Pro další čtení manuálu je potřeba upřesnit několik důležitých pojmů,
+které se budou dále vyskytovat.
+\begin{description}
+\item [{Systémová~skupina}] je nutná pro správné fungování IS.
+\end{description}
+Tato sekce je rozdělena podle rolí definovaných v IS.
+\begin{description}
+\item [{Správce:}] pověřený uživatel s plnými právy ke všem modulům systému.
+\item [{Editor:}] osoba s omezenými právy k editaci vybraných modulů.
+\item [{Dodavatelé:}] zaměstnanec, brigádník či jiný subjekt vykonávající
+zadanou práci.
+\item [{Odběratelé:}] @todo
+\item [{Poskytovatelé:}] subjekty, které jsou vedeny ,,pod jednou střechou''
+a sdílí část informací.
+\item [{Účastníci:}] studenti jednotlivých kurzu. 
+\end{description}
+Výše popsané role mohou být změněny či zakázány administrátorem systému.
+Čtenáři je doporučeno číst pouze části, jenž se ho týkají.
+
+
+\section{Správce (hlavní manažer)}
 
 Má standardně nastavena veškerá přístupová práva ke všem modulům systému. 
-\begin{thebibliography}{1}
-\bibitem[1]{wikipedia}Wikipedia: \emph{Informační systém}, \\
+
+
+\subsection{Správa IS}
+
+Tento modul obsahuje moduly pro nastavení jednotlivých částí systému,
+správu uživatelů, skupin, práv a ostatních číselníků (daně, místnosti,
+kategorie produktů).
+
+
+\subsubsection{Uživatelé (Users)\label{sub:U=00017Eivatel=0000E9-(Users)}}
+
+Modul \noun{Uživatelé} nabízí veškeré nastavení potřebné pro definování
+možností při užívání systému osobami majícími vztah k IS. Dále jsou
+zde uchovány veškeré osobní informace důvěrného charakteru.
+\begin{description}
+\item [{Seznam~uživatelů~{[}/admin/Users/index{]}:}] V horní části se
+nachází odkazy na akce související s uživately. Filtry pro práci se
+seznamem uživatelů jsou umístěny nad hlavní tabulkou a v hlavičce
+tabulky s funkcí ,,našeptávače''.
+\item [{Přidání~uživatele~{[}/admin/Users/add{]}:}] Jedinnou povinnou
+položkou je \emph{zobrazovanné jméno}, která slouží jako popisek ve
+všech výběrových filtrech. Ostatní položky můžete vyplnit až při jejich
+potřebě ve výpisu. Volba \emph{Aktivní} slouží k aktivaci uživatelského
+účtu. Uživatel je schopen se přihlásit pouze pokud je jeho účet aktivní.
+\item [{Editace~uživatele:}] Vyberte odpovídající skupinu k editaci a
+pro uložení změn použijte tlačítko \emph{Uložit}. V případě chybového
+hlášení zkontrolujte všechny skupiny údajů.
+\item [{Zobrazení~uživatele:}] @todo
+\item [{Nastavení~či~změna~hesla:}] V přehledu uživatele klikněte na
+odkaz Změnit heslo a vyplňte nové heslo do obou kolonek. Správce může
+editovat hesla všem uživatelům a měl by je o této změně informovat
+zabezpečeným kanálem{[}@todo definovat zabezpeceny kanal{]}, aby se
+předešlo zneužití jejich účtu.
+\end{description}
+
+\subsubsection{Skupiny a oprávnění}
+
+V tomto modulu můžete přidávat a mazat uživatelské skupiny a oprávnění.
+Pro zachování správného fungování systému nemažte tyto systémové skupiny:
+customers, employees, providers, students a admin.
+
+Při implicitní nastavení má každá ze systémových skupin práva definované
+a přiřazené oprávnění k prefixovaným akcím jednotlivých modulů. Tyto
+oprávnění jsou definovány tímto způsobem: \emph{{*}:customers\_{*},
+{*}:employees\_{*}, {*}:providers\_{*}, {*}:students\_{*}, {*}:admin\_{*}}
+a říkají, že daná skupina může v libovolném modulu spouštět akce začínajícím
+jejich jménem. V příkladu byl použit expanzní znak ,,{*}'', který
+je možné používat k nahrazení libovoného počtu libovolných znaků,
+a ,,:'', jenž určuje hranici mezi modulem a akcí (např. oprávnění
+\emph{Users:{*}\_view} úmožní zobrazit všechny prefixované akce \emph{view}
+v modulu \noun{Uživatelé}).
+
+Každá skupina může může mít přiřazeno více definovaných oprávnění
+a je na správci, jak s nimi bude zacházet.
+
+
+\subsubsection{Číselníky}
+
+V této části se seznámíme se všemi číselníky, jejich funkcemi v systému
+a možností editace. Všechy dále uvedené moduly obsahují automaticky
+generovaný číselný identifikátor (dále jen \emph{id}), který slouží
+pro interní potřeby systému a není možné ho změnit. Dále je potřeba
+upozornit na fakt, že vytvořené položky v číselníku, které již byly
+v systému přizazeny nějakým záznamům, nelze vymazat. Vymazání je umožněno
+až když je číselník u daných záznamů změněn.
+\begin{description}
+\item [{Kategorie\label{kategorie}}] obsahuje název, zkratku, jednoduchý
+slovní popis a zašktávací políčko určující, zda se produkty v této
+kategorii považují za veřejné a má se zobrazovat jejich rozvh na webových
+stránkách. Účel číselníku spočíva v rozčlenění množství produktů do
+skupin, podle kterých lze vytvářet tiskové sestavy (přílohy faktur,
+rozvrhy, měsíční přehledy nákladů, ...).
+\item [{Místa\label{m=0000EDsta}}] obsahují název a adresu. Slouží k odkazu
+na místo v událostech.
+\item [{Štítky\label{st=0000EDtky}}] obsahují název a odkaz na nadřazený
+štítek, pro možnost tvorby hierarchické struktury článků.
+\end{description}
+
+\subsection{Produkty}
+
+Modul \noun{Produkty} je závislý na správně rozdělených uživatelích
+do systémových skupin. Rovněž je doporučeno předvyplnit číselník kategorií
+produktů.
+
+
+\subsubsection{Vytvoření nového produktu (jednoduchá verze)}
+
+Vyberte kategorii a poskytovatele. Dále vyplňte název produktu a infomaci
+o datu zahájení a předpokládaném či žádaném datu ukončení prací. Dále
+si řekněme, jak se vypočítá výsledná cena (bez DPH) pro zákazníka.
+Od toho se bude odvíjet další vyplňování formuláře.
+
+Stanovte si, jak budete daný produkt nabízet a od čeho se odvíjí náklady.
+V~případě, že se náklady odvíjí od počtu participujících osob zašrtněte
+možnost \emph{Počítat účastníky}. Pokud nevíte dobředu kolik hodin
+bude odučeno či kolik normostran bude účtováno a náklady na ně nejsou
+fixní, zaškrtněte možnost \emph{Počítat množství}. Celková cena bude
+spočítána takto:
+\begin{itemize}
+\item jednotková cena je vynásobena počtem účastníků pokud byla odpovídající
+volba zaškrtnuta
+\item mezisoučet je vynásoben součtem odpracovaných jednotek v událostech
+ve výkazech přiřazených v produktu pokud byla volba \emph{počítat
+množství} zaškrtnuta
+\item @todo možná konverze
+\end{itemize}
+Teď už zbývá doplnit zbývající povinné položky a to jednotku a jednotkovou
+cenu.
+
+
+\subsection{Výkazy}
+
+
+\subsubsection{Vytvoření~a~přiřazení~výkazu~k~produktu }
+
+Vytvoření a přiřazení výkazu k produktu provádějte pouze pokud je
+produkt, ke kterému chcete přidat výkaz, již vytvořen. 
+
+V menu klikněte na položku \emph{Přidat výkaz} a vyplňte následný
+přehledný formulář. U dodavatele se rozlišuje se i typ smlouvy uvedený
+v závorce. Sazba a jednotka jsou rovněž povinné položky.
+
+Jinou možností, jak přiřadit nový výkaz, je přes modul \noun{Produkty}
+(nebo přes ,,rychlé hledání''), kde lze snadno vyhledat daný produkt.
+Zobrazte si detaily nalezeného produktu a ve skupině \emph{Přiřazené
+výkazy} klikněte na odkaz \emph{Přidat výkaz}.
+
+
+\subsubsection{Přidání události k výkazu}
+
+
+\subsection{Tipy na urychlení práce}
+
+Zvláštní formulář na přidání produktu spolu se zákazníkem i dodavatelem
+úmožní rychlejší zadávání většího množství nových produktů.
+
+
+\section{Dodavatel}
+
+zadávání výkazu,
+
+evidence docházky do kurzů
+
+
+\chapter*{Závěr}
+
+Zavedení informačního systému je běh na dlouhou trať ... příprava
+dodavatelů i odběratelů na změny ve způsobu vykazování práce ...
+\begin{thebibliography}{IS}
+\bibitem[1]{informační systémy}
+
+\bibitem[IS]{wikipedia}Wikipedia: \emph{Informační systém}, \\
 http://cs.wikipedia.org/wiki/Informační\_systém
 \end{thebibliography}
 
