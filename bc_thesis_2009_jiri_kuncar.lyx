@@ -502,6 +502,8 @@ Kdo nepozná vlastní firemní procesy, nemůže je zlepšovat.
 \end_inset
 
 
+\emph on
+[citát]
 \end_layout
 
 \begin_layout Standard
@@ -580,6 +582,10 @@ Uživatelská dokumentace
 \end_layout
 
 \begin_layout Standard
+Poznamky k prepsani....
+\end_layout
+
+\begin_layout Standard
 Ve druhé kapitole této práce je provedena analýza úlohy s ohledem na několik
  motivačních praktických příkladů.
  V této kapitole jsou mimo jiné stanoveny požadavky na řešení a je uveden
@@ -620,6 +626,13 @@ Analýza úlohy
 
 \begin_layout Section
 Požadavky klienta
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Požadavky-klienta"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -844,28 +857,16 @@ Použité technologie a frameworky
 \end_layout
 
 \begin_layout Standard
-Jelikož se jedná webovou aplikaci typu server-klient, je zapotřebí mít nainstalo
-vaný webový prohlížec podporující 
-\end_layout
+Použité technologie byly částečně determinovány požadavy klienta
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Požadavky-klienta"
 
-\begin_layout Standard
-LAMP
-\end_layout
+\end_inset
 
-\begin_layout Standard
-Apache - 
-\end_layout
-
-\begin_layout Standard
-http://www.nexen.net/images/stories/phpversion/200810/evolution.global.en.png
-\end_layout
-
-\begin_layout Standard
-MySQL
-\end_layout
-
-\begin_layout Standard
-xHTML 4.01
+.
+ Tím, že se mělo jednat o systém využívající výhradně open-souce technologie
+ tak, aby nebyly zvyšovány náklady na nákup licencí.
 \end_layout
 
 \begin_layout Section
@@ -898,32 +899,8 @@ http://cs.wikipedia.org/wiki/Rekurzivní_zkratka
 \end_layout
 
 \begin_layout Standard
-Zdrojové kódy aplikace jsou obvykle interpretovány serverem při každém požadavku
- na stránku a k uživateli se dostane až jejich výstup.
- Tuto nepříjemnou vlastnost skriptovacích jazyků lze řešit předkompilací
- zdrojových kódů, nebo vhodným využíváním 
-\begin_inset Quotes pld
-\end_inset
-
-keší
-\begin_inset Quotes prd
-\end_inset
-
-
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-z anglického slova 
-\emph on
-cache
-\emph default
-, označuje vyrovnávací paměť
-\end_layout
-
-\end_inset
-
-.
+Výhodou použití PHP je existence interpretu pro různé operační systémy a
+ podobnost jeho syntaxe s C, Javou.
 \end_layout
 
 \begin_layout Standard
@@ -1010,7 +987,7 @@ target "http://framework.zend.com/"
 
 \end_inset
 
-, 
+, Symfony a CakePHP.
 \end_layout
 
 \begin_layout Subsection
@@ -1041,10 +1018,38 @@ u.
 
 \begin_layout Standard
 Díky těmto úsporám je možné se zaměřit na ergonomii dané aplikace a její
- možnou optimalizaci, která je ovšem limitována výkonností použitých technologií.
- Tato omezení lze, jak již bylo zmíněno víše, eliminovat udržováním částí
- zpracovaného zdrojového kódu v paměti a kešováním nebo kompresí výstupu.
+ možnou optimalizaci, která je ovšem limitována výkonností použitého skriptovací
+ho jazyka.
+ Tato omezení lze, minimalizovat udržováním částí zpracovaného zdrojového
+ kódu v paměti a kešováním
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+z anglického slova 
+\emph on
+cache
+\emph default
+, označuje vyrovnávací paměť
+\end_layout
+
+\end_inset
+
+ nebo kompresí výstupu.
  
+\end_layout
+
+\begin_layout Standard
+Tuto nepříjemnou vlastnost skriptovacích jazyků lze řešit předkompilací
+ zdrojových kódů, nebo vhodným využíváním 
+\begin_inset Quotes pld
+\end_inset
+
+keší
+\begin_inset Quotes prd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1054,13 +1059,17 @@ APC, Xcache, File
 \begin_layout Standard
 Další možnou optimalizací, která sice přímo nesouvisí s CakePHP, ale je
  v něm snadno implementovatelná, je snížení počtu požadavků na stránku.
- S používáním pluginů a javascriptových knihoven se snadno může stát, že
- počet vkládaných odkazů na skripty a kaskádové styly (CSS) se vyšplhá až
- k desítkám a začne se neúměrně prodlužovat doba potřebná na stažení všech
- potřebných částí.
- Navíc se zvyšuje počet požadavků na server a díky režii protokolu HTTP
- je tak ve výsledku stažen větší objem dat.
- Tento problém úspěšně řeší projekty jsMin
+ S používáním javascriptových frameworků a knihoven se snadno může stát,
+ že počet vkládaných odkazů na skripty a kaskádové styly (CSS) se vyšplhá
+ až k desítkám a začne se neúměrně prodlužovat doba potřebná na stažení
+ všech potřebných částí.
+ Zvyšuje se tak počet požadavků na server a díky režii protokolu HTTP je
+ ve výsledku stažen větší objem dat.
+ Tento problém úspěšně řeší projekty 
+\emph on
+jsMin
+\emph default
+
 \begin_inset Foot
 status collapsed
 
@@ -1076,7 +1085,11 @@ target "http://code.google.com/p/jsmin-php/"
 
 \end_inset
 
- a CSSTidy
+ a 
+\emph on
+CSSTidy
+\emph default
+
 \begin_inset Foot
 status collapsed
 
@@ -1095,6 +1108,10 @@ target "http://csstidy.sourceforge.net/"
 .
 \end_layout
 
+\begin_layout Subsection
+MySQL
+\end_layout
+
 \begin_layout Section
 Klient
 \end_layout
@@ -1104,8 +1121,12 @@ Pro vlastní běh aplikační logiky je možné se spolehnout, že serverová č
  aplikace bude zpracována jednou verzí PHP interpretu v uzavřeném a otestovaném
  prostředí.
  Naproti tomu klientská část bude prezentována na odlišných operačních systémech
- v mnoha aplikacích nejrůznějších verzích.Klient musí umět zpracovávat XHTML
- 1.0
+ v mnoha prohlížečích nejrůznějších verzích.
+ Základními požadavky kladené na prohlížeč jsou:
+\end_layout
+
+\begin_layout Itemize
+XHTML 1.0
 \begin_inset Foot
 status collapsed
 
@@ -1121,9 +1142,11 @@ target "http://www.w3.org/TR/xhtml1/"
 
 \end_inset
 
-.
- Dále je doporučeno aby zvádal vykreslovat elementy stránky s kaskádovými
- styly - CSS 2.1
+
+\end_layout
+
+\begin_layout Itemize
+CSS 2.1
 \begin_inset Foot
 status collapsed
 
@@ -1139,8 +1162,11 @@ target "http://www.w3.org/TR/CSS2/"
 
 \end_inset
 
-.
- a podporoval JavaScript
+
+\end_layout
+
+\begin_layout Itemize
+JavaScript
 \begin_inset Foot
 status collapsed
 
@@ -1158,7 +1184,44 @@ target "http://www.ecma-international.org/publications/standards/Ecma-262.htm"
 
 \end_inset
 
-.
+
+\end_layout
+
+\begin_layout Standard
+S XHTML a CSS prohlížeče problémy nemívají.
+ Horší je to, ale s implementacemi Javascriptu.
+ Toto bylo vyřešeno díky provázanosti CakePHP a javascriptového frameworku
+ Prototype[@todo odkaz] a jeho rozšíření Script.aculo.us[@todo odkaz], který
+ se snaží zakrýt rozdíly mezi prohlížeči.
+\end_layout
+
+\begin_layout Standard
+Prototype není jediným či nejlepším frameworkem.
+ Existují i jiné, které mají rozsáhlejší schopnosti v oblasti používaní
+ dotazovacího jazyka XPath nebo tvorby GUI
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+z anglických slov 
+\emph on
+Graphical User Interface
+\emph default
+, uživatelské prostředí, jenž úmožnuje uživateli ovládat aplikaci pomocí
+ grafických ovládacích prvků
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+Prototype a jeho rozšíření
+\end_layout
+
+\begin_layout Standard
+Prototype úmožnuje 
 \end_layout
 
 \begin_layout Itemize
@@ -1167,6 +1230,23 @@ JS - Prototype, Script.aculo.us, Livepipe
 
 \begin_layout Chapter
 Programátorská dokumentace
+\end_layout
+
+\begin_layout Standard
+V následující kapitole je popsáno a vysvětleno databázové schéma, základní
+ adresářová struktura projektu, a metody použitých tříd.
+\end_layout
+
+\begin_layout Section
+Databázové schéma
+\end_layout
+
+\begin_layout Standard
+Normalizace???
+\end_layout
+
+\begin_layout Section
+Adresářová struktura
 \end_layout
 
 \begin_layout Chapter
