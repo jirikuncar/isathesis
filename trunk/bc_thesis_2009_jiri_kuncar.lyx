@@ -468,8 +468,9 @@ Keywords: information system, PHP, MySQL
 
 \begin_layout Standard
 Informační systémy hrají v rychle se rozvíjejícím prostředí svou nepostradatelou
- roli a Internet jim poskytl výbornou platformu úmožňující další rozvoj
- v dříve nepříliš využívaném prostředí.
+ roli a Internet, který se stal dostupným pro širokou veřejnost, jim poskytl
+ výbornou platformu úmožňující další rozvoj v dříve nepříliš využívaném
+ virtuálním prostředí.
  Úmožňují snadné a rychlé zpracování, vyhledávání a publikovaní informací,
  které se díky němu stávají dostupné pro širší spektrum zákazníků, dodavatelů
  i samotných zaměstanců.
@@ -477,17 +478,26 @@ Informační systémy hrají v rychle se rozvíjejícím prostředí svou nepost
 \end_layout
 
 \begin_layout Standard
-S využíváním Internetu, ale zároveň rostou nároky na funkce, bezpečnost
- a dostupnost uložených informací, které jsou pro chod firem životně důležité.
+S využíváním Internetu zároveň rostou nároky na funkce, bezpečnost a dostupnost
+ uložených informací, které jsou pro chod firem životně důležité a bývají
+ jejich nejcenějším majetkem.
  Toto zvyšuje požadavky na robustnost řešení včetně nároků na nástroje použité
- při implementaci systému.
+ při implementaci systému, kdy malá chyba může zapříčinit únik citlivých
+ dat a jejich zneužití.
 \end_layout
 
 \begin_layout Standard
 Před zavádění informačního systému je nutné stanovit, čeho chce firma s
- využitím nového systému v daném čase dosáhnout.
- Tomu by měla pomoci důkladná analýza firemních procesů a jejich optimalizace.
- 
+ jeho využitím v
+\begin_inset space ~
+\end_inset
+
+daném čase dosáhnout.
+ Tomu by měla pomoci důkladná analýza firemních procesů a
+\begin_inset space ~
+\end_inset
+
+jejich optimalizace.
 \end_layout
 
 \begin_layout Standard
@@ -503,7 +513,21 @@ Kdo nepozná vlastní firemní procesy, nemůže je zlepšovat.
 
 
 \emph on
-[citát]
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "informační systémy"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Změna zavedených procesů bývá náročná, jak z finančního hlediska, tak z
+ hledika její vlastní realizace.
+ , která se nemusí dotknout jen ...
+ 
 \end_layout
 
 \begin_layout Standard
@@ -527,8 +551,8 @@ Cílem práce je návrh a implementace informačního systému usnadňující č
 
 \begin_layout Standard
 Cílem práce není vytvořit, vzhledem k náročným právním úpravám a častým
- změnám, komplexní účetní program, ale systém úmožní vytvořit přehledy pro
- účetní evidenci, které mohou být zavedeny do některého již existujícího
+ změnám, komplexní účetní program, ale pouze systém úmožnící vytvořit přehledy
+ pro účetní evidenci, které mohou být zavedeny do některého již existujícího
  programu.
 \end_layout
 
@@ -622,6 +646,13 @@ V závěru jsou přehledně shrnuty výsledky, kterých bylo při vývoji systé
 
 \begin_layout Chapter
 Analýza úlohy
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:Analýza-úlohy"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -666,7 +697,23 @@ Na začátku stála žádost manažerky agentury zjednodušit proces zpracován�
  měsíčních výkazů lektorů, překladatelů a tlumočníků tvořících podklady
  pro mzdy a fakturaci služeb.
  Tyto měsíční výkazy neměly jednotný vzor a ani nebylo jednoduše možné,
- bez znalostí místních poměrů přiřadit vykázanou činnost k jednotlivým produktům.
+ bez znalostí místních poměrů přiřadit vykázanou činnost k jednotlivým překladům
+, tlumočení a výuce
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Na překlady, tlumočení a výuku je jednotně nahlíženo jako na výsledek lidské
+ práce dále označovanou jako 
+\emph on
+produkt
+\emph default
+.
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -676,8 +723,13 @@ Zavedení jednotných identifikátorů
 \begin_layout Standard
 Kvůli výše uvedným problémům se začalo s postupným zaváděním jednotných
  identifikátorů závazných pro všechny zúčastněné strany.
- Tento krok byl ze začátku velmi těžce snášen a trvalo několik měsíců, než
- se tento proces tvorby ustálil a začal být všemi akceptován.
+ Tento nepopulární krok byl ze začátku velmi těžce příjmán a trvalo několik
+ měsíců, než se proces tvorby ustálil a začal být všemi akceptován.
+\end_layout
+
+\begin_layout Itemize
+Z identikátoru musí být zřejmé o jakou kategorii produktu se jedná, pro
+ koho je určen a kdy byl zaveden, aby se předešlo kolizím jmen v budoucnu.
 \end_layout
 
 \begin_layout Itemize
@@ -703,13 +755,6 @@ U lektora či překladatele vloží jeho sazbu za jednotku.
 U kurzů vloží předpokládaný rozvh, kde jsou uvedeny dny, čas, lektor a učebna.
  Tento rozvrh slouží zároveň jako pomůcka pro stanovení předběžných nákladů
  v budoucích měsících.
- 
-\end_layout
-
-\begin_layout Standard
-Každé pondělí administrátor tiskne aktuální rozvrhy učeben, časy individuální
- výuky jsou pohyblivé, lektoři musí vědět, kdy je v učebnách volno, najdou
- to na dveřích učeben.
  
 \end_layout
 
@@ -739,6 +784,13 @@ Podle potřeby potřebuje administrátor rychle řešit suplování a změny lek
 
 tomu potřebuje aktuální stav.
  Příležitostně je třeba zjistit vytížení překladatelů.
+\end_layout
+
+\begin_layout Itemize
+Na začátku týdne tiskne administrátor podle potřeby aktuální rozvrhy učeben
+ a informuje zúčastněné strany o změnách.
+ Časy individuální výuky jsou pohyblivé, lektoři musí vědět, kdy je v učebnách
+ volno.
 \end_layout
 
 \begin_layout Subsection
@@ -807,12 +859,12 @@ News
 \begin_inset Quotes prd
 \end_inset
 
- by měly být na webu přístupné pro lektory i překl., protože obsahují přílohy
- platné pro celý rok.
+ by měly být v systému přístupné pro lektory i překladatele, protože obsahují
+ přílohy platné pro celý rok.
 \end_layout
 
 \begin_layout Subsection
-Oddělení reálných dat více agentur
+Oddělení správy dat více agentur
 \end_layout
 
 \begin_layout Standard
@@ -820,6 +872,10 @@ Vzhledem ke složitým poměrům v agentuře bylo potřeba oddělit evidenci zak
  vyřizovaných manažerem pro různé agentury a fyzické osoby, jenž s agenturami
  úzce spolupracují.
  
+\end_layout
+
+\begin_layout Standard
+@todo
 \end_layout
 
 \begin_layout Subsection
@@ -830,6 +886,10 @@ Vzhledem ke složitým poměrům v agentuře bylo potřeba oddělit evidenci zak
 Evidence hodin, rozvrhy učeben
 \end_layout
 
+\begin_layout Standard
+@todo
+\end_layout
+
 \begin_layout Subsection
 Vícejazykový systém
 \end_layout
@@ -838,6 +898,11 @@ Vícejazykový systém
 Vzhledem k tomu, že je systém určen primárně pro jazykové agentury, kde
  se počítá s komunikací se zákazníky v jiném než českém jazyce, bylo k tomu
  přizpůsobit systém již od počátku.
+\end_layout
+
+\begin_layout Itemize
+Uživatelé musí mít možnost si jednoduše vybrat mezi několika jazykovými
+ variantami.
 \end_layout
 
 \begin_layout Section
@@ -872,7 +937,7 @@ Produkt
 Zakázka
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection
 CSS
 \end_layout
 
@@ -885,14 +950,32 @@ Existujicí aplikace lze rozdělit na několik skupin, kde ovšem žádná nepok
  veškeré požadavky v plném rozsahu.
  První se více zaměřuje na správu webového obsahu.
  Označované anglickou zkratkou CMS
-\begin_inset CommandInset label
-LatexCommand label
-name "CMS"
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "wdw"
 
 \end_inset
 
- - Content Management System, před kterou se někdy přídává W označující
- webové systémy.
+
+\end_layout
+
+\end_inset
+
+ nebo WCMS
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+df
+\end_layout
+
+\end_inset
+
+ označující webové systémy.
  Tyto systémy lze rozdělit do podskupin podle způsobu, jakým prezentují
  uložená data.
 \end_layout
@@ -937,7 +1020,17 @@ Online
 \end_inset
 
 zpracování Server generuje prezentační data až na základě požadavků klienta.
- Pro keše
+ Pro keše ...
+ Pokročilé systémy úmožňují i úpravy základních šablon, bez zásahu do zdrojových
+ kódu http://tangocms.org/ joomla drupal ...
+\begin_inset Newline newline
+\end_inset
+
+http://php.opensourcecms.com/
+\end_layout
+
+\begin_layout Description
+Hybridní ...
 \end_layout
 
 \begin_layout Description
@@ -964,32 +1057,6 @@ Dôležité sú tiež úlohy IS:
  * kancelárske (OIS - Office IS) * operatívne o TPS - transakčné (banky,
  ...) o CRM - vzťahy so zákazníkmi o RIS - rezervačné systémy o CAM - konštrukčné
  (CAD, ...) o GIS - geografické systémy
-\end_layout
-
-\begin_layout Chapter
-Návrh řešení
-\end_layout
-
-\begin_layout Section
-Návrh databáze
-\end_layout
-
-\begin_layout Standard
-Návrh dobře strukturované relační databáze je nejnáročnějším prvkem celé
- práce.
- Vyžaduje jak 
-\end_layout
-
-\begin_layout Standard
-Evidence produktů
-\end_layout
-
-\begin_layout Standard
-Podklady pro fakturaci dodavatelům a mzdy
-\end_layout
-
-\begin_layout Standard
-Finanční vyrovnání subjektů v IS
 \end_layout
 
 \begin_layout Chapter
@@ -1366,6 +1433,133 @@ Prototype úmožnuje
 
 \begin_layout Itemize
 JS - Prototype, Script.aculo.us, Livepipe
+\end_layout
+
+\begin_layout Chapter
+Návrh řešení
+\end_layout
+
+\begin_layout Section
+Návrh databáze
+\end_layout
+
+\begin_layout Standard
+Pro ukládání dat bude realizováno v relační databázi.
+ Ta poskytuje funkce pro vytvoření, čtení, změnu a smazání uložených informací
+ a v tomto případě se jeví jako nejlepší ze způsobů ukládání dat.
+ 
+\end_layout
+
+\begin_layout Standard
+Návrhy se XML databázi jsou 
+\end_layout
+
+\begin_layout Standard
+XML databáze jsou sice již na velmi dobré úrovni v komerčních produktech,
+ ale jejich implementace a dostupnost ve volně dos ...
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www-01.ibm.com/software/data/db2/express/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Návrh dobře strukturované relační databáze vyžaduje předevších pochopení
+ vztahů a
+\begin_inset space ~
+\end_inset
+
+procesů fungování firmy, která ji bude využívat.
+ Problémem s optimalizací navrženého modelu pomáhají řešit algoritmy logického
+ návrhu relační databáze
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+@todo vyjmenovat a nejake strucne popsat
+\end_layout
+
+\end_inset
+
+, které se snaží zajistit, aby navžená databáze byla prostorově efektivní,
+ eliminovala vznik anomálií a zároveň úmožňovala rychlé zpracování uživatelských
+ požadavků.
+ Proces návrhu můžeme rozdělit na čtyři základní fáze
+\begin_inset CommandInset citation
+LatexCommand cite
+key "soukupova 2004"
+
+\end_inset
+
+: analýza požadavků a specifikace, konceptuální návrh, logický návrh a fyzický
+ návrh.
+\end_layout
+
+\begin_layout Subsection
+Analýza požadavků 
+\end_layout
+
+\begin_layout Standard
+Analýza požadavků vycházi z informací popsaných 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "cha:Analýza-úlohy"
+
+\end_inset
+
+ a snaží se je co nepřesněji interpretovat pro použití v dalších fázích
+ návrhu.
+\end_layout
+
+\begin_layout Subsection
+Konceptuální návrh
+\end_layout
+
+\begin_layout Standard
+Ne všechny specifické informace o daných produktech je potřeba udržovat
+ jako speciální atributy.
+ Zvítězila proto varianta jedné tabulky s minimem položek pro produkt.
+ V budoucí rozšiřovaní by mělo být realizováno pomocí tabulek se specifikými
+ informacemi.
+\end_layout
+
+\begin_layout Standard
+Oracle XML DB http://www.oracle.com/technology/tech/xml/xmldb/index.html
+\end_layout
+
+\begin_layout Standard
+Evidence produktů
+\end_layout
+
+\begin_layout Standard
+Jedna z hlavních výhod XML, která ovšem není v tomto případě využívána,
+ je snadná výměna dat mezi aplikacemi.
+\end_layout
+
+\begin_layout Standard
+Návrh dobře strukturované relační databáze je nejnáročnějším prvkem celé
+ práce.
+ Vyžaduje jak 
+\end_layout
+
+\begin_layout Standard
+Podklady pro fakturaci dodavatelům a mzdy
+\end_layout
+
+\begin_layout Standard
+Finanční vyrovnání subjektů v IS
 \end_layout
 
 \begin_layout Chapter
@@ -2123,6 +2317,13 @@ key "informační systémy"
 \end_inset
 
 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.informacny-system.sk"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Bibliography
@@ -2140,7 +2341,317 @@ Informační systém
 \begin_inset Newline newline
 \end_inset
 
-http://cs.wikipedia.org/wiki/Informační_systém
+
+\begin_inset CommandInset href
+LatexCommand href
+target "http://cs.wikipedia.org/wiki/Informační_systém"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "soukupova 2004"
+
+\end_inset
+
+Dana Soukupová: 
+\emph on
+Algoritmy logického návrhu relační databáze
+\emph default
+, 2004
+\end_layout
+
+\begin_layout Standard
+sadsa
+\end_layout
+
+\begin_layout Standard
+dasd
+\end_layout
+
+\begin_layout Chapter
+\start_of_appendix
+Ukázka XML databáze
+\end_layout
+
+\begin_layout Section
+DTD
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+<!-- Evidence kurzu --> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ELEMENT courses (course+,user+)>
+\end_layout
+
+\begin_layout Plain Layout
+
+ <!ELEMENT course (description,teachers,participators,events)>
+\end_layout
+
+\begin_layout Plain Layout
+
+  <!ATTLIST course id ID #REQUIRED>
+\end_layout
+
+\begin_layout Plain Layout
+
+ <!ELEMENT teachers (teacher)*>
+\end_layout
+
+\begin_layout Plain Layout
+
+  <!ELEMENT teacher (price)>
+\end_layout
+
+\begin_layout Plain Layout
+
+   <!ATTLIST teacher
+\end_layout
+
+\begin_layout Plain Layout
+
+      id ID #REQUIRED
+\end_layout
+
+\begin_layout Plain Layout
+
+      uid IDREF #REQUIRED
+\end_layout
+
+\begin_layout Plain Layout
+
+      master (0|1) "0"
+\end_layout
+
+\begin_layout Plain Layout
+
+   >
+\end_layout
+
+\begin_layout Plain Layout
+
+  <!ELEMENT participators (participator)*>
+\end_layout
+
+\begin_layout Plain Layout
+
+   <!ELEMENT participator (price)>
+\end_layout
+
+\begin_layout Plain Layout
+
+			<!ATTLIST participator
+\end_layout
+
+\begin_layout Plain Layout
+
+				id ID #REQUIRED
+\end_layout
+
+\begin_layout Plain Layout
+
+				uid IDREF #REQUIRED
+\end_layout
+
+\begin_layout Plain Layout
+
+			>
+\end_layout
+
+\begin_layout Plain Layout
+
+    <!ELEMENT price (#PCDATA)>
+\end_layout
+
+\begin_layout Plain Layout
+
+     <!ATTLIST price currency (CZK|EUR|USD) #IMPLIED >
+\end_layout
+
+\begin_layout Plain Layout
+
+   <!ELEMENT events (event)*>
+\end_layout
+
+\begin_layout Plain Layout
+
+		<!ATTLIST events
+\end_layout
+
+\begin_layout Plain Layout
+
+			from CDATA #REQUIRED
+\end_layout
+
+\begin_layout Plain Layout
+
+			to CDATA #REQUIRED
+\end_layout
+
+\begin_layout Plain Layout
+
+		>
+\end_layout
+
+\begin_layout Plain Layout
+
+	<!ELEMENT event (content,attendance*)>
+\end_layout
+
+\begin_layout Plain Layout
+
+		<!ATTLIST event
+\end_layout
+
+\begin_layout Plain Layout
+
+			teacher_id IDREF #REQUIRED
+\end_layout
+
+\begin_layout Plain Layout
+
+			date CDATA #REQUIRED
+\end_layout
+
+\begin_layout Plain Layout
+
+			time_from CDATA #REQUIRED
+\end_layout
+
+\begin_layout Plain Layout
+
+			time_to CDATA #IMPLIED
+\end_layout
+
+\begin_layout Plain Layout
+
+		>
+\end_layout
+
+\begin_layout Plain Layout
+
+		<!ELEMENT content (#PCDATA|lesson)*>
+\end_layout
+
+\begin_layout Plain Layout
+
+			<!ELEMENT lesson (#PCDATA|chapter)*>
+\end_layout
+
+\begin_layout Plain Layout
+
+				<!ELEMENT chapter (#PCDATA)>
+\end_layout
+
+\begin_layout Plain Layout
+
+		<!ELEMENT attendance EMPTY>
+\end_layout
+
+\begin_layout Plain Layout
+
+			<!ATTLIST attendance
+\end_layout
+
+\begin_layout Plain Layout
+
+				participator_id IDREF #REQUIRED
+\end_layout
+
+\begin_layout Plain Layout
+
+			>
+\end_layout
+
+\begin_layout Plain Layout
+
+	<!ELEMENT description (#PCDATA)>
+\end_layout
+
+\begin_layout Plain Layout
+
+ <!ELEMENT user (name, (phone)*, (email)?)>
+\end_layout
+
+\begin_layout Plain Layout
+
+  <!ATTLIST user id ID #REQUIRED>
+\end_layout
+
+\begin_layout Plain Layout
+
+  <!ELEMENT name (lastname,firstname)>
+\end_layout
+
+\begin_layout Plain Layout
+
+   <!ELEMENT firstname (#PCDATA)>
+\end_layout
+
+\begin_layout Plain Layout
+
+   <!ELEMENT lastname (#PCDATA)>
+\end_layout
+
+\begin_layout Plain Layout
+
+   <!ELEMENT phone (#PCDATA)>
+\end_layout
+
+\begin_layout Plain Layout
+
+    <!ATTLIST phone type (wired | mobile) "mobile">         
+\end_layout
+
+\begin_layout Plain Layout
+
+   <!ELEMENT email (#PCDATA)>
+\end_layout
+
+\begin_layout Plain Layout
+
+<!-- Definice entity pro zjednodušení práce -->
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ENTITY at "@">
+\end_layout
+
+\begin_layout Plain Layout
+
+<!ENTITY pcz "+420">
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+XML
+\end_layout
+
+\begin_layout Section
+XPath
+\end_layout
+
+\begin_layout Section
+XQuery
 \end_layout
 
 \end_body
