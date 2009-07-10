@@ -1446,19 +1446,66 @@ Návrh databáze
 \begin_layout Standard
 Pro ukládání dat bude realizováno v relační databázi.
  Ta poskytuje funkce pro vytvoření, čtení, změnu a smazání uložených informací
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Někdy je používaní zkratka 
+\emph on
+CRUD
+\emph default
+ z anglických slov 
+\emph on
+create
+\emph default
+, 
+\emph on
+read
+\emph default
+, 
+\emph on
+update
+\emph default
+, 
+\emph on
+delete
+\emph default
+.
+\end_layout
+
+\end_inset
+
  a v tomto případě se jeví jako nejlepší ze způsobů ukládání dat.
- 
 \end_layout
 
 \begin_layout Standard
-Návrhy se XML databázi jsou 
+V rámci testování byl rovněž vytvořen návrh zjednodušené verze XML
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+eXtesible Mar Language @todo
+\end_layout
+
+\end_inset
+
+ databáze [@todo priloha] uchovávané v souboru a zpracovávanho pomocí jazyka
+ XPath, XQuery či XSLT[@todo popis].
+ Výsledky byly dobré při zpracování omezého množství dat a jednouživatelském
+ přístupu k datům.
+ Se vzrůstajícím objemem uložených dat začala projevovat prostorová náročnost
+ použitého značkovacího jazyka a býlo nutné použít kompresi a rozdělení
+ dat do více souborů.
+ Druhou možnou variantou bylo použití něktré specializované XML databáze
+ nebo relační databáze s podporou XML (Oracle, MySQL).
+ Toto řešení, ale nakonec nebylo implementováno ani v rámci testování.
 \end_layout
 
 \begin_layout Standard
 XML databáze jsou sice již na velmi dobré úrovni v komerčních produktech,
  ale jejich implementace a dostupnost ve volně dos ...
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset CommandInset href
@@ -1527,12 +1574,83 @@ reference "cha:Analýza-úlohy"
 Konceptuální návrh
 \end_layout
 
+\begin_layout Subsubsection
+Produkty 
+\end_layout
+
 \begin_layout Standard
 Ne všechny specifické informace o daných produktech je potřeba udržovat
  jako speciální atributy.
  Zvítězila proto varianta jedné tabulky s minimem položek pro produkt.
  V budoucí rozšiřovaní by mělo být realizováno pomocí tabulek se specifikými
  informacemi.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Identifikátor
+\emph default
+ obsahuje infomace o jazycích, typu produktu a stručný jednoznačný popisek.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Kategorie
+\emph default
+ určuje zařazení produktu do skupin.
+ Některé skupiny produktů mohou být veřejnosti online nabízeny na webových
+ stránkách.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Poskytovatel
+\emph default
+ produktu je subjekt, který se stará o jeho realizaci.
+ Hledá dodavatele i odběratele a jsou na něj vydávany faktury.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Časové informace
+\emph default
+ jsou používány dle potřeb pro určení doby konání kurzů, tlumočení nebo
+ upřesnění požadavků na vyhotovení překladu.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Popis
+\emph default
+ je veřejná informace k produktu pro všechny zúčastněné strany.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Nastavení způsobu účtování
+\emph default
+ pro správné stanovení ceny produktu (započítat množství, započítat počet
+ účastníků na přihlášce).
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Jednotka
+\emph default
+ a 
+\emph on
+jednotková cena
+\end_layout
+
+\begin_layout Subsubsection
+Smlouvy
 \end_layout
 
 \begin_layout Standard
@@ -1567,8 +1685,8 @@ Programátorská dokumentace
 \end_layout
 
 \begin_layout Standard
-V následující kapitole je popsáno a vysvětleno databázové schéma, základní
- adresářová struktura projektu, a metody použitých tříd.
+V následující kapitole je popsáno a vysvětleno propojejí databázového schématu
+ s třídami, základní adresářová struktura projektu a metody použitých tříd.
 \end_layout
 
 \begin_layout Section
