@@ -645,6 +645,124 @@ V závěru jsou přehledně shrnuty výsledky, kterých bylo při vývoji systé
 \end_layout
 
 \begin_layout Chapter
+Existující implementace
+\end_layout
+
+\begin_layout Standard
+Existujicí aplikace lze rozdělit na několik skupin, kde ovšem žádná nepokrývá
+ veškeré požadavky v plném rozsahu.
+ První se více zaměřuje na správu webového obsahu.
+ Označované anglickou zkratkou CMS
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "wdw"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ nebo WCMS
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+df
+\end_layout
+
+\end_inset
+
+ označující webové systémy.
+ Tyto systémy lze rozdělit do podskupin podle způsobu, jakým prezentují
+ uložená data.
+\end_layout
+
+\begin_layout Description
+Offline
+\begin_inset space ~
+\end_inset
+
+zpracování Server vygeneruje statické HTML před samotnou publikací, proto
+ takové systémy nepořebují, aby server aplikoval šablony na data při každém
+ požadavku.
+ Výhody jsou zjevné pro vytížené CMS používané převážně pro čtení dat.
+ Naopak při častých změnách dat můžou být tyto systémy pomalé nebo neaktuální,
+ proto je nutné si jejich nasazení řádně rozmyslet.
+ Příkladem takového systému je například Vignette CMS
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.vignette.com/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Online
+\begin_inset space ~
+\end_inset
+
+zpracování Server generuje prezentační data až na základě požadavků klienta.
+ Pro keše ...
+ Pokročilé systémy úmožňují i úpravy základních šablon, bez zásahu do zdrojových
+ kódu http://tangocms.org/ joomla drupal ...
+\begin_inset Newline newline
+\end_inset
+
+http://php.opensourcecms.com/
+\end_layout
+
+\begin_layout Description
+Hybridní ...
+\end_layout
+
+\begin_layout Description
+E-learning ...
+ Moodle
+\end_layout
+
+\begin_layout Description
+ciele:
+\end_layout
+
+\begin_layout Description
+* strategické (plánovanie investícií…) * taktické (vedenie, kontrola rozpočtu…)
+ * operatívne (každodenná rutina)
+\end_layout
+
+\begin_layout Description
+Dôležité sú tiež úlohy IS:
+\end_layout
+
+\begin_layout Description
+* manažérske (EIS - Executive IS) * taktické (DSS - Decision Support System)
+ * vedenie (MIS - Management IS) * expertné (KWS - Knowledge Work System)
+ * kancelárske (OIS - Office IS) * operatívne o TPS - transakčné (banky,
+ ...) o CRM - vzťahy so zákazníkmi o RIS - rezervačné systémy o CAM - konštrukčné
+ (CAD, ...) o GIS - geografické systémy
+\end_layout
+
+\begin_layout Chapter
 Analýza úlohy
 \begin_inset CommandInset label
 LatexCommand label
@@ -763,10 +881,10 @@ Měsíční výkazy
 \end_layout
 
 \begin_layout Standard
-Vzhledem k velkým rozdílům mezi jednotlivými lektory, překladateli a tlumočníky,
- bylo rozhodnuto, že se v první fázi začne s jednotým papírovým formulářem.
- Ten bude následně zkontrolován administrativním pracovníkem a vložen do
- systému, aby se předešlo chybám.
+Po zavedení identifikátorů bylo potřeba sjednotit formuláře měsíčních výkazů
+ a připravit dodavatele na možnost jejich elektronického vyplňování.
+ Papírové formuláře budou do systému vkládány administrativním pracovníkem
+ a elektronické budou potvrzeny a uzamčeny.
 \end_layout
 
 \begin_layout Itemize
@@ -774,6 +892,11 @@ Každý měsíc si administrátor může z výkazů odpracovaných jednotek lekt
  překladatele a tlumočníka zobrazit a vytiskout přehled, kde je souhrn toho,
  kolik jednotek opracoval v jednotlivých dnech a celkem u jednotlivých produktů.
  
+\end_layout
+
+\begin_layout Itemize
+Systém musí zobrazit varování při překročení stanoveného počtu vykázaných
+ odpracovaných hodin nebo přeložených normostran.
 \end_layout
 
 \begin_layout Itemize
@@ -942,500 +1065,6 @@ CSS
 \end_layout
 
 \begin_layout Chapter
-Existující implementace
-\end_layout
-
-\begin_layout Standard
-Existujicí aplikace lze rozdělit na několik skupin, kde ovšem žádná nepokrývá
- veškeré požadavky v plném rozsahu.
- První se více zaměřuje na správu webového obsahu.
- Označované anglickou zkratkou CMS
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "wdw"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- nebo WCMS
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-df
-\end_layout
-
-\end_inset
-
- označující webové systémy.
- Tyto systémy lze rozdělit do podskupin podle způsobu, jakým prezentují
- uložená data.
-\end_layout
-
-\begin_layout Description
-Offline
-\begin_inset space ~
-\end_inset
-
-zpracování Server vygeneruje statické HTML před samotnou publikací, proto
- takové systémy nepořebují, aby server aplikoval šablony na data při každém
- požadavku.
- Výhody jsou zjevné pro vytížené CMS používané převážně pro čtení dat.
- Naopak při častých změnách dat můžou být tyto systémy pomalé nebo neaktuální,
- proto je nutné si jejich nasazení řádně rozmyslet.
- Příkladem takového systému je například Vignette CMS
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-http://www.vignette.com/
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Description
-Online
-\begin_inset space ~
-\end_inset
-
-zpracování Server generuje prezentační data až na základě požadavků klienta.
- Pro keše ...
- Pokročilé systémy úmožňují i úpravy základních šablon, bez zásahu do zdrojových
- kódu http://tangocms.org/ joomla drupal ...
-\begin_inset Newline newline
-\end_inset
-
-http://php.opensourcecms.com/
-\end_layout
-
-\begin_layout Description
-Hybridní ...
-\end_layout
-
-\begin_layout Description
-E-learning ...
- Moodle
-\end_layout
-
-\begin_layout Description
-ciele:
-\end_layout
-
-\begin_layout Description
-* strategické (plánovanie investícií…) * taktické (vedenie, kontrola rozpočtu…)
- * operatívne (každodenná rutina)
-\end_layout
-
-\begin_layout Description
-Dôležité sú tiež úlohy IS:
-\end_layout
-
-\begin_layout Description
-* manažérske (EIS - Executive IS) * taktické (DSS - Decision Support System)
- * vedenie (MIS - Management IS) * expertné (KWS - Knowledge Work System)
- * kancelárske (OIS - Office IS) * operatívne o TPS - transakčné (banky,
- ...) o CRM - vzťahy so zákazníkmi o RIS - rezervačné systémy o CAM - konštrukčné
- (CAD, ...) o GIS - geografické systémy
-\end_layout
-
-\begin_layout Chapter
-Použité technologie a frameworky
-\end_layout
-
-\begin_layout Standard
-Použité technologie byly částečně determinovány požadavy klienta
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Požadavky-klienta"
-
-\end_inset
-
-.
- Tím, že se mělo jednat o systém využívající výhradně open-souce technologie
- tak, aby nebyly zvyšovány náklady na nákup licencí.
-\end_layout
-
-\begin_layout Section
-Server
-\end_layout
-
-\begin_layout Standard
-Tento webový informační systém využívá technologi PHP (jazyk, interpret
- a knihovny), která vychází se skriptovacího víceúčelového jazyka, jenž
- byl původně vyvinut pro tvorbu dynamických webových stránek.
- Z tohoto využití vznikla i zkatka z anglických slov 
-\emph on
-Personal Home Page
-\emph default
-, které byly nahrazeny slovy 
-\emph on
-PHP: Hypertext Preprocessor
-\emph default
- dající vznik rekurzivní zkratce
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-http://cs.wikipedia.org/wiki/Rekurzivní_zkratka
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Výhodou použití PHP je existence interpretu pro různé operační systémy a
- podobnost jeho syntaxe s C, Javou.
-\end_layout
-
-\begin_layout Standard
-Nevýhodou, která brzdí dalšímu rozvoji a rozšíření, je absence normy (k
- datu vydání BP).
- Jazyk je tak de facto standardizovaný interpretem a množstvím lidí
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-dle statistiky na http://www.php.net/usage.php
-\end_layout
-
-\end_inset
-
-, kteří jej využívají.
- I když existují mnohé polemiky a živé diskuze mezi jeho zastánci a odpůrci
- o jeho výkonnosti, bezpečnosti a vhodnosti pro velké projekty, existují
- vyjímky
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Facebook, YouTube, Wikipedia (MediaWiki) a další
-\end_layout
-
-\end_inset
-
-, které tyto názory vyvrací a zároveň se podílejí na vývoji, a tak se snaží
- přispět k jeho větší výkonnosti a bezpečnosti.
-\end_layout
-
-\begin_layout Standard
-Vývoj jazyka sebou nese i stinné stránky.
- Mezi ty nejpodstatnější patří úpravy API
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-anglická zkratka 
-\emph on
-Application Programming Interface
-\emph default
-, označuje sadu funkcí, procedur či tříd programu či knihovny, jenž mohou
- být využívány programátorem 
-\end_layout
-
-\end_inset
-
- některých vestavěných funkcí a změna syntaxe.
- To může zapříčinit, že po aktualizaci interpretu jazyka, přestanou fungovat
- některé části nebo celá aplikace.
- Řešením ovšem není zůstávat na několik let staré verzi, ve které mohly
- být objeveny chyby.
- 
-\end_layout
-
-\begin_layout Standard
-Pokud programátor nechce nebo nemůže přepisovat kód může využít služeb něktrého
- z frameworků nad daným jazykem, který se snaží tyto rozdíly ve verzích
- zakrýt.
- Další nespornou výhodou používání frameworků spočívá jednodušším vývoji
- aplikací a minimalizací rizika chyb v jinak ručně psaném jádru aplikace.
- Toto je zajištěno pouze pokud má kvalitní a úplnou dokumentaci a je zastřešen
- silnou komunitou nebo společností zajištující jeho vývoj.
-\end_layout
-
-\begin_layout Standard
-Při výběru byl proto důraz kladen hlavně na kvalitní dokumentaci, rozšířitelnost
- a možnost práce s různými relačními databázemi.
- Frameworky, které splňují vetšinu požadavků jsou Zend
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://framework.zend.com/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-, Symfony a CakePHP.
-\end_layout
-
-\begin_layout Subsection
-CakePHP
-\end_layout
-
-\begin_layout Standard
-Nám dává příležitost věnovat se návrhu schématu.
- MVC - Model-View-Controller - http://en.wikipedia.org/wiki/Model-view-controller
-\end_layout
-
-\begin_layout Standard
-Odstínění od způsobu práce odlišnými zdroji dat.
- mezi relačními databázemi (MySQL, PostgreSQL, Oracle, MSSQL, ...) a dokonce
- i definování vlastních zdrojů dat ať už z lokálních zdrojů s přímým přístupem
- (formátované soubory např.
- csv, xml) nebo za pomocí API k on-line službám (LDAP, twitter, IMAP).
-\end_layout
-
-\begin_layout Standard
-Díky množství napsaného a otestovaného kódu, není potřeba psát již jednou
- napsané části, ale možné šetřit lidské zdroje na vývoj.
- Tím není myšleno prosté skládání kusů posbíraného kódu, ale smysluplného
- využívání dostupných knihoven a pluginů do programovacího jazyka nebo framework
-u.
- 
-\end_layout
-
-\begin_layout Standard
-Díky těmto úsporám je možné se zaměřit na ergonomii dané aplikace a její
- možnou optimalizaci, která je ovšem limitována výkonností použitého skriptovací
-ho jazyka.
- Tato omezení lze, minimalizovat udržováním částí zpracovaného zdrojového
- kódu v paměti a kešováním
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-z anglického slova 
-\emph on
-cache
-\emph default
-, označuje vyrovnávací paměť
-\end_layout
-
-\end_inset
-
- nebo kompresí výstupu.
- 
-\end_layout
-
-\begin_layout Standard
-Tuto nepříjemnou vlastnost skriptovacích jazyků lze řešit předkompilací
- zdrojových kódů, nebo vhodným využíváním 
-\begin_inset Quotes pld
-\end_inset
-
-keší
-\begin_inset Quotes prd
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-APC, Xcache, File
-\end_layout
-
-\begin_layout Standard
-Další možnou optimalizací, která sice přímo nesouvisí s CakePHP, ale je
- v něm snadno implementovatelná, je snížení počtu požadavků na stránku.
- S používáním javascriptových frameworků a knihoven se snadno může stát,
- že počet vkládaných odkazů na skripty a kaskádové styly (CSS) se vyšplhá
- až k desítkám a začne se neúměrně prodlužovat doba potřebná na stažení
- všech potřebných částí.
- Zvyšuje se tak počet požadavků na server a díky režii protokolu HTTP je
- ve výsledku stažen větší objem dat.
- Tento problém úspěšně řeší projekty 
-\emph on
-jsMin
-\emph default
-
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://code.google.com/p/jsmin-php/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- a 
-\emph on
-CSSTidy
-\emph default
-
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://csstidy.sourceforge.net/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Subsection
-MySQL
-\end_layout
-
-\begin_layout Section
-Klient
-\end_layout
-
-\begin_layout Standard
-Pro vlastní běh aplikační logiky je možné se spolehnout, že serverová část
- aplikace bude zpracována jednou verzí PHP interpretu v uzavřeném a otestovaném
- prostředí.
- Naproti tomu klientská část bude prezentována na odlišných operačních systémech
- v mnoha prohlížečích nejrůznějších verzích.
- Základními požadavky kladené na prohlížeč jsou:
-\end_layout
-
-\begin_layout Itemize
-XHTML 1.0
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.w3.org/TR/xhtml1/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-CSS 2.1
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.w3.org/TR/CSS2/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-JavaScript
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-JavaScript je dialektem ECMASriptu.
- Minimálním implementovaným standardem by měl být ECMA-262, revize 3:
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.ecma-international.org/publications/standards/Ecma-262.htm"
-
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-S XHTML a CSS prohlížeče problémy nemívají.
- Horší je to, ale s implementacemi Javascriptu.
- Toto bylo vyřešeno díky provázanosti CakePHP a javascriptového frameworku
- Prototype[@todo odkaz] a jeho rozšíření Script.aculo.us[@todo odkaz], který
- se snaží zakrýt rozdíly mezi prohlížeči.
-\end_layout
-
-\begin_layout Standard
-Prototype není jediným či nejlepším frameworkem.
- Existují i jiné, které mají rozsáhlejší schopnosti v oblasti používaní
- dotazovacího jazyka XPath nebo tvorby GUI
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-z anglických slov 
-\emph on
-Graphical User Interface
-\emph default
-, uživatelské prostředí, jenž úmožnuje uživateli ovládat aplikaci pomocí
- grafických ovládacích prvků
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Subsection
-Prototype a jeho rozšíření
-\end_layout
-
-\begin_layout Standard
-Prototype úmožnuje 
-\end_layout
-
-\begin_layout Itemize
-JS - Prototype, Script.aculo.us, Livepipe
-\end_layout
-
-\begin_layout Chapter
 Návrh řešení
 \end_layout
 
@@ -1497,13 +1126,13 @@ eXtesible Mar Language @todo
  použitého značkovacího jazyka a býlo nutné použít kompresi a rozdělení
  dat do více souborů.
  Druhou možnou variantou bylo použití něktré specializované XML databáze
- nebo relační databáze s podporou XML (Oracle, MySQL).
+ nebo relační databáze s podporou XML (@todo Oracle, MySQL).
  Toto řešení, ale nakonec nebylo implementováno ani v rámci testování.
 \end_layout
 
 \begin_layout Standard
-XML databáze jsou sice již na velmi dobré úrovni v komerčních produktech,
- ale jejich implementace a dostupnost ve volně dos ...
+@todo XML databáze jsou sice již na velmi dobré úrovni v komerčních produktech,
+ ale jejich implementace ve volně dostupných aplikacích mírně zaostává.
 \begin_inset Foot
 status collapsed
 
@@ -1654,6 +1283,275 @@ Smlouvy
 \end_layout
 
 \begin_layout Standard
+V návrhu se počítá s kontrolou maximálního počtu odpracovaných jednotek.
+ Některé možnosti nastavení jsou pevně zakomponované a půjde je změnit pouze
+ zásahem do zdrojových kódů nebo databáze.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Dodavatel
+\emph default
+ je smluvním partnerem jazykové agentury - 
+\emph on
+poskytovatele 
+\emph default
+jazykových služeb
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Maximální počet jednotek
+\emph default
+, které může na smlouvu vykonat.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Sazba, jednotka, způsob platby 
+\emph default
+a
+\emph on
+ typ smlouvy
+\emph default
+ úmožňují generování účetních přehledů.
+\end_layout
+
+\begin_layout Subsubsection
+Výkazy
+\end_layout
+
+\begin_layout Standard
+Tabulka výkazů se nedrží papírové podoby, která je pro ukládání v databázi
+ nevhodná z důvodu malé hustoty záznamů (obvykle 5-10 záznamů za měsíc na
+ jeden produkt).
+ Jednotlivé záznamy budou ukládány v oddělené tabulce s dalšími upřesňujícími
+ informacemi.
+\end_layout
+
+\begin_layout Standard
+Z požadavků rovněž vyplívá potřeba uzamykání výkazu k danému datu.
+ Jelikož se jedná o velmi důležitá data, měla by jejich kontrola prováděna
+ i na databázové úrovni pomocí triggeru, pokud to bude daná databáze bude
+ podporovat.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Produkt
+\emph default
+, ke kterému se výkaz vztahuje.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Sazba za jednotku
+\emph default
+ a 
+\emph on
+jednotka
+\emph default
+, jenž náleží dodavateli, jako odměna.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Smlouva
+\emph default
+ na níž je prováděna daná činnost.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Datum
+\emph default
+ před kterým již není možné přidávat, editovat nebo mazat odpracované jednotky.
+\end_layout
+
+\begin_layout Subsubsection
+Události
+\end_layout
+
+\begin_layout Standard
+Seznam událostí je přiřazen k výkazu a každá událost je doplněna o upřesňující
+ informace.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Výkaz
+\emph default
+, ke kterému se událost vztahuje.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Počet jednotek
+\emph default
+ typu uvedeného v přiřazeném výkazu.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Datum
+\emph default
+ a 
+\emph on
+čas
+\emph default
+, kdy byla práce vykonávána.
+ Slouži rovněž jako rozvrh hodin.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Místo
+\emph default
+ vybrané z číselníku.
+\end_layout
+
+\begin_layout Subsubsection
+Přihlášky (objednávky)
+\end_layout
+
+\begin_layout Standard
+Tabulka slouží k evidenci zákazníků a produktů, jenž si objednali.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Produkt,
+\emph default
+ ke kterému se přihláška vztahuje.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Zákazník
+\emph default
+ vybraný z tabulky uživatelů.
+\end_layout
+
+\begin_layout Subsubsection
+Účastníci
+\end_layout
+
+\begin_layout Standard
+Účastníci jsou přiřazeni k danému produktu, přes přihlášku, kde je definován
+ plátce.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Přihláška
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Účastník
+\emph default
+ vybraný z tabulky uživatelů.
+\end_layout
+
+\begin_layout Subsubsection
+Uživatelé
+\end_layout
+
+\begin_layout Standard
+O všech uživatelích systému je potřeba vést obdobné informace.
+ Proto jsou uloženi v jedné tabulce a o jejich specifikaci je rozhodnuto
+ až přiřazením do skupiny.
+ Každý uživatel může být ve více skupinách.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Osobní údaje
+\emph default
+ - jméno, příjmení, titul a zobrazované jméno
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Přihlašovací údaje
+\emph default
+ - přihlašovací jméno, heslo a stav účtu
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Doručovací a fakturační adresa
+\end_layout
+
+\begin_layout Itemize
+Ostatní nečleněné informace
+\end_layout
+
+\begin_layout Subsubsection
+Číselníky
+\end_layout
+
+\begin_layout Standard
+Byly navrhnuty zjednodušení práce s vyplňováním formulářů a odstranění duplicit
+ v tabulkách.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Místa
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Kategorie
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Jednotky
+\end_layout
+
+\begin_layout Standard
+Uvedené informace jsou zpracovány do zjednodušeného ER diagramu v příloze
+ [@todo zjednodušený ER]
+\end_layout
+
+\begin_layout Subsection
+Logický návrh
+\end_layout
+
+\begin_layout Subsection
+Fyzický návrh
+\end_layout
+
+\begin_layout Standard
+V uvedeném návrhu je potřeba zajistit integritu dat a optimalizace pro rychlejší
+ přístup k datům.
+ K tomu nám 
+\end_layout
+
+\begin_layout Standard
 Oracle XML DB http://www.oracle.com/technology/tech/xml/xmldb/index.html
 \end_layout
 
@@ -1681,6 +1579,416 @@ Finanční vyrovnání subjektů v IS
 \end_layout
 
 \begin_layout Chapter
+Použité technologie a frameworky
+\end_layout
+
+\begin_layout Standard
+Použité technologie byly částečně determinovány požadavy klienta
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Požadavky-klienta"
+
+\end_inset
+
+.
+ Tím, že se mělo jednat o systém využívající výhradně open-souce technologie
+ tak, aby nebyly zvyšovány náklady na nákup licencí.
+\end_layout
+
+\begin_layout Section
+Server
+\end_layout
+
+\begin_layout Standard
+Tento webový informační systém využívá technologi PHP (jazyk, interpret
+ a knihovny), která vychází se skriptovacího víceúčelového jazyka, jenž
+ byl původně vyvinut pro tvorbu dynamických webových stránek.
+ Z tohoto využití vznikla i zkatka z anglických slov 
+\emph on
+Personal Home Page
+\emph default
+, které byly nahrazeny slovy 
+\emph on
+PHP: Hypertext Preprocessor
+\emph default
+ dající vznik rekurzivní zkratce
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+http://cs.wikipedia.org/wiki/Rekurzivní_zkratka
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Výhodou použití PHP je existence interpretu pro různé operační systémy a
+ podobnost jeho syntaxe s C, Javou.
+\end_layout
+
+\begin_layout Standard
+Nevýhodou, která brzdí dalšímu rozvoji a rozšíření, je absence normy (k
+ datu vydání BP).
+ Jazyk je tak de facto standardizovaný interpretem a množstvím lidí
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+dle statistiky na http://www.php.net/usage.php
+\end_layout
+
+\end_inset
+
+, kteří jej využívají.
+ I když existují mnohé polemiky a živé diskuze mezi jeho zastánci a odpůrci
+ o jeho výkonnosti, bezpečnosti a vhodnosti pro velké projekty, existují
+ vyjímky
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Facebook, YouTube, Wikipedia (MediaWiki) a další
+\end_layout
+
+\end_inset
+
+, které tyto názory vyvrací a zároveň se podílejí na vývoji, a tak se snaží
+ přispět k jeho větší výkonnosti a bezpečnosti.
+\end_layout
+
+\begin_layout Standard
+Vývoj jazyka sebou nese i stinné stránky.
+ Mezi ty nejpodstatnější patří úpravy API
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+anglická zkratka 
+\emph on
+Application Programming Interface
+\emph default
+, označuje sadu funkcí, procedur či tříd programu či knihovny, jenž mohou
+ být využívány programátorem 
+\end_layout
+
+\end_inset
+
+ některých vestavěných funkcí a změna syntaxe.
+ To může zapříčinit, že po aktualizaci interpretu jazyka, přestanou fungovat
+ některé části nebo celá aplikace.
+ Řešením ovšem není zůstávat na několik let staré verzi, ve které mohly
+ být objeveny chyby.
+ 
+\end_layout
+
+\begin_layout Standard
+Pokud programátor nechce nebo nemůže přepisovat kód může využít služeb něktrého
+ z frameworků nad daným jazykem, který se snaží tyto rozdíly ve verzích
+ zakrýt.
+ Další nespornou výhodou používání frameworků spočívá jednodušším vývoji
+ aplikací a minimalizací rizika chyb v jinak ručně psaném jádru aplikace.
+ Toto je zajištěno pouze pokud má kvalitní a úplnou dokumentaci a je zastřešen
+ silnou komunitou nebo společností zajištující jeho vývoj.
+\end_layout
+
+\begin_layout Standard
+Při výběru byl proto důraz kladen hlavně na kvalitní dokumentaci, rozšířitelnost
+ a možnost práce s různými relačními databázemi.
+ Frameworky, které splňují vetšinu požadavků jsou Zend
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://framework.zend.com/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, Symfony a CakePHP.
+\end_layout
+
+\begin_layout Subsection
+CakePHP
+\end_layout
+
+\begin_layout Standard
+CakePHP je open source[@todo], rapid developent[@todo] framework
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CakePHP"
+
+\end_inset
+
+, který dává příležitost věnovat se návrhu schématu a logiky aplikace.
+\end_layout
+
+\begin_layout Description
+MVC 
+\emph on
+Model-View-Controller
+\emph default
+ (Model-Pohled-Řadič) - softwarová architektura oddělující data, uživatelské
+ rozhraní a logiku aplikace
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MVC"
+
+\end_inset
+
+.
+ Výsledný kód aplikace se stává přehlednějším a úmožňuje změnu libovolné
+ komponenty s minimálními dopady na ostatní části aplikace (např.
+ změna databáze, výstup v XML či jiném formátu, ovládání přes webové rozhraní
+ nebo konzoli).
+\end_layout
+
+\begin_layout Description
+ORM 
+\emph on
+Object-relational mapping
+\emph default
+ (objektově relační mapování)
+\end_layout
+
+\begin_layout Standard
+Odstínění od způsobu práce odlišnými zdroji dat.
+ mezi relačními databázemi (MySQL, PostgreSQL, Oracle, MSSQL, ...) a dokonce
+ i definování vlastních zdrojů dat ať už z lokálních zdrojů s přímým přístupem
+ (formátované soubory např.
+ csv, xml) nebo za pomocí API k on-line službám (LDAP, twitter, IMAP).
+\end_layout
+
+\begin_layout Standard
+Díky množství napsaného a otestovaného kódu, není potřeba psát již jednou
+ napsané části, ale možné šetřit lidské zdroje na vývoj.
+ Tím není myšleno prosté skládání kusů posbíraného kódu, ale smysluplného
+ využívání dostupných knihoven a pluginů do programovacího jazyka nebo framework
+u.
+ 
+\end_layout
+
+\begin_layout Standard
+Díky těmto úsporám je možné se zaměřit na ergonomii dané aplikace a její
+ možnou optimalizaci, která je ovšem limitována výkonností použitého skriptovací
+ho jazyka.
+ Tato omezení lze, minimalizovat udržováním částí zpracovaného zdrojového
+ kódu v paměti nebo jeho předkompilací [@todo APC, Xcache, File] a kešováním
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+z anglického slova 
+\emph on
+cache
+\emph default
+, označuje vyrovnávací paměť
+\end_layout
+
+\end_inset
+
+ nebo kompresí výstupu.
+ 
+\end_layout
+
+\begin_layout Standard
+Další možnou optimalizací, která sice přímo nesouvisí s CakePHP, ale je
+ v něm snadno implementovatelná, je snížení počtu požadavků na stránku.
+ S používáním javascriptových frameworků a knihoven se snadno může stát,
+ že počet vkládaných odkazů na skripty a kaskádové styly (CSS) se vyšplhá
+ až k desítkám a začne se neúměrně prodlužovat doba potřebná na stažení
+ všech potřebných částí.
+ Zvyšuje se tak počet požadavků na server a díky režii protokolu HTTP
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+@todo HTTP Transfer Protokol - textově orientovaný
+\end_layout
+
+\end_inset
+
+ je ve výsledku stažen větší objem dat.
+ Tento problém úspěšně řeší projekty 
+\emph on
+jsMin
+\emph default
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://code.google.com/p/jsmin-php/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ a 
+\emph on
+CSSTidy
+\emph default
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://csstidy.sourceforge.net/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+MySQL
+\end_layout
+
+\begin_layout Standard
++ MySQL workbench, phpMyAdmin
+\end_layout
+
+\begin_layout Standard
+- triggery, 
+\end_layout
+
+\begin_layout Section
+Klient
+\end_layout
+
+\begin_layout Standard
+Pro vlastní běh aplikační logiky je možné se spolehnout, že serverová část
+ aplikace bude zpracována jednou verzí PHP interpretu v uzavřeném a otestovaném
+ prostředí.
+ Naproti tomu klientská část bude prezentována na odlišných operačních systémech
+ v mnoha prohlížečích nejrůznějších verzích.
+ Základními požadavky kladené na prohlížeč jsou:
+\end_layout
+
+\begin_layout Itemize
+XHTML 1.0
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.w3.org/TR/xhtml1/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+CSS 2.1
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.w3.org/TR/CSS2/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+JavaScript
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+JavaScript je dialektem ECMASriptu.
+ Minimálním implementovaným standardem by měl být ECMA-262, revize 3:
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.ecma-international.org/publications/standards/Ecma-262.htm"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+S XHTML a CSS prohlížeče problémy nemívají.
+ Horší je to, ale s implementacemi Javascriptu.
+ Toto bylo vyřešeno díky provázanosti CakePHP a javascriptového frameworku
+ Prototype[@todo odkaz] a jeho rozšíření Script.aculo.us[@todo odkaz], který
+ se snaží zakrýt rozdíly mezi prohlížeči.
+\end_layout
+
+\begin_layout Standard
+Prototype není jediným či nejlepším frameworkem.
+ Existují i jiné, které mají rozsáhlejší schopnosti v oblasti používaní
+ dotazovacího jazyka XPath nebo tvorby GUI
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+z anglických slov 
+\emph on
+Graphical User Interface
+\emph default
+, uživatelské prostředí, jenž úmožnuje uživateli ovládat aplikaci pomocí
+ grafických ovládacích prvků
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+Prototype a jeho rozšíření
+\end_layout
+
+\begin_layout Standard
+Prototype úmožnuje 
+\end_layout
+
+\begin_layout Itemize
+JS - Prototype, Script.aculo.us, Livepipe
+\end_layout
+
+\begin_layout Chapter
 Programátorská dokumentace
 \end_layout
 
@@ -1690,15 +1998,27 @@ V následující kapitole je popsáno a vysvětleno propojejí databázového sc
 \end_layout
 
 \begin_layout Section
-Databázové schéma
+Modely (Models)
 \end_layout
 
 \begin_layout Standard
-Normalizace???
+Předefinování stránkovače (paginate)
 \end_layout
 
 \begin_layout Section
-Adresářová struktura
+Řadiče (Controllers)
+\end_layout
+
+\begin_layout Section
+Doplňky (Pluginy)
+\end_layout
+
+\begin_layout Subsection
+Vyhledávací modul
+\end_layout
+
+\begin_layout Subsection
+Sprava verzí
 \end_layout
 
 \begin_layout Chapter
@@ -1708,7 +2028,7 @@ Uživatelská dokumentace
 \begin_layout Standard
 Tato uživatelská dokumentace si klade za cíl stručně přiblížit čtenáři výhody
  informačního systému a jeho záklaními způsoby ovládání.
- Jednotlivých kapitolách je vysvětleno, jak má správce postupovat od úvodní
+ V jednotlivých částech je vysvětleno, jak má správce postupovat od úvodní
  instalace, přes inicializaci databáze, uložení informací o uživatelích,
  přidání produktů až po tisk účetních podkladů.
  
@@ -1727,7 +2047,8 @@ Zákazníkům je vysvětleno, jak jednoduše zjistit, kolik z objednaných služ
 \end_layout
 
 \begin_layout Standard
-Studenti
+Studenti si mohou zkontrolovat svojí docházku a zobrazit rozvrh hodin na
+ další týdny.
 \end_layout
 
 \begin_layout Section
@@ -1953,7 +2274,7 @@ Dodavatelé: zaměstnanec, brigádník či jiný subjekt vykonávající zadanou
 \end_layout
 
 \begin_layout Description
-Odběratelé: @todo
+Odběratelé: zákazníci, kteří si objednali libovolný produkt.
 \end_layout
 
 \begin_layout Description
@@ -2411,6 +2732,11 @@ Dodavatel
 \end_layout
 
 \begin_layout Standard
+Dodavatel má přístup, ke všem produktům, kde měl přiřazen alespoň jeden
+ výkaz.
+\end_layout
+
+\begin_layout Standard
 zadávání výkazu,
 \end_layout
 
@@ -2481,6 +2807,54 @@ Dana Soukupová:
 Algoritmy logického návrhu relační databáze
 \emph default
 , 2004
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "CakePHP"
+
+\end_inset
+
+Cake Software Foundation: 
+\emph on
+The Cookbook
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "http://book.cakephp.org/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "MVC"
+
+\end_inset
+
+Wikipedia: 
+\emph on
+Model-view-controller
+\emph default
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "http://en.wikipedia.org/wiki/Model-view-controller"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

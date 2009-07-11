@@ -3,11 +3,13 @@
 \documentclass[12pt,czech,notitlepage]{report}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{listings}
 \pagestyle{plain}
 \setcounter{secnumdepth}{1}
 \setcounter{tocdepth}{1}
 \usepackage{babel}
 
+\usepackage{varioref}
 \usepackage{url}
 \usepackage{graphicx}
 \usepackage[unicode=true, pdfusetitle,
@@ -183,23 +185,30 @@ a summary of changes)\\
 \chapter*{Úvod}
 
 Informační systémy hrají v rychle se rozvíjejícím prostředí svou nepostradatelou
-roli a Internet jim poskytl výbornou platformu úmožňující další rozvoj
-v dříve nepříliš využívaném prostředí. Úmožňují snadné a rychlé zpracování,
+roli a Internet, který se stal dostupným pro širokou veřejnost, jim
+poskytl výbornou platformu úmožňující další rozvoj v dříve nepříliš
+využívaném virtuálním prostředí. Úmožňují snadné a rychlé zpracování,
 vyhledávání a publikovaní informací, které se díky němu stávají dostupné
 pro širší spektrum zákazníků, dodavatelů i samotných zaměstanců. 
 
-S využíváním Internetu, ale zároveň rostou nároky na funkce, bezpečnost
+S využíváním Internetu zároveň rostou nároky na funkce, bezpečnost
 a dostupnost uložených informací, které jsou pro chod firem životně
-důležité. Toto zvyšuje požadavky na robustnost řešení včetně nároků
-na nástroje použité při implementaci systému.
+důležité a bývají jejich nejcenějším majetkem. Toto zvyšuje požadavky
+na robustnost řešení včetně nároků na nástroje použité při implementaci
+systému, kdy malá chyba může zapříčinit únik citlivých dat a jejich
+zneužití.
 
 Před zavádění informačního systému je nutné stanovit, čeho chce firma
-s využitím nového systému v daném čase dosáhnout. Tomu by měla pomoci
-důkladná analýza firemních procesů a jejich optimalizace. 
+s jeho využitím v~daném čase dosáhnout. Tomu by měla pomoci důkladná
+analýza firemních procesů a~jejich optimalizace.
 
 \begin{center}
-\textit{,,Kdo nepozná vlastní firemní procesy, nemůže je zlepšovat.''}\textit{\emph{{[}citát{]}}}
+\textit{,,Kdo nepozná vlastní firemní procesy, nemůže je zlepšovat.''}\textit{\emph{\cite{informační systémy}}}
 \par\end{center}
+
+Změna zavedených procesů bývá náročná, jak z finančního hlediska,
+tak z hledika její vlastní realizace. , která se nemusí dotknout jen
+... 
 
 Z původních jednoduchých aplikací na 
 
@@ -213,9 +222,9 @@ Cílem práce je návrh a implementace informačního systému usnadňující
 technologií a frameworků v použitých programovacích jazycích.
 
 Cílem práce není vytvořit, vzhledem k náročným právním úpravám a častým
-změnám, komplexní účetní program, ale systém úmožní vytvořit přehledy
-pro účetní evidenci, které mohou být zavedeny do některého již existujícího
-programu.
+změnám, komplexní účetní program, ale pouze systém úmožnící vytvořit
+přehledy pro účetní evidenci, které mohou být zavedeny do některého
+již existujícího programu.
 
 
 \section*{Obsah práce}
@@ -263,7 +272,62 @@ V závěru jsou přehledně shrnuty výsledky, kterých bylo při vývoji
 systému dosaženo, a jsou naznačeny možnosti dalšího rozšíření.
 
 
-\chapter{Analýza úlohy}
+\chapter{Existující implementace}
+
+Existujicí aplikace lze rozdělit na několik skupin, kde ovšem žádná
+nepokrývá veškeré požadavky v plném rozsahu. První se více zaměřuje
+na správu webového obsahu. Označované anglickou zkratkou CMS%
+\footnote{\href{http://wdw}{wdw}%
+} nebo WCMS%
+\footnote{df%
+} označující webové systémy. Tyto systémy lze rozdělit do podskupin
+podle způsobu, jakým prezentují uložená data.
+\begin{description}
+\item [{Offline~zpracování}] Server vygeneruje statické HTML před samotnou
+publikací, proto takové systémy nepořebují, aby server aplikoval šablony
+na data při každém požadavku. Výhody jsou zjevné pro vytížené CMS
+používané převážně pro čtení dat. Naopak při častých změnách dat můžou
+být tyto systémy pomalé nebo neaktuální, proto je nutné si jejich
+nasazení řádně rozmyslet. Příkladem takového systému je například
+Vignette CMS%
+\footnote{\url{http://www.vignette.com/}%
+}.
+\item [{Online~zpracování}] Server generuje prezentační data až na základě
+požadavků klienta. Pro keše ... Pokročilé systémy úmožňují i úpravy
+základních šablon, bez zásahu do zdrojových kódu http://tangocms.org/
+joomla drupal ...\\
+http://php.opensourcecms.com/
+\item [{Hybridní}] ...
+\item [{E-learning}] ... Moodle
+\item [{ciele:}]~
+\item [{{*}}] strategické (plánovanie investícií…) {*} taktické (vedenie,
+kontrola rozpočtu…) {*} operatívne (každodenná rutina)
+\item [{Dôležité}] sú tiež úlohy IS:
+\item [{{*}}] manažérske (EIS - Executive IS) {*} taktické (DSS - Decision
+Support System) {*} vedenie (MIS - Management IS) {*} expertné (KWS
+- Knowledge Work System) {*} kancelárske (OIS - Office IS) {*} operatívne
+o TPS - transakčné (banky, ...) o CRM - vzťahy so zákazníkmi o RIS
+- rezervačné systémy o CAM - konštrukčné (CAD, ...) o GIS - geografické
+systémy
+\end{description}
+
+\chapter{Analýza úlohy\label{cha:Anal=0000FDza-=0000FAlohy}}
+
+Základním úkolem jazykové agentury je zajišťovat služby v oblasti
+jazykového vzdělání, překladů a tlumočení pro široké spektrum firemních
+i individuálních zákazníků.
+
+Podniky posílají poptávky bez ohledu na nabídku konkrétních kurzů.
+Manažer vyřizuje zakázku elektronickou poštou, telefonicky nebo osobně.
+Všechny získané informace musí být schopen zaznamenat pro pozdější
+zajišťování vhodných dodavatelů . 
+
+Veřejnost posílá zápisové listy s ohledem na nabídku kurzů pro veřejnost.
+Manažer sestavuje skupiny podle zápisových listů a potvrzuje místo,
+termíny a cenu výuky. Současně probíhá zajišťování lektorů.
+
+Dále jsou v kapitole popsány specifické požadavky na systém a návrhy
+jejich možného řešení.
 
 
 \section{Požadavky klienta\label{sec:Po=00017Eadavky-klienta}}
@@ -272,25 +336,52 @@ Na začátku stála žádost manažerky agentury zjednodušit proces zpracován�
 měsíčních výkazů lektorů, překladatelů a tlumočníků tvořících podklady
 pro mzdy a fakturaci služeb. Tyto měsíční výkazy neměly jednotný vzor
 a ani nebylo jednoduše možné, bez znalostí místních poměrů přiřadit
-vykázanou činnost k jednotlivým produktům.
+vykázanou činnost k jednotlivým překladům, tlumočení a výuce%
+\footnote{Na překlady, tlumočení a výuku je jednotně nahlíženo jako na výsledek
+lidské práce dále označovanou jako \emph{produkt}.%
+}.
 
 
 \subsection{Zavedení jednotných identifikátorů}
 
 Kvůli výše uvedným problémům se začalo s postupným zaváděním jednotných
-identifikátorů závazných pro všechny zúčastněné strany. Tento krok
-byl ze začátku velmi těžce snášen a trvalo několik měsíců, než se
-tento proces tvorby ustálil a začal být všemi akceptován.
-
+identifikátorů závazných pro všechny zúčastněné strany. Tento nepopulární
+krok byl ze začátku velmi těžce příjmán a trvalo několik měsíců, než
+se proces tvorby ustálil a začal být všemi akceptován.
+\begin{itemize}
+\item Z identikátoru musí být zřejmé o jakou kategorii produktu se jedná,
+pro koho je určen a kdy byl zaveden, aby se předešlo kolizím jmen
+v budoucnu.
+\item V~průběhu měsíce vkládá administrátor zadané překlady a nově zahájené
+kurzy.
+\item U produktu vloží poskytovatele, přiřadí zákazníka, studenty, lektora
+nebo překladatele a dále cenu za jednotku. 
+\item U lektora či překladatele vloží jeho sazbu za jednotku. 
+\item U kurzů vloží předpokládaný rozvh, kde jsou uvedeny dny, čas, lektor
+a učebna. Tento rozvrh slouží zároveň jako pomůcka pro stanovení předběžných
+nákladů v budoucích měsících. 
+\end{itemize}
 
 \subsection{Měsíční výkazy}
 
-Vzhledem k velkým rozdílům mezi jednotlivými lektory, překladateli
-a tlumočníky, bylo rozhodnuto, že se v první fázi začne s jednotým
-papírovým formulářem {[}@todo odkaz na prilohu{]}. Ten bude následně
-zkontrolován administrativním pracovníkem a vložen do systému, aby
-se předešlo chybám.
-
+Po zavedení identifikátorů bylo potřeba sjednotit formuláře měsíčních
+výkazů a připravit dodavatele na možnost jejich elektronického vyplňování.
+Papírové formuláře budou do systému vkládány administrativním pracovníkem
+a elektronické budou potvrzeny a uzamčeny.
+\begin{itemize}
+\item Každý měsíc si administrátor může z výkazů odpracovaných jednotek
+lektora, překladatele a tlumočníka zobrazit a vytiskout přehled, kde
+je souhrn toho, kolik jednotek opracoval v jednotlivých dnech a celkem
+u jednotlivých produktů. 
+\item Systém musí zobrazit varování při překročení stanoveného počtu vykázaných
+odpracovaných hodin nebo přeložených normostran.
+\item Podle potřeby potřebuje administrátor rychle řešit suplování a změny
+lektorů, k~tomu potřebuje aktuální stav. Příležitostně je třeba zjistit
+vytížení překladatelů.
+\item Na začátku týdne tiskne administrátor podle potřeby aktuální rozvrhy
+učeben a informuje zúčastněné strany o změnách. Časy individuální
+výuky jsou pohyblivé, lektoři musí vědět, kdy je v učebnách volno.
+\end{itemize}
 
 \subsection{Podklady pro fakturaci}
 
@@ -302,18 +393,41 @@ v systému zachyceny vazby mezi produktem, zákazníkem a vlastními účastník
 tak, aby bylo možné stanovit výslednou cenu zakázky, která může být
 závislá nejen od počtu odučených hodin či přeložených stran, ale i
 od počtu účastníků.
+\begin{itemize}
+\item Před fakturací pro klienta si administrátor může sestavit seznam položek
+k fakturaci. 
+\item Příloha za překlady a výuku se liší. U překladů není uvedeno jméno
+překladatele.
+\end{itemize}
 
+\subsection{Správa lektorů a překladatelů}
 
-\subsection{Oddělení reálných dat více agentur}
+Práce agentury spočívá mimo jiné i ve shromažďování kontaktů na osoby
+zabývající se výukou, překlady a tlumočením. Musí být úmožněno rychlé
+vyhledání a jednoduchá editace.
+\begin{itemize}
+\item V~průběhu měsíce průběžně administrátor vkládá nové dodavatele tj.
+zájemce o spolupráci a aktualizuje změny u stávajících.
+\item Jedenkrát měsíčně odesílá administrátor minibuletin ,,News'' vybraným
+lektorům a překladatelům. 
+\item ,,News'' by měly být v systému přístupné pro lektory i překladatele,
+protože obsahují přílohy platné pro celý rok.
+\end{itemize}
+
+\subsection{Oddělení správy dat více agentur}
 
 Vzhledem ke složitým poměrům v agentuře bylo potřeba oddělit evidenci
 zakázek vyřizovaných manažerem pro různé agentury a fyzické osoby,
 jenž s agenturami úzce spolupracují. 
 
+@todo
+
 
 \subsection{Úzká provázanost s webem}
 
 Evidence hodin, rozvrhy učeben
+
+@todo
 
 
 \subsection{Vícejazykový systém}
@@ -321,7 +435,10 @@ Evidence hodin, rozvrhy učeben
 Vzhledem k tomu, že je systém určen primárně pro jazykové agentury,
 kde se počítá s komunikací se zákazníky v jiném než českém jazyce,
 bylo k tomu přizpůsobit systém již od počátku.
-
+\begin{itemize}
+\item Uživatelé musí mít možnost si jednoduše vybrat mezi několika jazykovými
+variantami.
+\end{itemize}
 
 \section{Definice a upřesnění pojmů}
 
@@ -340,45 +457,187 @@ poskytování informací a dat\cite{wikipedia}.
 
 \subsection{Zakázka}
 
-CSS
 
+\subsection{CSS}
 
-\chapter{Existující implementace}
-
-Existujicí aplikace lze rozdělit na několik skupin, kde ovšem žádná
-nepokrývá veškeré požadavky v plném rozsahu. První se více zaměřuje
-na správu webového obsahu. Označované anglickou zkratkou CMS\label{CMS}
-- Content Management System, před kterou se někdy přídává W označující
-webové systémy. Tyto systémy lze rozdělit do podskupin podle způsobu,
-jakým prezentují uložená data.
-\begin{description}
-\item [{Offline~zpracování}] Server vygeneruje statické HTML před samotnou
-publikací, proto takové systémy nepořebují, aby server aplikoval šablony
-na data při každém požadavku. Výhody jsou zjevné pro vytížené CMS
-používané převážně pro čtení dat. Naopak při častých změnách dat můžou
-být tyto systémy pomalé nebo neaktuální, proto je nutné si jejich
-nasazení řádně rozmyslet. Příkladem takového systému je například
-Vignette CMS%
-\footnote{\url{http://www.vignette.com/}%
-}.
-\item [{Online~zpracování}] Server generuje prezentační data až na základě
-požadavků klienta. Pro keše
-\item [{E-learning}] ... Moodle
-\item [{ciele:}]~
-\item [{{*}}] strategické (plánovanie investícií…) {*} taktické (vedenie,
-kontrola rozpočtu…) {*} operatívne (každodenná rutina)
-\item [{Dôležité}] sú tiež úlohy IS:
-\item [{{*}}] manažérske (EIS - Executive IS) {*} taktické (DSS - Decision
-Support System) {*} vedenie (MIS - Management IS) {*} expertné (KWS
-- Knowledge Work System) {*} kancelárske (OIS - Office IS) {*} operatívne
-o TPS - transakčné (banky, ...) o CRM - vzťahy so zákazníkmi o RIS
-- rezervačné systémy o CAM - konštrukčné (CAD, ...) o GIS - geografické
-systémy
-\end{description}
 
 \chapter{Návrh řešení}
 
+
+\section{Návrh databáze}
+
+Pro ukládání dat bude realizováno v relační databázi. Ta poskytuje
+funkce pro vytvoření, čtení, změnu a smazání uložených informací%
+\footnote{Někdy je používaní zkratka \emph{CRUD} z anglických slov \emph{create},
+\emph{read}, \emph{update}, \emph{delete}.%
+} a v tomto případě se jeví jako nejlepší ze způsobů ukládání dat.
+
+V rámci testování byl rovněž vytvořen návrh zjednodušené verze XML%
+\footnote{eXtesible Mar Language @todo%
+} databáze {[}@todo priloha{]} uchovávané v souboru a zpracovávanho
+pomocí jazyka XPath, XQuery či XSLT{[}@todo popis{]}. Výsledky byly
+dobré při zpracování omezého množství dat a jednouživatelském přístupu
+k datům. Se vzrůstajícím objemem uložených dat začala projevovat prostorová
+náročnost použitého značkovacího jazyka a býlo nutné použít kompresi
+a rozdělení dat do více souborů. Druhou možnou variantou bylo použití
+něktré specializované XML databáze nebo relační databáze s podporou
+XML (@todo Oracle, MySQL). Toto řešení, ale nakonec nebylo implementováno
+ani v rámci testování.
+
+@todo XML databáze jsou sice již na velmi dobré úrovni v komerčních
+produktech, ale jejich implementace ve volně dostupných aplikacích
+mírně zaostává.%
+\footnote{\href{http://www-01.ibm.com/software/data/db2/express/}{http://www-01.ibm.com/software/data/db2/express/}%
+}
+
+Návrh dobře strukturované relační databáze vyžaduje předevších pochopení
+vztahů a~procesů fungování firmy, která ji bude využívat. Problémem
+s optimalizací navrženého modelu pomáhají řešit algoritmy logického
+návrhu relační databáze%
+\footnote{@todo vyjmenovat a nejake strucne popsat%
+}, které se snaží zajistit, aby navžená databáze byla prostorově efektivní,
+eliminovala vznik anomálií a zároveň úmožňovala rychlé zpracování
+uživatelských požadavků. Proces návrhu můžeme rozdělit na čtyři základní
+fáze\cite{soukupova 2004}: analýza požadavků a specifikace, konceptuální
+návrh, logický návrh a fyzický návrh.
+
+
+\subsection{Analýza požadavků }
+
+Analýza požadavků vycházi z informací popsaných \vpageref{cha:Anal=0000FDza-=0000FAlohy}
+a snaží se je co nepřesněji interpretovat pro použití v dalších fázích
+návrhu.
+
+
+\subsection{Konceptuální návrh}
+
+
+\subsubsection{Produkty }
+
+Ne všechny specifické informace o daných produktech je potřeba udržovat
+jako speciální atributy. Zvítězila proto varianta jedné tabulky s
+minimem položek pro produkt. V budoucí rozšiřovaní by mělo být realizováno
+pomocí tabulek se specifikými informacemi.
+\begin{itemize}
+\item \emph{Identifikátor} obsahuje infomace o jazycích, typu produktu a
+stručný jednoznačný popisek.
+\item \emph{Kategorie} určuje zařazení produktu do skupin. Některé skupiny
+produktů mohou být veřejnosti online nabízeny na webových stránkách.
+\item \emph{Poskytovatel} produktu je subjekt, který se stará o jeho realizaci.
+Hledá dodavatele i odběratele a jsou na něj vydávany faktury.
+\item \emph{Časové informace} jsou používány dle potřeb pro určení doby
+konání kurzů, tlumočení nebo upřesnění požadavků na vyhotovení překladu.
+\item \emph{Popis} je veřejná informace k produktu pro všechny zúčastněné
+strany.
+\item \emph{Nastavení způsobu účtování} pro správné stanovení ceny produktu
+(započítat množství, započítat počet účastníků na přihlášce).
+\item \emph{Jednotka} a \emph{jednotková cena}
+\end{itemize}
+
+\subsubsection{Smlouvy}
+
+V návrhu se počítá s kontrolou maximálního počtu odpracovaných jednotek.
+Některé možnosti nastavení jsou pevně zakomponované a půjde je změnit
+pouze zásahem do zdrojových kódů nebo databáze.
+\begin{itemize}
+\item \emph{Dodavatel} je smluvním partnerem jazykové agentury - \emph{poskytovatele
+}jazykových služeb
+\item \emph{Maximální počet jednotek}, které může na smlouvu vykonat.
+\item \emph{Sazba, jednotka, způsob platby }a\emph{ typ smlouvy} úmožňují
+generování účetních přehledů.
+\end{itemize}
+
+\subsubsection{Výkazy}
+
+Tabulka výkazů se nedrží papírové podoby, která je pro ukládání v
+databázi nevhodná z důvodu malé hustoty záznamů (obvykle 5-10 záznamů
+za měsíc na jeden produkt). Jednotlivé záznamy budou ukládány v oddělené
+tabulce s dalšími upřesňujícími informacemi.
+
+Z požadavků rovněž vyplívá potřeba uzamykání výkazu k danému datu.
+Jelikož se jedná o velmi důležitá data, měla by jejich kontrola prováděna
+i na databázové úrovni pomocí triggeru, pokud to bude daná databáze
+bude podporovat.
+\begin{itemize}
+\item \emph{Produkt}, ke kterému se výkaz vztahuje.
+\item \emph{Sazba za jednotku} a \emph{jednotka}, jenž náleží dodavateli,
+jako odměna.
+\item \emph{Smlouva} na níž je prováděna daná činnost.
+\item \emph{Datum} před kterým již není možné přidávat, editovat nebo mazat
+odpracované jednotky.
+\end{itemize}
+
+\subsubsection{Události}
+
+Seznam událostí je přiřazen k výkazu a každá událost je doplněna o
+upřesňující informace.
+\begin{itemize}
+\item \emph{Výkaz}, ke kterému se událost vztahuje.
+\item \emph{Počet jednotek} typu uvedeného v přiřazeném výkazu.
+\item \emph{Datum} a \emph{čas}, kdy byla práce vykonávána. Slouži rovněž
+jako rozvrh hodin.
+\item \emph{Místo} vybrané z číselníku.
+\end{itemize}
+
+\subsubsection{Přihlášky (objednávky)}
+
+Tabulka slouží k evidenci zákazníků a produktů, jenž si objednali.
+\begin{itemize}
+\item \emph{Produkt,} ke kterému se přihláška vztahuje.
+\item \emph{Zákazník} vybraný z tabulky uživatelů.
+\end{itemize}
+
+\subsubsection{Účastníci}
+
+Účastníci jsou přiřazeni k danému produktu, přes přihlášku, kde je
+definován plátce.
+\begin{itemize}
+\item \emph{Přihláška}
+\item \emph{Účastník} vybraný z tabulky uživatelů.
+\end{itemize}
+
+\subsubsection{Uživatelé}
+
+O všech uživatelích systému je potřeba vést obdobné informace. Proto
+jsou uloženi v jedné tabulce a o jejich specifikaci je rozhodnuto
+až přiřazením do skupiny. Každý uživatel může být ve více skupinách.
+\begin{itemize}
+\item \emph{Osobní údaje} - jméno, příjmení, titul a zobrazované jméno
+\item \emph{Přihlašovací údaje} - přihlašovací jméno, heslo a stav účtu
+\item \emph{Doručovací a fakturační adresa}
+\item Ostatní nečleněné informace
+\end{itemize}
+
+\subsubsection{Číselníky}
+
+Byly navrhnuty zjednodušení práce s vyplňováním formulářů a odstranění
+duplicit v tabulkách.
+\begin{itemize}
+\item \emph{Místa}
+\item \emph{Kategorie}
+\item \emph{Jednotky}
+\end{itemize}
+Uvedené informace jsou zpracovány do zjednodušeného ER diagramu v
+příloze {[}@todo zjednodušený ER{]}
+
+
+\subsection{Logický návrh}
+
+
+\subsection{Fyzický návrh}
+
+V uvedeném návrhu je potřeba zajistit integritu dat a optimalizace
+pro rychlejší přístup k datům. K tomu nám 
+
+Oracle XML DB http://www.oracle.com/technology/tech/xml/xmldb/index.html
+
 Evidence produktů
+
+Jedna z hlavních výhod XML, která ovšem není v tomto případě využívána,
+je snadná výměna dat mezi aplikacemi.
+
+Návrh dobře strukturované relační databáze je nejnáročnějším prvkem
+celé práce. Vyžaduje jak 
 
 Podklady pro fakturaci dodavatelům a mzdy
 
@@ -444,9 +703,17 @@ které splňují vetšinu požadavků jsou Zend%
 
 \subsection{CakePHP}
 
-Nám dává příležitost věnovat se návrhu schématu. MVC - Model-View-Controller
-- http://en.wikipedia.org/wiki/Model-view-controller
-
+CakePHP je open source{[}@todo{]}, rapid developent{[}@todo{]} framework\cite{CakePHP},
+který dává příležitost věnovat se návrhu schématu a logiky aplikace.
+\begin{description}
+\item [{MVC}] \emph{Model-View-Controller} (Model-Pohled-Řadič) - softwarová
+architektura oddělující data, uživatelské rozhraní a logiku aplikace\cite{MVC}.
+Výsledný kód aplikace se stává přehlednějším a úmožňuje změnu libovolné
+komponenty s minimálními dopady na ostatní části aplikace (např. změna
+databáze, výstup v XML či jiném formátu, ovládání přes webové rozhraní
+nebo konzoli).
+\item [{ORM}] \emph{Object-relational mapping} (objektově relační mapování)
+\end{description}
 Odstínění od způsobu práce odlišnými zdroji dat. mezi relačními databázemi
 (MySQL, PostgreSQL, Oracle, MSSQL, ...) a dokonce i definování vlastních
 zdrojů dat ať už z lokálních zdrojů s přímým přístupem (formátované
@@ -462,14 +729,10 @@ frameworku.
 Díky těmto úsporám je možné se zaměřit na ergonomii dané aplikace
 a její možnou optimalizaci, která je ovšem limitována výkonností použitého
 skriptovacího jazyka. Tato omezení lze, minimalizovat udržováním částí
-zpracovaného zdrojového kódu v paměti a kešováním%
+zpracovaného zdrojového kódu v paměti nebo jeho předkompilací {[}@todo
+APC, Xcache, File{]} a kešováním%
 \footnote{z anglického slova \emph{cache}, označuje vyrovnávací paměť%
 } nebo kompresí výstupu. 
-
-Tuto nepříjemnou vlastnost skriptovacích jazyků lze řešit předkompilací
-zdrojových kódů, nebo vhodným využíváním ,,keší''.
-
-APC, Xcache, File
 
 Další možnou optimalizací, která sice přímo nesouvisí s CakePHP, ale
 je v něm snadno implementovatelná, je snížení počtu požadavků na stránku.
@@ -477,8 +740,10 @@ S používáním javascriptových frameworků a knihoven se snadno může
 stát, že počet vkládaných odkazů na skripty a kaskádové styly (CSS)
 se vyšplhá až k desítkám a začne se neúměrně prodlužovat doba potřebná
 na stažení všech potřebných částí. Zvyšuje se tak počet požadavků
-na server a díky režii protokolu HTTP je ve výsledku stažen větší
-objem dat. Tento problém úspěšně řeší projekty \emph{jsMin}%
+na server a díky režii protokolu HTTP%
+\footnote{@todo HTTP Transfer Protokol - textově orientovaný%
+} je ve výsledku stažen větší objem dat. Tento problém úspěšně řeší
+projekty \emph{jsMin}%
 \footnote{\href{http://code.google.com/p/jsmin-php/}{http://code.google.com/p/jsmin-php/}%
 } a \emph{CSSTidy}%
 \footnote{\href{http://csstidy.sourceforge.net/}{http://csstidy.sourceforge.net/}%
@@ -486,6 +751,10 @@ objem dat. Tento problém úspěšně řeší projekty \emph{jsMin}%
 
 
 \subsection{MySQL}
+
++ MySQL workbench, phpMyAdmin
+
+- triggery, 
 
 
 \section{Klient}
@@ -530,23 +799,33 @@ Prototype úmožnuje
 
 \chapter{Programátorská dokumentace}
 
-V následující kapitole je popsáno a vysvětleno databázové schéma,
-základní adresářová struktura projektu, a metody použitých tříd.
+V následující kapitole je popsáno a vysvětleno propojejí databázového
+schématu s třídami, základní adresářová struktura projektu a metody
+použitých tříd.
 
 
-\section{Databázové schéma}
+\section{Modely (Models)}
 
-Normalizace???
+Předefinování stránkovače (paginate)
 
 
-\section{Adresářová struktura}
+\section{Řadiče (Controllers)}
+
+
+\section{Doplňky (Pluginy)}
+
+
+\subsection{Vyhledávací modul}
+
+
+\subsection{Sprava verzí}
 
 
 \chapter{Uživatelská dokumentace}
 
 Tato uživatelská dokumentace si klade za cíl stručně přiblížit čtenáři
-výhody informačního systému a jeho záklaními způsoby ovládání. Jednotlivých
-kapitolách je vysvětleno, jak má správce postupovat od úvodní instalace,
+výhody informačního systému a jeho záklaními způsoby ovládání. V jednotlivých
+částech je vysvětleno, jak má správce postupovat od úvodní instalace,
 přes inicializaci databáze, uložení informací o uživatelích, přidání
 produktů až po tisk účetních podkladů. 
 
@@ -557,7 +836,8 @@ Zákazníkům je vysvětleno, jak jednoduše zjistit, kolik z objednaných
 služeb již bylo zaplaceno a zkontrolovat průběh aktuálních kurzů či
 počet přeložených stran překladu.
 
-Studenti
+Studenti si mohou zkontrolovat svojí docházku a zobrazit rozvrh hodin
+na další týdny.
 
 
 \section{Instalace serveru}
@@ -612,14 +892,16 @@ heslo: isapass
 
 Pokud máme server správně nakonfigurovaný, zkopírujeme složku s aplikací
 do adresáře určeného konfigurací Apache (obvykle /var/www či C:\textbackslash{}\textbackslash{}Program
-Files\textbackslash{}apache2\textbackslash{}www). Dále je potřeba
+Files\textbackslash{}apache2\textbackslash{}www - budeme označovat
+\emph{ROOT}). Pro větší bezpečnost je doporučeno změnit ,,webroot''
+v konfiguraci apache na složku \emph{ROOT}/app/webroot. Dále je potřeba
 nastavit přihlašovací údaje k databázi podle \ref{sub:Sta=00017Een=0000ED-a-instalace}předchozí
-části.
+části v souboru \emph{ROOT}/app/config/database.php .
 
 
 \section{Inicializace databáze}
 
-V souboru \%CDROM\%/app/config/sql/isa\_init.sql se nachází MySQL
+V souboru \emph{ROOT}/app/config/sql/isa\_init.sql se nachází MySQL
 5.0+ kompatibilní skript, který vytvoří tabulky a naplní je daty nutnými
 k prvnímu přihlášení administrátora.
 
@@ -637,14 +919,18 @@ Tato sekce je rozdělena podle rolí definovaných v IS.
 \item [{Editor:}] osoba s omezenými právy k editaci vybraných modulů.
 \item [{Dodavatelé:}] zaměstnanec, brigádník či jiný subjekt vykonávající
 zadanou práci.
-\item [{Odběratelé:}] @todo
+\item [{Odběratelé:}] zákazníci, kteří si objednali libovolný produkt.
 \item [{Poskytovatelé:}] subjekty, které jsou vedeny ,,pod jednou střechou''
 a sdílí část informací.
 \item [{Účastníci:}] studenti jednotlivých kurzu. 
 \end{description}
 Výše popsané role mohou být změněny či zakázány administrátorem systému.
 Čtenáři je doporučeno číst pouze části, jenž se ho týkají.
-
+\begin{description}
+\item [{Poznámka:}] Text u odkazu na zobrazení, editaci nebo smazání záznamu
+mohou být nahrazeny po řadě obrázky: \includegraphics[scale=0.8]{more},\includegraphics[scale=0.8]{edit}
+a \includegraphics[scale=0.8]{delete}.
+\end{description}
 
 \section{Správce (hlavní manažer)}
 
@@ -664,18 +950,22 @@ Modul \noun{Uživatelé} nabízí veškeré nastavení potřebné pro definován
 možností při užívání systému osobami majícími vztah k IS. Dále jsou
 zde uchovány veškeré osobní informace důvěrného charakteru.
 \begin{description}
-\item [{Seznam~uživatelů~{[}/admin/Users/index{]}:}] V horní části se
-nachází odkazy na akce související s uživately. Filtry pro práci se
-seznamem uživatelů jsou umístěny nad hlavní tabulkou a v hlavičce
-tabulky s funkcí ,,našeptávače''.
-\item [{Přidání~uživatele~{[}/admin/Users/add{]}:}] Jedinnou povinnou
-položkou je \emph{zobrazovanné jméno}, která slouží jako popisek ve
-všech výběrových filtrech. Ostatní položky můžete vyplnit až při jejich
-potřebě ve výpisu. Volba \emph{Aktivní} slouží k aktivaci uživatelského
-účtu. Uživatel je schopen se přihlásit pouze pokud je jeho účet aktivní.
-\item [{Editace~uživatele:}] Vyberte odpovídající skupinu k editaci a
-pro uložení změn použijte tlačítko \emph{Uložit}. V případě chybového
-hlášení zkontrolujte všechny skupiny údajů.
+\item [{Filtr~seznam~uživatelů~{[}/admin/Users/index{]}:}] V horní části
+se nachází odkazy na akce související s uživately. Filtry pro práci
+se seznamem uživatelů jsou umístěny nad hlavní tabulkou a v hlavičce
+tabulky s funkcí ,,našeptávače'' a jejich zm
+\item [{Přidání~uživatele~{[}/admin/Users/add{]}:}] Odkaz na formulář
+je hlavním menu a v částech, které na uživatelích závisí. Jedinnou
+povinnou položkou je \emph{zobrazovanné jméno}, která slouží jako
+popisek ve všech výběrových filtrech. Ostatní položky můžete vyplnit
+až při jejich potřebě ve výpisu. Volba \emph{Aktivní} slouží k aktivaci
+uživatelského účtu. Uživatel je schopen se přihlásit pouze pokud je
+jeho účet aktivní.
+\item [{Editace~uživatele:}] Uživatele vyhledejte přes filtr seznamů uživatelů
+nebo přes formulář rychlého hledání. V prním případě klikněte na Vyberte
+odpovídající skupinu k editaci a pro uložení změn použijte tlačítko
+\emph{Uložit}. V případě chybového hlášení zkontrolujte všechny skupiny
+údajů.
 \item [{Zobrazení~uživatele:}] @todo
 \item [{Nastavení~či~změna~hesla:}] V přehledu uživatele klikněte na
 odkaz Změnit heslo a vyplňte nové heslo do obou kolonek. Správce může
@@ -788,6 +1078,9 @@ Zvláštní formulář na přidání produktu spolu se zákazníkem i dodavatele
 
 \section{Dodavatel}
 
+Dodavatel má přístup, ke všem produktům, kde měl přiřazen alespoň
+jeden výkaz.
+
 zadávání výkazu,
 
 evidence docházky do kurzů
@@ -797,11 +1090,94 @@ evidence docházky do kurzů
 
 Zavedení informačního systému je běh na dlouhou trať ... příprava
 dodavatelů i odběratelů na změny ve způsobu vykazování práce ...
-\begin{thebibliography}{IS}
-\bibitem[1]{informační systémy}
+\begin{thebibliography}{5}
+\bibitem{informační systémy}\href{http://www.informacny-system.sk}{http://www.informacny-system.sk}
 
-\bibitem[IS]{wikipedia}Wikipedia: \emph{Informační systém}, \\
-http://cs.wikipedia.org/wiki/Informační\_systém
+\bibitem{wikipedia}Wikipedia: \emph{Informační systém}, \\
+\href{http://cs.wikipedia.org/wiki/Informační_systém}{http://cs.wikipedia.org/wiki/Informační\_{}systém}
+
+\bibitem{soukupova 2004}Dana Soukupová: \emph{Algoritmy logického
+návrhu relační databáze}, 2004
+
+\bibitem{CakePHP}Cake Software Foundation: \emph{The Cookbook}\\
+\emph{\href{http://book.cakephp.org/}{http://book.cakephp.org/}}
+
+\bibitem{MVC}Wikipedia: \emph{Model-view-controller}\\
+\href{http://en.wikipedia.org/wiki/Model-view-controller}{http://en.wikipedia.org/wiki/Model-view-controller}
+
 \end{thebibliography}
+sadsa
 
+dasd
+
+\appendix
+
+\chapter{Ukázka XML databáze}
+
+
+\section{DTD}
+
+\inputencoding{latin2}
+\begin{lstlisting}[basicstyle={\footnotesize\ttfamily},breaklines=true,language=XML,tabsize=2]
+<!-- Evidence kurzu --> 
+<!ELEMENT courses (course+,user+)>
+ <!ELEMENT course (description,teachers,participators,events)>
+  <!ATTLIST course id ID #REQUIRED>
+ <!ELEMENT teachers (teacher)*>
+  <!ELEMENT teacher (price)>
+   <!ATTLIST teacher
+      id ID #REQUIRED
+      uid IDREF #REQUIRED
+      master (0|1) "0"
+   >
+  <!ELEMENT participators (participator)*>
+   <!ELEMENT participator (price)>
+			<!ATTLIST participator
+				id ID #REQUIRED
+				uid IDREF #REQUIRED
+			>
+    <!ELEMENT price (#PCDATA)>
+     <!ATTLIST price currency (CZK|EUR|USD) #IMPLIED >
+   <!ELEMENT events (event)*>
+		<!ATTLIST events
+			from CDATA #REQUIRED
+			to CDATA #REQUIRED
+		>
+	<!ELEMENT event (content,attendance*)>
+		<!ATTLIST event
+			teacher_id IDREF #REQUIRED
+			date CDATA #REQUIRED
+			time_from CDATA #REQUIRED
+			time_to CDATA #IMPLIED
+		>
+		<!ELEMENT content (#PCDATA|lesson)*>
+			<!ELEMENT lesson (#PCDATA|chapter)*>
+				<!ELEMENT chapter (#PCDATA)>
+		<!ELEMENT attendance EMPTY>
+			<!ATTLIST attendance
+				participator_id IDREF #REQUIRED
+			>
+	<!ELEMENT description (#PCDATA)>
+ <!ELEMENT user (name, (phone)*, (email)?)>
+  <!ATTLIST user id ID #REQUIRED>
+  <!ELEMENT name (lastname,firstname)>
+   <!ELEMENT firstname (#PCDATA)>
+   <!ELEMENT lastname (#PCDATA)>
+   <!ELEMENT phone (#PCDATA)>
+    <!ATTLIST phone type (wired | mobile) "mobile">         
+   <!ELEMENT email (#PCDATA)>
+<!-- Definice entity pro zjednodu�en� pr�ce -->
+<!ENTITY at "@">
+<!ENTITY pcz "+420">
+\end{lstlisting}
+\inputencoding{utf8}
+
+
+\section{XML}
+
+
+\section{XPath}
+
+
+\section{XQuery}
 \end{document}
