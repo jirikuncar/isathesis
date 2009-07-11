@@ -1714,6 +1714,34 @@ target "http://framework.zend.com/"
 \end_inset
 
 , Symfony a CakePHP.
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Srovnání vybraných PHP frameworků
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1749,6 +1777,105 @@ key "MVC"
  komponenty s minimálními dopady na ostatní části aplikace (např.
  změna databáze, výstup v XML či jiném formátu, ovládání přes webové rozhraní
  nebo konzoli).
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Description
+\begin_inset Graphics
+	filename basic_mvc.png
+	lyxscale 80
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagram-MVC-dotazu"
+
+\end_inset
+
+Diagram MVC dotazu
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MVC"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Obrázek
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagram-MVC-dotazu"
+
+\end_inset
+
+zobrazuje základní schéma procesu zpracování požadavku klienta na URL
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+Uniform Resource Locator
+\emph default
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "RFC1738"
+
+\end_inset
+
+(jednotný lokátor zdrojů) popisuje sémantiku a syntaxi řetězce znaků sloužící
+ k přesné specifikaci zdroje informací v prostředí Internetu.
+\end_layout
+
+\end_inset
+
+.
+ Klient pošle (1) požadavek na URL, které je plánovačem (
+\emph on
+Dispatcher
+\emph default
+) zkontrolováno a předáno (2) správnému přepínači (
+\emph on
+Controller
+\emph default
+).
+ Ten se na základě parametrů, které obdrží od plánovače, rozhodne o spuštění
+ správné akce a předání parametrů.
+ V plánovači je obsažena vlastní aplikační logika (včetně např.
+ kontroly přihlášení uživatele), která může využívat modely pro přístup
+ k uloženým datům a jejich modifikaci (3 a 4).
+ Až plánovač získá všechna potřebná data předá (5) je zbývající vrstvě -
+ pohledu (
+\emph on
+View
+\emph default
+).
+ V té jsou data zformátována do požadované podoby a poslány (6) klientovi.
 \end_layout
 
 \begin_layout Description
@@ -1756,32 +1883,81 @@ ORM
 \emph on
 Object-relational mapping
 \emph default
- (objektově relační mapování)
+ (objektově relační mapování) - programátorská technika určená pro konverzi
+ dat mezi nekompatibilními systémy určenými pro ukládání dat a objektově
+ orientovanými jazyky
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ORM"
+
+\end_inset
+
+.
+ Největší výhoda tedy spočívá v odstínění způsobu práce s odlišnými zdroji
+ dat.
+ Ať už se jde o různé relačními databáze (MySQL, PostgreSQL, Oracle, MSSQL)
+ nebo dokonce vlastní definováné zdroje dat.
+ Může se jednat formátované soubory např.
+ CSV[@todo], XML nebo za pomocí API ke službám jako LDAP, Twitter, IMAP
+ a další.
 \end_layout
 
 \begin_layout Standard
-Odstínění od způsobu práce odlišnými zdroji dat.
- mezi relačními databázemi (MySQL, PostgreSQL, Oracle, MSSQL, ...) a dokonce
- i definování vlastních zdrojů dat ať už z lokálních zdrojů s přímým přístupem
- (formátované soubory např.
- csv, xml) nebo za pomocí API k on-line službám (LDAP, twitter, IMAP).
+Mezi další výhody, které CakePHP nabízí, patří SEO optimalizace stránek,
+ podpora i18n i l10n pro tvorbu vícejazyčných aplikací.
+ Kód je již zapracován do jádra frameworku a otestován komunitou, díky které
+ není potřeba psát již jednou napsané části, ale možné šetřit lidské zdroje
+ na vlastní vývoj aplikační logiky.
 \end_layout
 
 \begin_layout Standard
-Díky množství napsaného a otestovaného kódu, není potřeba psát již jednou
- napsané části, ale možné šetřit lidské zdroje na vývoj.
- Tím není myšleno prosté skládání kusů posbíraného kódu, ale smysluplného
- využívání dostupných knihoven a pluginů do programovacího jazyka nebo framework
-u.
+Za největší přínos samotného frameworku v počátku návrhu aplikace považuji
  
+\begin_inset Quotes pld
+\end_inset
+
+pekárnu
+\begin_inset Quotes prd
+\end_inset
+
+ kódu (
+\emph on
+baker
+\emph default
+) a podporu 
+\begin_inset Quotes pld
+\end_inset
+
+lešení
+\begin_inset Quotes prd
+\end_inset
+
+ (
+\emph on
+scaffolding
+\emph default
+), které úmožňuje pracovat s automaticky generovaným rozhraním podporujícím
+ CRUD.
+ Pekárna umí vygenerovat modely i s validačními kritérii, prezentační vrstvu
+ a řadiče.
+ Navíc sama najde relace mezi tabulkami a přidá tuto informaci do odpovídajícího
+ modelu.
+\end_layout
+
+\begin_layout Standard
+Hledání relací probíhá na základě názvů tabulkek a jejich atributů.
+ Proto je doporučeno při práci s CakePHP dodržovat tyto konvence:
+\end_layout
+
+\begin_layout Itemize
+
 \end_layout
 
 \begin_layout Standard
 Díky těmto úsporám je možné se zaměřit na ergonomii dané aplikace a její
  možnou optimalizaci, která je ovšem limitována výkonností použitého skriptovací
 ho jazyka.
- Tato omezení lze, minimalizovat udržováním částí zpracovaného zdrojového
- kódu v paměti nebo jeho předkompilací [@todo APC, Xcache, File] a kešováním
+ Tato omezení lze, minimalizovat kešováním
 \begin_inset Foot
 status collapsed
 
@@ -1795,8 +1971,8 @@ cache
 
 \end_inset
 
- nebo kompresí výstupu.
- 
+ částí zpracovaného zdrojového kódu v paměti nebo jeho předkompilací [@todo
+ APC, Xcache, File].
 \end_layout
 
 \begin_layout Standard
@@ -2835,6 +3011,31 @@ target "http://book.cakephp.org/"
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
+key "CakePHP-MVC"
+
+\end_inset
+
+Cake Software Foundation: 
+\emph on
+Porozumění Model-Pohled-Controller
+\emph default
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "http://book.cakephp.org/cz/view/10/Understanding-Model-View-Controller"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
 key "MVC"
 
 \end_inset
@@ -2851,6 +3052,54 @@ Model-view-controller
 \begin_inset CommandInset href
 LatexCommand href
 target "http://en.wikipedia.org/wiki/Model-view-controller"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "RFC1738"
+
+\end_inset
+
+Berners-Lee, Masinter & McCahill: Uniform Resource Locators (URL), 
+\emph on
+RFC1738
+\emph default
+, Prosinec 1994
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.ietf.org/rfc/rfc1738.txt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "ORM"
+
+\end_inset
+
+Wikipedia: 
+\emph on
+Object-relational mapping
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "http://en.wikipedia.org/wiki/O-RM"
 
 \end_inset
 
@@ -2876,6 +3125,7 @@ DTD
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "basicstyle={\footnotesize\ttfamily},breaklines=true,language=XML,tabsize=2"
 inline false
 status open
 
@@ -3144,6 +3394,18 @@ XPath
 
 \begin_layout Section
 XQuery
+\end_layout
+
+\begin_layout Chapter
+Obsah přiloženého CD
+\end_layout
+
+\begin_layout Description
+Bakalářká
+\begin_inset space ~
+\end_inset
+
+práce tisknutelný PDF soubor s textem této práce.
 \end_layout
 
 \end_body
