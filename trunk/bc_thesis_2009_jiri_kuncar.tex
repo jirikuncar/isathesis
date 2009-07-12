@@ -419,26 +419,27 @@ protože obsahují přílohy platné pro celý rok.
 Vzhledem ke složitým poměrům v agentuře bylo potřeba oddělit evidenci
 zakázek vyřizovaných manažerem pro různé agentury a fyzické osoby,
 jenž s agenturami úzce spolupracují. 
+\begin{itemize}
+\item Při vytváření produktu manažer zvolí poskytovatele služeb podle potřeb
+zákazníka.
+\end{itemize}
 
-@todo
+\subsection{Vícejazyková podpora}
 
+Systém je určen primárně pro jazykové agentury, kde se počítá s komunikací
+se zákazníky i v jiném než českém jazyce. K tomu bylo potřeba přizpůsobit
+systém již od počátku.
+\begin{itemize}
+\item Uživatelé by měli mít možnost si jednoduše vybrat mezi několika jazykovými
+variantami.
+\end{itemize}
 
 \subsection{Úzká provázanost s webem}
 
-Evidence hodin, rozvrhy učeben
+Na webových stránkách se zobrazuje aktuální rozvh veřejných kurzů,
+jenž je i jinak dostupný na dveřích učeben. Ostatní rozvh individuální
+výuky bude dostupný po přihlášení do systému.
 
-@todo
-
-
-\subsection{Vícejazykový systém}
-
-Vzhledem k tomu, že je systém určen primárně pro jazykové agentury,
-kde se počítá s komunikací se zákazníky v jiném než českém jazyce,
-bylo k tomu přizpůsobit systém již od počátku.
-\begin{itemize}
-\item Uživatelé musí mít možnost si jednoduše vybrat mezi několika jazykovými
-variantami.
-\end{itemize}
 
 \section{Definice a upřesnění pojmů}
 
@@ -623,10 +624,14 @@ příloze {[}@todo zjednodušený ER{]}
 
 \subsection{Logický návrh}
 
+@todo
+
 
 \subsection{Fyzický návrh}
 
-V uvedeném návrhu je potřeba zajistit integritu dat a optimalizace
+@todo
+
+@notes V uvedeném návrhu je potřeba zajistit integritu dat a optimalizace
 pro rychlejší přístup k datům. K tomu nám 
 
 Oracle XML DB http://www.oracle.com/technology/tech/xml/xmldb/index.html
@@ -698,7 +703,16 @@ Při výběru byl proto důraz kladen hlavně na kvalitní dokumentaci,
 rozšířitelnost a možnost práce s různými relačními databázemi. Frameworky,
 které splňují vetšinu požadavků jsou Zend%
 \footnote{\href{http://framework.zend.com/}{http://framework.zend.com/}%
-}, Symfony a CakePHP.
+}, Symfony a CakePHP.%
+\begin{table}
+
+
+\caption{Srovnání vybraných PHP frameworků}
+
+
+
+\end{table}
+
 
 
 \subsection{CakePHP}
@@ -711,28 +725,73 @@ architektura oddělující data, uživatelské rozhraní a logiku aplikace\cite{
 Výsledný kód aplikace se stává přehlednějším a úmožňuje změnu libovolné
 komponenty s minimálními dopady na ostatní části aplikace (např. změna
 databáze, výstup v XML či jiném formátu, ovládání přes webové rozhraní
-nebo konzoli).
-\item [{ORM}] \emph{Object-relational mapping} (objektově relační mapování)
+nebo konzoli).%
+\begin{figure}
+\begin{description}
+\item [{\includegraphics[width=1\textwidth]{basic_mvc}}]~
 \end{description}
-Odstínění od způsobu práce odlišnými zdroji dat. mezi relačními databázemi
-(MySQL, PostgreSQL, Oracle, MSSQL, ...) a dokonce i definování vlastních
-zdrojů dat ať už z lokálních zdrojů s přímým přístupem (formátované
-soubory např. csv, xml) nebo za pomocí API k on-line službám (LDAP,
-twitter, IMAP).
+\centering{}\caption{\label{fig:Diagram-MVC-dotazu}Diagram MVC dotazu\cite{MVC}}
 
-Díky množství napsaného a otestovaného kódu, není potřeba psát již
-jednou napsané části, ale možné šetřit lidské zdroje na vývoj. Tím
-není myšleno prosté skládání kusů posbíraného kódu, ale smysluplného
-využívání dostupných knihoven a pluginů do programovacího jazyka nebo
-frameworku. 
+\end{figure}
+\\
+Obrázek\ref{fig:Diagram-MVC-dotazu}zobrazuje základní schéma procesu
+zpracování požadavku klienta na URL%
+\footnote{\emph{Uniform Resource Locator}\cite{RFC1738}(jednotný lokátor zdrojů)
+popisuje sémantiku a syntaxi řetězce znaků sloužící k přesné specifikaci
+zdroje informací v prostředí Internetu.%
+}. Klient pošle (1) požadavek na URL, které je plánovačem (\emph{Dispatcher})
+zkontrolováno a předáno (2) správnému přepínači (\emph{Controller}).
+Ten se na základě parametrů, které obdrží od plánovače, rozhodne o
+spuštění správné akce a předání parametrů. V plánovači je obsažena
+vlastní aplikační logika (včetně např. kontroly přihlášení uživatele),
+která může využívat modely pro přístup k uloženým datům a jejich modifikaci
+(3 a 4). Až plánovač získá všechna potřebná data předá (5) je zbývající
+vrstvě - pohledu (\emph{View}). V té jsou data zformátována do požadované
+podoby a poslány (6) klientovi.
+\item [{ORM}] \emph{Object-relational mapping} (objektově relační mapování)
+- programátorská technika určená pro konverzi dat mezi nekompatibilními
+systémy určenými pro ukládání dat a objektově orientovanými jazyky\cite{ORM}.
+Největší výhoda tedy spočívá v odstínění způsobu práce s odlišnými
+zdroji dat. Ať už se jde o různé relačními databáze (MySQL, PostgreSQL,
+Oracle, MSSQL) nebo dokonce vlastní definováné zdroje dat. Může se
+jednat formátované soubory např. CSV{[}@todo{]}, XML nebo za pomocí
+API ke službám jako LDAP, Twitter, IMAP a další. V CakePHP verze 1.2
+jsou data z tabulky mapovány na dvojrozměrné pole.
+\end{description}
+Mezi další výhody, které CakePHP nabízí, patří SEO optimalizace stránek,
+podpora i18n%
+\footnote{,,Příprava aplikace na podporu různých kulturních zvyklostí.''\cite{i18n}%
+} i l10n%
+\footnote{Jedná se o ,,doplnění aplikace o data specifická pro konkrétní národní/regionální
+prostředí''\cite{l10n}%
+} pro tvorbu vícejazyčných aplikací. Kód je již zapracován do jádra
+frameworku a otestován komunitou, díky které není potřeba psát již
+jednou napsané části, ale možné šetřit lidské zdroje na vlastní vývoj
+aplikační logiky.
 
+@todo DRY - Don't Repeat Yourself
+
+Za největší přínos samotného frameworku v počátku návrhu aplikace
+považuji ,,pekárnu'' kódu (\emph{baker}) a podporu ,,lešení''
+(\emph{scaffolding}), které úmožňuje pracovat s automaticky generovaným
+rozhraním podporujícím CRUD. Pekárna umí vygenerovat modely i s validačními
+kritérii, prezentační vrstvu a řadiče. Navíc sama najde relace mezi
+tabulkami a přidá tuto informaci do odpovídajícího modelu.
+
+Hledání relací probíhá na základě názvů tabulkek a jejich atributů.
+Proto je doporučeno při práci s CakePHP dodržovat tyto konvence, které
+nejsou nijak závazné a jdou změnit ve specifikaci každého modelu.
+\begin{itemize}
+\item názvy tabulek anglicky v množném čísle
+\item cizí klíče stejně jako tabulka v jednotném čísle a končí na ,,\_id''
+\item primární klíč má název ,,id''
+\end{itemize}
 Díky těmto úsporám je možné se zaměřit na ergonomii dané aplikace
 a její možnou optimalizaci, která je ovšem limitována výkonností použitého
-skriptovacího jazyka. Tato omezení lze, minimalizovat udržováním částí
-zpracovaného zdrojového kódu v paměti nebo jeho předkompilací {[}@todo
-APC, Xcache, File{]} a kešováním%
+skriptovacího jazyka. Tato omezení lze, minimalizovat kešováním%
 \footnote{z anglického slova \emph{cache}, označuje vyrovnávací paměť%
-} nebo kompresí výstupu. 
+} částí zpracovaného zdrojového kódu v paměti nebo jeho předkompilací
+{[}@todo APC, Xcache, File{]}.
 
 Další možnou optimalizací, která sice přímo nesouvisí s CakePHP, ale
 je v něm snadno implementovatelná, je snížení počtu požadavků na stránku.
@@ -752,9 +811,29 @@ projekty \emph{jsMin}%
 
 \subsection{MySQL}
 
-+ MySQL workbench, phpMyAdmin
-
-- triggery, 
+MySQL je multiplatformní systém pro řízení báze dat (DBMS, zkáceně
+databázový systém), který poskytuje všechny potřebné vlastnosti nutné
+pro běh tohoto informačního systému:
+\begin{itemize}
+\item cizí klíče (foreign-keys)
+\item poddotazy (subselect)
+\item pohledy (views)
+\item transakce
+\item triggery
+\item fultextové vyhledávání
+\end{itemize}
+Systém byl původně vyvinut Michaelem Wideniusem a Davidem Axmarkem
+v roce 1994, kteří se podíleli na založení firmy MySQL AB. Ta byla
+až do roku 2008, kdy byla provedena akvizice s firmou Sun Microsystems,
+jednou z největších open source společností na světě. MySQL je nabízeno
+jak pod bezplatnou licencí, tak pod komerční licencí s plnou technickou
+podporou\cite{MySQL}. Těší velké oblibě hlavně mezi vývojáři webových
+aplikací, kde je součástí sady nástrojů označované jako \emph{LAMP}.
+Tato platforma obsahuje \emph{Linux}, \emph{Apache}, \emph{MySQL}
+a \emph{PHP}. Obecně jednotlivé části mohou být zaměněny (např. PHP
+za Perl nebo Python, MySQL za Postgres) při zachování zkratky, která
+je zaužívaným označením pro operační systém, webový server, databázový
+systém a skriptovací jazyk sloužící k provozování webových stránek.
 
 
 \section{Klient}
@@ -787,7 +866,7 @@ jazyka XPath nebo tvorby GUI%
 \footnote{z anglických slov \emph{Graphical User Interface}, uživatelské prostředí,
 jenž úmožnuje uživateli ovládat aplikaci pomocí grafických ovládacích
 prvků%
-} 
+}. 
 
 
 \subsection{Prototype a jeho rozšíření}
@@ -1090,7 +1169,7 @@ evidence docházky do kurzů
 
 Zavedení informačního systému je běh na dlouhou trať ... příprava
 dodavatelů i odběratelů na změny ve způsobu vykazování práce ...
-\begin{thebibliography}{5}
+\begin{thebibliography}{11}
 \bibitem{informační systémy}\href{http://www.informacny-system.sk}{http://www.informacny-system.sk}
 
 \bibitem{wikipedia}Wikipedia: \emph{Informační systém}, \\
@@ -1102,8 +1181,26 @@ návrhu relační databáze}, 2004
 \bibitem{CakePHP}Cake Software Foundation: \emph{The Cookbook}\\
 \emph{\href{http://book.cakephp.org/}{http://book.cakephp.org/}}
 
+\bibitem{CakePHP-MVC}Cake Software Foundation: \emph{Porozumění Model-Pohled-Controller}\\
+\href{http://book.cakephp.org/cz/view/10/Understanding-Model-View-Controller}{http://book.cakephp.org/cz/view/10/Understanding-Model-View-Controller}
+
 \bibitem{MVC}Wikipedia: \emph{Model-view-controller}\\
 \href{http://en.wikipedia.org/wiki/Model-view-controller}{http://en.wikipedia.org/wiki/Model-view-controller}
+
+\bibitem{RFC1738}Berners-Lee, Masinter \& McCahill: Uniform Resource
+Locators (URL), \emph{RFC1738}, Prosinec 1994\\
+\href{http://www.ietf.org/rfc/rfc1738.txt}{http://www.ietf.org/rfc/rfc1738.txt}
+
+\bibitem{ORM}Wikipedia: \emph{Object-relational mapping}\\
+\emph{\href{http://en.wikipedia.org/wiki/O-RM}{http://en.wikipedia.org/wiki/O-RM}}
+
+\bibitem{i18n}\emph{I18n - Internacionalizace}\\
+\href{http://kore.fi.muni.cz:5080/wiki/index.php/I18n_-_Internacionalizace}{http://kore.fi.muni.cz:5080/wiki/index.php/I18n\_{}-\_{}Internacionalizace}
+
+\bibitem{l10n}\emph{PV168/Lokalizace a internacionalizace}\\
+\href{http://kore.fi.muni.cz:5080/wiki/index.php/PV168/Lokalizace_a_internacionalizace}{http://kore.fi.muni.cz:5080/wiki/index.php/PV168/Lokalizace\_{}a\_{}internacionalizace}
+
+\bibitem{MySQL}\href{http://www.mysql.com/}{http://www.mysql.com/}
 
 \end{thebibliography}
 sadsa
@@ -1180,4 +1277,11 @@ dasd
 
 
 \section{XQuery}
+
+
+\chapter{Obsah přiloženého CD}
+\begin{description}
+\item [{Bakalářká~práce}] tisknutelný PDF soubor s textem této práce.
+\end{description}
+
 \end{document}

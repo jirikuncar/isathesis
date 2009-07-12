@@ -997,8 +997,23 @@ Vzhledem ke složitým poměrům v agentuře bylo potřeba oddělit evidenci zak
  
 \end_layout
 
+\begin_layout Itemize
+Při vytváření produktu manažer zvolí poskytovatele služeb podle potřeb zákazníka.
+\end_layout
+
+\begin_layout Subsection
+Vícejazyková podpora
+\end_layout
+
 \begin_layout Standard
-@todo
+Systém je určen primárně pro jazykové agentury, kde se počítá s komunikací
+ se zákazníky i v jiném než českém jazyce.
+ K tomu bylo potřeba přizpůsobit systém již od počátku.
+\end_layout
+
+\begin_layout Itemize
+Uživatelé by měli mít možnost si jednoduše vybrat mezi několika jazykovými
+ variantami.
 \end_layout
 
 \begin_layout Subsection
@@ -1006,26 +1021,9 @@ Vzhledem ke složitým poměrům v agentuře bylo potřeba oddělit evidenci zak
 \end_layout
 
 \begin_layout Standard
-Evidence hodin, rozvrhy učeben
-\end_layout
-
-\begin_layout Standard
-@todo
-\end_layout
-
-\begin_layout Subsection
-Vícejazykový systém
-\end_layout
-
-\begin_layout Standard
-Vzhledem k tomu, že je systém určen primárně pro jazykové agentury, kde
- se počítá s komunikací se zákazníky v jiném než českém jazyce, bylo k tomu
- přizpůsobit systém již od počátku.
-\end_layout
-
-\begin_layout Itemize
-Uživatelé musí mít možnost si jednoduše vybrat mezi několika jazykovými
- variantami.
+Na webových stránkách se zobrazuje aktuální rozvh veřejných kurzů, jenž
+ je i jinak dostupný na dveřích učeben.
+ Ostatní rozvh individuální výuky bude dostupný po přihlášení do systému.
 \end_layout
 
 \begin_layout Section
@@ -1541,13 +1539,21 @@ Uvedené informace jsou zpracovány do zjednodušeného ER diagramu v příloze
 Logický návrh
 \end_layout
 
+\begin_layout Standard
+@todo
+\end_layout
+
 \begin_layout Subsection
 Fyzický návrh
 \end_layout
 
 \begin_layout Standard
-V uvedeném návrhu je potřeba zajistit integritu dat a optimalizace pro rychlejší
- přístup k datům.
+@todo
+\end_layout
+
+\begin_layout Standard
+@notes V uvedeném návrhu je potřeba zajistit integritu dat a optimalizace
+ pro rychlejší přístup k datům.
  K tomu nám 
 \end_layout
 
@@ -1900,14 +1906,68 @@ key "ORM"
  Může se jednat formátované soubory např.
  CSV[@todo], XML nebo za pomocí API ke službám jako LDAP, Twitter, IMAP
  a další.
+ V CakePHP verze 1.2 jsou data z tabulky mapovány na dvojrozměrné pole.
 \end_layout
 
 \begin_layout Standard
 Mezi další výhody, které CakePHP nabízí, patří SEO optimalizace stránek,
- podpora i18n i l10n pro tvorbu vícejazyčných aplikací.
+ podpora i18n
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Quotes pld
+\end_inset
+
+Příprava aplikace na podporu různých kulturních zvyklostí.
+\begin_inset Quotes prd
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "i18n"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ i l10n
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Jedná se o 
+\begin_inset Quotes pld
+\end_inset
+
+doplnění aplikace o data specifická pro konkrétní národní/regionální prostředí
+\begin_inset Quotes prd
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "l10n"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ pro tvorbu vícejazyčných aplikací.
  Kód je již zapracován do jádra frameworku a otestován komunitou, díky které
  není potřeba psát již jednou napsané části, ale možné šetřit lidské zdroje
  na vlastní vývoj aplikační logiky.
+\end_layout
+
+\begin_layout Standard
+@todo DRY - Don't Repeat Yourself
 \end_layout
 
 \begin_layout Standard
@@ -1946,10 +2006,35 @@ scaffolding
 
 \begin_layout Standard
 Hledání relací probíhá na základě názvů tabulkek a jejich atributů.
- Proto je doporučeno při práci s CakePHP dodržovat tyto konvence:
+ Proto je doporučeno při práci s CakePHP dodržovat tyto konvence, které
+ nejsou nijak závazné a jdou změnit ve specifikaci každého modelu.
 \end_layout
 
 \begin_layout Itemize
+názvy tabulek anglicky v množném čísle
+\end_layout
+
+\begin_layout Itemize
+cizí klíče stejně jako tabulka v jednotném čísle a končí na 
+\begin_inset Quotes pld
+\end_inset
+
+_id
+\begin_inset Quotes prd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+primární klíč má název 
+\begin_inset Quotes pld
+\end_inset
+
+id
+\begin_inset Quotes prd
+\end_inset
+
 
 \end_layout
 
@@ -2041,11 +2126,76 @@ MySQL
 \end_layout
 
 \begin_layout Standard
-+ MySQL workbench, phpMyAdmin
+MySQL je multiplatformní systém pro řízení báze dat (DBMS, zkáceně databázový
+ systém), který poskytuje všechny potřebné vlastnosti nutné pro běh tohoto
+ informačního systému:
+\end_layout
+
+\begin_layout Itemize
+cizí klíče (foreign-keys)
+\end_layout
+
+\begin_layout Itemize
+poddotazy (subselect)
+\end_layout
+
+\begin_layout Itemize
+pohledy (views)
+\end_layout
+
+\begin_layout Itemize
+transakce
+\end_layout
+
+\begin_layout Itemize
+triggery
+\end_layout
+
+\begin_layout Itemize
+fultextové vyhledávání
 \end_layout
 
 \begin_layout Standard
-- triggery, 
+Systém byl původně vyvinut Michaelem Wideniusem a Davidem Axmarkem v roce
+ 1994, kteří se podíleli na založení firmy MySQL AB.
+ Ta byla až do roku 2008, kdy byla provedena akvizice s firmou Sun Microsystems,
+ jednou z největších open source společností na světě.
+ MySQL je nabízeno jak pod bezplatnou licencí, tak pod komerční licencí
+ s plnou technickou podporou
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MySQL"
+
+\end_inset
+
+.
+ Těší velké oblibě hlavně mezi vývojáři webových aplikací, kde je součástí
+ sady nástrojů označované jako 
+\emph on
+LAMP
+\emph default
+.
+ Tato platforma obsahuje 
+\emph on
+Linux
+\emph default
+, 
+\emph on
+Apache
+\emph default
+, 
+\emph on
+MySQL
+\emph default
+ a 
+\emph on
+PHP
+\emph default
+.
+ Obecně jednotlivé části mohou být zaměněny (např.
+ PHP za Perl nebo Python, MySQL za Postgres) při zachování zkratky, která
+ je zaužívaným označením pro operační systém, webový server, databázový
+ systém a skriptovací jazyk sloužící k provozování webových stránek.
 \end_layout
 
 \begin_layout Section
@@ -2149,6 +2299,7 @@ Graphical User Interface
 
 \end_inset
 
+.
  
 \end_layout
 
@@ -3100,6 +3251,73 @@ Object-relational mapping
 \begin_inset CommandInset href
 LatexCommand href
 target "http://en.wikipedia.org/wiki/O-RM"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "i18n"
+
+\end_inset
+
+
+\emph on
+I18n - Internacionalizace
+\emph default
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "http://kore.fi.muni.cz:5080/wiki/index.php/I18n_-_Internacionalizace"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "l10n"
+
+\end_inset
+
+
+\emph on
+PV168/Lokalizace a internacionalizace
+\emph default
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "http://kore.fi.muni.cz:5080/wiki/index.php/PV168/Lokalizace_a_internacionalizace"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "MySQL"
+
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.mysql.com/"
 
 \end_inset
 
