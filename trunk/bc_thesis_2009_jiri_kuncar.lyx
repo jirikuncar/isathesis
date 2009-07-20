@@ -22,9 +22,9 @@
 
 \graphics default
 \paperfontsize 12
-\spacing single
+\spacing onehalf
 \use_hyperref false
-\papersize default
+\papersize a4paper
 \use_geometry false
 \use_amsmath 1
 \use_esint 1
@@ -1667,7 +1667,11 @@ Facebook, YouTube, Wikipedia (MediaWiki) a další
 
 \begin_layout Standard
 Vývoj jazyka sebou nese i stinné stránky.
- Mezi ty nejpodstatnější patří úpravy API
+ Po létech vývoje dochází k
+\begin_inset space ~
+\end_inset
+
+úpravavám API
 \begin_inset Foot
 status collapsed
 
@@ -1691,18 +1695,18 @@ Application Programming Interface
 \end_layout
 
 \begin_layout Standard
-Pokud programátor nechce nebo nemůže přepisovat kód může využít služeb něktrého
- z frameworků nad daným jazykem, který se snaží tyto rozdíly ve verzích
- zakrýt.
- Další nespornou výhodou používání frameworků spočívá jednodušším vývoji
- aplikací a minimalizací rizika chyb v jinak ručně psaném jádru aplikace.
+Nespornou výhodou používání frameworků spočívá jednodušším vývoji aplikací
+ a minimalizací rizika chyb v jinak ručně psaném jádru aplikace.
  Toto je zajištěno pouze pokud má kvalitní a úplnou dokumentaci a je zastřešen
  silnou komunitou nebo společností zajištující jeho vývoj.
+ Některé frameworky rovněž dokáží do jisté míry zakrýt rozdíly mezi ve verzích.
+ Děje se tak, za cenu zpomalení některých částí aplikace, díky kotroly verze
+ překladače a vykonáním alternativního kódu.
 \end_layout
 
 \begin_layout Standard
-Při výběru byl proto důraz kladen hlavně na kvalitní dokumentaci, rozšířitelnost
- a možnost práce s různými relačními databázemi.
+Při výběru frameworku byl kladen důraz hlavně na kvalitní dokumentaci, rozšířite
+lnost a možnost práce s různými relačními databázemi.
  Frameworky, které splňují vetšinu požadavků jsou Zend
 \begin_inset Foot
 status collapsed
@@ -1720,6 +1724,13 @@ target "http://framework.zend.com/"
 \end_inset
 
 , Symfony a CakePHP.
+\end_layout
+
+\begin_layout Standard
+- Symfony - používa yml na konfigurování
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
@@ -1738,10 +1749,6 @@ Srovnání vybraných PHP frameworků
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1967,7 +1974,34 @@ key "l10n"
 \end_layout
 
 \begin_layout Standard
-@todo DRY - Don't Repeat Yourself
+CakePHP zastává programátorskou filosofii 
+\emph on
+DRY
+\emph default
+ - Don't Repeat Yourself.
+ Ta zdůrazňuje, že jednotlivé části kódu by se v programu neměly opakovat,
+ jelikož se snižuje srozumitelnost kódu a při modifikaci se musí upravovat
+ stejný kód na více místech, což často vede k nesnadno odhalitelným chybám
+ programu.
+ K tomuto účelu se používají 
+\emph on
+
+\begin_inset Quotes pld
+\end_inset
+
+Pomocníci
+\begin_inset Quotes prd
+\end_inset
+
+
+\emph default
+ (
+\emph on
+Helpers
+\emph default
+), kteří daný kód generují.
+ Při potřebě změny je lze snadno upravit, bez potřeby zásahu do míst odkud
+ jsou voláni.
 \end_layout
 
 \begin_layout Standard
@@ -2170,12 +2204,11 @@ key "MySQL"
 
 .
  Těší velké oblibě hlavně mezi vývojáři webových aplikací, kde je součástí
- sady nástrojů označované jako 
+ platformy označované jako 
 \emph on
 LAMP
 \emph default
-.
- Tato platforma obsahuje 
+, která obsahuje 
 \emph on
 Linux
 \emph default
@@ -2195,7 +2228,7 @@ PHP
  Obecně jednotlivé části mohou být zaměněny (např.
  PHP za Perl nebo Python, MySQL za Postgres) při zachování zkratky, která
  je zaužívaným označením pro operační systém, webový server, databázový
- systém a skriptovací jazyk sloužící k provozování webových stránek.
+ systém a skriptovací jazyk sloužící k obsluze a generování webových stránek.
 \end_layout
 
 \begin_layout Section
@@ -2329,11 +2362,283 @@ Modely (Models)
 \end_layout
 
 \begin_layout Standard
-Předefinování stránkovače (paginate)
+Modely reprezentují data ať už fyzicky uložená v databázových tabulkách
+ nebo získaná například z webových formulářů.
+ Tato data jsou zpracována řadičem, který je získá zavoláním metody 
+\emph on
+find($typ, $parametry)
+\emph default
+ na příslušném modelu.
+ První parametr určuje typ dotazu, který může být jedním z následujích:
+\end_layout
+
+\begin_layout Description
+'all' najde všechny data splňující podmínky
+\end_layout
+
+\begin_layout Description
+'first' najde první záznam vyhovující podmínkám (liší se od předcházejícího
+ ve struktuře vráceného pole)
+\end_layout
+
+\begin_layout Description
+'count' vrátí počet vyhovujících záznamů
+\end_layout
+
+\begin_layout Description
+'list' vygeneruje pole s hodnotami ze sloupce tabulky definované v proměnné
+ 
+\emph on
+$displayField
+\emph default
+ daného modelu indexované standardně primárním klíčem
+\end_layout
+
+\begin_layout Description
+'threaded' vygeneruje vnořené pole podle zadaného intervalu (
+\emph on
+ltf 
+\emph default
+- 
+\emph on
+rght
+\emph default
+)
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+detailní popis můžete nalést na
+\begin_inset CommandInset href
+LatexCommand href
+target "http://dev.mysql.com/tech-resources/articles/hierarchical-data.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+'neighbors' vrátí položku před (
+\emph on
+prev
+\emph default
+) a za (
+\emph on
+next
+\emph default
+) položkou, která by byla nalezena pomocí 
+\emph on
+find('first', $podminky)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\small\sffamily},tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+array(
+\end_layout
+
+\begin_layout Plain Layout
+
+	'conditions' => array('Model.field' => $thisValue), 
+\end_layout
+
+\begin_layout Plain Layout
+
+	//vygeneruje klauzuji WHERE Model.field = $thisValue
+\end_layout
+
+\begin_layout Plain Layout
+
+	'recursive' => 1, //int
+\end_layout
+
+\begin_layout Plain Layout
+
+	'fields' => array('Model.field1', 'DISTINCT Model.field2'),
+\end_layout
+
+\begin_layout Plain Layout
+
+	//sloupečky v dotazu SELECT
+\end_layout
+
+\begin_layout Plain Layout
+
+	'order' => array('Model.created', 'Model.field3 DESC'),
+\end_layout
+
+\begin_layout Plain Layout
+
+	//definice klauzule ORDER BY
+\end_layout
+
+\begin_layout Plain Layout
+
+	'group' => array('Model.field'), 
+\end_layout
+
+\begin_layout Plain Layout
+
+	//sloupečky použité v klauzuli GROUP BY
+\end_layout
+
+\begin_layout Plain Layout
+
+	'limit' => n, 
+\end_layout
+
+\begin_layout Plain Layout
+
+	//počet záznamů na stránku
+\end_layout
+
+\begin_layout Plain Layout
+
+	'page' => i, //najdi i-tou stranu
+\end_layout
+
+\begin_layout Plain Layout
+
+	'callbacks' => true 
+\end_layout
+
+\begin_layout Plain Layout
+
+	//možné hodnoty jsou: false, 'before', 'after' 
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Druhý pro abstrakci dat z uživatelkých formulářu @todo
+\end_layout
+
+\begin_layout Standard
+Jelikož je kontrola konzistence dat po přidání, smazání a editaci záznamu
+ ponechána na databázi, bylo potřeba zajistit zpracování chybových hlášení
+ z databáze.
+ To se děje v metodě 
+\emph on
+AppModel::onError()
+\emph default
+, která je volána pokaždé, když metoda 
+\emph on
+DboSouce::execute()
+\emph default
+ vrátí chybu.
+ V našem případě je chyba zpracována a chybová hláška je uložena pro pozdější
+ prezentaci uživateli.
+\end_layout
+
+\begin_layout Standard
+Pro plnou lokalizaci aplikace bylo potřeba rozšířit metodu 
+\emph on
+AppModel::invalidate($záznam, $chybovéHlášení)
+\emph default
+ o překlad chybového hlášení, pokud daný záznam neprošel validací.
+ Lokalizaci lze rovněž provádět při generování pohledu, ale to se z hlediska
+ údržby kódu nejeví jako nejvhodnější řešení.
+\end_layout
+
+\begin_layout Subsection
+Doplňkové reakce/chování @todo vybrat (Behaviors)
+\end_layout
+
+\begin_layout Description
+Slugable Vytváří texty použitelné v URL z definovaných sloupců tabulky.
+\end_layout
+
+\begin_layout Description
+Versionable Ukládá aktuální verzi záznamu před změnou či smazáním.
+\end_layout
+
+\begin_layout Description
+Linkable Spojuje tabulky podle nadefinovaného typu (LEFT, RIGHT, INNER JOIN).
+ Tato vlastnost není ve verzi CakePHP 1.2.8235 oficiálně podporována.
+ Je plánována na verzi 2.0.x se syntaxi 
+\begin_inset Quotes pld
+\end_inset
+
+Model1::Model2::Model3.sloupeček = 3
+\begin_inset Quotes prd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Extend
+\begin_inset space ~
+\end_inset
+
+associations Zjednodušuje ukládání relací M:N
 \end_layout
 
 \begin_layout Section
 Řadiče (Controllers)
+\end_layout
+
+\begin_layout Subsection
+Komponenty
+\end_layout
+
+\begin_layout Description
+Email Slouží k odesílání emailů.
+ Lze používat šablony, html zprávy a přidávat přílohy.
+\end_layout
+
+\begin_layout Description
+Auth/Authmd5 Standardní knihovna přidává k heslu řetězec definovaný v app/config
+/core.php v interní proměnné Security.salt.
+ Tato vlastnost byla v systému na obtíž, hlavně kvůli přenositelnosti již
+ zadaných hesel v předchozí aplikaci.
+ Proto byla vytvořena komponenta Authmd5, která nepřidává zabezpečovací
+ řetězec k heslu.
+ Další drobnou změnou oproti původní komponentě je automatické hashovaní
+ hesla z formuláře i když není zadáno přihlašovací jméno.
+\end_layout
+
+\begin_layout Description
+P28n Ukládá změněné jazykové nastavení do Cookie.
+\end_layout
+
+\begin_layout Description
+Password
+\begin_inset space ~
+\end_inset
+
+Helper Vygeneruje 
+\begin_inset Quotes pld
+\end_inset
+
+hezké
+\begin_inset Quotes prd
+\end_inset
+
+ heslo zadané délky bez opakujících se znaků.
+\end_layout
+
+\begin_layout Description
+Autocomplete
 \end_layout
 
 \begin_layout Section
@@ -2342,6 +2647,13 @@ Doplňky (Pluginy)
 
 \begin_layout Subsection
 Vyhledávací modul
+\end_layout
+
+\begin_layout Standard
+Nejdůležitějším požadavkem na tento modul je rychlost.
+ Jelikož byla vybrán databázový systém MySQL, který ve verzi 5.2 úmožňuje
+ fultextové vyhledánání pouze nad tabulkami typu MyISAM, bylo potřeba zajistit,
+ že půjde rychle vyhledávat data obsažená tabulkách typu InnoDB.
 \end_layout
 
 \begin_layout Subsection
