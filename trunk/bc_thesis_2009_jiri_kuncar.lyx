@@ -1124,17 +1124,15 @@ eXtesible Mar Language @todo
  použitého značkovacího jazyka a býlo nutné použít kompresi a rozdělení
  dat do více souborů.
  Druhou možnou variantou bylo použití něktré specializované XML databáze
- nebo relační databáze s podporou XML (@todo Oracle, MySQL).
+ nebo relační databáze s podporou XML.
  Toto řešení, ale nakonec nebylo implementováno ani v rámci testování.
-\end_layout
-
-\begin_layout Standard
-@todo XML databáze jsou sice již na velmi dobré úrovni v komerčních produktech,
- ale jejich implementace ve volně dostupných aplikacích mírně zaostává.
+ Protože ačkoliv jsou XML databáze v komerčních produktech na velmi dobré
+ úrovni, jejich implementace ve volně dostupných aplikacích mírně zaostává.
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
+@todo
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www-01.ibm.com/software/data/db2/express/"
@@ -2358,13 +2356,87 @@ V následující kapitole je popsáno a vysvětleno propojejí databázového sc
 \end_layout
 
 \begin_layout Section
-Modely (Models)
+Modely (
+\emph on
+Models
+\emph default
+)
 \end_layout
 
 \begin_layout Standard
-Modely reprezentují data ať už fyzicky uložená v databázových tabulkách
- nebo získaná například z webových formulářů.
- Tato data jsou zpracována řadičem, který je získá zavoláním metody 
+Všechny modely v aplikaci jsou odvozeny od třídy 
+\emph on
+Object
+\emph default
+, která zakryta třídou 
+\emph on
+Overloadable
+\emph default
+.
+ Ta navržena tak, aby zakryla rozdíly mezi PHP verze 4 a 5.
+ 
+\end_layout
+
+\begin_layout Standard
+Modely jsou determinovány návrhem databáze.
+ Relace mezi jednotlivými modely odpovídají relacím v databázi a je možné
+ je upravovat ve vlastnostech dané třídy.
+ Existují čtyři druhy relací, jenž jdou v CakePHP modelovat, a mají své
+ vlastní nastavení.
+ Relace 1:1 (
+\emph on
+hasOne
+\emph default
+), 1:N (
+\emph on
+hasMany
+\emph default
+) a N:1 (
+\emph on
+belongsTo
+\emph default
+) mají většinu nastavení společnou:
+\end_layout
+
+\begin_layout Description
+className jméno třídy asociovaného modelu 
+\end_layout
+
+\begin_layout Description
+foreignKey jméno cizího klíče v asociovaném modelu
+\end_layout
+
+\begin_layout Description
+fields seznam polí, jenž mají být načteny při použití dané asociace
+\end_layout
+
+\begin_layout Description
+order část SQL dotazu sloužící k definici pořadí výsledků
+\end_layout
+
+\begin_layout Description
+conditions část SQL dotazu sloužící k filtraci nalezených výsledků
+\end_layout
+
+\begin_layout Standard
+Při modelování relace M:N (
+\emph on
+hasAndBelongsToMany - HAPTM
+\emph default
+) je potřeba nadefinovat tabulku (
+\emph on
+joinTable
+\emph default
+), přes kterou bude prováděno spojení nalezených dat, a cizí klíč do asociované
+ tabulky (
+\emph on
+associationForeignKey
+\emph default
+).
+\end_layout
+
+\begin_layout Standard
+Pro získání dat se používá metoda 
 \emph on
 find($typ, $parametry)
 \emph default
@@ -2373,20 +2445,20 @@ find($typ, $parametry)
 \end_layout
 
 \begin_layout Description
-'all' najde všechny data splňující podmínky
+all najde všechny data splňující podmínky definované ve druhém parametru
 \end_layout
 
 \begin_layout Description
-'first' najde první záznam vyhovující podmínkám (liší se od předcházejícího
+first najde první záznam vyhovující podmínkám (liší se od předcházejícího
  ve struktuře vráceného pole)
 \end_layout
 
 \begin_layout Description
-'count' vrátí počet vyhovujících záznamů
+count vrátí počet vyhovujících záznamů
 \end_layout
 
 \begin_layout Description
-'list' vygeneruje pole s hodnotami ze sloupce tabulky definované v proměnné
+list vygeneruje pole s hodnotami ze sloupce tabulky definované v proměnné
  
 \emph on
 $displayField
@@ -2395,7 +2467,7 @@ $displayField
 \end_layout
 
 \begin_layout Description
-'threaded' vygeneruje vnořené pole podle zadaného intervalu (
+threaded vygeneruje vnořené pole podle zadaného intervalu (
 \emph on
 ltf 
 \emph default
@@ -2408,14 +2480,15 @@ rght
 status collapsed
 
 \begin_layout Plain Layout
-detailní popis můžete nalést na
+Detailní popis příkladu, jak uchovávat stromové struktury v relační můžete
+ nalést na
 \begin_inset CommandInset href
 LatexCommand href
 target "http://dev.mysql.com/tech-resources/articles/hierarchical-data.html"
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
@@ -2424,7 +2497,7 @@ target "http://dev.mysql.com/tech-resources/articles/hierarchical-data.html"
 \end_layout
 
 \begin_layout Description
-'neighbors' vrátí položku před (
+neighbors vrátí položku před (
 \emph on
 prev
 \emph default
@@ -2435,6 +2508,14 @@ next
 ) položkou, která by byla nalezena pomocí 
 \emph on
 find('first', $podminky)
+\end_layout
+
+\begin_layout Standard
+Pole s vyhledávacími podmínkami může vypadat jako v následujícím příkladu,
+ kde jsou uvedeny všechny základní možnosti.
+ Další parametry mohou být přidávány pro doplňkové rozšíření chování jednotlivýc
+h modelů.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2465,7 +2546,7 @@ array(
 
 \begin_layout Plain Layout
 
-	'fields' => array('Model.field1', 'DISTINCT Model.field2'),
+	'fields' => array('Model.field1'),
 \end_layout
 
 \begin_layout Plain Layout
@@ -2529,7 +2610,212 @@ array(
 \end_layout
 
 \begin_layout Standard
-Druhý pro abstrakci dat z uživatelkých formulářu @todo
+Zajímavým parametrem je 
+\emph on
+recursive
+\emph default
+, který určuje do jaké hloubky mají být načítána data.
+ Pokud data z asociovaných modelů nejsou potřeba, je vhodné jej nastavit
+ na 
+\emph on
+-1
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+V systému, kde je potřeba vyhledávat sdružovat data podle modelů, jenž jsou
+ v řetězci asociací dále, bylo výchozí chování parametru nedostatečné.
+ Naštěstí existují doplňky, které takové činnosti úmožňují.
+\end_layout
+
+\begin_layout Subsection
+Rozšíření chování (
+\emph on
+Behaviors
+\emph default
+)
+\end_layout
+
+\begin_layout Standard
+V základní výbavě CakePHP je obsaženo rozšíření 
+\emph on
+Containable
+\emph default
+, které úmožnuje dynamicky přidávat asociované modely bez omezení hloubky
+ rekurze
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Je ovšem potřeba vzít na vědomí, že CakePHP tak vygeneruje značné množství
+ dotazů, které mohou mít vliv na výkon dané aplikace.
+\end_layout
+
+\end_inset
+
+.
+ Je to ale pouze syntaktický cukr k metodám 
+\emph on
+bindModel()
+\emph default
+ a 
+\emph on
+unbindModel()
+\emph default
+, které úmožnují definovat pouze asociace příslušící danému modelu.
+ Containtable přidává metodu 
+\emph on
+contain()
+\emph default
+, jenž je volána i pokud je nalezen index 
+\begin_inset Quotes pld
+\end_inset
+
+contain
+\begin_inset Quotes prd
+\end_inset
+
+ v poli s vyhledávacími parametry metody 
+\emph on
+find()
+\emph default
+.
+ Ta se postará o dynamickou asociaci potřebných modelů.
+\end_layout
+
+\begin_layout Standard
+Také výše zmíněné rozšíření má určité nedostatky a to hlavně pokud je potřeba
+ filtrovat data podle modelů asociovaných ve větší hloubce.
+ Proto je použité rozšíření 
+\emph on
+
+\begin_inset Quotes pld
+\end_inset
+
+Linkable
+\emph default
+
+\begin_inset Quotes prd
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "linkable"
+
+\end_inset
+
+, které má obdobnou syntaxi nastavení, ale vytváří jeden SQL dotaz za pomocí
+ klauzují JOIN.
+\end_layout
+
+\begin_layout Standard
+Pro usnadnění práce s relacemi typu M:N přes tabulku s klíči je použito
+ rozšíření 
+\emph on
+
+\begin_inset Quotes pld
+\end_inset
+
+Extend Associations
+\begin_inset Quotes prd
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ExtendAssoc"
+
+\end_inset
+
+
+\emph default
+ .
+ To úmožňuje jednoduché přidání nebo smazání asociací, bez ovlivnění ostatních
+ již existujících.
+ K tomu slouží nově definovaná sada metod:
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+
+\emph on
+habtmAdd(&$model,
+\begin_inset space ~
+\end_inset
+
+$assoc,
+\begin_inset space ~
+\end_inset
+
+$id,
+\begin_inset space ~
+\end_inset
+
+$assoc_ids
+\emph default
+) přidá asociace k danému záznamu v modelu
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+
+\emph on
+habtmDelete(&$model,
+\begin_inset space ~
+\end_inset
+
+$assoc,
+\begin_inset space ~
+\end_inset
+
+$id,
+\begin_inset space ~
+\end_inset
+
+$assoc_ids)
+\emph default
+ smaže asociace s danou kombinací klíčů
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+habtmDeleteAll(&$model,
+\begin_inset space ~
+\end_inset
+
+$assoc,
+\begin_inset space ~
+\end_inset
+
+$id) smaže včechny asociace k danému záznamu modelu
+\end_layout
+
+\begin_layout Standard
+A pro úplnost jsou zde uvedneny zbývající rozšíření.
+\end_layout
+
+\begin_layout Description
+Slugable Vytváří texty použitelné v URL z definovaných sloupců tabulky.
+\end_layout
+
+\begin_layout Description
+Versionable Ukládá aktuální verzi záznamu před změnou či smazáním.
+\end_layout
+
+\begin_layout Description
+Logable Zaznamenává akce uživatelů.
+\end_layout
+
+\begin_layout Description
+Translate @todo
+\end_layout
+
+\begin_layout Subsection
+Úpravy základních metod 
+\emph on
+AppModel
 \end_layout
 
 \begin_layout Standard
@@ -2559,51 +2845,24 @@ AppModel::invalidate($záznam, $chybovéHlášení)
  údržby kódu nejeví jako nejvhodnější řešení.
 \end_layout
 
-\begin_layout Subsection
-Doplňkové reakce/chování @todo vybrat (Behaviors)
-\end_layout
-
-\begin_layout Description
-Slugable Vytváří texty použitelné v URL z definovaných sloupců tabulky.
-\end_layout
-
-\begin_layout Description
-Versionable Ukládá aktuální verzi záznamu před změnou či smazáním.
-\end_layout
-
-\begin_layout Description
-Linkable Spojuje tabulky podle nadefinovaného typu (LEFT, RIGHT, INNER JOIN).
- Tato vlastnost není ve verzi CakePHP 1.2.8235 oficiálně podporována.
- Je plánována na verzi 2.0.x se syntaxi 
-\begin_inset Quotes pld
-\end_inset
-
-Model1::Model2::Model3.sloupeček = 3
-\begin_inset Quotes prd
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Description
-Extend
-\begin_inset space ~
-\end_inset
-
-associations Zjednodušuje ukládání relací M:N
-\end_layout
-
 \begin_layout Section
-Řadiče (Controllers)
+Řadiče (
+\emph on
+Controllers
+\emph default
+)
+\end_layout
+
+\begin_layout Standard
+Řadiče jsou používany ke správě aplikační logiky.
+ Pro možnost používat stejný kus kódu v různých řadičích je vhodné používat
+ komponenty.
+ Tyto komponenty usnadňují autentifikaci, autorizaci uživatelů, vyhledávání
+ v databázi, posílání emailů nebo validaci uživatelských formulářů.
 \end_layout
 
 \begin_layout Subsection
 Komponenty
-\end_layout
-
-\begin_layout Description
-Email Slouží k odesílání emailů.
- Lze používat šablony, html zprávy a přidávat přílohy.
 \end_layout
 
 \begin_layout Description
@@ -2618,7 +2877,34 @@ Auth/Authmd5 Standardní knihovna přidává k heslu řetězec definovaný v app
 \end_layout
 
 \begin_layout Description
-P28n Ukládá změněné jazykové nastavení do Cookie.
+P28n Při načtení komponenty se zkontroluje zda si již uživatel někdy vybral
+ jazyk, který byl uložen do cookie pomocí metody 
+\emph on
+change($lang)
+\emph default
+.
+ Pokud se jazyk v cookie nenachází zvolí se výchozí jazyk aplikace podle
+ proměnné 
+\emph on
+$_SERVER['HTTP_ACCEPT_LANGUAGE']
+\emph default
+, pokud je prohlížečem nastavena.
+ V opačném případě je použit jazyk definovaný v konstaně 
+\emph on
+DEFAULT_LANGUAGE
+\emph default
+ v souboru 
+\emph on
+app/config/core.php
+\emph default
+.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "p28n"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -2635,10 +2921,291 @@ hezké
 \end_inset
 
  heslo zadané délky bez opakujících se znaků.
+ Jednotlivé znaky jsou vybírány z řetězce 
+\emph on
+PasswordHelper::possible
+\emph default
+.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "pass-gen"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
-Autocomplete
+Autocomplete Přidává metodu 
+\emph on
+autocomplete()
+\emph default
+, která zpracuje získaná data z formuláře (data[Model][položka]), vyhledá
+ vyhovující záznamy a vygeneruje seznam s výsledky.
+ Přidání doplňkových podmínek pro vyhledávání je možné v metodě 
+\emph on
+beforeFilter()
+\emph default
+ daného řadiče nebo jeho předka.
+ Děje se tak nastavením vlastnosti 
+\emph on
+AutocompleteComponent::handles
+\emph default
+, kde index v zadaném poli určuje položky tabulky, kterých se mají podmínky
+ týkat.
+ Následující příklad je vybrán z řadiče produktů, kde má být zákazníkům
+ úmožněno vyhledávat pouze v produktech, které se jich přímo týkají.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\footnotesize\ttfamily},breaklines=true,tabsize=2"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+function beforeFilter() {
+\end_layout
+
+\begin_layout Plain Layout
+
+	parent::beforeFilter();
+\end_layout
+
+\begin_layout Plain Layout
+
+	$this->Autocomplete->handles = false;
+\end_layout
+
+\begin_layout Plain Layout
+
+	// standardně je doporučeno vypnutí všech políček
+\end_layout
+
+\begin_layout Plain Layout
+
+	if($this->Auth->user()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		if (isset($this->params['prefix']) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		if ($this->params['prefix'] === 'admin') {
+\end_layout
+
+\begin_layout Plain Layout
+
+		// podle prefixu můžeme omezit práva
+\end_layout
+
+\begin_layout Plain Layout
+
+			$this->Autocomplete->handles = array('Product.*'); 		}
+\end_layout
+
+\begin_layout Plain Layout
+
+		if ($this->params['prefix'] === 'customers') {
+\end_layout
+
+\begin_layout Plain Layout
+
+			$this->Product->Behaviors->attach('Linkable');
+\end_layout
+
+\begin_layout Plain Layout
+
+			// dynamické načtení 
+\begin_inset Quotes pld
+\end_inset
+
+chování
+\begin_inset Quotes prd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+			$this->Autocomplete->handles = array(
+\end_layout
+
+\begin_layout Plain Layout
+
+				'Product.name' => array(
+\end_layout
+
+\begin_layout Plain Layout
+
+					'link' => array('Application'),
+\end_layout
+
+\begin_layout Plain Layout
+
+					'conditions' => array(
+\end_layout
+
+\begin_layout Plain Layout
+
+	'Application.user_id' => User::get('id'))
+\end_layout
+
+\begin_layout Plain Layout
+
+	// zákazníci mohou vyhledávat pouze v produktech,
+\end_layout
+
+\begin_layout Plain Layout
+
+	// kterých se účastní
+\end_layout
+
+\begin_layout Plain Layout
+
+			));
+\end_layout
+
+\begin_layout Plain Layout
+
+		}         
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Ajaxupdate Slouží pro usnadnění editace záznamů přes AJAX za podpory javascripti
+vé knihovny 
+\emph on
+control.js
+\emph default
+, která je součástí balíku 
+\emph on
+scriptaculous.js
+\emph default
+.
+\end_layout
+
+\begin_layout Description
+Email Slouží k odesílání emailů.
+ Lze používat šablony, html zprávy a přidávat přílohy.
+\end_layout
+
+\begin_layout Description
+Filter Komponenta pro validaci vyhledávacích formulářů a vygenerování podmínek
+ pro vyhledávání.
+\end_layout
+
+\begin_layout Subsection
+Popis jednotlivých řadičů
+\end_layout
+
+\begin_layout Standard
+V této části budou popsány nejdůležitější části aplikační logiky.
+ Při vytváření základní kostry byla použita 
+\begin_inset Quotes pld
+\end_inset
+
+pekárna
+\begin_inset Quotes prd
+\end_inset
+
+ kódu, jejiž vygenerovaný kód byl posléze upraven.
+\end_layout
+
+\begin_layout Subsubsection
+Uživatelé
+\end_layout
+
+\begin_layout Standard
+Nejdůležitějšími akcemi jsou bezpochyby přihlášení a odhlášení uživatele.
+ Ty jsou zajitěny komponentou 
+\emph on
+Auth
+\emph default
+, která je nastavena v řadiči aplikace (
+\emph on
+AppController
+\emph default
+) v metodě 
+\emph on
+beforeFilter()
+\emph default
+.
+\end_layout
+
+\begin_layout Description
+login() Po přihlášení je aktualizována položka 
+\begin_inset Quotes pld
+\end_inset
+
+poslední přihlášení
+\begin_inset Quotes prd
+\end_inset
+
+ v databázi, nastavena zpráva uživateli a uživatel je přesměrován na požadovanou
+ nebo výchozí stránku.
+\end_layout
+
+\begin_layout Description
+logout() Smaže cookie, nastaví zprávu o úspěšném odhlášení a přesměruje
+ na výchozí stránku.
+\end_layout
+
+\begin_layout Description
+account() Slouží ke změně hesla uživatele.
+ Pokud jsou poslány data a hesla projdou validací, je uživateli nastaveno
+ nové heslo.
+\end_layout
+
+\begin_layout Description
+recover() Uživatel si může nechat zaslat nové heslo po zadání emailu.
+ Je vytvořen token s platností 1 den.
+ V budoucnu by bylo dobré rozšířit možnost obnovy hesla o kontrolní otázku.
+\end_layout
+
+\begin_layout Description
+verify($token) Zkontroluje zda se zadaný token nachází v databázi a pokud
+ ano, zašle uživateli nově vygenerované heslo.
+\end_layout
+
+\begin_layout Description
+register() Jednoduchá registrace uživatele po jejímž dokončení je uživateli
+ zaslán aktivační email.
+\end_layout
+
+\begin_layout Subsubsection
+Produkty
+\end_layout
+
+\begin_layout Description
+admin_export() Vygeneruje CSV soubor s nalezenými produkty.
+\end_layout
+
+\begin_layout Description
+admin_shedule() 
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Section
@@ -2654,10 +3221,6 @@ Nejdůležitějším požadavkem na tento modul je rychlost.
  Jelikož byla vybrán databázový systém MySQL, který ve verzi 5.2 úmožňuje
  fultextové vyhledánání pouze nad tabulkami typu MyISAM, bylo potřeba zajistit,
  že půjde rychle vyhledávat data obsažená tabulkách typu InnoDB.
-\end_layout
-
-\begin_layout Subsection
-Sprava verzí
 \end_layout
 
 \begin_layout Chapter
@@ -3392,6 +3955,12 @@ Zavedení informačního systému je běh na dlouhou trať ...
  příprava dodavatelů i odběratelů na změny ve způsobu vykazování práce ...
 \end_layout
 
+\begin_layout Description
+Nedostatky Pro lepší ochranu uložených dat by se měl zavést ACL - Access
+ Control List.
+ V současné verzi systému je díky 
+\end_layout
+
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
@@ -3613,6 +4182,107 @@ PV168/Lokalizace a internacionalizace
 \begin_inset CommandInset href
 LatexCommand href
 target "http://kore.fi.muni.cz:5080/wiki/index.php/PV168/Lokalizace_a_internacionalizace"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "p28n"
+
+\end_inset
+
+Jason Chow: 
+\emph on
+P28n, the top to bottom persistent internationalization tutorial
+\emph default
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "http://bakery.cakephp.org/articles/view/p28n-the-top-to-bottom-persistent-internationalization-tutorial"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "pass-gen"
+
+\end_inset
+
+
+\emph on
+Random password generator component for CakePHP
+\emph default
+, Červen 2008
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.solitechgmbh.com/2008/06/11/random-password-generator-component-for-cakephp/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "linkable"
+
+\end_inset
+
+Rafael Bandeira: 
+\emph on
+Linkable Behavior.
+ Taking it easy in your DB
+\emph default
+, Listopad 2008
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "http://blog.rafaelbandeira3.com/2008/11/16/linkable-behavior-taking-it-easy-in-your-db/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "ExtendAssoc"
+
+\end_inset
+
+Brandon Parise: 
+\emph on
+HABTM Add & Delete Behavior
+\emph default
+, Květen 2007
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "http://bakery.cakephp.org/articles/view/add-delete-habtm-behavior"
 
 \end_inset
 
