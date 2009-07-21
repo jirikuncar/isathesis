@@ -8,7 +8,7 @@
 \usepackage[left=4cm]{geometry}
 \end_preamble
 \options notitlepage
-\use_default_options false
+\use_default_options true
 \language czech
 \inputencoding utf8
 \font_roman default
@@ -22,7 +22,7 @@
 
 \graphics default
 \paperfontsize 12
-\spacing onehalf
+\spacing single
 \use_hyperref false
 \papersize a4paper
 \use_geometry false
@@ -35,14 +35,14 @@
 \topmargin 3cm
 \rightmargin 25mm
 \bottommargin 3cm
-\secnumdepth 1
-\tocdepth 1
-\paragraph_separation indent
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation skip
 \defskip medskip
 \quotes_language polish
 \papercolumns 1
 \papersides 1
-\paperpagestyle plain
+\paperpagestyle default
 \tracking_changes false
 \output_changes false
 \author "" 
@@ -462,7 +462,7 @@ Keywords: information system, PHP, MySQL
 
 \end_layout
 
-\begin_layout Chapter*
+\begin_layout Chapter
 Úvod
 \end_layout
 
@@ -1192,7 +1192,7 @@ reference "cha:Analýza-úlohy"
 \end_inset
 
  a snaží se je co nepřesněji interpretovat pro použití v dalších fázích
- návrhu.
+ návrhu a implementace.
 \end_layout
 
 \begin_layout Subsection
@@ -1307,7 +1307,7 @@ Maximální počet jednotek
 \begin_layout Itemize
 
 \emph on
-Sazba, jednotka, způsob platby 
+Způsob platby 
 \emph default
 a
 \emph on
@@ -2793,7 +2793,23 @@ $id) smaže včechny asociace k danému záznamu modelu
 \end_layout
 
 \begin_layout Standard
-A pro úplnost jsou zde uvedneny zbývající rozšíření.
+Pro překlady do cizích jazyků bylo použito rozšíření 
+\emph on
+Translate
+\emph default
+, které úmožňuje nadefinovat seznam sloupců tabulky, které mají být překládány.
+ Přeložená data jsou ukládána v oddělené tabulce (
+\emph on
+i18n
+\emph default
+ - lze změnit v konfiguraci pro každý model) a při dotazu je vytořeno spojení
+ s touto tabulkou pomocí složeného klíče - jméno modelu, cizí klíč do daného
+ modelu a jméno překládaného sloupce.
+\end_layout
+
+\begin_layout Standard
+A pro úplnost jsou zde uvedneny zbývající rozšíření použité v aplikaci,
+ které zatím nejsou součástí základních knihoven frameworku.
 \end_layout
 
 \begin_layout Description
@@ -2808,10 +2824,6 @@ Versionable Ukládá aktuální verzi záznamu před změnou či smazáním.
 Logable Zaznamenává akce uživatelů.
 \end_layout
 
-\begin_layout Description
-Translate @todo
-\end_layout
-
 \begin_layout Subsection
 Úpravy základních metod 
 \emph on
@@ -2824,7 +2836,7 @@ Jelikož je kontrola konzistence dat po přidání, smazání a editaci záznamu
  z databáze.
  To se děje v metodě 
 \emph on
-AppModel::onError()
+onError()
 \emph default
 , která je volána pokaždé, když metoda 
 \emph on
@@ -2838,7 +2850,7 @@ DboSouce::execute()
 \begin_layout Standard
 Pro plnou lokalizaci aplikace bylo potřeba rozšířit metodu 
 \emph on
-AppModel::invalidate($záznam, $chybovéHlášení)
+invalidate($záznam, $chybovéHlášení)
 \emph default
  o překlad chybového hlášení, pokud daný záznam neprošel validací.
  Lokalizaci lze rovněž provádět při generování pohledu, ale to se z hlediska
@@ -2878,7 +2890,7 @@ Auth/Authmd5 Standardní knihovna přidává k heslu řetězec definovaný v app
 
 \begin_layout Description
 P28n Při načtení komponenty se zkontroluje zda si již uživatel někdy vybral
- jazyk, který byl uložen do cookie pomocí metody 
+ vybral jazyk, který byl uložen do cookie pomocí metody 
 \emph on
 change($lang)
 \emph default
@@ -2886,7 +2898,7 @@ change($lang)
  Pokud se jazyk v cookie nenachází zvolí se výchozí jazyk aplikace podle
  proměnné 
 \emph on
-$_SERVER['HTTP_ACCEPT_LANGUAGE']
+HTTP_ACCEPT_LANGUAGE
 \emph default
 , pokud je prohlížečem nastavena.
  V opačném případě je použit jazyk definovaný v konstaně 
@@ -2921,11 +2933,11 @@ hezké
 \end_inset
 
  heslo zadané délky bez opakujících se znaků.
- Jednotlivé znaky jsou vybírány z řetězce 
+ Jednotlivé znaky jsou vybírány z řetězce vlastnosti
 \emph on
-PasswordHelper::possible
+ possible
 \emph default
-.
+ dané komponenty.
 \begin_inset CommandInset citation
 LatexCommand cite
 key "pass-gen"
@@ -2949,7 +2961,7 @@ beforeFilter()
  daného řadiče nebo jeho předka.
  Děje se tak nastavením vlastnosti 
 \emph on
-AutocompleteComponent::handles
+handles
 \emph default
 , kde index v zadaném poli určuje položky tabulky, kterých se mají podmínky
  týkat.
@@ -2995,17 +3007,27 @@ function beforeFilter() {
 
 \begin_layout Plain Layout
 
+		// podle prefixu můžeme omezit práva komponentou Auth
+\end_layout
+
+\begin_layout Plain Layout
+
 		if ($this->params['prefix'] === 'admin') {
 \end_layout
 
 \begin_layout Plain Layout
 
-		// podle prefixu můžeme omezit práva
+			$this->Autocomplete->handles = array('Product.*');
 \end_layout
 
 \begin_layout Plain Layout
 
-			$this->Autocomplete->handles = array('Product.*'); 		}
+			// administratoři mohou číst všchny položky produktu
+\end_layout
+
+\begin_layout Plain Layout
+
+		}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3119,7 +3141,11 @@ Popis jednotlivých řadičů
 \end_layout
 
 \begin_layout Standard
-V této části budou popsány nejdůležitější části aplikační logiky.
+V této části budou popsány 
+\emph on
+nejdůležitější
+\emph default
+ části aplikační logiky.
  Při vytváření základní kostry byla použita 
 \begin_inset Quotes pld
 \end_inset
@@ -3192,20 +3218,70 @@ register() Jednoduchá registrace uživatele po jejímž dokončení je uživate
  zaslán aktivační email.
 \end_layout
 
+\begin_layout Standard
+Výše uvedené akce jsou povoleny i nepřihlášeným uživatelům pomocí metody
+ 
+\emph on
+Auth::allow($akce)
+\emph default
+.
+\end_layout
+
+\begin_layout Description
+admin_account($id) Úmožní administrátorovi změnit heslo uživateli s daným
+ id bez znalosti starého.
+\end_layout
+
+\begin_layout Description
+admin_reset_password($id) Vygeneruje uživateli s daným id náhodné heslo
+ a zašle ho uživateli na email zadaný při registraci.
+\end_layout
+
+\begin_layout Description
+admin_invoiceattachment() Jakmile jsou vyplněny informace o poskytovateli,
+ zákazníkovi a časovém období, je vygenerován seznam produktů, na kterých
+ se v tomto období pracovalo.
+ Provede spojení tabulek uživatelů, slmuv, výkazů, produktů, údálostí a
+ přihlášek daného zákazníka.
+ Vyberou se pouze ty, které mají záznam v tabulce událostí v daném intervalu.
+ Nakonec jsou k nalezeným záznamům přidány informace o jednotlivých datech
+ a množství vykázaných jednotek.
+ Podle nastavení způsobu účtování je vypočítána výsledná cena bez dph.
+\end_layout
+
 \begin_layout Subsubsection
 Produkty
 \end_layout
 
-\begin_layout Description
-admin_export() Vygeneruje CSV soubor s nalezenými produkty.
-\end_layout
-
-\begin_layout Description
-admin_shedule() 
-\end_layout
-
 \begin_layout Standard
+Kromě běžných akcí pro fitrování, zobrazení, editování a smazání produktu
+ adminitrátorem, jsou zde i metody pro export dat a tisk přehledů.
+\end_layout
 
+\begin_layout Description
+admin_export() Vygeneruje CSV soubor s nalezenými produkty podle vyplněného
+ filtru.
+\end_layout
+
+\begin_layout Description
+admin_shedule() Pro každý vyfiltrovaný produkt vyhledá dny v týdnu, ve kterých
+ probíhá výuka a přidá informaci o časovém intervalu.
+\end_layout
+
+\begin_layout Description
+admin_shedulePdf() Použije výše uvedenou metodu k nalezení dat.
+ Poté vygeneruje pdf soubor a nabídne jej uživateli ke stažení.
+\end_layout
+
+\begin_layout Subsubsection
+Smlouvy
+\end_layout
+
+\begin_layout Description
+admin_payment() Na základě filtru vybere odpovídající smlouvy a vygeneruje
+ přehled pro sestavení výplat a kontrolu přijatých faktur od dodavatelů.
+ Slabinou aplikace je, že nedokáže generovat přehledy pro odvody na sociálním
+ a zdravotním pojištění placených zaměstnavatelem.
 \end_layout
 
 \begin_layout Section
