@@ -23,7 +23,16 @@
 \graphics default
 \paperfontsize 12
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref section
+\pdf_pdfusetitle true
 \papersize a4paper
 \use_geometry false
 \use_amsmath 1
@@ -37,7 +46,7 @@
 \bottommargin 3cm
 \secnumdepth 2
 \tocdepth 2
-\paragraph_separation skip
+\paragraph_separation indent
 \defskip medskip
 \quotes_language polish
 \papercolumns 1
@@ -526,17 +535,16 @@ key "informační systémy"
 \begin_layout Standard
 Změna zavedených procesů bývá náročná, jak z finančního hlediska, tak z
  hledika její vlastní realizace.
- , která se nemusí dotknout jen ...
- 
+ Důležitou roli zde hraje plánování časového hramonogramu a jeho dodržování.
 \end_layout
 
 \begin_layout Standard
-Z původních jednoduchých aplikací na 
-\end_layout
-
-\begin_layout Standard
-Informačný systém, Client/Server.
- 
+Zlepšení výsledků činnosti firmy se nemusí dostavit okamžitě po spuštění
+ nového systému, ale až po adaptaci všech zúčastněných stran.
+ Výhodou je pokud byl daný systém navržen v souladu se zaběhnutými a fungujícími
+ firemními procesy.
+ Proto bude práce věnovaná především jejich důkladnému popisu, na kterém
+ bude dále stavět.
 \end_layout
 
 \begin_layout Section*
@@ -544,16 +552,20 @@ Cíle práce
 \end_layout
 
 \begin_layout Standard
-Cílem práce je návrh a implementace informačního systému usnadňující činnost
- a spolupráci více subjektů za použití vhodných opensource technologií a
- frameworků v použitých programovacích jazycích.
+Cílem práce je návrh a základní implementace webového informačního systému
+ usnadňující činnost a spolupráci více nezávislých subjektů za použití vhodných
+ opensource technologií a frameworků v použitých programovacích jazycích.
+ V práci budou rozebrány funkce systému pro správu, uržování a sdílení informací
+ v prostředí internetu.
 \end_layout
 
 \begin_layout Standard
-Cílem práce není vytvořit, vzhledem k náročným právním úpravám a častým
- změnám, komplexní účetní program, ale pouze systém úmožnící vytvořit přehledy
+Implementovaný systém bude mimo jiné obsahovat prostředky pro správu uživatelů,
+ evidenci zakázek a fakturaci služeb.
+ Cílem práce není, vzhledem k náročným právním úpravám a častým změnám,
+ vytvořit komplexní účetní program, ale pouze systém úmožnící tvorbu přehledů
  pro účetní evidenci, které mohou být zavedeny do některého již existujícího
- programu.
+ účetního programu.
 \end_layout
 
 \begin_layout Section*
@@ -2933,7 +2945,7 @@ hezké
 \end_inset
 
  heslo zadané délky bez opakujících se znaků.
- Jednotlivé znaky jsou vybírány z řetězce vlastnosti
+ Jednotlivé znaky jsou vybírány z atributu
 \emph on
  possible
 \emph default
@@ -2959,7 +2971,7 @@ autocomplete()
 beforeFilter()
 \emph default
  daného řadiče nebo jeho předka.
- Děje se tak nastavením vlastnosti 
+ Děje se tak nastavením atributu 
 \emph on
 handles
 \emph default
@@ -3127,17 +3139,29 @@ scriptaculous.js
 \end_layout
 
 \begin_layout Description
+Filter Komponenta pro validaci vyhledávacích formulářů a vygenerování podmínek
+ pro vyhledávání.
+\end_layout
+
+\begin_layout Description
 Email Slouží k odesílání emailů.
  Lze používat šablony, html zprávy a přidávat přílohy.
 \end_layout
 
 \begin_layout Description
-Filter Komponenta pro validaci vyhledávacích formulářů a vygenerování podmínek
- pro vyhledávání.
+Request
+\begin_inset space ~
+\end_inset
+
+Handler
 \end_layout
 
 \begin_layout Subsection
-Popis jednotlivých řadičů
+Popis řadičů (
+\emph on
+Controllers
+\emph default
+)
 \end_layout
 
 \begin_layout Standard
@@ -3277,11 +3301,144 @@ admin_shedulePdf() Použije výše uvedenou metodu k nalezení dat.
 Smlouvy
 \end_layout
 
+\begin_layout Standard
+Řadič smluv definuje různý přístup k datům pro administrátora a dodavatele,
+ kteří mohou nahlížet pouze na své smlouvy a nemohou je editovat (metody
+ 
+\emph on
+employees_index()
+\emph default
+, 
+\emph on
+employess_view($id)
+\emph default
+).
+ 
+\end_layout
+
 \begin_layout Description
-admin_payment() Na základě filtru vybere odpovídající smlouvy a vygeneruje
- přehled pro sestavení výplat a kontrolu přijatých faktur od dodavatelů.
- Slabinou aplikace je, že nedokáže generovat přehledy pro odvody na sociálním
+admin_payment() Na základě filtru vybere odpovídající smlouvy a
+\begin_inset space ~
+\end_inset
+
+vygeneruje přehled pro sestavení výplat a kontrolu přijatých faktur od dodavatel
+ů.
+ Základní schéma výpočtu pro rok 2008 bylo následující:
+\begin_inset listings
+lstparams "basicstyle={\ttfamily},breaklines=true,tabsize=2"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+if typ služby == služba then
+\end_layout
+
+\begin_layout Plain Layout
+
+	if způsob platby == hotově then
+\end_layout
+
+\begin_layout Plain Layout
+
+		zaokrouhli výplatu na 50 haléřů
+\end_layout
+
+\begin_layout Plain Layout
+	
+endif
+\end_layout
+
+\begin_layout Plain Layout
+
+else if plátce daně then
+\end_layout
+
+\begin_layout Plain Layout
+
+		if výplata > 5000 then
+\end_layout
+
+\begin_layout Plain Layout
+
+			zálohová daň := 15% z výplaty
+\end_layout
+
+\begin_layout Plain Layout
+
+		else
+\end_layout
+
+\begin_layout Plain Layout
+
+			srážková daň := 15% z výplaty
+\end_layout
+
+\begin_layout Plain Layout
+
+		endif
+\end_layout
+
+\begin_layout Plain Layout
+
+endif
+\end_layout
+
+\end_inset
+
+Slabinou systému je, že nedokáže generovat přehledy pro odvody na sociálním
  a zdravotním pojištění placených zaměstnavatelem.
+\end_layout
+
+\begin_layout Subsubsection
+Příjmové doklady
+\end_layout
+
+\begin_layout Standard
+Pro zobrazení dokladu a vygenerování položek k zaplacení slouží metoda 
+\emph on
+admin_view($id)
+\emph default
+.
+ Pro každý produkt se sečtou již zaplacené položky a celkový počet položek
+ k zaplacení.
+ Rozdíl těchto dvou mezivýsledků určuje nedoplatek popřípadě přeplatek na
+ daném produktu.
+ Jelikož je rozhraní pro přidávání a mazání položek z dokladu postaveno
+ na AJAXu jsou vytvořeny dvě metody 
+\emph on
+admin_additem()
+\emph default
+ a 
+\emph on
+admin_delitem()
+\emph default
+, které po provedení akce vygenerují element s aktualizovanými položkami
+ dokladu.
+\end_layout
+
+\begin_layout Subsubsection
+Události v kalendáři
+\end_layout
+
+\begin_layout Standard
+Pro pro přehledné zobrazení údálostí jsou na výběr dvě možnosti.
+ Tou první je zobrazení všech událostí v daném měsíci v tabulce podobné
+ kalendáři.
+ K tomuto účelu slouží metoda 
+\emph on
+admin_calendar()
+\emph default
+, kterou jsou získány všechny záznamy vyhovující filtru a pro generování
+ pohledu je použit pomocník třídy 
+\emph on
+CalendarHelper::calendar()
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Pro generování týdenního je nutné nejdříve načtená data z 
 \end_layout
 
 \begin_layout Section
@@ -3294,9 +3451,9 @@ Vyhledávací modul
 
 \begin_layout Standard
 Nejdůležitějším požadavkem na tento modul je rychlost.
- Jelikož byla vybrán databázový systém MySQL, který ve verzi 5.2 úmožňuje
+ Jelikož byl vybrán databázový systém MySQL, který ve verzi 5.2 úmožňuje
  fultextové vyhledánání pouze nad tabulkami typu MyISAM, bylo potřeba zajistit,
- že půjde rychle vyhledávat data obsažená tabulkách typu InnoDB.
+ že půjde rychle vyhledávat i data obsažená tabulkách typu InnoDB.
 \end_layout
 
 \begin_layout Chapter
@@ -3885,7 +4042,7 @@ Stanovte si, jak budete daný produkt nabízet a od čeho se odvíjí náklady.
 \begin_inset space ~
 \end_inset
 
-případě, že se náklady odvíjí od počtu participujících osob zašrtněte možnost
+případě, že se náklady odvíjí od počtu zúčastněných osob zašrtněte možnost
  
 \emph on
 Počítat účastníky
@@ -3901,21 +4058,17 @@ Počítat množství
 \end_layout
 
 \begin_layout Itemize
-jednotková cena je vynásobena počtem účastníků pokud byla odpovídající volba
+Jednotková cena je vynásobena počtem účastníků pokud byla odpovídající volba
  zaškrtnuta
 \end_layout
 
 \begin_layout Itemize
-mezisoučet je vynásoben součtem odpracovaných jednotek v událostech ve výkazech
+Mezisoučet je vynásoben součtem odpracovaných jednotek v událostech ve výkazech
  přiřazených v produktu pokud byla volba 
 \emph on
 počítat množství
 \emph default
- zaškrtnuta
-\end_layout
-
-\begin_layout Itemize
-@todo možná konverze
+ zaškrtnuta.
 \end_layout
 
 \begin_layout Standard
@@ -3923,8 +4076,107 @@ Teď už zbývá doplnit zbývající povinné položky a to jednotku a jednotko
  cenu.
 \end_layout
 
+\begin_layout Subsubsection
+Filtrování produktů
+\end_layout
+
+\begin_layout Standard
+Pro filtrování produktů můžete použít 
+\begin_inset Quotes pld
+\end_inset
+
+našeptávač
+\begin_inset Quotes prd
+\end_inset
+
+ u jednotlivých polí.
+ Vyplněním části hledaného výrazu, se zobrazí seznam položek, které tento
+ výraz obsahují (obrázek
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Našeptávač"
+
+\end_inset
+
+).
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename autocomplete.png
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Našeptávač"
+
+\end_inset
+
+
+\begin_inset Quotes pld
+\end_inset
+
+Našeptávač
+\begin_inset Quotes prd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Odstranění produktu
+\end_layout
+
+\begin_layout Standard
+Odstranění produktu není povoleno, pokud obsahuje výkazy nebo přihlášky.
+ Nejprve je nutné zkontrolovat, že jednotlivé položky na výkazech nebyly
+ zaúčtovány a ty pak následně vymazat.
+ Další problém může nastat, pokud již byl vydán příjmový doklad.
+ V tom případě z něj musíte stornovat příslušté položky vztahující se k
+ danému produktu.
+ Při splnění všech těchto podmínek bude smazání úmožněno.
+\end_layout
+
 \begin_layout Subsection
 Výkazy
+\end_layout
+
+\begin_layout Subsubsection
+Vyhledání a filtrování výkazů
+\end_layout
+
+\begin_layout Standard
+V menu nebo produktech klikněte na 
+\emph on
+Zobrazit výkazy
+\emph default
+.
+ V horní tabulce je možné zaškrtnou pouze některé kategorie produktů, ke
+ kterým byly výkazy přidány.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3962,13 +4214,13 @@ V menu klikněte na položku
 \emph on
 Přidat výkaz
 \emph default
- a vyplňte následný přehledný formulář.
+ a vyplňte následný formulář.
  U dodavatele se rozlišuje se i typ smlouvy uvedený v závorce.
  Sazba a jednotka jsou rovněž povinné položky.
 \end_layout
 
 \begin_layout Standard
-Jinou možností, jak přiřadit nový výkaz, je přes modul 
+Další možností, jak přiřadit nový výkaz, je přes modul 
 \noun on
 Produkty
 \noun default
@@ -3994,6 +4246,10 @@ Přidat výkaz
 
 \begin_layout Subsubsection
 Přidání události k výkazu
+\end_layout
+
+\begin_layout Standard
+Vyhledejte a zobrazte výkaz.
 \end_layout
 
 \begin_layout Subsection
