@@ -1104,8 +1104,76 @@ Hybridní Jak již název napovídá, tak tyto systémy kombinují oba predchoz�
 \end_layout
 
 \begin_layout Standard
-Samotnou kapitolu představují různé specializované systémy pro e-learning,
+Samotnou kategorii představují různé specializované systémy pro e-learning,
  evidenci kurzů a prodej produktů.
+ Pro tyto systémy se nejčasteji užívají tyto názvy:
+\end_layout
+
+\begin_layout Itemize
+Course
+\begin_inset space ~
+\end_inset
+
+Management
+\begin_inset space ~
+\end_inset
+
+System
+\begin_inset space ~
+\end_inset
+
+(CMS
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Zkratka je v tomto případě shodná se systémy pro správu obsahu, která bude
+ dále v textu upřednotňována.
+\end_layout
+
+\end_inset
+
+) - systém pro správu kurzů
+\end_layout
+
+\begin_layout Itemize
+Learning Management System (LMS) - systém pro řízení výuky
+\end_layout
+
+\begin_layout Itemize
+Virtual Learning Enviroment (VLE) - virtuální výukové prostředí
+\end_layout
+
+\begin_layout Standard
+V posledních letech zažívají tyto systémy bouřlivý vývoj.
+ Vznikají buď jako naprosto nové systémy, nebo jako rozšíření do stávajících
+ CMS.
+ 
+\end_layout
+
+\begin_layout Standard
+Důležitým faktorem pro práci s těmito je dodržování standardů tak, aby bylo
+ možné rychle a snadno začlenit již existující výukový materiál, který může
+ vzniknout již před samotným nasazením systému.
+ Mezi tyto standardy patří SCORM - 
+\emph on
+Shareable Content Object Reference Model
+\emph default
+.
+ Je to soubor specifikací, jenž by měl daný systém podporat, aby v něm bylo
+ možné provozovat libovolný obsah vyhovující SCORM.
+\end_layout
+
+\begin_layout Standard
+Open source implementace e-learningových systému jsou již dnes hojně využívány.
+ Příkladem je Moodle, který je rozšířen v mnoha zemích včetně České republiky
+ a je využíván i na několika univerzitách - UK , ČVUT, ČZU (seznam určitě
+ není kompletní).
+ Podle oficiálních stránek umožňuje či podporuje snadnou publikaci studijních
+ materiálů, zakládání diskusních fór, sběr a hodnocení elektronicky odevzdávanýc
+h úkolů, tvorbu online testů a řadu dalších činností sloužících pro podporu
+ výuky.
+ 
 \end_layout
 
 \begin_layout Description
@@ -1761,6 +1829,8 @@ Application Programming Interface
  některé části nebo celá aplikace.
  Řešením ovšem není zůstávat na několik let staré verzi, ve které mohly
  být objeveny chyby.
+ Ale snažit se nepoužívat funkce, které mohou být v příštích verzích změněny
+ nebo zrušeny, nebo alespoň kontrolovat jejich existenci.
  
 \end_layout
 
@@ -1771,7 +1841,7 @@ Nespornou výhodou používání frameworků spočívá jednodušším vývoji a
  silnou komunitou nebo společností zajištující jeho vývoj.
  Některé frameworky rovněž dokáží do jisté míry zakrýt rozdíly mezi ve verzích.
  Děje se tak, za cenu zpomalení některých částí aplikace, díky kotroly verze
- překladače a vykonáním alternativního kódu.
+ překladače a spuštěním alternativního kódu.
 \end_layout
 
 \begin_layout Standard
@@ -1805,10 +1875,6 @@ target "http://framework.zend.com/"
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption
@@ -3277,7 +3343,7 @@ Request
 \begin_inset space ~
 \end_inset
 
-Handler
+Handler @todo
 \end_layout
 
 \begin_layout Subsection
@@ -4488,6 +4554,27 @@ Wikipedia: WYSIWYG, Červenec 2009
 \begin_inset CommandInset href
 LatexCommand href
 target "http://cs.wikipedia.org/wiki/WYSIWYG"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Moodle.cz"
+
+\end_inset
+
+Moodle: úvodní stránka
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "http://moodle.cz/"
 
 \end_inset
 
