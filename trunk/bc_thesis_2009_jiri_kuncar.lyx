@@ -609,14 +609,6 @@ optimalizace GET/POST požadavků na stránku
 \end_layout
 
 \end_deeper
-\begin_layout Itemize
-Programátorská dokumentace
-\end_layout
-
-\begin_layout Itemize
-Uživatelská dokumentace
-\end_layout
-
 \begin_layout Standard
 Poznamky k prepsani....
 \end_layout
@@ -657,124 +649,6 @@ V závěru jsou přehledně shrnuty výsledky, kterých bylo při vývoji systé
 \end_layout
 
 \begin_layout Chapter
-Existující implementace
-\end_layout
-
-\begin_layout Standard
-Existujicí aplikace lze rozdělit na několik skupin, kde ovšem žádná nepokrývá
- veškeré požadavky v plném rozsahu.
- První se více zaměřuje na správu webového obsahu.
- Označované anglickou zkratkou CMS
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "wdw"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- nebo WCMS
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-df
-\end_layout
-
-\end_inset
-
- označující webové systémy.
- Tyto systémy lze rozdělit do podskupin podle způsobu, jakým prezentují
- uložená data.
-\end_layout
-
-\begin_layout Description
-Offline
-\begin_inset space ~
-\end_inset
-
-zpracování Server vygeneruje statické HTML před samotnou publikací, proto
- takové systémy nepořebují, aby server aplikoval šablony na data při každém
- požadavku.
- Výhody jsou zjevné pro vytížené CMS používané převážně pro čtení dat.
- Naopak při častých změnách dat můžou být tyto systémy pomalé nebo neaktuální,
- proto je nutné si jejich nasazení řádně rozmyslet.
- Příkladem takového systému je například Vignette CMS
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-http://www.vignette.com/
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Description
-Online
-\begin_inset space ~
-\end_inset
-
-zpracování Server generuje prezentační data až na základě požadavků klienta.
- Pro keše ...
- Pokročilé systémy úmožňují i úpravy základních šablon, bez zásahu do zdrojových
- kódu http://tangocms.org/ joomla drupal ...
-\begin_inset Newline newline
-\end_inset
-
-http://php.opensourcecms.com/
-\end_layout
-
-\begin_layout Description
-Hybridní ...
-\end_layout
-
-\begin_layout Description
-E-learning ...
- Moodle
-\end_layout
-
-\begin_layout Description
-ciele:
-\end_layout
-
-\begin_layout Description
-* strategické (plánovanie investícií…) * taktické (vedenie, kontrola rozpočtu…)
- * operatívne (každodenná rutina)
-\end_layout
-
-\begin_layout Description
-Dôležité sú tiež úlohy IS:
-\end_layout
-
-\begin_layout Description
-* manažérske (EIS - Executive IS) * taktické (DSS - Decision Support System)
- * vedenie (MIS - Management IS) * expertné (KWS - Knowledge Work System)
- * kancelárske (OIS - Office IS) * operatívne o TPS - transakčné (banky,
- ...) o CRM - vzťahy so zákazníkmi o RIS - rezervačné systémy o CAM - konštrukčné
- (CAD, ...) o GIS - geografické systémy
-\end_layout
-
-\begin_layout Chapter
 Analýza úlohy
 \begin_inset CommandInset label
 LatexCommand label
@@ -786,9 +660,97 @@ name "cha:Analýza-úlohy"
 \end_layout
 
 \begin_layout Standard
-Základním úkolem jazykové agentury je zajišťovat služby v oblasti jazykového
- vzdělání, překladů a tlumočení pro široké spektrum firemních i individuálních
- zákazníků.
+V kapitole budou popsány základní pojmy používané při popisu požadavků klienta,
+ specifické požadavky na systém a popis základních firemních procesů.
+ Cílem je přiblížit čtenáři problematiku návrhu konkrétního informačního
+ systému a možné problémy, jenž se skrývají ve zdánlivě jednoduchých úkolech.
+\end_layout
+
+\begin_layout Section
+Definice a upřesnění pojmů
+\end_layout
+
+\begin_layout Standard
+Dále uvedené pojmy mívají v různých odvětvích mírně odlišné významy.
+ Zde budou přeneseny a vysvětleny v oblasti firem zabývající se jazykovou
+ přípravou, překlady a tlumočením.
+\end_layout
+
+\begin_layout Subsection
+Agentura
+\end_layout
+
+\begin_layout Standard
+Pojem agentura se můžeme setkat v oblastech cestovního ruchu, reklamy, personali
+stiky, bezpečnosti a jazykových služeb.
+ Dále v práci bude pojem agentury používán právě v poslední zmiňované oblasti
+ - jazykových služeb.
+\end_layout
+
+\begin_layout Standard
+Jazyková agentura je útvar usnadňující zákazníkům orientaci na trhu a zajišťujíc
+í služby spojené s výukou jazyků, tlumočením a překlady.
+ Zprostředkovává jejich realizaci a prodej za stanovenou provizi.
+\end_layout
+
+\begin_layout Subsection
+Infomační systém
+\end_layout
+
+\begin_layout Standard
+Informační systém (IS) je dosti široký pojem, který se postupem let vyvíjí
+ a nabírá nové významy.
+ Z dřívějších papírových kartoték, telefonních seznamů a další firemní evidence,
+ která se těžko v reálném čase sdílela, se vyvinuly systémy, jenž poskytují
+ firmám prostředí pro efektivnější práci a komunikaci.
+\end_layout
+
+\begin_layout Standard
+Informačním systémem rozumíme prostředí pro sběr, udržování, zpracování
+ a
+\begin_inset space ~
+\end_inset
+
+poskytování informací
+\begin_inset CommandInset citation
+LatexCommand cite
+key "wikipedia"
+
+\end_inset
+
+, ve kterém by měla zůstat zachována důvěrnost a
+\begin_inset space ~
+\end_inset
+
+integrita uložených dat.
+\end_layout
+
+\begin_layout Subsection
+Produkt
+\end_layout
+
+\begin_layout Standard
+Produktem bude rozuměno pořádání jazykové výuky pro danou skupinu lidí,
+ dále tlumočení, překlady a překlady s ověřením.
+ Jedná se tedy o spojení služeb, jejichž výsledkem je znalost cizího jazyka
+ - tedy nehmotný výrobek, a předmětů vzniklých lidkou prací - překladů.
+\end_layout
+
+\begin_layout Section
+Požadavky klienta
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Požadavky-klienta"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Základním úkolem vybrané jazykové agentury je zajišťovat služby v oblasti
+ jazykového vzdělání, překladů a tlumočení pro široké spektrum firemních
+ i individuálních zákazníků.
 \end_layout
 
 \begin_layout Standard
@@ -807,28 +769,13 @@ Veřejnost posílá zápisové listy s ohledem na nabídku kurzů pro veřejnost
 \end_layout
 
 \begin_layout Standard
-Dále jsou v kapitole popsány specifické požadavky na systém a návrhy jejich
- možného řešení.
-\end_layout
-
-\begin_layout Section
-Požadavky klienta
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Požadavky-klienta"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Na začátku stála žádost manažerky agentury zjednodušit proces zpracování
+Na začátku vývoje stála žádost manažerky agentury zjednodušit proces zpracování
  měsíčních výkazů lektorů, překladatelů a tlumočníků tvořících podklady
  pro mzdy a fakturaci služeb.
- Tyto měsíční výkazy neměly jednotný vzor a ani nebylo jednoduše možné,
- bez znalostí místních poměrů přiřadit vykázanou činnost k jednotlivým překladům
-, tlumočení a výuce
+ Na základě ní vytyčených požadavků byla zpracována základníTyto měsíční
+ výkazy neměly jednotný vzor a ani nebylo jednoduše možné, bez znalostí
+ místních poměrů přiřadit vykázanou činnost k jednotlivým překladům, tlumočení
+ a výuce
 \begin_inset Foot
 status collapsed
 
@@ -1038,40 +985,153 @@ Na webových stránkách se zobrazuje aktuální rozvh veřejných kurzů, jenž
  Ostatní rozvh individuální výuky bude dostupný po přihlášení do systému.
 \end_layout
 
-\begin_layout Section
-Definice a upřesnění pojmů
-\end_layout
-
-\begin_layout Subsection
-Agentura
-\end_layout
-
-\begin_layout Subsection*
-Infomační systém
+\begin_layout Chapter
+Existující implementace
 \end_layout
 
 \begin_layout Standard
-Informační systém (IS) je systém pro sběr, udržování, zpracování a poskytování
- informací a dat
-\begin_inset CommandInset citation
-LatexCommand cite
-key "wikipedia"
+Existujicí aplikace lze rozdělit na několik skupin.
+ Některé však nepokrývájí veškeré požadavky v plném rozsahu, nebo jsou až
+ příliž zaměřené na specifickou oblast.
+ První se více zaměřují na správu webového obsahu.
+ Označované anglickou zkratkou CMS
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "wdw"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ nebo WCMS
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+df
+\end_layout
+
+\end_inset
+
+, které označující webové systémy.
+ Tyto systémy lze rozdělit do podskupin podle způsobu, jakým prezentují
+ uložená data.
+\end_layout
+
+\begin_layout Description
+Offline
+\begin_inset space ~
+\end_inset
+
+zpracování Server vygeneruje statické HTML před samotnou publikací.
+ Proto takové systémy nepořebují, aby server aplikoval šablony na data při
+ každém požadavku.
+ Výhody jsou zjevné pro vytížené CMS používané převážně pro čtení dat.
+ Naopak při častých změnách dat mohou být tyto systémy pomalé nebo neaktuální,
+ proto je nutné si jejich nasazení řádně rozmyslet.
+ Příkladem takového systému je například Vignette CMS
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.vignette.com/
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
 .
 \end_layout
 
-\begin_layout Subsection
-Produkt
+\begin_layout Description
+Online
+\begin_inset space ~
+\end_inset
+
+zpracování Server generuje prezentační data až na základě požadavků klienta.
+ To znamená, že server má daleko více práce.
+ Proto je vhodné, aby vygenerovaná data uložil do keše a při dalším stejném
+ požadavku vrátil požadovaná data přímo z ní.
+ Mezi nejznámější open source systémy patří Joomla, Drupal, WordPress, TangoCMS,
+ DotNetNuke a Zope.
+ Pokročilé systémy úmožňují i úpravy základních šablon, bez zásahu do zdrojových
+ kódu pomocí nástrojů WYSIWYG
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Akronym vzniklý z anglické věty 
+\begin_inset Quotes pld
+\end_inset
+
+What You See Is What You Get, označuje způsob editace, při kterém je dokument
+ na obrazovce totožný s výslednou verzí
+\begin_inset CommandInset citation
+LatexCommand cite
+key "wysiwyg"
+
+\end_inset
+
+.
 \end_layout
 
-\begin_layout Subsection
-Zakázka
+\end_inset
+
+.
 \end_layout
 
-\begin_layout Subsection
-CSS
+\begin_layout Description
+Hybridní Jak již název napovídá, tak tyto systémy kombinují oba predchozí
+ přístupy.
+ Příkladem takového systému může být Blosxom, který se dočkal mnoha implementací
+ v různých programovacích jazycích.
+\end_layout
+
+\begin_layout Standard
+Samotnou kapitolu představují různé specializované systémy pro e-learning,
+ evidenci kurzů a prodej produktů.
+\end_layout
+
+\begin_layout Description
+E-learning ...
+ Moodle
+\end_layout
+
+\begin_layout Description
+ciele:
+\end_layout
+
+\begin_layout Description
+* strategické (plánovanie investícií…) * taktické (vedenie, kontrola rozpočtu…)
+ * operatívne (každodenná rutina)
+\end_layout
+
+\begin_layout Description
+Dôležité sú tiež úlohy IS:
+\end_layout
+
+\begin_layout Description
+* manažérske (EIS - Executive IS) * taktické (DSS - Decision Support System)
+ * vedenie (MIS - Management IS) * expertné (KWS - Knowledge Work System)
+ * kancelárske (OIS - Office IS) * operatívne o TPS - transakčné (banky,
+ ...) o CRM - vzťahy so zákazníkmi o RIS - rezervačné systémy o CAM - konštrukčné
+ (CAD, ...) o GIS - geografické systémy
 \end_layout
 
 \begin_layout Chapter
@@ -2318,10 +2378,45 @@ target "http://www.ecma-international.org/publications/standards/Ecma-262.htm"
 
 \begin_layout Standard
 S XHTML a CSS prohlížeče problémy nemívají.
- Horší je to, ale s implementacemi Javascriptu.
+ Horší je to, ale s implementacemi Javascriptu, které se mezi prohlížeči
+ dost liší.
  Toto bylo vyřešeno díky provázanosti CakePHP a javascriptového frameworku
- Prototype[@todo odkaz] a jeho rozšíření Script.aculo.us[@todo odkaz], který
- se snaží zakrýt rozdíly mezi prohlížeči.
+ Prototype
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Aktuální verzi naleznete na
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.prototypejs.org/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ a jeho rozšíření Script.aculo.us
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Knihovna se nachází na 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://script.aculo.us"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, které se dohromady snaží zakrýt rozdíly mezi prohlížeči a zpříjemnit uživateli
+ pracovní prostředí pomocí efektů.
 \end_layout
 
 \begin_layout Standard
@@ -2343,7 +2438,19 @@ Graphical User Interface
 \end_inset
 
 .
+ Mezi jinak hojně využívané patří JQuery, MooTools, Yahoo User Interface
+ Library a Dojo.
+ Říct, že by jeden z nich byl o mnoho lepší nejde, a proto si každý vývojář
+ musí stanovit, co od frameworku očekává.
+ Pomoci s výběrem může i několik výkonostních testů, jenž se nachází na
  
+\begin_inset CommandInset href
+LatexCommand href
+target "http://mootools.net/slickspeed/"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -2351,11 +2458,28 @@ Prototype a jeho rozšíření
 \end_layout
 
 \begin_layout Standard
-Prototype úmožnuje 
+Jak už bylo zmíněno výše, Prototype je skvěle provázán s CakePHP, který
+ tak programátorovi úmožňuje psát pouze v jednom programovacím jazyce -
+ PHP.
+ Kromě Scipt.aculo.us, je v systému použita i knihovna Livepipe
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Dokumentace a stažení knihovny na 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://livepipe.net"
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Itemize
-JS - Prototype, Script.aculo.us, Livepipe
+\end_inset
+
+, která se zaměřuje na tvorbu uživatelského rozhraní - záložky, okna a další
+ prvky známé z klasických newebových aplikací.
 \end_layout
 
 \begin_layout Chapter
@@ -3345,8 +3469,8 @@ if typ služby == služba then
 \end_layout
 
 \begin_layout Plain Layout
-	
-endif
+
+	endif
 \end_layout
 
 \begin_layout Plain Layout
@@ -4347,6 +4471,27 @@ Dana Soukupová:
 Algoritmy logického návrhu relační databáze
 \emph default
 , 2004
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "wysiwyg"
+
+\end_inset
+
+Wikipedia: WYSIWYG, Červenec 2009
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "http://cs.wikipedia.org/wiki/WYSIWYG"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Bibliography
