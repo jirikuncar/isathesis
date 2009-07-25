@@ -1103,6 +1103,10 @@ Hybridní Jak již název napovídá, tak tyto systémy kombinují oba predchoz�
  v různých programovacích jazycích.
 \end_layout
 
+\begin_layout Section
+E-Learning
+\end_layout
+
 \begin_layout Standard
 Samotnou kategorii představují různé specializované systémy pro e-learning,
  evidenci kurzů a prodej produktů.
@@ -1164,42 +1168,236 @@ Shareable Content Object Reference Model
  možné provozovat libovolný obsah vyhovující SCORM.
 \end_layout
 
+\begin_layout Subsection
+Moodle
+\end_layout
+
 \begin_layout Standard
 Open source implementace e-learningových systému jsou již dnes hojně využívány.
- Příkladem je Moodle, který je rozšířen v mnoha zemích včetně České republiky
- a je využíván i na několika univerzitách - UK , ČVUT, ČZU (seznam určitě
- není kompletní).
- Podle oficiálních stránek umožňuje či podporuje snadnou publikaci studijních
- materiálů, zakládání diskusních fór, sběr a hodnocení elektronicky odevzdávanýc
-h úkolů, tvorbu online testů a řadu dalších činností sloužících pro podporu
- výuky.
+ Příkladem je 
+\emph on
+Moodle
+\emph default
+, který je rozšířen v mnoha zemích včetně České republiky a je využíván
+ i na několika univerzitách - UK , ČVUT, ČZU (seznam určitě není kompletní).
+ Podle oficiálních stránek
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Moodle.cz"
+
+\end_inset
+
+ umožňuje či podporuje snadnou publikaci studijních materiálů, zakládání
+ diskusních fór, sběr a hodnocení elektronicky odevzdávaných úkolů, tvorbu
+ online testů a řadu dalších činností sloužících pro podporu výuky.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename moodle.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Moodle - rozhraní pro učitele
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+ATutor
+\end_layout
+
+\begin_layout Standard
+ATutor je navržen s maximálním ohledem na přístupnost dle standardu W3C
+ WCAG 1.0.
+ Při správě výukového obsahu se můžete spolehnou na kompatibilitu s SCORM
+ 1.2, pokročilou správu práv uživatelů a kurzů.
+ Úmožnuje vytvářet blogy, fóra, testy a vést evidenci o studijních výsledcích.
+\end_layout
+
+\begin_layout Standard
+Systém je snadno přizpůsobitelný pomocí témat.
+ Velkou výhodou je možnost instalovat aktualizace a opravy přímo z webového
+ prohlížeče.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename atutor-patcher.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+ATutor - instalátor aktualizací a oprav
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Claroline
+\end_layout
+
+\begin_layout Standard
+Claroline má jednoduché a přehledné rozhraní.
+ Studenti mohou využívat chat, diskuzní fóra a wiki.
+ Učitelé mají možnost vytvářet úkoly nebo cvičení a zobrazit si jejich statistik
+y.
  
 \end_layout
 
-\begin_layout Description
-E-learning ...
- Moodle
+\begin_layout Standard
+Dále systém úmožnuje import kurzů ve formátu SCORM 1.2 a nastavení přístupu
+ k jednotlivým stránkách podle příslušnoti ke skupinám.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename claroline.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Claroline - rozhraní pro vedoucího kurzu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+eFront
+\end_layout
+
+\begin_layout Standard
+EFront je vysoce propracovaný systém postavený na technologii AJAX s atraktivním
+ designem.
+ Samozřejmostí je podpora vícejazyková podpora a SCORM.
+ Pro větší firmy může být přínosem spolupráce s LDAP.
+\end_layout
+
+\begin_layout Standard
+Výčet všech funkcí by byl velmi obsáhlý, proto jsou zde uvedeny pouze nejzajímav
+ější:
+\end_layout
+
+\begin_layout Itemize
+správa uživatelů, lekcí, kurzů a kategorií
+\end_layout
+
+\begin_layout Itemize
+správce souborů a digitální knihovny
+\end_layout
+
+\begin_layout Itemize
+tvorba testů
+\end_layout
+
+\begin_layout Itemize
+fóra, chat, kalendář
+\end_layout
+
+\begin_layout Itemize
+pokrokové stopování (informace o pokroku uživatele v lekcích), historie
+ akcí
+\end_layout
+
+\begin_layout Itemize
+tvorba vlastních certifikátů
+\end_layout
+
+\begin_layout Itemize
+platební nástroj - Paypal
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename efront.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+eFront - úvodní administrátorská obrazovka
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
-ciele:
-\end_layout
-
-\begin_layout Description
-* strategické (plánovanie investícií…) * taktické (vedenie, kontrola rozpočtu…)
- * operatívne (každodenná rutina)
-\end_layout
-
-\begin_layout Description
-Dôležité sú tiež úlohy IS:
-\end_layout
-
-\begin_layout Description
-* manažérske (EIS - Executive IS) * taktické (DSS - Decision Support System)
- * vedenie (MIS - Management IS) * expertné (KWS - Knowledge Work System)
- * kancelárske (OIS - Office IS) * operatívne o TPS - transakčné (banky,
- ...) o CRM - vzťahy so zákazníkmi o RIS - rezervačné systémy o CAM - konštrukčné
- (CAD, ...) o GIS - geografické systémy
+@todo ostatni webove informacni systemy Plone
 \end_layout
 
 \begin_layout Chapter
