@@ -1,12 +1,9 @@
 %% LyX 1.6.2 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[12pt,czech,notitlepage]{report}
+\documentclass[12pt,a4paper,czech,notitlepage]{report}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{listings}
-\pagestyle{plain}
-\setcounter{secnumdepth}{1}
-\setcounter{tocdepth}{1}
 \usepackage{babel}
 
 \usepackage{varioref}
@@ -14,12 +11,21 @@
 \usepackage{graphicx}
 \usepackage[unicode=true, pdfusetitle,
  bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
- breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ breaklinks=true,pdfborder={0 0 0},backref=section,colorlinks=false]
  {hyperref}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
 \newcommand{\noun}[1]{\textsc{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\newenvironment{lyxlist}[1]
+{\begin{list}{}
+{\settowidth{\labelwidth}{#1}
+ \setlength{\leftmargin}{\labelwidth}
+ \addtolength{\leftmargin}{\labelsep}
+ \renewcommand{\makelabel}[1]{##1\hfil}}}
+{\end{list}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
 \usepackage{a4wide}
@@ -182,7 +188,7 @@ a summary of changes)\\
 \newpage{}
 
 
-\chapter*{Úvod}
+\chapter{Úvod}
 
 Informační systémy hrají v rychle se rozvíjejícím prostředí svou nepostradatelou
 roli a Internet, který se stal dostupným pro širokou veřejnost, jim
@@ -207,24 +213,30 @@ analýza firemních procesů a~jejich optimalizace.
 \par\end{center}
 
 Změna zavedených procesů bývá náročná, jak z finančního hlediska,
-tak z hledika její vlastní realizace. , která se nemusí dotknout jen
-... 
+tak z hledika její vlastní realizace. Důležitou roli zde hraje plánování
+časového hramonogramu a jeho dodržování.
 
-Z původních jednoduchých aplikací na 
-
-Informačný systém, Client/Server. 
+Zlepšení výsledků činnosti firmy se nemusí dostavit okamžitě po spuštění
+nového systému, ale až po adaptaci všech zúčastněných stran. Výhodou
+je pokud byl daný systém navržen v souladu se zaběhnutými a fungujícími
+firemními procesy. Proto bude práce věnovaná především jejich důkladnému
+popisu, na kterém bude dále stavět.
 
 
 \section*{Cíle práce}
 
-Cílem práce je návrh a implementace informačního systému usnadňující
-činnost a spolupráci více subjektů za použití vhodných opensource
-technologií a frameworků v použitých programovacích jazycích.
+Cílem práce je návrh a základní implementace webového informačního
+systému usnadňující činnost a spolupráci více nezávislých subjektů
+za použití vhodných opensource technologií a frameworků v použitých
+programovacích jazycích. V práci budou rozebrány funkce systému pro
+správu, uržování a sdílení informací v prostředí internetu.
 
-Cílem práce není vytvořit, vzhledem k náročným právním úpravám a častým
-změnám, komplexní účetní program, ale pouze systém úmožnící vytvořit
-přehledy pro účetní evidenci, které mohou být zavedeny do některého
-již existujícího programu.
+Implementovaný systém bude mimo jiné obsahovat prostředky pro správu
+uživatelů, evidenci zakázek a fakturaci služeb. Cílem práce není,
+vzhledem k náročným právním úpravám a častým změnám, vytvořit komplexní
+účetní program, ale pouze systém úmožnící tvorbu přehledů pro účetní
+evidenci, které mohou být zavedeny do některého již existujícího účetního
+programu.
 
 
 \section*{Obsah práce}
@@ -482,13 +494,11 @@ k datům. Se vzrůstajícím objemem uložených dat začala projevovat prostoro
 náročnost použitého značkovacího jazyka a býlo nutné použít kompresi
 a rozdělení dat do více souborů. Druhou možnou variantou bylo použití
 něktré specializované XML databáze nebo relační databáze s podporou
-XML (@todo Oracle, MySQL). Toto řešení, ale nakonec nebylo implementováno
-ani v rámci testování.
-
-@todo XML databáze jsou sice již na velmi dobré úrovni v komerčních
-produktech, ale jejich implementace ve volně dostupných aplikacích
-mírně zaostává.%
-\footnote{\href{http://www-01.ibm.com/software/data/db2/express/}{http://www-01.ibm.com/software/data/db2/express/}%
+XML. Toto řešení, ale nakonec nebylo implementováno ani v rámci testování.
+Protože ačkoliv jsou XML databáze v komerčních produktech na velmi
+dobré úrovni, jejich implementace ve volně dostupných aplikacích mírně
+zaostává.%
+\footnote{@todo\href{http://www-01.ibm.com/software/data/db2/express/}{http://www-01.ibm.com/software/data/db2/express/}%
 }
 
 Návrh dobře strukturované relační databáze vyžaduje předevších pochopení
@@ -507,7 +517,7 @@ návrh, logický návrh a fyzický návrh.
 
 Analýza požadavků vycházi z informací popsaných \vpageref{cha:Anal=0000FDza-=0000FAlohy}
 a snaží se je co nepřesněji interpretovat pro použití v dalších fázích
-návrhu.
+návrhu a implementace.
 
 
 \subsection{Konceptuální návrh}
@@ -544,8 +554,8 @@ pouze zásahem do zdrojových kódů nebo databáze.
 \item \emph{Dodavatel} je smluvním partnerem jazykové agentury - \emph{poskytovatele
 }jazykových služeb
 \item \emph{Maximální počet jednotek}, které může na smlouvu vykonat.
-\item \emph{Sazba, jednotka, způsob platby }a\emph{ typ smlouvy} úmožňují
-generování účetních přehledů.
+\item \emph{Způsob platby }a\emph{ typ smlouvy} úmožňují generování účetních
+přehledů.
 \end{itemize}
 
 \subsubsection{Výkazy}
@@ -681,8 +691,8 @@ pro velké projekty, existují vyjímky%
 }, které tyto názory vyvrací a zároveň se podílejí na vývoji, a tak
 se snaží přispět k jeho větší výkonnosti a bezpečnosti.
 
-Vývoj jazyka sebou nese i stinné stránky. Mezi ty nejpodstatnější
-patří úpravy API%
+Vývoj jazyka sebou nese i stinné stránky. Po létech vývoje dochází
+k~úpravavám API%
 \footnote{anglická zkratka \emph{Application Programming Interface}, označuje
 sadu funkcí, procedur či tříd programu či knihovny, jenž mohou být
 využívány programátorem %
@@ -691,25 +701,27 @@ využívány programátorem %
 nebo celá aplikace. Řešením ovšem není zůstávat na několik let staré
 verzi, ve které mohly být objeveny chyby. 
 
-Pokud programátor nechce nebo nemůže přepisovat kód může využít služeb
-něktrého z frameworků nad daným jazykem, který se snaží tyto rozdíly
-ve verzích zakrýt. Další nespornou výhodou používání frameworků spočívá
-jednodušším vývoji aplikací a minimalizací rizika chyb v jinak ručně
-psaném jádru aplikace. Toto je zajištěno pouze pokud má kvalitní a
-úplnou dokumentaci a je zastřešen silnou komunitou nebo společností
-zajištující jeho vývoj.
+Nespornou výhodou používání frameworků spočívá jednodušším vývoji
+aplikací a minimalizací rizika chyb v jinak ručně psaném jádru aplikace.
+Toto je zajištěno pouze pokud má kvalitní a úplnou dokumentaci a je
+zastřešen silnou komunitou nebo společností zajištující jeho vývoj.
+Některé frameworky rovněž dokáží do jisté míry zakrýt rozdíly mezi
+ve verzích. Děje se tak, za cenu zpomalení některých částí aplikace,
+díky kotroly verze překladače a vykonáním alternativního kódu.
 
-Při výběru byl proto důraz kladen hlavně na kvalitní dokumentaci,
+Při výběru frameworku byl kladen důraz hlavně na kvalitní dokumentaci,
 rozšířitelnost a možnost práce s různými relačními databázemi. Frameworky,
 které splňují vetšinu požadavků jsou Zend%
 \footnote{\href{http://framework.zend.com/}{http://framework.zend.com/}%
-}, Symfony a CakePHP.%
+}, Symfony a CakePHP.
+
+- Symfony - používa yml na konfigurování
+
+%
 \begin{table}
 
 
 \caption{Srovnání vybraných PHP frameworků}
-
-
 
 \end{table}
 
@@ -769,7 +781,13 @@ frameworku a otestován komunitou, díky které není potřeba psát již
 jednou napsané části, ale možné šetřit lidské zdroje na vlastní vývoj
 aplikační logiky.
 
-@todo DRY - Don't Repeat Yourself
+CakePHP zastává programátorskou filosofii \emph{DRY} - Don't Repeat
+Yourself. Ta zdůrazňuje, že jednotlivé části kódu by se v programu
+neměly opakovat, jelikož se snižuje srozumitelnost kódu a při modifikaci
+se musí upravovat stejný kód na více místech, což často vede k nesnadno
+odhalitelným chybám programu. K tomuto účelu se používají \emph{,,Pomocníci''}
+(\emph{Helpers}), kteří daný kód generují. Při potřebě změny je lze
+snadno upravit, bez potřeby zásahu do míst odkud jsou voláni.
 
 Za největší přínos samotného frameworku v počátku návrhu aplikace
 považuji ,,pekárnu'' kódu (\emph{baker}) a podporu ,,lešení''
@@ -828,12 +846,12 @@ až do roku 2008, kdy byla provedena akvizice s firmou Sun Microsystems,
 jednou z největších open source společností na světě. MySQL je nabízeno
 jak pod bezplatnou licencí, tak pod komerční licencí s plnou technickou
 podporou\cite{MySQL}. Těší velké oblibě hlavně mezi vývojáři webových
-aplikací, kde je součástí sady nástrojů označované jako \emph{LAMP}.
-Tato platforma obsahuje \emph{Linux}, \emph{Apache}, \emph{MySQL}
-a \emph{PHP}. Obecně jednotlivé části mohou být zaměněny (např. PHP
-za Perl nebo Python, MySQL za Postgres) při zachování zkratky, která
-je zaužívaným označením pro operační systém, webový server, databázový
-systém a skriptovací jazyk sloužící k provozování webových stránek.
+aplikací, kde je součástí platformy označované jako \emph{LAMP}, která
+obsahuje \emph{Linux}, \emph{Apache}, \emph{MySQL} a \emph{PHP}. Obecně
+jednotlivé části mohou být zaměněny (např. PHP za Perl nebo Python,
+MySQL za Postgres) při zachování zkratky, která je zaužívaným označením
+pro operační systém, webový server, databázový systém a skriptovací
+jazyk sloužící k obsluze a generování webových stránek.
 
 
 \section{Klient}
@@ -883,12 +901,326 @@ schématu s třídami, základní adresářová struktura projektu a metody
 použitých tříd.
 
 
-\section{Modely (Models)}
+\section{Modely (\emph{Models})}
 
-Předefinování stránkovače (paginate)
+Všechny modely v aplikaci jsou odvozeny od třídy \emph{Object}, která
+zakryta třídou \emph{Overloadable}. Ta navržena tak, aby zakryla rozdíly
+mezi PHP verze 4 a 5. 
+
+Modely jsou determinovány návrhem databáze. Relace mezi jednotlivými
+modely odpovídají relacím v databázi a je možné je upravovat ve vlastnostech
+dané třídy. Existují čtyři druhy relací, jenž jdou v CakePHP modelovat,
+a mají své vlastní nastavení. Relace 1:1 (\emph{hasOne}), 1:N (\emph{hasMany})
+a N:1 (\emph{belongsTo}) mají většinu nastavení společnou:
+\begin{description}
+\item [{className}] jméno třídy asociovaného modelu 
+\item [{foreignKey}] jméno cizího klíče v asociovaném modelu
+\item [{fields}] seznam polí, jenž mají být načteny při použití dané asociace
+\item [{order}] část SQL dotazu sloužící k definici pořadí výsledků
+\item [{conditions}] část SQL dotazu sloužící k filtraci nalezených výsledků
+\end{description}
+Při modelování relace M:N (\emph{hasAndBelongsToMany - HAPTM}) je
+potřeba nadefinovat tabulku (\emph{joinTable}), přes kterou bude prováděno
+spojení nalezených dat, a cizí klíč do asociované tabulky (\emph{associationForeignKey}).
+
+Pro získání dat se používá metoda \emph{find(\$typ, \$parametry)}
+na příslušném modelu. První parametr určuje typ dotazu, který může
+být jedním z následujích:
+\begin{description}
+\item [{all}] najde všechny data splňující podmínky definované ve druhém
+parametru
+\item [{first}] najde první záznam vyhovující podmínkám (liší se od předcházejícího
+ve struktuře vráceného pole)
+\item [{count}] vrátí počet vyhovujících záznamů
+\item [{list}] vygeneruje pole s hodnotami ze sloupce tabulky definované
+v proměnné \emph{\$displayField} daného modelu indexované standardně
+primárním klíčem
+\item [{threaded}] vygeneruje vnořené pole podle zadaného intervalu (\emph{ltf
+}- \emph{rght})%
+\footnote{Detailní popis příkladu, jak uchovávat stromové struktury v relační
+můžete nalést na\href{http://dev.mysql.com/tech-resources/articles/hierarchical-data.html}{http://dev.mysql.com/tech-resources/articles/hierarchical-data.html}.%
+}
+\item [{neighbors}] vrátí položku před (\emph{prev}) a za (\emph{next})
+položkou, která by byla nalezena pomocí \emph{find('first', \$podminky)}
+\end{description}
+Pole s vyhledávacími podmínkami může vypadat jako v následujícím příkladu,
+kde jsou uvedeny všechny základní možnosti. Další parametry mohou
+být přidávány pro doplňkové rozšíření chování jednotlivých modelů. 
+
+\inputencoding{latin2}
+\begin{lstlisting}[basicstyle={\small\sffamily},tabsize=4]
+array(
+	'conditions' => array('Model.field' => $thisValue), 
+	//vygeneruje klauzuji WHERE Model.field = $thisValue
+	'recursive' => 1, //int
+	'fields' => array('Model.field1'),
+	//sloupe�ky v dotazu SELECT
+	'order' => array('Model.created', 'Model.field3 DESC'),
+	//definice klauzule ORDER BY
+	'group' => array('Model.field'), 
+	//sloupe�ky pou�it� v klauzuli GROUP BY
+	'limit' => n, 
+	//po�et z�znam� na str�nku
+	'page' => i, //najdi i-tou stranu
+	'callbacks' => true 
+	//mo�n� hodnoty jsou: false, 'before', 'after' 
+)
+\end{lstlisting}
+\inputencoding{utf8}
+
+Zajímavým parametrem je \emph{recursive}, který určuje do jaké hloubky
+mají být načítána data. Pokud data z asociovaných modelů nejsou potřeba,
+je vhodné jej nastavit na \emph{-1}.
+
+V systému, kde je potřeba vyhledávat sdružovat data podle modelů,
+jenž jsou v řetězci asociací dále, bylo výchozí chování parametru
+nedostatečné. Naštěstí existují doplňky, které takové činnosti úmožňují.
 
 
-\section{Řadiče (Controllers)}
+\subsection{Rozšíření chování (\emph{Behaviors})}
+
+V základní výbavě CakePHP je obsaženo rozšíření \emph{Containable},
+které úmožnuje dynamicky přidávat asociované modely bez omezení hloubky
+rekurze%
+\footnote{Je ovšem potřeba vzít na vědomí, že CakePHP tak vygeneruje značné
+množství dotazů, které mohou mít vliv na výkon dané aplikace.%
+}. Je to ale pouze syntaktický cukr k metodám \emph{bindModel()} a
+\emph{unbindModel()}, které úmožnují definovat pouze asociace příslušící
+danému modelu. Containtable přidává metodu \emph{contain()}, jenž
+je volána i pokud je nalezen index ,,contain'' v poli s vyhledávacími
+parametry metody \emph{find()}. Ta se postará o dynamickou asociaci
+potřebných modelů.
+
+Také výše zmíněné rozšíření má určité nedostatky a to hlavně pokud
+je potřeba filtrovat data podle modelů asociovaných ve větší hloubce.
+Proto je použité rozšíření \emph{,,Linkable}''\cite{linkable},
+které má obdobnou syntaxi nastavení, ale vytváří jeden SQL dotaz za
+pomocí klauzují JOIN.
+
+Pro usnadnění práce s relacemi typu M:N přes tabulku s klíči je použito
+rozšíření \emph{,,Extend Associations''\cite{ExtendAssoc}} . To
+úmožňuje jednoduché přidání nebo smazání asociací, bez ovlivnění ostatních
+již existujících. K tomu slouží nově definovaná sada metod:
+\begin{lyxlist}{00.00.0000}
+\item [{\emph{habtmAdd(\&\$model,~\$assoc,~\$id,~\$assoc\_ids})}] přidá
+asociace k danému záznamu v modelu
+\item [{\emph{habtmDelete(\&\$model,~\$assoc,~\$id,~\$assoc\_ids)}}] smaže
+asociace s danou kombinací klíčů
+\item [{habtmDeleteAll(\&\$model,~\$assoc,~\$id)}] smaže včechny asociace
+k danému záznamu modelu
+\end{lyxlist}
+Pro překlady do cizích jazyků bylo použito rozšíření \emph{Translate},
+které úmožňuje nadefinovat seznam sloupců tabulky, které mají být
+překládány. Přeložená data jsou ukládána v oddělené tabulce (\emph{i18n}
+- lze změnit v konfiguraci pro každý model) a při dotazu je vytořeno
+spojení s touto tabulkou pomocí složeného klíče - jméno modelu, cizí
+klíč do daného modelu a jméno překládaného sloupce.
+
+A pro úplnost jsou zde uvedneny zbývající rozšíření použité v aplikaci,
+které zatím nejsou součástí základních knihoven frameworku.
+\begin{description}
+\item [{Slugable}] Vytváří texty použitelné v URL z definovaných sloupců
+tabulky.
+\item [{Versionable}] Ukládá aktuální verzi záznamu před změnou či smazáním.
+\item [{Logable}] Zaznamenává akce uživatelů.
+\end{description}
+
+\subsection{Úpravy základních metod \emph{AppModel}}
+
+Jelikož je kontrola konzistence dat po přidání, smazání a editaci
+záznamu ponechána na databázi, bylo potřeba zajistit zpracování chybových
+hlášení z databáze. To se děje v metodě \emph{onError()}, která je
+volána pokaždé, když metoda \emph{DboSouce::execute()} vrátí chybu.
+V našem případě je chyba zpracována a chybová hláška je uložena pro
+pozdější prezentaci uživateli.
+
+Pro plnou lokalizaci aplikace bylo potřeba rozšířit metodu \emph{invalidate(\$záznam,
+\$chybovéHlášení)} o překlad chybového hlášení, pokud daný záznam
+neprošel validací. Lokalizaci lze rovněž provádět při generování pohledu,
+ale to se z hlediska údržby kódu nejeví jako nejvhodnější řešení.
+
+
+\section{Řadiče (\emph{Controllers})}
+
+Řadiče jsou používany ke správě aplikační logiky. Pro možnost používat
+stejný kus kódu v různých řadičích je vhodné používat komponenty.
+Tyto komponenty usnadňují autentifikaci, autorizaci uživatelů, vyhledávání
+v databázi, posílání emailů nebo validaci uživatelských formulářů.
+
+
+\subsection{Komponenty}
+\begin{description}
+\item [{Auth/Authmd5}] Standardní knihovna přidává k heslu řetězec definovaný
+v app/config/core.php v interní proměnné Security.salt. Tato vlastnost
+byla v systému na obtíž, hlavně kvůli přenositelnosti již zadaných
+hesel v předchozí aplikaci. Proto byla vytvořena komponenta Authmd5,
+která nepřidává zabezpečovací řetězec k heslu. Další drobnou změnou
+oproti původní komponentě je automatické hashovaní hesla z formuláře
+i když není zadáno přihlašovací jméno.
+\item [{P28n}] Při načtení komponenty se zkontroluje zda si již uživatel
+někdy vybral vybral jazyk, který byl uložen do cookie pomocí metody
+\emph{change(\$lang)}. Pokud se jazyk v cookie nenachází zvolí se
+výchozí jazyk aplikace podle proměnné \emph{HTTP\_ACCEPT\_LANGUAGE},
+pokud je prohlížečem nastavena. V opačném případě je použit jazyk
+definovaný v konstaně \emph{DEFAULT\_LANGUAGE} v souboru \emph{app/config/core.php}.\cite{p28n}
+\item [{Password~Helper}] Vygeneruje ,,hezké'' heslo zadané délky bez
+opakujících se znaků. Jednotlivé znaky jsou vybírány z atributu\emph{
+possible} dané komponenty.\cite{pass-gen}
+\item [{Autocomplete}] Přidává metodu \emph{autocomplete()}, která zpracuje
+získaná data z formuláře (data{[}Model{]}{[}položka{]}), vyhledá vyhovující
+záznamy a vygeneruje seznam s výsledky. Přidání doplňkových podmínek
+pro vyhledávání je možné v metodě \emph{beforeFilter()} daného řadiče
+nebo jeho předka. Děje se tak nastavením atributu \emph{handles},
+kde index v zadaném poli určuje položky tabulky, kterých se mají podmínky
+týkat. Následující příklad je vybrán z řadiče produktů, kde má být
+zákazníkům úmožněno vyhledávat pouze v produktech, které se jich přímo
+týkají.
+\end{description}
+\inputencoding{latin2}
+\begin{lstlisting}[basicstyle={\footnotesize\ttfamily},breaklines=true,tabsize=2]
+function beforeFilter() {
+	parent::beforeFilter();
+	$this->Autocomplete->handles = false;
+	// standardn� je doporu�eno vypnut� v�ech pol��ek
+	if($this->Auth->user()) {
+		if (isset($this->params['prefix']) {
+		// podle prefixu m��eme omezit pr�va komponentou Auth
+		if ($this->params['prefix'] === 'admin') {
+			$this->Autocomplete->handles = array('Product.*');
+			// administrato�i mohou ��st v�chny polo�ky produktu
+		}
+		if ($this->params['prefix'] === 'customers') {
+			$this->Product->Behaviors->attach('Linkable');
+			// dynamick� na�ten� chov�n�
+			$this->Autocomplete->handles = array(
+				'Product.name' => array(
+					'link' => array('Application'),
+					'conditions' => array(
+	'Application.user_id' => User::get('id'))
+	// z�kazn�ci mohou vyhled�vat pouze v produktech,
+	// kter�ch se ��astn�
+			));
+		}         
+	}
+}
+\end{lstlisting}
+\inputencoding{utf8}
+\begin{description}
+\item [{Ajaxupdate}] Slouží pro usnadnění editace záznamů přes AJAX za
+podpory javascriptivé knihovny \emph{control.js}, která je součástí
+balíku \emph{scriptaculous.js}.
+\item [{Filter}] Komponenta pro validaci vyhledávacích formulářů a vygenerování
+podmínek pro vyhledávání.
+\item [{Email}] Slouží k odesílání emailů. Lze používat šablony, html zprávy
+a přidávat přílohy.
+\item [{Request~Handler}]~
+\end{description}
+
+\subsection{Popis řadičů (\emph{Controllers})}
+
+V této části budou popsány \emph{nejdůležitější} části aplikační logiky.
+Při vytváření základní kostry byla použita ,,pekárna'' kódu, jejiž
+vygenerovaný kód byl posléze upraven.
+
+
+\subsubsection{Uživatelé}
+
+Nejdůležitějšími akcemi jsou bezpochyby přihlášení a odhlášení uživatele.
+Ty jsou zajitěny komponentou \emph{Auth}, která je nastavena v řadiči
+aplikace (\emph{AppController}) v metodě \emph{beforeFilter()}.
+\begin{description}
+\item [{login()}] Po přihlášení je aktualizována položka ,,poslední přihlášení''
+v databázi, nastavena zpráva uživateli a uživatel je přesměrován na
+požadovanou nebo výchozí stránku.
+\item [{logout()}] Smaže cookie, nastaví zprávu o úspěšném odhlášení a
+přesměruje na výchozí stránku.
+\item [{account()}] Slouží ke změně hesla uživatele. Pokud jsou poslány
+data a hesla projdou validací, je uživateli nastaveno nové heslo.
+\item [{recover()}] Uživatel si může nechat zaslat nové heslo po zadání
+emailu. Je vytvořen token s platností 1 den. V budoucnu by bylo dobré
+rozšířit možnost obnovy hesla o kontrolní otázku.
+\item [{verify(\$token)}] Zkontroluje zda se zadaný token nachází v databázi
+a pokud ano, zašle uživateli nově vygenerované heslo.
+\item [{register()}] Jednoduchá registrace uživatele po jejímž dokončení
+je uživateli zaslán aktivační email.
+\end{description}
+Výše uvedené akce jsou povoleny i nepřihlášeným uživatelům pomocí
+metody \emph{Auth::allow(\$akce)}.
+\begin{description}
+\item [{admin\_account(\$id)}] Úmožní administrátorovi změnit heslo uživateli
+s daným id bez znalosti starého.
+\item [{admin\_reset\_password(\$id)}] Vygeneruje uživateli s daným id
+náhodné heslo a zašle ho uživateli na email zadaný při registraci.
+\item [{admin\_invoiceattachment()}] Jakmile jsou vyplněny informace o
+poskytovateli, zákazníkovi a časovém období, je vygenerován seznam
+produktů, na kterých se v tomto období pracovalo. Provede spojení
+tabulek uživatelů, slmuv, výkazů, produktů, údálostí a přihlášek daného
+zákazníka. Vyberou se pouze ty, které mají záznam v tabulce událostí
+v daném intervalu. Nakonec jsou k nalezeným záznamům přidány informace
+o jednotlivých datech a množství vykázaných jednotek. Podle nastavení
+způsobu účtování je vypočítána výsledná cena bez dph.
+\end{description}
+
+\subsubsection{Produkty}
+
+Kromě běžných akcí pro fitrování, zobrazení, editování a smazání produktu
+adminitrátorem, jsou zde i metody pro export dat a tisk přehledů.
+\begin{description}
+\item [{admin\_export()}] Vygeneruje CSV soubor s nalezenými produkty podle
+vyplněného filtru.
+\item [{admin\_shedule()}] Pro každý vyfiltrovaný produkt vyhledá dny v
+týdnu, ve kterých probíhá výuka a přidá informaci o časovém intervalu.
+\item [{admin\_shedulePdf()}] Použije výše uvedenou metodu k nalezení dat.
+Poté vygeneruje pdf soubor a nabídne jej uživateli ke stažení.
+\end{description}
+
+\subsubsection{Smlouvy}
+
+Řadič smluv definuje různý přístup k datům pro administrátora a dodavatele,
+kteří mohou nahlížet pouze na své smlouvy a nemohou je editovat (metody
+\emph{employees\_index()}, \emph{employess\_view(\$id)}). 
+\begin{description}
+\item [{admin\_payment()}] Na základě filtru vybere odpovídající smlouvy
+a~vygeneruje přehled pro sestavení výplat a kontrolu přijatých faktur
+od dodavatelů. Základní schéma výpočtu pro rok 2008 bylo následující:\inputencoding{latin2}
+\begin{lstlisting}[basicstyle={\ttfamily},breaklines=true,tabsize=2]
+if typ slu�by == slu�ba then
+	if zp�sob platby == hotov� then
+		zaokrouhli v�platu na 50 hal���
+	endif
+else if pl�tce dan� then
+		if v�plata > 5000 then
+			z�lohov� da� := 15% z v�platy
+		else
+			sr�kov� da� := 15% z v�platy
+		endif
+endif
+\end{lstlisting}
+\inputencoding{utf8}Slabinou systému je, že nedokáže generovat přehledy pro odvody na
+sociálním a zdravotním pojištění placených zaměstnavatelem.
+\end{description}
+
+\subsubsection{Příjmové doklady}
+
+Pro zobrazení dokladu a vygenerování položek k zaplacení slouží metoda
+\emph{admin\_view(\$id)}. Pro každý produkt se sečtou již zaplacené
+položky a celkový počet položek k zaplacení. Rozdíl těchto dvou mezivýsledků
+určuje nedoplatek popřípadě přeplatek na daném produktu. Jelikož je
+rozhraní pro přidávání a mazání položek z dokladu postaveno na AJAXu
+jsou vytvořeny dvě metody \emph{admin\_additem()} a \emph{admin\_delitem()},
+které po provedení akce vygenerují element s aktualizovanými položkami
+dokladu.
+
+
+\subsubsection{Události v kalendáři}
+
+Pro pro přehledné zobrazení údálostí jsou na výběr dvě možnosti. Tou
+první je zobrazení všech událostí v daném měsíci v tabulce podobné
+kalendáři. K tomuto účelu slouží metoda \emph{admin\_calendar()},
+kterou jsou získány všechny záznamy vyhovující filtru a pro generování
+pohledu je použit pomocník třídy \emph{CalendarHelper::calendar()}.
+
+Pro generování týdenního je nutné nejdříve načtená data z 
 
 
 \section{Doplňky (Pluginy)}
@@ -896,8 +1228,10 @@ Předefinování stránkovače (paginate)
 
 \subsection{Vyhledávací modul}
 
-
-\subsection{Sprava verzí}
+Nejdůležitějším požadavkem na tento modul je rychlost. Jelikož byl
+vybrán databázový systém MySQL, který ve verzi 5.2 úmožňuje fultextové
+vyhledánání pouze nad tabulkami typu MyISAM, bylo potřeba zajistit,
+že půjde rychle vyhledávat i data obsažená tabulkách typu InnoDB.
 
 
 \chapter{Uživatelská dokumentace}
@@ -1111,24 +1445,56 @@ si řekněme, jak se vypočítá výsledná cena (bez DPH) pro zákazníka.
 Od toho se bude odvíjet další vyplňování formuláře.
 
 Stanovte si, jak budete daný produkt nabízet a od čeho se odvíjí náklady.
-V~případě, že se náklady odvíjí od počtu participujících osob zašrtněte
+V~případě, že se náklady odvíjí od počtu zúčastněných osob zašrtněte
 možnost \emph{Počítat účastníky}. Pokud nevíte dobředu kolik hodin
 bude odučeno či kolik normostran bude účtováno a náklady na ně nejsou
 fixní, zaškrtněte možnost \emph{Počítat množství}. Celková cena bude
 spočítána takto:
 \begin{itemize}
-\item jednotková cena je vynásobena počtem účastníků pokud byla odpovídající
+\item Jednotková cena je vynásobena počtem účastníků pokud byla odpovídající
 volba zaškrtnuta
-\item mezisoučet je vynásoben součtem odpracovaných jednotek v událostech
+\item Mezisoučet je vynásoben součtem odpracovaných jednotek v událostech
 ve výkazech přiřazených v produktu pokud byla volba \emph{počítat
-množství} zaškrtnuta
-\item @todo možná konverze
+množství} zaškrtnuta.
 \end{itemize}
 Teď už zbývá doplnit zbývající povinné položky a to jednotku a jednotkovou
 cenu.
 
 
+\subsubsection{Filtrování produktů}
+
+Pro filtrování produktů můžete použít ,,našeptávač'' u jednotlivých
+polí. Vyplněním části hledaného výrazu, se zobrazí seznam položek,
+které tento výraz obsahují (obrázek\vref{fig:Na=000161ept=0000E1va=00010D}).%
+\begin{figure}
+\noindent \begin{centering}
+\includegraphics{autocomplete}
+\par\end{centering}
+
+\caption{\label{fig:Na=000161ept=0000E1va=00010D},,Našeptávač''}
+
+\end{figure}
+
+
+
+\subsubsection{Odstranění produktu}
+
+Odstranění produktu není povoleno, pokud obsahuje výkazy nebo přihlášky.
+Nejprve je nutné zkontrolovat, že jednotlivé položky na výkazech nebyly
+zaúčtovány a ty pak následně vymazat. Další problém může nastat, pokud
+již byl vydán příjmový doklad. V tom případě z něj musíte stornovat
+příslušté položky vztahující se k danému produktu. Při splnění všech
+těchto podmínek bude smazání úmožněno.
+
+
 \subsection{Výkazy}
+
+
+\subsubsection{Vyhledání a filtrování výkazů}
+
+V menu nebo produktech klikněte na \emph{Zobrazit výkazy}. V horní
+tabulce je možné zaškrtnou pouze některé kategorie produktů, ke kterým
+byly výkazy přidány.
 
 
 \subsubsection{Vytvoření~a~přiřazení~výkazu~k~produktu }
@@ -1137,16 +1503,18 @@ Vytvoření a přiřazení výkazu k produktu provádějte pouze pokud je
 produkt, ke kterému chcete přidat výkaz, již vytvořen. 
 
 V menu klikněte na položku \emph{Přidat výkaz} a vyplňte následný
-přehledný formulář. U dodavatele se rozlišuje se i typ smlouvy uvedený
-v závorce. Sazba a jednotka jsou rovněž povinné položky.
+formulář. U dodavatele se rozlišuje se i typ smlouvy uvedený v závorce.
+Sazba a jednotka jsou rovněž povinné položky.
 
-Jinou možností, jak přiřadit nový výkaz, je přes modul \noun{Produkty}
+Další možností, jak přiřadit nový výkaz, je přes modul \noun{Produkty}
 (nebo přes ,,rychlé hledání''), kde lze snadno vyhledat daný produkt.
 Zobrazte si detaily nalezeného produktu a ve skupině \emph{Přiřazené
 výkazy} klikněte na odkaz \emph{Přidat výkaz}.
 
 
 \subsubsection{Přidání události k výkazu}
+
+Vyhledejte a zobrazte výkaz.
 
 
 \subsection{Tipy na urychlení práce}
@@ -1169,7 +1537,10 @@ evidence docházky do kurzů
 
 Zavedení informačního systému je běh na dlouhou trať ... příprava
 dodavatelů i odběratelů na změny ve způsobu vykazování práce ...
-\begin{thebibliography}{11}
+\begin{description}
+\item [{Nedostatky}] Pro lepší ochranu uložených dat by se měl zavést ACL
+- Access Control List. V současné verzi systému je díky \end{description}
+\begin{thebibliography}{15}
 \bibitem{informační systémy}\href{http://www.informacny-system.sk}{http://www.informacny-system.sk}
 
 \bibitem{wikipedia}Wikipedia: \emph{Informační systém}, \\
@@ -1199,6 +1570,22 @@ Locators (URL), \emph{RFC1738}, Prosinec 1994\\
 
 \bibitem{l10n}\emph{PV168/Lokalizace a internacionalizace}\\
 \href{http://kore.fi.muni.cz:5080/wiki/index.php/PV168/Lokalizace_a_internacionalizace}{http://kore.fi.muni.cz:5080/wiki/index.php/PV168/Lokalizace\_{}a\_{}internacionalizace}
+
+\bibitem{p28n}Jason Chow: \emph{P28n, the top to bottom persistent
+internationalization tutorial}\\
+\href{http://bakery.cakephp.org/articles/view/p28n-the-top-to-bottom-persistent-internationalization-tutorial}{http://bakery.cakephp.org/articles/view/p28n-the-top-to-bottom-persistent-internationalization-tutorial}
+
+\bibitem{pass-gen}\emph{Random password generator component for CakePHP},
+Červen 2008\\
+\href{http://www.solitechgmbh.com/2008/06/11/random-password-generator-component-for-cakephp/}{http://www.solitechgmbh.com/2008/06/11/random-password-generator-component-for-cakephp/}
+
+\bibitem{linkable}Rafael Bandeira: \emph{Linkable Behavior. Taking
+it easy in your DB}, Listopad 2008\\
+\href{http://blog.rafaelbandeira3.com/2008/11/16/linkable-behavior-taking-it-easy-in-your-db/}{http://blog.rafaelbandeira3.com/2008/11/16/linkable-behavior-taking-it-easy-in-your-db/}
+
+\bibitem{ExtendAssoc}Brandon Parise: \emph{HABTM Add \& Delete Behavior},
+Květen 2007\\
+\href{http://bakery.cakephp.org/articles/view/add-delete-habtm-behavior}{http://bakery.cakephp.org/articles/view/add-delete-habtm-behavior}
 
 \bibitem{MySQL}\href{http://www.mysql.com/}{http://www.mysql.com/}
 
