@@ -9,6 +9,9 @@
 \end_preamble
 \options notitlepage
 \use_default_options true
+\begin_modules
+theorems-ams
+\end_modules
 \language czech
 \inputencoding utf8
 \font_roman default
@@ -42,7 +45,7 @@
 \paperorientation portrait
 \leftmargin 4cm
 \topmargin 3cm
-\rightmargin 25mm
+\rightmargin 4mm
 \bottommargin 3cm
 \secnumdepth 1
 \tocdepth 1
@@ -476,11 +479,14 @@ Keywords: information system, PHP, MySQL
 \end_layout
 
 \begin_layout Standard
-Informační systémy hrají v rychle se rozvíjejícím prostředí svou nepostradatelou
- roli.
+Informační systémy hrají v
+\begin_inset space ~
+\end_inset
+
+rychle se rozvíjejícím prostředí svou nepostradatelou roli.
  Internet, který se stal dostupným pro širokou veřejnost, jim poskytl výbornou
  platformu k dalšímu rozvoji.
- Ve dříve nepříliš využívaném virtuálním prostředí úmožňují tyto systémy
+ Ve dříve nepříliš využívaném virtuálním prostředí umožňují tyto systémy
  rychlé a snadné zpracování, vyhledávání a publikovaní informací, které
  se tak stávají dostupné pro širší spektrum zákazníků, dodavatelů i samotných
  zaměstanců.
@@ -488,13 +494,35 @@ Informační systémy hrají v rychle se rozvíjejícím prostředí svou nepost
 \end_layout
 
 \begin_layout Standard
-S využíváním Internetu zároveň rostou nároky na bezpečnost a dostupnost
- uložených informací.
- Ty jsou životně důležité pro chod firem a bývají jejich nejcenějším majetkem.
+S využíváním Internetu zároveň rostou nároky na bezpečnost a
+\begin_inset space ~
+\end_inset
+
+dostupnost uložených informací.
+ Ty jsou životně důležité pro chod firem a
+\begin_inset space ~
+\end_inset
+
+bývají jejich nejcenějším majetkem.
  Zvyšují se požadavky kladou tlak na nástroje použité při implementaci systému
- a jejich robustnost.
- Jelikož i malá chyba může zapříčinit únik citlivých dat a jejich zneužití
- v globálním měřítku, které nelze vrátit zpět.
+ a
+\begin_inset space ~
+\end_inset
+
+jejich robustnost.
+ Jelikož i
+\begin_inset space ~
+\end_inset
+
+malá chyba může zapříčinit únik citlivých dat a
+\begin_inset space ~
+\end_inset
+
+jejich zneužití v
+\begin_inset space ~
+\end_inset
+
+globálním měřítku, které nelze vrátit zpět.
 \end_layout
 
 \begin_layout Standard
@@ -536,15 +564,26 @@ key "informační systémy"
 
 \begin_layout Standard
 Změna zavedených procesů bývá náročná, jak z finančního hlediska, tak z
- hledika její vlastní realizace.
- Důležitou roli zde hraje plánování časového hramonogramu a jeho dodržování.
+ hlediska její vlastní realizace.
+ Důležitou roli zde hraje plánování časového hramonogramu a
+\begin_inset space ~
+\end_inset
+
+jeho dodržování.
 \end_layout
 
 \begin_layout Standard
 Zlepšení výsledků činnosti firmy se nemusí dostavit okamžitě po spuštění
  nového systému, ale až po adaptaci všech zúčastněných stran.
- Výhodou je pokud byl daný systém navržen v souladu se zaběhnutými a fungujícími
- firemními procesy.
+ Výhodou je, pokud byl daný systém navržen v
+\begin_inset space ~
+\end_inset
+
+souladu se zaběhnutými a
+\begin_inset space ~
+\end_inset
+
+fungujícími firemními procesy.
  Proto bude práce věnovaná především jejich důkladnému popisu, na kterém
  bude dále stavět.
 \end_layout
@@ -554,20 +593,53 @@ Cíle práce
 \end_layout
 
 \begin_layout Standard
-Cílem práce je návrh a základní implementace webového informačního systému,
- usnadňující činnost a spolupráci více nezávislých subjektů.
- Implementace bude provedena pomocí vhodných open source technologií a framework
-ů v použitých programovacích jazycích.
- V práci budou rozebrány funkce systémů pro správu, uržování a sdílení informací
- v prostředí Internetu.
+Cílem práce je návrh a
+\begin_inset space ~
+\end_inset
+
+základní implementace webového informačního systému, usnadňující činnost
+ a
+\begin_inset space ~
+\end_inset
+
+spolupráci více nezávislých subjektů.
+ Implementace bude provedena pomocí vhodných open source technologií a
+\begin_inset space ~
+\end_inset
+
+frameworků v
+\begin_inset space ~
+\end_inset
+
+použitých programovacích jazycích.
+ V
+\begin_inset space ~
+\end_inset
+
+práci budou rozebrány funkce systémů pro správu, udržování a
+\begin_inset space ~
+\end_inset
+
+sdílení informací v
+\begin_inset space ~
+\end_inset
+
+prostředí Internetu.
 \end_layout
 
 \begin_layout Standard
 Implementovaný systém bude mimo jiné obsahovat prostředky pro správu uživatelů,
- evidenci zakázek, výpočet výplat a fakturaci služeb.
- Cílem práce není, vzhledem k náročným právním úpravám a častým změnám,
- vytvořit komplexní účetní program, ale pouze systém úmožnící tvorbu podkladů
- pro účetní evidenci, které mohou být v
+ evidenci zakázek, výpočet výplat a
+\begin_inset space ~
+\end_inset
+
+fakturaci služeb.
+ Cílem práce není, vzhledem k náročným právním úpravám a
+\begin_inset space ~
+\end_inset
+
+častým změnám, vytvořit komplexní účetní program, ale pouze systém úmožnící
+ tvorbu podkladů pro účetní evidenci, které mohou být v
 \begin_inset space ~
 \end_inset
 
@@ -579,36 +651,87 @@ Obsah práce
 \end_layout
 
 \begin_layout Standard
-Ve druhé kapitole této práce je provedena analýza úlohy a jsou mimo jiné
- stanoveny požadavky na řešení.
+Ve druhé kapitole této práce je provedena analýza úlohy a
+\begin_inset space ~
+\end_inset
+
+jsou mimo jiné stanoveny požadavky na řešení.
 \end_layout
 
 \begin_layout Standard
-Ve třetí kapitole jsou stručně popsány technologie dále používané v této
- práci a je ukázáno jejich použití.
+Třetí kapitola popisuje návrh vlastní implementace s
+\begin_inset space ~
+\end_inset
+
+ohledem na
+\begin_inset space ~
+\end_inset
+
+požadavky stanovené v
+\begin_inset space ~
+\end_inset
+
+kapitole druhé.
+ Jsou zde základní návrhová rozhodnutí a
+\begin_inset space ~
+\end_inset
+
+důvody pro volbu konkrétních řešení.
 \end_layout
 
 \begin_layout Standard
-Čtvrtá kapitola popisuje návrh vlastní implementace s ohledem na požadavky
- stanovené v kapitole druhé.
- Jsou zde základní návrhová rozhodnutí a důvody pro volbu konkrétních řešení.
+Ve čtvrté kapitole jsou stručně popsány technologie dále používané v
+\begin_inset space ~
+\end_inset
+
+této práci a
+\begin_inset space ~
+\end_inset
+
+je ukázáno jejich použití.
 \end_layout
 
 \begin_layout Standard
 Pátá kapitola obsahuje programátorskou dokumentaci.
- Je zde popsáno technické řešení implementace a jsou nastíněny některé problémy,
- které bylo při implementaci nutné řešit.
+ Je zde popsáno technické řešení implementace a
+\begin_inset space ~
+\end_inset
+
+jsou nastíněny některé problémy, které bylo při implementaci nutné řešit.
 \end_layout
 
 \begin_layout Standard
-Uživatelská dokumentace je obsažena v šesté kapitole.
- Popisuje uživatelské rozhraní vytvořených aplikací a ukazuje jejich použití
- na konkrétních příkladech.
+Uživatelská dokumentace je obsažena v
+\begin_inset space ~
+\end_inset
+
+šesté kapitole.
+ Popisuje uživatelské rozhraní vytvořených aplikací a
+\begin_inset space ~
+\end_inset
+
+ukazuje jejich použití na
+\begin_inset space ~
+\end_inset
+
+konkrétních příkladech.
+\end_layout
+
+\begin_layout Standard
+Předposlední kapitola se zabývá popisem existujících implementací a
+\begin_inset space ~
+\end_inset
+
+jejich možným začleněním do informačního systému.
 \end_layout
 
 \begin_layout Standard
 V závěru jsou přehledně shrnuty výsledky, kterých bylo při vývoji systému
- dosaženo, a jsou naznačeny možnosti dalšího rozšíření.
+ dosaženo, a
+\begin_inset space ~
+\end_inset
+
+jsou naznačeny možnosti dalšího rozšíření.
 \end_layout
 
 \begin_layout Chapter
@@ -664,17 +787,24 @@ Infomační systém
 Informační systém (IS) je dosti široký pojem, který se postupem let vyvíjí
  a nabírá nové významy.
  Z dřívějších papírových kartoték, telefonních seznamů a další firemní evidence,
- které se velice obtížně sdílely s více suběkty, se vyvinuly systémy, jenž
+ které se velice obtížně sdílely s více subjekty, se vyvinuly systémy, jenž
  poskytují firmám prostředí pro efektivnější práci a komunikaci.
 \end_layout
 
 \begin_layout Standard
-Informačním systémem rozumíme prostředí pro sběr, udržování, zpracování
- a
+Informačním systémem rozumíme 
+\begin_inset Quotes pld
+\end_inset
+
+prostředí pro sběr, udržování, zpracování a
 \begin_inset space ~
 \end_inset
 
 poskytování informací
+\begin_inset Quotes prd
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "wikipedia"
@@ -711,8 +841,11 @@ name "sec:Požadavky-klienta"
 \end_layout
 
 \begin_layout Standard
-Základním úkolem popisované jazykové agentury je zajišťovat služby v oblasti
- jazykového vzdělání, překladů a tlumočení především pro široké spektrum
+Základním úkolem popisované jazykové agentury je zajišťovat služby v
+\begin_inset space ~
+\end_inset
+
+oblasti jazykového vzdělání, překladů a tlumočení především pro široké spektrum
  firemních i individuálních zákazníků.
 \end_layout
 
@@ -720,7 +853,7 @@ Základním úkolem popisované jazykové agentury je zajišťovat služby v obl
 Podniky posílají poptávky bez ohledu na nabídku konkrétních kurzů.
  Manažer vyřizuje zakázku elektronickou poštou, telefonicky nebo osobně.
  Všechny získané informace musí být schopen zaznamenat pro pozdější zajišťování
- vhodných dodavatelů .
+ vhodných dodavatelů.
  
 \end_layout
 
@@ -752,7 +885,7 @@ Kvůli výše uvedným problémům se začalo s postupným zaváděním jednotn�
 \end_layout
 
 \begin_layout Itemize
-Z identikátoru musí být zřejmé o jakou kategorii produktu se jedná, pro
+Z identikátoru musí být zřejmé, o jakou kategorii produktu se jedná, pro
  koho je určen a kdy byl zaveden, aby se předešlo kolizím jmen v budoucnu.
 \end_layout
 
@@ -771,14 +904,21 @@ U produktu vloží poskytovatele, přiřadí zákazníka, studenty, lektora nebo
 \end_layout
 
 \begin_layout Itemize
-U lektora či překladatele vloží jeho sazbu za jednotku.
+U lektora či překladatele stanoví sazbu za jednotku.
  
 \end_layout
 
 \begin_layout Itemize
 U kurzů vloží předpokládaný rozvh, kde jsou uvedeny dny, čas, lektor a učebna.
- Tento rozvrh slouží zároveň jako pomůcka pro stanovení předběžných nákladů
- v budoucích měsících.
+ Tento rozvrh slouží zároveň jako pomůcka pro
+\begin_inset space ~
+\end_inset
+
+stanovení předběžných nákladů v
+\begin_inset space ~
+\end_inset
+
+budoucích měsících.
  
 \end_layout
 
@@ -831,10 +971,13 @@ Se vzrůstajícím objemem překladů a odučených hodin přestávalo být úno
  ruční vytváření měsíčních přehledů pro zákazníky.
  Ti si přáli být informování nejen o počtu odučených hodin, ale i o všech
  změnách zavedeném měsíčním rozvrhu a případném suplování.
- Zárověn musely být v systému zachyceny vazby mezi produktem, zákazníkem
- a vlastními účastníky tak, aby bylo možné stanovit výslednou cenu zakázky,
- která může být závislá nejen od počtu odučených hodin či přeložených stran,
- ale i od počtu účastníků.
+ Zároveň musely být v
+\begin_inset space ~
+\end_inset
+
+systému zachyceny vazby mezi produktem, zákazníkem a vlastními účastníky
+ tak, aby bylo možné stanovit výslednou cenu zakázky, která může být závislá
+ jak od počtu odučených hodin či přeložených stran, tak od počtu účastníků.
 \end_layout
 
 \begin_layout Itemize
@@ -928,7 +1071,15 @@ Uživatelé by měli mít možnost si jednoduše vybrat mezi několika jazykový
 
 \begin_layout Standard
 Na webových stránkách se zobrazuje aktuální rozvh veřejných kurzů, jenž
- je i jinak dostupný na dveřích učeben.
+ je i
+\begin_inset space ~
+\end_inset
+
+jinak dostupný na
+\begin_inset space ~
+\end_inset
+
+dveřích učeben.
  Ostatní rozvh individuální výuky bude dostupný po přihlášení do systému.
 \end_layout
 
@@ -937,9 +1088,20 @@ Návrh řešení
 \end_layout
 
 \begin_layout Standard
-Na základě požadavků bylo vytvořeno databázové schéma a popis jeho napojení
- na existující data ve firmě.
- Ukládání dat bude realizováno v relační databázi.
+Na základě požadavků bylo vytvořeno databázové schéma a
+\begin_inset space ~
+\end_inset
+
+popis jeho napojení na
+\begin_inset space ~
+\end_inset
+
+existující data ve firmě.
+ Ukládání dat bude realizováno v
+\begin_inset space ~
+\end_inset
+
+relační databázi.
  Ta poskytuje funkce pro vytvoření, čtení, změnu a smazání uložených informací
 \begin_inset Foot
 status collapsed
@@ -970,7 +1132,15 @@ delete
 
 \end_inset
 
- a v tomto případě se jeví jako nejlepší ze způsobů ukládání dat.
+ a
+\begin_inset space ~
+\end_inset
+
+v
+\begin_inset space ~
+\end_inset
+
+tomto případě se jeví jako nejlepší volba z různým variant ukládání dat.
 \end_layout
 
 \begin_layout Standard
@@ -989,18 +1159,52 @@ Extensible Markup Language
 
 \end_inset
 
- databáze uchovávané v souboru a zpracovávanho pomocí jazyka XPath, XQuery
- nebo XSLT.
- Výsledky byly dobré při zpracování omezeného množství dat a jednouživatelském
- přístupu k datům.
- Se vzrůstajícím objemem uložených dat se začala projevovat prostorová náročnost
+ databáze uchovávané v souboru a
+\begin_inset space ~
+\end_inset
+
+zpracovávanho pomocí jazyka XPath, XQuery nebo XSLT.
+ Výsledky byly dobré při zpracování omezeného množství dat a
+\begin_inset space ~
+\end_inset
+
+jednouživatelském přístupu k
+\begin_inset space ~
+\end_inset
+
+datům.
+ Se
+\begin_inset space ~
+\end_inset
+
+vzrůstajícím objemem uložených dat se začala projevovat prostorová náročnost
  použitého značkovacího jazyka.
- Proto bylo nutné použít kompresi a rozdělení dat do více souborů.
+ Proto bylo nutné použít kompresi a
+\begin_inset space ~
+\end_inset
+
+rozdělení dat do
+\begin_inset space ~
+\end_inset
+
+více souborů.
  Alernativu tvoří některé specializované XML databáze nebo relační databáze
- s podporou XML.
- Toto řešení, ale nakonec nebylo implementováno ani v rámci testování.
- Protože ačkoliv jsou XML databáze v komerčních produktech na velmi dobré
- úrovni, jejich implementace ve volně dostupných aplikacích mírně zaostává.
+ s
+\begin_inset space ~
+\end_inset
+
+podporou XML.
+ Toto řešení, ale nakonec nebylo implementováno ani v
+\begin_inset space ~
+\end_inset
+
+rámci testování.
+ Protože ačkoliv jsou XML databáze v komerčních produktech na
+\begin_inset space ~
+\end_inset
+
+velmi dobré úrovni, jejich implementace ve volně dostupných aplikacích mírně
+ zaostává.
 \end_layout
 
 \begin_layout Standard
@@ -1010,20 +1214,42 @@ Návrh dobře strukturované relační databáze vyžaduje předevších pochope
 \end_inset
 
 procesů fungování firmy, která ji bude využívat.
- Problémem s optimalizací navrženého modelu pomáhají řešit algoritmy logického
- návrhu relační databáze, které se snaží zajistit, aby navžená databáze
- byla prostorově efektivní, eliminovala vznik anomálií a zároveň úmožňovala
- rychlé zpracování uživatelských požadavků.
- Celý proces návrhu můžeme rozdělit na čtyři základní fáze
+ Problémem s
+\begin_inset space ~
+\end_inset
+
+optimalizací navrženého modelu pomáhají řešit algoritmy logického návrhu
+ relační databáze, které se snaží zajistit, aby navžená databáze byla prostorově
+ efektivní, eliminovala vznik anomálií a
+\begin_inset space ~
+\end_inset
+
+zároveň umožňovala rychlé zpracování uživatelských požadavků.
+ Celý proces návrhu můžeme rozdělit na
+\begin_inset space ~
+\end_inset
+
+čtyři základní fáze
 \begin_inset CommandInset citation
 LatexCommand cite
 key "soukupova 2004"
 
 \end_inset
 
-: analýza požadavků a specifikace, konceptuální návrh, logický návrh a fyzický
- návrh.
- Analýza požadavků a specifikace byla definována v předcházející kapitole.
+: analýza požadavků a
+\begin_inset space ~
+\end_inset
+
+specifikace, konceptuální návrh, logický návrh a
+\begin_inset space ~
+\end_inset
+
+fyzický návrh.
+ Analýza požadavků a
+\begin_inset space ~
+\end_inset
+
+specifikace byla provedena v předcházející kapitole.
 \end_layout
 
 \begin_layout Section
@@ -1032,7 +1258,11 @@ Konceptuální návrh
 
 \begin_layout Standard
 Zpracováním požadavků vznikl prvotní model budoucí databáze, který by měl
- pokrývat všechny důležité vazby a informace.
+ pokrývat všechny důležité vazby a
+\begin_inset space ~
+\end_inset
+
+informace.
 \end_layout
 
 \begin_layout Subsection*
@@ -1040,9 +1270,16 @@ Produkty
 \end_layout
 
 \begin_layout Standard
-Ne všechny specifické informace o daných produktech je potřeba udržovat
- jako speciální atributy.
- Zvítězila proto varianta jedné tabulky s minimem položek pro produkt.
+Ne všechny informace o
+\begin_inset space ~
+\end_inset
+
+daných produktech je potřeba udržovat jako speciální atributy.
+ Zvítězila proto varianta jedné tabulky s
+\begin_inset space ~
+\end_inset
+
+minimem položek pro produkt.
  V budoucí rozšiřovaní by mělo být realizováno pomocí tabulek se specifikými
  informacemi nebo pomocí strukturovaných poznámek.
 \end_layout
@@ -1052,7 +1289,7 @@ Ne všechny specifické informace o daných produktech je potřeba udržovat
 \emph on
 Identifikátor
 \emph default
- obsahuje infomace o jazycích, typu produktu a stručný jednoznačný popisek.
+ obsahuje infomace o jazycích, typu produktu a stručný jednoznačný popis.
 \end_layout
 
 \begin_layout Itemize
@@ -1071,7 +1308,7 @@ Kategorie
 Poskytovatel
 \emph default
  produktu je subjekt (uživatel), který se stará o jeho realizaci.
- Hledá dodavatele i odběratele a jsou na něj vystaveny faktury.
+ Hledá dodavatele i odběratele a vystavuje faktury.
 \end_layout
 
 \begin_layout Itemize
@@ -1096,8 +1333,12 @@ Popis
 \emph on
 Nastavení způsobu účtování
 \emph default
- pro správné stanovení ceny produktu (započítat množství, započítat počet
- účastníků na přihlášce).
+ pro správné stanovení ceny produktu (započítat množství odpracovaných jednotek
+ nebo počet účastníků na
+\begin_inset space ~
+\end_inset
+
+přihlášce).
 \end_layout
 
 \begin_layout Itemize
@@ -1115,9 +1356,13 @@ Smlouvy
 \end_layout
 
 \begin_layout Standard
-V návrhu se počítá s kontrolou maximálního počtu odpracovaných jednotek.
- Některé možnosti nastavení jsou pevně zakomponované a půjde je změnit pouze
- zásahem do zdrojových kódů nebo databáze.
+V návrhu se dobudoucna počítá s kontrolou maximálního počtu odpracovaných
+ jednotek.
+ Některé možnosti nastavení typu smluv jsou pevně zakomponované a
+\begin_inset space ~
+\end_inset
+
+půjde je změnit pouze zásahem do zdrojových kódů nebo databáze.
 \end_layout
 
 \begin_layout Itemize
@@ -1149,7 +1394,7 @@ a
 \emph on
  typ smlouvy
 \emph default
- úmožňují generování účetních přehledů.
+ umožňují generování účetních přehledů.
 \end_layout
 
 \begin_layout Subsection*
@@ -1157,18 +1402,50 @@ Výkazy
 \end_layout
 
 \begin_layout Standard
-Tabulka výkazů se nedrží papírové podoby, která je pro ukládání v databázi
- nevhodná z důvodu malé hustoty záznamů (obvykle 5-10 záznamů za měsíc na
- jeden produkt).
- Jednotlivé záznamy budou ukládány v oddělené tabulce s dalšími upřesňujícími
- informacemi.
+Tabulka výkazů se nedrží papírové podoby, která je pro ukládání v
+\begin_inset space ~
+\end_inset
+
+databázi nevhodná z
+\begin_inset space ~
+\end_inset
+
+důvodu malé hustoty záznamů (obvykle 5-10 záznamů za měsíc na
+\begin_inset space ~
+\end_inset
+
+jeden produkt).
+ Jednotlivé záznamy budou ukládány v
+\begin_inset space ~
+\end_inset
+
+oddělené tabulce s
+\begin_inset space ~
+\end_inset
+
+dalšími upřesňujícími informacemi.
 \end_layout
 
 \begin_layout Standard
-Z požadavků rovněž vyplívá potřeba uzamykání výkazu k danému datu.
- Jelikož se jedná o velmi důležitá data, měla by jejich kontrola prováděna
- i na databázové úrovni pomocí triggeru, pokud to bude daná databáze bude
- podporovat.
+Z
+\begin_inset space ~
+\end_inset
+
+požadavků rovněž vyplývá potřeba uzamykání výkazu k
+\begin_inset space ~
+\end_inset
+
+danému datu.
+ Jelikož se jedná o
+\begin_inset space ~
+\end_inset
+
+velmi důležitá data, měla by jejich kontrola prováděna i
+\begin_inset space ~
+\end_inset
+
+na databázové úrovni pomocí triggeru, pokud to bude daná databáze bude podporova
+t.
 \end_layout
 
 \begin_layout Itemize
@@ -1212,8 +1489,19 @@ Události
 \end_layout
 
 \begin_layout Standard
-Seznam událostí je přiřazen k výkazu a každá událost je doplněna o upřesňující
- informace.
+Seznam událostí je přiřazen k
+\begin_inset space ~
+\end_inset
+
+výkazu a
+\begin_inset space ~
+\end_inset
+
+každá událost je doplněna o
+\begin_inset space ~
+\end_inset
+
+upřesňující informace.
 \end_layout
 
 \begin_layout Itemize
@@ -1310,8 +1598,19 @@ Uživatelé
 
 \begin_layout Standard
 O všech uživatelích systému je potřeba vést obdobné informace.
- Proto jsou uloženi v jedné tabulce a o jejich specifikaci je rozhodnuto
- až přiřazením do skupiny.
+ Proto jsou uloženi v
+\begin_inset space ~
+\end_inset
+
+jedné tabulce a
+\begin_inset space ~
+\end_inset
+
+o
+\begin_inset space ~
+\end_inset
+
+jejich specifikaci je rozhodnuto až přiřazením do skupiny.
  Každý uživatel může být ve více skupinách.
 \end_layout
 
@@ -1466,7 +1765,7 @@ id
 \emph on
 id
 \emph default
- události implikuje přítomnost osoby ve výuce.
+ události indikuje přítomnost osoby ve výuce.
 \begin_inset Float figure
 wide false
 sideways false
@@ -1509,8 +1808,8 @@ Schéma produktů a vazeb na uživatele
 \end_layout
 
 \begin_layout Standard
-Evidence plateb je svázána s přihláškami, aby bylo možné snadno určit, za
- které služby již bylo zaplaceno.
+Evidence plateb je svázána s přihláškami, aby bylo možné snadno a rychle
+ určit, za které služby již bylo zaplaceno.
  Spolu s informací o DPH mohou být platby sdruženy do jednoho účetního dokladu,
  jehož schéma je zobrazeno na obrázku 
 \begin_inset CommandInset ref
@@ -1524,10 +1823,6 @@ reference "fig:Evidence-plateb"
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \align center
@@ -1561,10 +1856,6 @@ Evidence plateb
 
 \end_layout
 
-\begin_layout Standard
-@todo clanky a testy
-\end_layout
-
 \begin_layout Section
 Fyzický návrh
 \end_layout
@@ -1573,12 +1864,13 @@ Fyzický návrh
 V uvedeném návrhu je potřeba zajistit integritu dat a optimalizace pro rychlejší
  přístup k datům.
  K tomu slouží vytvořené cizí klíče, triggery a indexy.
- Jejich seznam a definice lze nalést v na přiloženém CD.
+ Jejich seznam a definice lze nalézt v na přiloženém CD.
 \end_layout
 
 \begin_layout Standard
-Při vytváření triggerů pro MySQL verze 5.2 nastal problém s vyvoláním vyjímky,
- pokud vkládaný objekt nesplňoval zadaná kritéria.
+Při vytváření triggerů pro MySQL verze 5.2 nastal problém s vyvoláním vyjímky
+ uvnitř triggeru, pokud vkládaný, editovaný či odstraňovaný objekt nesplňoval
+ zadaná kritéria.
  Řešení spočívá ve vytvoření tabulky s integritním omezením 
 \emph on
 UNIQUE
@@ -1591,11 +1883,39 @@ FAIL('chyba')
  Ta se pokusí naplnit tabulku dvěma indentickými záznami, což poruší omezení
  na jedinečnost záznamu ve sloupci a vyvolaná vyjímka zabrání potvrzení
  transakce.
+ Uvedené řešení je pouze náhradou za 
+\emph on
+RAISE EXCEPTION
+\emph default
+ známé třeba z PostgreSQL.
 \end_layout
 
 \begin_layout Standard
 V poslední fázi bylo schéma doplněno o tabulky pro správu menu, vyhledávání,
- tokenů, logů a emailových příloh.@todo
+ tokenů, logů a emailových příloh.
+ Také přibylo schéma pro správu článků a testů.
+\end_layout
+
+\begin_layout Standard
+Celkově schéma 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "cha:Databázové-schéma"
+
+\end_inset
+
+ simuluje firemní procesy velice přesně.
+ Problémem může být náročnější způsob výpočtu ceny pro zákazníka.
+ Pokud se totiž cena odvíjí od množství vykázaných jednotek dodavateli,
+ je potřeba spojit více tabulek a
+\begin_inset space ~
+\end_inset
+
+použít agregační funkci 
+\emph on
+SUM()
+\emph default
+ na počty odpracovaných jednotek v jednotlivých událostech.
 \end_layout
 
 \begin_layout Chapter
@@ -1603,8 +1923,8 @@ Použité technologie a frameworky
 \end_layout
 
 \begin_layout Standard
-Použité technologie byly částečně determinovány požadavy klienta.
- Systém využívá výhradně open source technologie tak, aby nebyly zvyšovány
+Použité technologie byly částečně determinovány požadavky klienta.
+ Systém tak využívá výhradně open source technologie, aby nebyly zvyšovány
  náklady na nákup licencí.
 \end_layout
 
@@ -1614,9 +1934,21 @@ Server
 
 \begin_layout Standard
 Tento webový informační systém využívá technologi PHP (jazyk, interpret
- a knihovny), která vychází se skriptovacího víceúčelového jazyka, jenž
- byl původně vyvinut pro tvorbu dynamických webových stránek.
- Z tohoto využití vznikla i zkatka z anglických slov 
+ a
+\begin_inset space ~
+\end_inset
+
+knihovny), která vychází se skriptovacího víceúčelového jazyka, jenž byl
+ původně vyvinut pro
+\begin_inset space ~
+\end_inset
+
+tvorbu dynamických webových stránek.
+ Z
+\begin_inset space ~
+\end_inset
+
+tohoto využití vznikla i zkratka z anglických slov 
 \emph on
 Personal Home Page
 \emph default
@@ -1649,15 +1981,18 @@ Nevýhodou, která brzdí další rozvoj a rozšíření, je absence normy.
 status collapsed
 
 \begin_layout Plain Layout
-dle statistiky na http://www.php.net/usage.php
+viz statistiky na http://www.php.net/usage.php
 \end_layout
 
 \end_inset
 
 , kteří jej využívají.
  I když existují mnohé polemiky a živé diskuze mezi jeho zastánci a odpůrci
- o jeho výkonnosti, bezpečnosti a vhodnosti pro velké projekty, existují
- vyjímky
+ o jeho výkonnosti, bezpečnosti a vhodnosti pro
+\begin_inset space ~
+\end_inset
+
+velké projekty, existují vyjímky
 \begin_inset Foot
 status collapsed
 
@@ -1667,8 +2002,12 @@ Facebook, YouTube, Wikipedia (MediaWiki) a další
 
 \end_inset
 
-, které tyto názory vyvrací a zároveň se podílejí na vývoji, a tak se snaží
- přispět k jeho větší výkonnosti a bezpečnosti.
+, které tyto názory vyvrací a
+\begin_inset space ~
+\end_inset
+
+zároveň se podílejí na vývoji, a tak se snaží přispět k jeho větší výkonnosti
+ a bezpečnosti.
 \end_layout
 
 \begin_layout Standard
@@ -1698,28 +2037,69 @@ Application Programming Interface
 \end_layout
 
 \begin_layout Standard
-Nesporná výhoda používání frameworků spočívá jednodušším vývoji aplikací
- a minimalizací rizika chyb v jinak ručně psaném jádru aplikace.
- Toto platí pouze za předpokladu, že je dostupná kvalitní dokumentace a
- vývoj včetně testování je zastřešen silnou komunitou nebo společností.
- Některé frameworky rovněž dokáží do jisté míry zakrýt rozdíly mezi ve verzích
- jazyka.
- Děje se tak, za cenu zpomalení některých částí aplikace, díky kontroly
- verze překladače a vykonáním alternativního kódu.
+Nesporná výhoda používání frameworků spočívá v jednodušším vývoji aplikací
+ a
+\begin_inset space ~
+\end_inset
+
+minimalizací rizika chyb v
+\begin_inset space ~
+\end_inset
+
+jinak ručně psaném jádru aplikace.
+ Toto platí pouze za
+\begin_inset space ~
+\end_inset
+
+předpokladu, že je dostupná kvalitní dokumentace a
+\begin_inset space ~
+\end_inset
+
+vývoj včetně testování je zastřešen silnou komunitou nebo společností.
+ Některé frameworky rovněž dokáží do jisté míry zakrýt rozdíly mezi ve
+\begin_inset space ~
+\end_inset
+
+verzích jazyka.
+ Děje se tak, za
+\begin_inset space ~
+\end_inset
+
+cenu zpomalení některých částí aplikace, díky kontroly verze překladače
+ a
+\begin_inset space ~
+\end_inset
+
+vykonáním alternativního kódu.
 \end_layout
 
 \begin_layout Standard
-Při výběru frameworku byl kladen důraz hlavně na kvalitní dokumentaci, rozšířite
-lnost a možnost práce s různými relačními databázemi.
+Při výběru frameworku byl kladen důraz hlavně na
+\begin_inset space ~
+\end_inset
+
+kvalitní dokumentaci, rozšířitelnost a možnost práce s
+\begin_inset space ~
+\end_inset
+
+různými relačními databázemi.
  Frameworky, které splňují vetšinu požadavků jsou Zend, Prado, Symfony a
- CakePHP, který navíc ve výkonnostních testech podle 
+ CakePHP, který navíc ve
+\begin_inset space ~
+\end_inset
+
+výkonostních testech podle 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "root-testy"
 
 \end_inset
 
- dopadl velmi dobře a právem byl vybrán pro vývoj informačního systému.
+ dopadl velmi dobře, a
+\begin_inset space ~
+\end_inset
+
+tak byl vybrán pro vývoj informačního systému.
 \end_layout
 
 \begin_layout Subsection
@@ -1734,8 +2114,15 @@ key "CakePHP"
 
 \end_inset
 
-, který poskytuje většinu nástrojů pro snadný vývoj webové aplikace a dává
- větší příležitost věnovat se návrhu schématu a logiky aplikace.
+, který poskytuje většinu nástrojů pro snadný vývoj webové aplikace a
+\begin_inset space ~
+\end_inset
+
+dává větší příležitost věnovat se návrhu schématu a
+\begin_inset space ~
+\end_inset
+
+logiky aplikace.
 \end_layout
 
 \begin_layout Description
@@ -1751,7 +2138,11 @@ name "mvc"
 Model-View-Controller
 \emph default
  (Model-Pohled-Řadič) - softwarová architektura oddělující data, uživatelské
- rozhraní a logiku aplikace
+ rozhraní a
+\begin_inset space ~
+\end_inset
+
+logiku aplikace
 \begin_inset CommandInset citation
 LatexCommand cite
 key "MVC"
@@ -1759,8 +2150,19 @@ key "MVC"
 \end_inset
 
 .
- Výsledný kód aplikace se stává přehlednějším a úmožňuje změnu libovolné
- komponenty s minimálními dopady na ostatní části aplikace (např.
+ Výsledný kód aplikace se stává přehlednějším a
+\begin_inset space ~
+\end_inset
+
+umožňuje změnu libovolné komponenty s
+\begin_inset space ~
+\end_inset
+
+minimálními dopady na
+\begin_inset space ~
+\end_inset
+
+ostatní části aplikace (např.
  změna databáze, výstup v XML či jiném formátu, ovládání přes webové rozhraní
  nebo konzoli).
 \begin_inset Float figure
@@ -1850,18 +2252,57 @@ Dispatcher
 Controller
 \emph default
 ).
- Ten se na základě parametrů, které obdrží od plánovače, rozhodne o spuštění
- správné akce a předání parametrů.
+ Ten se na
+\begin_inset space ~
+\end_inset
+
+základě parametrů, které obdrží od
+\begin_inset space ~
+\end_inset
+
+plánovače, rozhodne o
+\begin_inset space ~
+\end_inset
+
+spuštění správné akce a
+\begin_inset space ~
+\end_inset
+
+předání parametrů.
  V řadiči je obsažena vlastní aplikační logika (včetně např.
- kontroly přihlášení a práv uživatele), která může využívat modely pro přístup
- k uloženým datům a jejich modifikaci (3 a 4).
- Až řadič získá všechna potřebná data předá (5) je zbývající vrstvě - pohledu
+ kontroly přihlášení a
+\begin_inset space ~
+\end_inset
+
+práv uživatele), která může využívat modely pro přístup k uloženým datům
+ a
+\begin_inset space ~
+\end_inset
+
+jejich modifikaci (3
+\begin_inset space ~
+\end_inset
+
+a
+\begin_inset space ~
+\end_inset
+
+4).
+ Až řadič získá všechna potřebná data, předá (5) je zbývající vrstvě - pohledu
  (
 \emph on
 View
 \emph default
 ).
- V té jsou data zformátována do požadované podoby a poslány (6) klientovi.
+ V té jsou data zformátována do
+\begin_inset space ~
+\end_inset
+
+požadované podoby a
+\begin_inset space ~
+\end_inset
+
+poslány (6) klientovi.
 \end_layout
 
 \begin_layout Description
@@ -1894,6 +2335,7 @@ Mezi další výhody, které CakePHP nabízí, patří SEO optimalizace stránek
 status collapsed
 
 \begin_layout Plain Layout
+\noindent
 \begin_inset Quotes pld
 \end_inset
 
@@ -1918,11 +2360,11 @@ key "i18n"
 status collapsed
 
 \begin_layout Plain Layout
-Jedná se o 
+\noindent
 \begin_inset Quotes pld
 \end_inset
 
-doplnění aplikace o data specifická pro konkrétní národní/regionální prostředí
+Doplnění aplikace o data specifická pro konkrétní národní prostředí
 \begin_inset Quotes prd
 \end_inset
 
@@ -1940,8 +2382,8 @@ key "l10n"
 
  pro tvorbu vícejazyčných aplikací.
  Kód je již zapracován do jádra frameworku a otestován komunitou, díky které
- není potřeba psát již jednou napsané části, ale možné šetřit lidské zdroje
- na vlastní vývoj aplikační logiky.
+ není potřeba psát již jednou napsané části, ale je možné šetřit lidské
+ zdroje na vlastní vývoj aplikační logiky.
 \end_layout
 
 \begin_layout Standard
@@ -1976,12 +2418,12 @@ helpers
 \end_layout
 
 \begin_layout Standard
-Za největší přínos samotného frameworku v počátku návrhu aplikace považuji
+Za největší přínos samotného frameworku v počátku návrhu aplikace je považována
  
 \begin_inset Quotes pld
 \end_inset
 
-pekárnu
+pekárna
 \begin_inset Quotes prd
 \end_inset
 
@@ -1989,7 +2431,7 @@ pekárnu
 \emph on
 baker
 \emph default
-) a podporu 
+) a podpora 
 \begin_inset Quotes pld
 \end_inset
 
@@ -2001,7 +2443,7 @@ lešení
 \emph on
 scaffolding
 \emph default
-), které úmožňuje pracovat s automaticky generovaným rozhraním podporujícím
+), které umožňují pracovat s automaticky generovaným rozhraním podporujícím
  CRUD.
  
 \begin_inset Quotes pld
@@ -2029,7 +2471,7 @@ name "Hledání-relací"
 
 \end_inset
 
- probíhá na základě názvů tabulkek a jejich atributů.
+ probíhá na základě názvů tabulek a jejich atributů.
  Proto je doporučeno při práci s CakePHP dodržovat tyto konvence, které
  nejsou nijak závazné a jdou změnit ve specifikaci každého modelu.
 \end_layout
@@ -2070,7 +2512,7 @@ id
 Díky těmto úsporám je možné se zaměřit na ergonomii dané aplikace a její
  možnou optimalizaci, která je ovšem limitována výkonností použitého skriptovací
 ho jazyka.
- Tato omezení lze, minimalizovat tzv.
+ Tato omezení lze minimalizovat tzv.
  kešováním
 \begin_inset Foot
 status collapsed
@@ -2160,9 +2602,17 @@ MySQL
 \end_layout
 
 \begin_layout Standard
-MySQL je multiplatformní systém pro řízení báze dat (DBMS, zkáceně databázový
+MySQL je multiplatformní systém pro řízení báze dat (DBMS, zkráceně databázový
  systém), který poskytuje všechny potřebné vlastnosti nutné pro běh tohoto
  informačního systému:
+\end_layout
+
+\begin_layout Itemize
+indexy
+\end_layout
+
+\begin_layout Itemize
+fultextové vyhledávání
 \end_layout
 
 \begin_layout Itemize
@@ -2183,10 +2633,6 @@ transakce
 
 \begin_layout Itemize
 triggery
-\end_layout
-
-\begin_layout Itemize
-indexy, fultextové vyhledávání
 \end_layout
 
 \begin_layout Standard
@@ -2249,9 +2695,9 @@ Pro vlastní běh aplikační logiky je možné se spolehnout na to, že servero
 \emph on
 volně dostupných
 \emph default
- prohlížečů dodžujících standardy (doporučení) konsorcia W3C.
+ prohlížečů dodržujících standardy (doporučení) konsorcia W3C.
  Mezi podprované prohlížeče patří Mozilla Firefox 3.5, Opera 9, Google Chrome,
- Safari a ostatní prohlížeče založené na vykreslovacím jádře Webkit.
+ Safari a další založené na vykreslovacím jádře Webkit nebo Gecko.
 \end_layout
 
 \begin_layout Standard
@@ -2388,7 +2834,7 @@ key "slicktest"
 
 \begin_layout Standard
 Jak už bylo zmíněno výše, Prototype je skvěle provázán s CakePHP, který
- tak programátorovi úmožňuje psát kód pouze v jednom programovacím jazyce
+ tak programátorovi umožňuje psát kód pouze v jednom programovacím jazyce
  - PHP.
  Kromě Scipt.aculo.us, je v systému použita i knihovna Livepipe
 \begin_inset Foot
@@ -2417,12 +2863,20 @@ Programátorská dokumentace
 
 \begin_layout Standard
 V následující kapitole je popsána základní adresářová struktura projektu,
- propojení databázového schématu s třídami a metody použitých tříd.
+ propojení databázového schématu s
+\begin_inset space ~
+\end_inset
+
+třídami a
+\begin_inset space ~
+\end_inset
+
+metody použitých tříd.
 \end_layout
 
 \begin_layout Standard
-Pro plné pochopení fungování frameworku CakePHP a kompletní dokumentaci
- všech metod je vhodné se nejprve nastudovat 
+Pro kompletní dokumentaci všech metod a plné pochopení fungování frameworku
+ CakePHP je vhodné si nejprve nastudovat 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "CakePHP"
@@ -2430,7 +2884,20 @@ key "CakePHP"
 \end_inset
 
 .
- Dále jsou vysvětleny jen nejdůležitější části a změny v jáderných metodách.
+ Dále jsou vysvětleny jen nejdůležitější části a
+\begin_inset space ~
+\end_inset
+
+změny v
+\begin_inset space ~
+\end_inset
+
+jaderných metodách frameworku.
+ Popis celého API je k
+\begin_inset space ~
+\end_inset
+
+dispozici na přiloženém CD.
 \end_layout
 
 \begin_layout Section
@@ -2446,7 +2913,7 @@ Kód aplikace je logicky rozčleněn podle původu do 3 hlavních složek.
 \emph on
 app
 \emph default
- - vlastní kód systému
+ - vlastní kód aplikace
 \end_layout
 
 \begin_deeper
@@ -2455,8 +2922,11 @@ app
 \emph on
 config
 \emph default
- - konfigurační soubory (nastavení databáze, přepisování URL a ostatní konstanty
-)
+ - konfigurační soubory (nastavení databáze, přepisování URL a
+\begin_inset space ~
+\end_inset
+
+ostatní konstanty)
 \end_layout
 
 \begin_layout Itemize
@@ -2472,7 +2942,15 @@ controllers
 \emph on
 locale
 \emph default
- - obsahuje podadresáře s přeloženými řetězci použitými v aplikaci
+ - obsahuje podadresáře s
+\begin_inset space ~
+\end_inset
+
+přeloženými řetězci použitými v
+\begin_inset space ~
+\end_inset
+
+aplikaci
 \end_layout
 
 \begin_layout Itemize
@@ -2480,7 +2958,11 @@ locale
 \emph on
 models
 \emph default
- - modely, doplňková chování a definice zdrojů dat
+ - modely, doplňková chování a
+\begin_inset space ~
+\end_inset
+
+definice zdrojů dat
 \end_layout
 
 \begin_layout Itemize
@@ -2488,7 +2970,7 @@ models
 \emph on
 plugins
 \emph default
- - doplňky a znovupoužitelné balíky
+ - zásuvné moduly a znovupoužitelné balíky
 \end_layout
 
 \begin_layout Itemize
@@ -2504,7 +2986,11 @@ tmp
 \emph on
 views
 \emph default
- - šablony, elementy a prezentační data
+ - šablony, elementy a
+\begin_inset space ~
+\end_inset
+
+prezentační data
 \end_layout
 
 \begin_layout Itemize
@@ -2512,8 +2998,11 @@ views
 \emph on
 webroot
 \emph default
- - kaskádové styly, javascriptové knihovny a obrázky použité při prezentaci
- dat
+ - kaskádové styly, javascriptové knihovny a
+\begin_inset space ~
+\end_inset
+
+obrázky použité při prezentaci dat
 \end_layout
 
 \end_deeper
@@ -2569,8 +3058,11 @@ Overloadable
 
 \begin_layout Standard
 Modely jsou částečně determinovány návrhem databáze.
- Relace mezi jednotlivými modely odpovídají relacím v databázi a je možné
- je upravovat ve vlastnostech dané třídy.
+ Relace mezi jednotlivými modely odpovídají relacím v databázi a
+\begin_inset space ~
+\end_inset
+
+je možné je upravovat ve vlastnostech dané třídy.
  Existují čtyři druhy relací, jenž jdou v CakePHP modelovat.
  Relace 1:1 (
 \emph on
@@ -2580,7 +3072,11 @@ hasOne
 \emph on
 hasMany
 \emph default
-) a N:1 (
+) a
+\begin_inset space ~
+\end_inset
+
+N:1 (
 \emph on
 belongsTo
 \emph default
@@ -2600,11 +3096,19 @@ fields seznam polí, jenž mají být načteny při použití dané asociace
 \end_layout
 
 \begin_layout Description
-order část SQL dotazu sloužící k definici pořadí výsledků
+order část SQL dotazu sloužící k
+\begin_inset space ~
+\end_inset
+
+definici pořadí výsledků
 \end_layout
 
 \begin_layout Description
-conditions část SQL dotazu sloužící k filtraci nalezených výsledků
+conditions část SQL dotazu sloužící k
+\begin_inset space ~
+\end_inset
+
+filtraci nalezených výsledků
 \end_layout
 
 \begin_layout Standard
@@ -2616,8 +3120,11 @@ hasAndBelongsToMany - HABTM
 \emph on
 joinTable
 \emph default
-), přes kterou bude prováděno spojení nalezených dat, a cizí klíč do asociované
- tabulky (
+), přes kterou bude prováděno spojení nalezených dat, a
+\begin_inset space ~
+\end_inset
+
+cizí klíč do asociované tabulky (
 \emph on
 associationForeignKey
 \emph default
@@ -2666,10 +3173,13 @@ count vrátí počet vyhovujících záznamů
 \end_layout
 
 \begin_layout Description
-list vygeneruje pole s hodnotami ze sloupce tabulky definované v proměnné
- 
+list vygeneruje pole s hodnotami ze sloupce tabulky definované v
+\begin_inset space ~
+\end_inset
+
+atributu 
 \emph on
-$displayField
+displayField
 \emph default
  daného modelu indexované standardně primárním klíčem
 \end_layout
@@ -2823,8 +3333,11 @@ Zajímavým parametrem je
 recursive
 \emph default
 , který určuje do jaké hloubky mají být načítána data.
- Pokud data z asociovaných modelů nejsou potřeba, je vhodné jej nastavit
- na 
+ Pokud data z
+\begin_inset space ~
+\end_inset
+
+asociovaných modelů nejsou potřeba, je vhodné jej nastavit na 
 \emph on
 -1
 \emph default
@@ -2833,7 +3346,11 @@ recursive
 
 \begin_layout Standard
 V systému, kde je potřeba vyhledávat sdružovat data podle modelů, jenž jsou
- v řetězci asociací dále, bylo výchozí chování parametru nedostatečné.
+ v
+\begin_inset space ~
+\end_inset
+
+řetězci asociací dále, bylo výchozí chování parametru nedostatečné.
  Naštěstí existují rozšiřující chování modelu, které takové činnosti umožňují.
 \end_layout
 
@@ -2857,7 +3374,7 @@ status collapsed
 
 \begin_layout Plain Layout
 Je ovšem potřeba vzít na vědomí, že CakePHP tak vygeneruje značné množství
- dotazů, které mohou mít vliv na výkon dané aplikace.
+ dotazů, které mohou mít negativní vliv na výkon dané aplikace.
 \end_layout
 
 \end_inset
@@ -2871,7 +3388,11 @@ syntaktický cukr
 \begin_inset Quotes prd
 \end_inset
 
- k metodám 
+ k
+\begin_inset space ~
+\end_inset
+
+metodám 
 \emph on
 bindModel()
 \emph default
@@ -2896,12 +3417,20 @@ contain
 \begin_inset Quotes prd
 \end_inset
 
- v poli s vyhledávacími parametry metody 
+ v
+\begin_inset space ~
+\end_inset
+
+poli s vyhledávacími parametry metody 
 \emph on
 find()
 \emph default
 .
- Ta se postará o dynamickou asociaci potřebných modelů.
+ Ta se postará o
+\begin_inset space ~
+\end_inset
+
+dynamickou asociaci potřebných modelů.
 \end_layout
 
 \begin_layout Standard
@@ -2911,7 +3440,7 @@ Také výše zmíněné rozšíření má určité nedostatky a to hlavně pokud
 \emph on
 Linkable
 \emph default
-
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "linkable"
@@ -2944,7 +3473,7 @@ key "ExtendAssoc"
 
 \emph default
  .
- To úmožňuje jednoduché přidání nebo smazání asociací, bez ovlivnění ostatních
+ To umožňuje jednoduché přidání nebo smazání asociací, bez ovlivnění ostatních
  již existujících.
  K tomu slouží nově definovaná sada metod:
 \end_layout
@@ -2966,7 +3495,11 @@ $id,
 
 $assoc_ids
 \emph default
-) - přidá asociace k danému záznamu v modelu
+) - přidá asociace k
+\begin_inset space ~
+\end_inset
+
+danému záznamu v modelu
 \end_layout
 
 \begin_layout Itemize
@@ -2986,7 +3519,11 @@ $id,
 
 $assoc_ids)
 \emph default
- - smaže asociace s danou kombinací klíčů
+ - smaže asociace s
+\begin_inset space ~
+\end_inset
+
+danou kombinací klíčů
 \end_layout
 
 \begin_layout Itemize
@@ -3002,7 +3539,11 @@ $assoc,
 
 $id)
 \emph default
- - smaže včechny asociace k danému záznamu modelu
+ - smaže včechny asociace k
+\begin_inset space ~
+\end_inset
+
+danému záznamu modelu
 \end_layout
 
 \begin_layout Standard
@@ -3011,22 +3552,48 @@ Pro překlady do cizích jazyků bylo použito rozšíření
 Translate
 \emph default
 , které umožňuje nadefinovat seznam sloupců tabulky, které mají být překládány.
- Přeložená data jsou ukládána v oddělené tabulce (
+ Přeložená data jsou ukládána v
+\begin_inset space ~
+\end_inset
+
+oddělené tabulce (
 \emph on
 i18n
 \emph default
- - lze změnit v konfiguraci pro každý model) a při dotazu je vytořeno spojení
- s touto tabulkou pomocí složeného klíče - jméno modelu, cizí klíč daného
- modelu a jméno překládaného sloupce.
+ - lze změnit v
+\begin_inset space ~
+\end_inset
+
+konfiguraci pro každý model) a
+\begin_inset space ~
+\end_inset
+
+při dotazu je vytořeno spojení s
+\begin_inset space ~
+\end_inset
+
+touto tabulkou pomocí složeného klíče - jméno modelu, cizí klíč daného modelu
+ a
+\begin_inset space ~
+\end_inset
+
+jméno překládaného sloupce.
 \end_layout
 
 \begin_layout Standard
-A pro úplnost jsou zde uvedneny zbývající rozšíření použité v aplikaci,
- které zatím nejsou součástí základních knihoven frameworku.
+A pro úplnost jsou zde uvedneny zbývající rozšíření použité v
+\begin_inset space ~
+\end_inset
+
+aplikaci, které zatím nejsou součástí základních knihoven frameworku.
 \end_layout
 
 \begin_layout Description
-Slugable Vytváří texty použitelné v URL z definovaných sloupců tabulky.
+Slugable Vytváří texty použitelné v URL z
+\begin_inset space ~
+\end_inset
+
+definovaných sloupců.
 \end_layout
 
 \begin_layout Description
@@ -3046,7 +3613,11 @@ AppModel
 \begin_layout Standard
 Jelikož je kontrola konzistence dat po přidání, smazání a editaci záznamu
  ponechána na databázi, bylo potřeba zajistit zpracování chybových hlášení
- z databáze.
+ z
+\begin_inset space ~
+\end_inset
+
+databáze.
  To se děje v metodě 
 \emph on
 onError()
@@ -3056,8 +3627,15 @@ onError()
 DboSouce::execute()
 \emph default
  vrátí chybu.
- V našem případě je chyba zpracována a chybové hlášení je uloženo pro pozdější
- prezentaci uživateli.
+ V
+\begin_inset space ~
+\end_inset
+
+našem případě je chyba zpracována a
+\begin_inset space ~
+\end_inset
+
+chybové hlášení je uloženo pro pozdější prezentaci uživateli.
 \end_layout
 
 \begin_layout Standard
@@ -3065,9 +3643,16 @@ Pro plnou lokalizaci aplikace bylo potřeba rozšířit metodu
 \emph on
 invalidate($záznam, $chybovéHlášení)
 \emph default
- o překlad chybového hlášení, pokud daný záznam neprošel validací.
- Lokalizaci lze rovněž provádět při generování pohledu, ale to se z hlediska
- údržby kódu nejeví jako nejvhodnější řešení.
+ o
+\begin_inset space ~
+\end_inset
+
+překlad chybového hlášení, pokud daný záznam neprošel validací.
+ Lokalizaci lze rovněž provádět při generování pohledu, ale to se z
+\begin_inset space ~
+\end_inset
+
+hlediska údržby kódu nejeví jako nejvhodnější řešení.
 \end_layout
 
 \begin_layout Section
@@ -3080,10 +3665,17 @@ Controllers
 
 \begin_layout Standard
 Řadiče jsou používany ke správě aplikační logiky.
- Pro možnost používat stejný kus kódu v různých řadičích je vhodné používat
- komponenty.
+ Pro možnost používat stejný kus kódu v
+\begin_inset space ~
+\end_inset
+
+různých řadičích je vhodné používat komponenty.
  Tyto komponenty usnadňují autentifikaci, autorizaci uživatelů, vyhledávání
- v databázi, posílání emailů nebo validaci uživatelských formulářů.
+ v
+\begin_inset space ~
+\end_inset
+
+databázi, posílání emailů nebo validaci uživatelských formulářů.
 \end_layout
 
 \begin_layout Subsection
@@ -3091,25 +3683,73 @@ Komponenty
 \end_layout
 
 \begin_layout Description
-Auth/Authmd5 Standardní knihovna přidává k heslu řetězec definovaný v app/config
-/core.php v interní proměnné Security.salt.
- Tato vlastnost byla v systému na obtíž, hlavně kvůli přenositelnosti již
- zadaných hesel v předchozí aplikaci.
+Auth/Authmd5 Standardní knihovna přidává k heslu řetězec definovaný v
+\begin_inset space ~
+\end_inset
+
+app/config/core.php v
+\begin_inset space ~
+\end_inset
+
+interní proměnné 
+\emph on
+Security.salt
+\emph default
+.
+ Tato vlastnost byla v
+\begin_inset space ~
+\end_inset
+
+systému na obtíž, hlavně kvůli přenositelnosti již zadaných hesel v
+\begin_inset space ~
+\end_inset
+
+předchozí aplikaci.
  Proto byla vytvořena komponenta Authmd5, která nepřidává zabezpečovací
- řetězec k heslu.
+ řetězec k
+\begin_inset space ~
+\end_inset
+
+heslu.
  Další drobnou změnou oproti původní komponentě je automatické hashovaní
- hesla z formuláře i když není zadáno přihlašovací jméno.
+ hesla z
+\begin_inset space ~
+\end_inset
+
+formuláře, i
+\begin_inset space ~
+\end_inset
+
+když není zadáno přihlašovací jméno.
 \end_layout
 
 \begin_layout Description
 P28n Při načtení komponenty se zkontroluje zda si již uživatel někdy vybral
- vybral jazyk, který byl uložen do cookie pomocí metody 
+ vybral jazyk, který byl uložen do cookie
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Označení pro data v protokolu HTTP uložená v počítači uživatele, která prohlížeč
+ obdržel od WWW serveru a
+\begin_inset space ~
+\end_inset
+
+při každé další komunikaci je posílá zpět.
+\end_layout
+
+\end_inset
+
+ pomocí metody 
 \emph on
 change($lang)
 \emph default
 .
- Pokud se jazyk v cookie nenachází zvolí se výchozí jazyk aplikace podle
- proměnné 
+ Pokud se jazyk v
+\begin_inset space ~
+\end_inset
+
+cookie nenachází zvolí se výchozí jazyk aplikace podle proměnné 
 \emph on
 HTTP_ACCEPT_LANGUAGE
 \emph default
@@ -3118,7 +3758,11 @@ HTTP_ACCEPT_LANGUAGE
 \emph on
 DEFAULT_LANGUAGE
 \emph default
- v souboru 
+ v
+\begin_inset space ~
+\end_inset
+
+souboru 
 \emph on
 app/config/core.php
 \emph default
@@ -3145,8 +3789,16 @@ hezké
 \begin_inset Quotes prd
 \end_inset
 
- a bezpečné heslo zadané délky bez opakujících se znaků.
- Jednotlivé znaky jsou vybírány z atributu
+ a
+\begin_inset space ~
+\end_inset
+
+bezpečné heslo zadané délky bez opakujících se znaků.
+ Jednotlivé znaky jsou vybírány z
+\begin_inset space ~
+\end_inset
+
+atributu
 \emph on
  possible
 \emph default
@@ -3165,7 +3817,15 @@ Autocomplete Přidává metodu
 \emph on
 autocomplete()
 \emph default
-, která zpracuje získaná data z formulářového prvku s atributem name 
+, která zpracuje získaná data z
+\begin_inset space ~
+\end_inset
+
+formulářového prvku s
+\begin_inset space ~
+\end_inset
+
+atributem name 
 \begin_inset Quotes pld
 \end_inset
 
@@ -3178,8 +3838,20 @@ data[Model][položka]
 \end_inset
 
 .
- Následně vyhledá vyhovující záznamy a vygeneruje seznam s výsledky.
- Přidání doplňkových podmínek pro vyhledávání je možné v metodě 
+ Následně vyhledá vyhovující záznamy a
+\begin_inset space ~
+\end_inset
+
+vygeneruje seznam s
+\begin_inset space ~
+\end_inset
+
+výsledky.
+ Přidání doplňkových podmínek pro vyhledávání je možné v
+\begin_inset space ~
+\end_inset
+
+metodě 
 \emph on
 beforeFilter()
 \emph default
@@ -3188,10 +3860,17 @@ beforeFilter()
 \emph on
 handles
 \emph default
-, kde index v zadaném poli určuje položky tabulky, kterých se mají podmínky
- týkat.
- Následující příklad je vybrán z řadiče produktů, kde má být zákazníkům
- úmožněno vyhledávat pouze v produktech, které se jich přímo týkají.
+, kde index v
+\begin_inset space ~
+\end_inset
+
+zadaném poli určuje položky tabulky, kterých se mají podmínky týkat.
+ Následující příklad je vybrán z
+\begin_inset space ~
+\end_inset
+
+řadiče produktů, kde má být zákazníkům úmožněno vyhledávat pouze v produktech,
+ které se jich přímo týkají.
 \end_layout
 
 \begin_layout Standard
@@ -3352,13 +4031,20 @@ scriptaculous.js
 \end_layout
 
 \begin_layout Description
-Filter Komponenta pro validaci vyhledávacích formulářů a vygenerování podmínek
- pro vyhledávání.
+Filter Komponenta pro validaci vyhledávacích formulářů a
+\begin_inset space ~
+\end_inset
+
+vygenerování podmínek pro vyhledávání.
 \end_layout
 
 \begin_layout Description
 Email Slouží k odesílání emailů.
- Lze používat šablony, html zprávy a přidávat přílohy.
+ Lze používat šablony, HTML zprávy a
+\begin_inset space ~
+\end_inset
+
+přidávat přílohy.
 \end_layout
 
 \begin_layout Description
@@ -3424,8 +4110,19 @@ poslední přihlášení
 \begin_inset Quotes prd
 \end_inset
 
- v databázi, nastavena zpráva uživateli a uživatel je přesměrován na požadovanou
- nebo výchozí stránku.
+ v
+\begin_inset space ~
+\end_inset
+
+databázi, nastavena zpráva uživateli a
+\begin_inset space ~
+\end_inset
+
+uživatel je přesměrován na
+\begin_inset space ~
+\end_inset
+
+požadovanou nebo výchozí stránku.
 \end_layout
 
 \begin_layout Description
@@ -3608,17 +4305,35 @@ Příjmové doklady
 \end_layout
 
 \begin_layout Standard
-Pro zobrazení dokladu a vygenerování položek k zaplacení slouží metoda 
+Pro zobrazení dokladu a vygenerování položek k
+\begin_inset space ~
+\end_inset
+
+zaplacení slouží metoda 
 \emph on
 admin_view($id)
 \emph default
 .
- Pro každý produkt se sečtou již zaplacené položky a celkový počet položek
- k zaplacení.
+ Pro každý produkt se sečtou již zaplacené položky a
+\begin_inset space ~
+\end_inset
+
+celkový počet položek k
+\begin_inset space ~
+\end_inset
+
+zaplacení.
  Rozdíl těchto dvou mezivýsledků určuje nedoplatek popřípadě přeplatek na
  daném produktu.
- Jelikož je rozhraní pro přidávání a mazání položek z dokladu postaveno
- na AJAXu jsou vytvořeny dvě metody 
+ Jelikož je rozhraní pro přidávání a
+\begin_inset space ~
+\end_inset
+
+mazání položek z
+\begin_inset space ~
+\end_inset
+
+dokladu postaveno na AJAXu jsou vytvořeny dvě metody 
 \emph on
 admin_additem()
 \emph default
@@ -3626,8 +4341,11 @@ admin_additem()
 \emph on
 admin_delitem()
 \emph default
-, které po provedení akce vygenerují element s aktualizovanými položkami
- dokladu.
+, které po provedení akce vygenerují element s
+\begin_inset space ~
+\end_inset
+
+aktualizovanými položkami dokladu.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3635,9 +4353,12 @@ Události v kalendáři
 \end_layout
 
 \begin_layout Standard
-Pro přehledné zobrazení údálostí jsou na výběr dvě možnosti.
- Tou první je zobrazení všech událostí v daném měsíci v tabulce podobné
- kalendáři.
+Pro přehledné zobrazení událostí jsou na výběr dvě možnosti.
+ Tou první je zobrazení všech událostí v daném měsíci v
+\begin_inset space ~
+\end_inset
+
+tabulce podobné kalendáři.
  K tomuto účelu slouží metoda 
 \emph on
 PREFIX_calendar()
@@ -3652,10 +4373,17 @@ CalendarHelper::calendar()
 
 \begin_layout Standard
 Druhou variantou je týdenní zobrazení včetně času.
- Data jsou nejdřív seřazena a vícedenní záznamy se rozdělí do několika jednodenn
-ích (např.
+ Data jsou nejdřív seřazena a
+\begin_inset space ~
+\end_inset
+
+vícedenní záznamy se rozdělí do několika jednodenních (např.
  událost 8.7.2009 16:00 - 9.7.2009 14:00 je rozdělena na 8.7.2009 16:00-24:00
- a 9.7-2009 00:00-14:00).
+ a
+\begin_inset space ~
+\end_inset
+
+9.7-2009 00:00-14:00).
  Rozdělené záznamy jsou pak vykresleny pomocí metody 
 \emph on
 CalendarHelper::week()
@@ -3664,7 +4392,16 @@ CalendarHelper::week()
 \end_layout
 
 \begin_layout Section
-Doplňky (Pluginy)
+Zásuvné moduly (
+\emph on
+Plugins
+\emph default
+)
+\end_layout
+
+\begin_layout Standard
+V této části budou popsány moduly jiných autorů a jejich úpravy a vylepšení,
+ které byly použity při implementaci systému.
 \end_layout
 
 \begin_layout Subsection
@@ -3677,9 +4414,95 @@ Searchable
 
 \begin_layout Standard
 Nejdůležitějším požadavkem na tento modul je rychlost.
- Jelikož byl vybrán databázový systém MySQL, který ve verzi 5.2 úmožňuje
+ Jelikož byl vybrán databázový systém MySQL, který ve verzi 5.2 umožňuje
  fultextové vyhledánání pouze nad tabulkami typu MyISAM, bylo potřeba zajistit,
- že půjde rychle vyhledávat i data obsažená tabulkách typu InnoDB.
+ že půjde rychle vyhledávat i
+\begin_inset space ~
+\end_inset
+
+data obsažená tabulkách typu InnoDB.
+\end_layout
+
+\begin_layout Standard
+Idea spočívá ve vytvoření tabulky typu MyISAM, do které jsou uloženy všechna
+ data z textových sloupců indexované tabulky.
+ Výhodou je, že lze prohledávat více tabulek jedním dotazem.
+ Nalezené řádky jsou spojeny se záznamy v původní tabulce.
+\end_layout
+
+\begin_layout Standard
+Úpravy se dočkalo generování výstupu pro 
+\begin_inset Quotes pld
+\end_inset
+
+našeptávač
+\begin_inset Quotes prd
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:Našeptávač"
+
+\end_inset
+
+, jinak vše zůstalo podle 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "searchable"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Komprimace skriptů a kaskádových stylů (
+\emph on
+Asset
+\emph default
+)
+\end_layout
+
+\begin_layout Standard
+Modul využívá kódu projektů JsMin a CssTidy pro komprimaci javascriptu a
+ kaskádových stylů.
+ Vybere všechny soubory, které byly do stránky vloženy voláním 
+\emph on
+$javascript->link(nazev)
+\emph default
+ a 
+\emph on
+$html->css(nazev)
+\emph default
+, a ty pak tranformuje do optimalizovaných souborů.
+\end_layout
+
+\begin_layout Subsection
+Optimalizace generování dotazů (
+\emph on
+Url_cache
+\emph default
+)
+\end_layout
+
+\begin_layout Standard
+Při optimalizaci výkonu bylo zjištěno, že na stránkách, kde je potřeba generovat
+ větší množství odkazů, dochází k výraznému spomalení generování výstupu.
+ Slabé místo bylo nalezeno v metodě 
+\emph on
+Router::url()
+\emph default
+, která je volána pro vytvoření URL podle nastaveného směrování v 
+\emph on
+app/coufig/routes.php
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Tento modul zavádí ukládání vygenerovaných URL do vyrovnávací paměti a odbourává
+ nutnost neustálého volání výše zmíněné metody.
 \end_layout
 
 \begin_layout Chapter
@@ -3729,12 +4552,13 @@ Stažení a instalace Apache
 \end_layout
 
 \begin_layout Standard
-Pokud používáte některou z
+Pokud je systém instalován na některou z
 \begin_inset space ~
 \end_inset
 
-moderních linuxových distribucí, zkuste nejdříve projít repozitáře [@todo
- vysvětlit], zda se zde nenachází již hotový balík upravený pro snadnější
+moderních linuxových distribucí, je doporučeno nejdříve prohledat její repozitář
+e.
+ Ve většině případů se zde nachází již hotový balík upravený pro snadnější
  instalaci a
 \begin_inset space ~
 \end_inset
@@ -3773,10 +4597,10 @@ emerge apache2
 \end_layout
 
 \begin_layout Standard
-Pokud jste požadovaný balík nenašli či používáte jiný operační systém, můžete
+V opačném případě je nutné stáhnout archív zdrojových kódů nebo předkompilovanou
  ze stránek projektu
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset CommandInset href
@@ -3790,8 +4614,14 @@ target "http://httpd.apache.org/download.cgi"
 
 \end_inset
 
- vybrat odkaz vedoucí na požadovaný balík zdrojových kódů nebo předkompilovanou
- aplikaci pro Váš operační systém.
+ a postupovat podle 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "apache2"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -3799,7 +4629,7 @@ Konfigurace Apache
 \end_layout
 
 \begin_layout Standard
-Pro správnou funkci aplikace je potřeba doinstalovat, popřípadě pouze povolit
+Pro správnou funkci aplikace je potřeba doinstalovat, popřípadě povolit
  následující moduly: 
 \shape italic
 mod_php5
@@ -3813,8 +4643,8 @@ mod_rewrite
 mod_ssl.
 
 \shape default
- Pro správnou funkci zabezpečeného připojení [@todo definovat zabezpečené
- připojení] je nutné vygenerovat certifikáty a upravit konfiguraci stránek.
+ Pro správnou funkci zabezpečeného připojení je nutné vygenerovat certifikáty
+ a upravit konfiguraci stránek.
 \end_layout
 
 \begin_layout Subsection
@@ -4035,7 +4865,7 @@ uživatelů
 \end_inset
 
 [/admin/Users/index]: V horní části se nachází odkazy na akce související
- s uživately.
+ s uživateli.
  Filtry pro práci se seznamem uživatelů jsou umístěny nad hlavní tabulkou
  a v hlavičce tabulky s funkcí 
 \begin_inset Quotes pld
@@ -4045,7 +4875,8 @@ našeptávače
 \begin_inset Quotes prd
 \end_inset
 
- a jejich zm
+.
+ 
 \end_layout
 
 \begin_layout Description
@@ -4057,20 +4888,35 @@ uživatele
 \begin_inset space ~
 \end_inset
 
-[/admin/Users/add]: Odkaz na formulář je hlavním menu a v částech, které
- na uživatelích závisí.
- Jedinnou povinnou položkou je 
+[/admin/Users/add]: Odkaz na formulář je hlavním menu a
+\begin_inset space ~
+\end_inset
+
+v
+\begin_inset space ~
+\end_inset
+
+částech, které na uživatelích závisí.
+ Jedinou povinnou položkou je 
 \emph on
 zobrazované jméno
 \emph default
-, která slouží jako popisek ve všech výběrových filtrech.
+, která slouží jako popisek ve všech filtrech.
  Ostatní položky je možné vyplnit až při jejich potřebě ve výpisu.
  Volba 
 \emph on
-Aktivní
+
+\begin_inset Quotes pld
+\end_inset
+
+aktivní
+\begin_inset Quotes prd
+\end_inset
+
+
 \emph default
  slouží k aktivaci uživatelského účtu.
- Uživatel je schopen se přihlásit pouze pokud je jeho účet aktivní.
+ Uživatel je schopen se přihlásit pouze pokud je jeho účet takto označen.
 \end_layout
 
 \begin_layout Description
@@ -4323,7 +5169,7 @@ reference "fig:Našeptávač"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -4480,6 +5326,11 @@ Tipy na urychlení práce
 \begin_layout Standard
 Zvláštní formulář na přidání produktu spolu se zákazníkem i dodavatelem
  umožní rychlejší zadávání většího množství nových produktů.
+ Je standardně dostupný přes hlavní menu nebo na adrese 
+\emph on
+/admin/products/addall
+\emph default
+.
 \end_layout
 
 \begin_layout Section
@@ -4504,10 +5355,12 @@ Existující implementace
 \end_layout
 
 \begin_layout Standard
-Existujicí aplikace lze rozdělit na několik skupin.
- Žádná však nepokrývá veškeré požadavky v plném rozsahu.
- První skupina se více zaměřuje na správu obsahu.
- Jsou označované anglickou zkratkou CMS
+Existujicí implementace lze rozdělit na několik skupin.
+ Žádná však nepokrývá veškeré požadavky v plném rozsahu vzhledem ke specifickým
+ požadavkům na způsob vedení evidence a účtování služeb.
+ Oblastmi, kde by využití existujících systému připadalo v úvahu jsou správa
+ obsahu pro prezentaci na Internetu a podpora on-line vzdělávání.
+ První skupina systémů je označována anglickou zkratkou CMS
 \begin_inset Foot
 status collapsed
 
@@ -4521,8 +5374,7 @@ Content Management System
 
 \end_inset
 
- nebo WCMS, které označující systémy pro správu webové obsahy.
- Tyto systémy lze rozdělit do podskupin podle způsobu, jakým prezentují
+ nebo WCMS a lze ji rozdělit do podskupin podle způsobu, jakým prezentují
  uložená data.
 \end_layout
 
@@ -4551,30 +5403,8 @@ zpracování Server generuje prezentační data až na základě požadavků kli
  dalším stejném dotazu vrátil požadovaná data přímo z ní.
  Mezi nejznámější open source systémy patří Joomla, Drupal, WordPress, TangoCMS,
  DotNetNuke a Zope.
- Pokročilé systémy úmožňují i úpravy základních šablon, bez zásahu do zdrojových
- kódu pomocí nástrojů WYSIWYG
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Akronym vzniklý z anglické věty 
-\begin_inset Quotes pld
-\end_inset
-
-What You See Is What You Get, označuje způsob editace, při kterém je dokument
- na obrazovce totožný s výslednou verzí
-\begin_inset CommandInset citation
-LatexCommand cite
-key "wysiwyg"
-
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-
-.
+ Pokročilé systémy umožňují i úpravy základních šablon, bez zásahu do zdrojových
+ kódu.
 \end_layout
 
 \begin_layout Description
@@ -4584,20 +5414,42 @@ Hybridní Jak již název napovídá, tyto systémy kombinují oba předchozí p
 \end_layout
 
 \begin_layout Section
+Správci obsahu (
+\emph on
 CMS
+\emph default
+)
 \end_layout
 
 \begin_layout Standard
 Systému pro správu obsahu existuje celá řada.
  Zde si stručně představíme nejznámější trojici open source správců webového
- obsahu napsaných v PHP.
- Celkově se systémy moc neodlišují a všechny mají silnou komunitu, která
- se stará o vývoj a rozšíření.
+ obsahu napsaných v
+\begin_inset space ~
+\end_inset
+
+PHP.
+ Celkově se systémy moc neodlišují a
+\begin_inset space ~
+\end_inset
+
+všechny mají silnou komunitu, která se stará o vývoj a
+\begin_inset space ~
+\end_inset
+
+rozšíření.
 \end_layout
 
 \begin_layout Standard
-Je možné, že při dalším vývoji informačního systému, bude některý z těchto
- správců nahradí primitivní publikační systém, jenž byl v systému implementován.
+Je možné, že při dalším vývoji informačního systému, některý z
+\begin_inset space ~
+\end_inset
+
+těchto správců nahradí primitivní publikační systém, jenž byl v
+\begin_inset space ~
+\end_inset
+
+systému implementován.
 \end_layout
 
 \begin_layout Subsection
@@ -4605,15 +5457,33 @@ Joomla!
 \end_layout
 
 \begin_layout Standard
-Systém Joomla! je vyvíjen od roku 2005 a vznikl odštěpením části vývojářů
- od projektu Mamboo.
- Joomla ve verzi 1.5 a vyšší nabízí kompletní lokalizaci, blogy, fóra, hlasování,
- kalendář, indexaci stránek, RSS kanály a různá témata.
+Systém Joomla! je vyvíjen od roku 2005 a
+\begin_inset space ~
+\end_inset
+
+vznikl odštěpením části vývojářů od projektu Mamboo.
+ Joomla ve
+\begin_inset space ~
+\end_inset
+
+verzi 1.5 a
+\begin_inset space ~
+\end_inset
+
+vyšší nabízí kompletní lokalizaci, blogy, fóra, hlasování, kalendář, indexaci
+ stránek, RSS kanály a
+\begin_inset space ~
+\end_inset
+
+různá témata.
 \end_layout
 
 \begin_layout Standard
-Pro Joomlu je napsáno přes 3000 open source doplňků a existují i komerční
- doplňky například pro e-learning
+Pro Joomlu je napsáno přes 3000 open source doplňků a existují i
+\begin_inset space ~
+\end_inset
+
+komerční doplňky například pro e-learning
 \begin_inset Foot
 status collapsed
 
@@ -4630,8 +5500,11 @@ target "http://www.joomlalms.com/"
 \end_inset
 
 .
- Snadno lze vytvořit také internetové obchody, rezervační systémy a další
- vlastní aplikace díky snadno rozšířitelné 
+ Snadno lze vytvořit také internetové obchody, rezervační systémy a
+\begin_inset space ~
+\end_inset
+
+další vlastní aplikace díky snadno rozšířitelné 
 \emph on
 MVC
 \emph default
@@ -4641,6 +5514,19 @@ MVC
 \begin_layout Standard
 V neprospěch Joomly nahrává málo strukturované rozdělení práv uživatelů
  k jednotlivým článkům a obsahu, což se má ale s verzí 1.7 změnit.
+ Velikost základní instalace dosahuje 13,8
+\begin_inset space ~
+\end_inset
+
+MB a drží se hesla: 
+\begin_inset Quotes pld
+\end_inset
+
+nabídneme uživateli raději víc, aby uživatel nemusel nic přidávat
+\begin_inset Quotes prd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -4684,23 +5570,77 @@ Drupal
 Drupal se stal open source projektem v roce 2001.
  Nabízí propracované rozhraní pro správu uživatelů, statistiku přístupů,
  blogy, fóra a další moduly včetně překladů do mnoha jazyků.
- V systému je dbáno hlavně na bezpečnost.
- Proto mohou být administrátoři automaticky upozorněni na aktualizace jak
- jádra aplikace, tak přidaných modulů.
+ V systému je dbáno hlavně na
+\begin_inset space ~
+\end_inset
+
+bezpečnost.
+ Proto mohou být administrátoři automaticky upozorněni na
+\begin_inset space ~
+\end_inset
+
+aktualizace jak jádra aplikace, tak přidavných modulů.
  Navíc lze přístup do systému jednoduše omezit podle IP adresy.
 \end_layout
 
 \begin_layout Standard
-Nejzajímavějším rozšířením s ohledem na cíl této práce je DrupalEd.
- Umožnuje tvorbu a správu výukových materiálů, rozdělení uživatelů do skupin
- (tříd) s možností nastavení přístupových práv k jednotlivých stránkám.
+Nejzajímavějším rozšířením s
+\begin_inset space ~
+\end_inset
+
+ohledem na cíl této práce je DrupalEd.
+ Umožnuje tvorbu a
+\begin_inset space ~
+\end_inset
+
+správu výukových materiálů, rozdělení uživatelů do
+\begin_inset space ~
+\end_inset
+
+skupin (tříd) s
+\begin_inset space ~
+\end_inset
+
+možností nastavení přístupových práv k
+\begin_inset space ~
+\end_inset
+
+jednotlivých stránkám.
+ 
 \end_layout
 
 \begin_layout Standard
-Občas je ale Drupalu vyčítano, že je oproti Joomle, v některých nasazeních
- pomalejší.
- Přesto se jedná o velmi dobrý produkt vhodný i pro větší projekty, který
- s přicházející verzí 7 tyto nedostatky postupně odstraňuje.
+Občas je Drupalu vyčítano, že je oproti Joomle, v
+\begin_inset space ~
+\end_inset
+
+některých nasazeních pomalejší.
+ Přesto se jedná o
+\begin_inset space ~
+\end_inset
+
+velmi dobrý produkt vhodný i
+\begin_inset space ~
+\end_inset
+
+pro větší projekty, který s
+\begin_inset space ~
+\end_inset
+
+přicházející verzí 7 tyto nedostatky postupně odstraňuje.
+\end_layout
+
+\begin_layout Standard
+Z pohledu vývojáře může být překážkou trochu zastaralý neobjektový přístup.
+ Kladně je naopak příjmána velikost základní instalace, která se pohybuje
+ kolem 4,8
+\begin_inset space ~
+\end_inset
+
+MB.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement p
 wide false
@@ -4739,9 +5679,20 @@ Wordpress
 
 \begin_layout Standard
 Wordpress je propracovaným publikačním nástrojem, jehož rozhraní je velice
- intuitivní a přehledné.
- Funkcionalitu lze rozšířit pomocí pluginů a na postranní panel lze přidávat
- widgety
+ intuitivní a
+\begin_inset space ~
+\end_inset
+
+přehledné.
+ Funkcionalitu lze rozšířit pomocí pluginů a
+\begin_inset space ~
+\end_inset
+
+na
+\begin_inset space ~
+\end_inset
+
+postranní panel lze přidávat widgety
 \begin_inset Foot
 status collapsed
 
@@ -4751,7 +5702,11 @@ prvek na stránce zobrazující doplňkové informace
 
 \end_inset
 
-, které lze v administrátorském prostředí nastavit 
+, které lze v
+\begin_inset space ~
+\end_inset
+
+administrátorském prostředí nastavit 
 \emph on
 drag-and-drop
 \emph default
@@ -4770,18 +5725,47 @@ způsob práce s elementy, které lze přesouvat mezi jednotlivými aplikacemi
 \end_layout
 
 \begin_layout Standard
-Na velice dobré úrovni je podpora třídění článků pomocí kategorií a štítků,
- kde je také umožněno vytvoření trvalého odkazu na článek pro případ změny
- zařazení do kategorií.
- K článkům lze přidávat fotogalerie, odkazy i videa.
- S verzí 2.7 rovněž přibyla možnost stahovaní aktualizací a pluginů přes
- administrátorské rozhraní.
+Na velice dobré úrovni je podpora třídění článků pomocí kategorií a
+\begin_inset space ~
+\end_inset
+
+štítků, kde je také umožněno vytvoření trvalého odkazu na článek pro případ
+ změny zařazení do kategorií.
+ K článkům lze přidávat fotogalerie, odkazy i
+\begin_inset space ~
+\end_inset
+
+videa.
+ S verzí 2.7 rovněž přibyla možnost stahovaní aktualizací a
+\begin_inset space ~
+\end_inset
+
+pluginů přes administrátorské rozhraní.
 \end_layout
 
 \begin_layout Standard
-Tento nástroj se zatím jeví jako vhodná alternativa k předešlým dvěma komplexním
- správcům, pro jednoduché publikování s malými nároky na studium administrátorsk
-ého prostředí.
+Tento nástroj se zatím jeví jako vhodná alternativa k
+\begin_inset space ~
+\end_inset
+
+předešlým dvěma komplexním správcům, pro jednoduché publikování s
+\begin_inset space ~
+\end_inset
+
+minimálními nároky na
+\begin_inset space ~
+\end_inset
+
+studium administrátorského prostředí.
+ Také velikost projektu odpovídá jeho schopnostem, když po rozbalení archívu
+ má instalace velikost 6,9
+\begin_inset space ~
+\end_inset
+
+MB.
+ Je ovšem nutné podoknout, že samotné javascriptové knihovny zabírají třetinu
+ místa.
+ 
 \begin_inset Float figure
 wide false
 sideways false
@@ -4818,12 +5802,22 @@ E-Learning
 \end_layout
 
 \begin_layout Standard
-Samotnou kategorii představují různé specializované systémy pro e-learning,
- evidenci kurzů a prodej produktů.
- Pro tyto systémy se nejčasteji užívají tyto názvy:
+Samotnou kategorii představují specializované open source systémy pro e-learning
+, evidenci kurzů a
+\begin_inset space ~
+\end_inset
+
+jejich prodej.
+ Při popisu těchto systémů je možné se setkat s
+\begin_inset space ~
+\end_inset
+
+následujícími výrazy:
 \end_layout
 
 \begin_layout Itemize
+
+\emph on
 Course
 \begin_inset space ~
 \end_inset
@@ -4838,24 +5832,38 @@ System
 
 (CMS
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Zkratka je v tomto případě shodná se systémy pro správu obsahu, která bude
- dále v textu upřednotňována.
+ dále v
+\begin_inset space ~
+\end_inset
+
+textu upřednotňována.
 \end_layout
 
 \end_inset
 
-) - systém pro správu kurzů
+)
+\emph default
+ - systém pro správu kurzů
 \end_layout
 
 \begin_layout Itemize
-Learning Management System (LMS) - systém pro řízení výuky
+
+\emph on
+Learning Management System (LMS)
+\emph default
+ - systém pro řízení výuky
 \end_layout
 
 \begin_layout Itemize
-Virtual Learning Enviroment (VLE) - virtuální výukové prostředí
+
+\emph on
+Virtual Learning Enviroment (VLE)
+\emph default
+ - virtuální výukové prostředí
 \end_layout
 
 \begin_layout Standard
@@ -4876,21 +5884,38 @@ status collapsed
 \begin_layout Plain Layout
 
 \emph on
-Shareable Content Object Reference Model @todo
+Shareable Content Object Reference Model 
+\emph default
+- referenční model sdílitelných obsahových objektů
 \end_layout
 
 \end_inset
 
 .
- Jedná se o soubor specifikací, jenž by měl daný systém podporovat, aby
- v něm bylo možné provozovat libovolný kompatibilní výukový obsah.
+ Jedná se o
+\begin_inset space ~
+\end_inset
+
+soubor specifikací, jenž by měl daný systém podporovat, aby v
+\begin_inset space ~
+\end_inset
+
+něm bylo možné provozovat libovolný kompatibilní výukový obsah.
 \end_layout
 
 \begin_layout Standard
-Při vývoji informačního systému byla této části věnovaná nejmenší pozornost
- z důvodů existence kvalitních open source řešení.
- Implementace jednoduchého testování slovní zásoby se nemůže s následujícími
- produkty rovnat.
+Při implementaci informačního systému byla této části věnovano omezené úsilí
+ z
+\begin_inset space ~
+\end_inset
+
+důvodů existence kvalitních open source řešení.
+ Implementace jednoduchého testování slovní zásoby v popisovaném systému
+ se nemůže s
+\begin_inset space ~
+\end_inset
+
+následujícími propracovaným e-learningovými systémy rovnat.
 \end_layout
 
 \begin_layout Subsection
@@ -4904,8 +5929,13 @@ Open source implementace e-learningových systému jsou již dnes hojně využí
 Moodle
 \emph default
 , který je rozšířen v mnoha zemích včetně České republiky a je využíván
- i na několika našich univerzitách, například: UK , ČVUT a ČZU.
- Podle oficiálních stránek
+ i na několika našich univerzitách.
+ Mezi ty největší patří UK, ČVUT a ČZU.
+ 
+\end_layout
+
+\begin_layout Standard
+Podle 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Moodle.cz"
@@ -4915,6 +5945,14 @@ key "Moodle.cz"
  umožňuje či podporuje snadnou publikaci studijních materiálů, zakládání
  diskusních fór, sběr a hodnocení elektronicky odevzdávaných úkolů, tvorbu
  online testů a řadu dalších činností sloužících pro podporu výuky.
+ Podporuje i
+\begin_inset space ~
+\end_inset
+
+napojení na jiné služby jako je LDAP nebo IMAP.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -4960,10 +5998,7 @@ ATutor je navržen s maximálním ohledem na přístupnost dle standardu W3C
 \end_inset
 
 vést evidenci o studijních výsledcích.
-\end_layout
-
-\begin_layout Standard
-Systém je snadno přizpůsobitelný pomocí témat a výhodou je možnost instalovat
+ Systém je snadno přizpůsobitelný pomocí témat a výhodou je možnost instalovat
  aktualizace a
 \begin_inset space ~
 \end_inset
@@ -5013,11 +6048,9 @@ Claroline má jednoduché a přehledné rozhraní.
  Studenti mohou využívat chat, diskuzní fóra a wiki.
  Učitelé mají možnost vytvářet úkoly nebo cvičení a zobrazit si jejich statistik
 y.
- 
-\end_layout
-
-\begin_layout Standard
-Dále systém umožnuje import kurzů ve formátu SCORM 1.2 a nastavení přístupu
+ Při vytváření obsahu je možné se přepnout do jiné role a zkontrolovat,
+ jak se zobrazuje jeným uživatelům.
+ Dále systém umožnuje import kurzů ve formátu SCORM 1.2 a nastavení přístupu
  k
 \begin_inset space ~
 \end_inset
@@ -5070,40 +6103,10 @@ atraktivním designem.
 
 SCORM.
  Pro větší firmy může být přínosem spolupráce s LDAP.
+ Navíc má integrován platební nástroj PayPal.
 \end_layout
 
 \begin_layout Standard
-Výčet všech funkcí by byl velmi obsáhlý, proto jsou zde uvedeny pouze nejzajímav
-ější:
-\end_layout
-
-\begin_layout Itemize
-správa uživatelů, lekcí, kurzů a kategorií
-\end_layout
-
-\begin_layout Itemize
-správce souborů a digitální knihovny
-\end_layout
-
-\begin_layout Itemize
-tvorba testů
-\end_layout
-
-\begin_layout Itemize
-fóra, chat, kalendář
-\end_layout
-
-\begin_layout Itemize
-pokrokové stopování (informace o pokroku uživatele v lekcích), historie
- akcí
-\end_layout
-
-\begin_layout Itemize
-tvorba vlastních certifikátů
-\end_layout
-
-\begin_layout Itemize
-platební nástroj - Paypal
 \begin_inset Float figure
 placement H
 wide false
@@ -5154,8 +6157,10 @@ Implementovaný systém po několika měsících ostrého provozu mnohonásobně
 \end_layout
 
 \begin_layout Standard
-Další rozvoj systému by měl směřovat k implementaci některého ze správců
- webového obsahu a nástroje pro podporu výuky uvedených v předcházející
+Ukázalo se, že existuje mnoho kvalitních open source nástrojů, frameworků
+ i jejich doplňků, které usnadily a urychlily vývoj systému.
+ Další rozvoj systému by měl směřovat k implementaci některého ze správců
+ webového obsahu a nástroje pro podporu výuky popsaných v předcházející
  kapitole.
  Zavedení informačního systému do praxe poukázalo rovněž i na některé nedostatky
  v jeho implementaci i použitých nástrojích.
@@ -5583,6 +6588,41 @@ target "http://bakery.cakephp.org/articles/view/add-delete-habtm-behavior"
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
+key "apache2"
+
+\end_inset
+
+
+\emph on
+Apache HTTP Server Version 2.0 Documentation
+\emph default
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "http://httpd.apache.org/docs/2.0/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "searchable"
+
+\end_inset
+
+http://code.google.com/p/searchable-behaviour-for-cakephp/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
 key "MySQL"
 
 \end_inset
@@ -5615,6 +6655,7 @@ target "http://www.ecma-international.org/publications/standards/Ecma-262.htm"
 \end_layout
 
 \begin_layout Chapter
+\start_of_appendix
 Obsah přiloženého CD
 \end_layout
 
@@ -5627,8 +6668,28 @@ práce tisknutelný PDF soubor s textem této práce.
 \end_layout
 
 \begin_layout Chapter
-\start_of_appendix
-Obsah CD
+Databázové schéma
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:Databázové-schéma"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename jednoduché schéma.png
+	height 80theight%
+
+\end_inset
+
+
 \end_layout
 
 \end_body
