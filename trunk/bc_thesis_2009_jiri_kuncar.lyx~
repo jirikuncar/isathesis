@@ -245,12 +245,35 @@ setcounter{page}{2}
 \begin_layout Standard
 \noindent
 Děkuji panu RNDr.
- Miroslavu Spoustovi za pomoc, připomínky, cenné rady a za odborné vedení
- bakalářské práce.
- Dále bych rád poděkoval firmě Primalingua s.r.o.
- za poskytnutí prostředků na vývoj aplikace.
+ Miroslavu Spoustovi za pomoc, připomínky, cenné rady a
+\begin_inset space ~
+\end_inset
+
+za odborné vedení bakalářské práce.
+ Dále bych rád poděkoval společnosti Prima
+\begin_inset space ~
+\end_inset
+
+Lingua
+\begin_inset space ~
+\end_inset
+
+s.r.o.
+ za poskytnutí informací a
+\begin_inset space ~
+\end_inset
+
+podkladů k
+\begin_inset space ~
+\end_inset
+
+vývoji aplikace.
  Speciální poděkování patří především paní majitelce Mgr.
- Miluši Psotové a paní RNDr.
+ Miluši Psotové a
+\begin_inset space ~
+\end_inset
+
+paní RNDr.
  Jitce Kunčarové, která vývoj informačního systému iniciovala.
 \end_layout
 
@@ -493,7 +516,7 @@ Informační systémy hrají v
 \begin_inset space ~
 \end_inset
 
-rychle se rozvíjejícím prostředí svou nepostradatelou roli.
+rychle se rozvíjející společnosti svou nepostradatelou roli.
  Internet, který se stal v posledních létech dostupným pro širokou veřejnost,
  jim poskytl výbornou platformu k dalšímu rozvoji.
  Ve dříve nepříliš využívaném virtuálním prostředí umožňují rychlou a snadnou
@@ -508,7 +531,7 @@ samotných zaměstanců.
 \emph on
 aktuální
 \emph default
- nabídce úmožňují snadno a efektivně oslovovat nové zákazníky, kteří postupně
+ nabídce umožňují snadno a efektivně oslovovat nové zákazníky, kteří postupně
  začínají převažovat nad zákazníky oslovenými jinými komunikačními kanály.
 \end_layout
 
@@ -518,11 +541,11 @@ S využíváním Internetu zároveň rostou nároky na bezpečnost a
 \end_inset
 
 dostupnost uložených informací.
- Ty jsou životně důležité pro chod firem a
+ Ty jsou důležité pro správu podniků a
 \begin_inset space ~
 \end_inset
 
-bývají jejich nejcenějším majetkem.
+bývají jejich nejcennějším majetkem.
  Zvyšující se požadavky vyžadují kvalitní nástroje použité při implementaci
  systému a
 \begin_inset space ~
@@ -544,13 +567,13 @@ globálním měřítku, které nelze vrátit zpět.
 \end_layout
 
 \begin_layout Standard
-Před zaváděním informačního systému je nutné stanovit, čeho chce firma s
- jeho využitím v
+Před zaváděním informačního systému je nutné stanovit, čeho chce podnik
+ s jeho využitím v
 \begin_inset space ~
 \end_inset
 
 daném čase dosáhnout.
- Tomu by měla pomoci důkladná analýza firemních procesů a
+ Tomu by měla pomoci důkladná analýza procesů a
 \begin_inset space ~
 \end_inset
 
@@ -583,7 +606,7 @@ key "informační systémy"
 \begin_layout Standard
 Změna zavedených procesů bývá náročná, jak z finančního hlediska, tak z
  hlediska její vlastní realizace.
- Důležitou roli zde hraje plánování časového hramonogramu a
+ Důležitou roli zde hraje plánování časového harmonogramu a
 \begin_inset space ~
 \end_inset
 
@@ -591,7 +614,7 @@ jeho dodržování.
 \end_layout
 
 \begin_layout Standard
-Zlepšení výsledků činnosti firmy se nemusí dostavit okamžitě po spuštění
+Zlepšení výsledků činnosti podniku se nemusí dostavit okamžitě po spuštění
  nového systému, ale až po adaptaci všech zúčastněných stran.
  Výhodou je, pokud byl daný systém navržen v
 \begin_inset space ~
@@ -601,7 +624,7 @@ souladu se zaběhnutými a
 \begin_inset space ~
 \end_inset
 
-fungujícími firemními procesy.
+fungujícími procesy.
  Proto bude práce věnovaná především jejich důkladnému popisu, na kterém
  bude dále stavět.
 \end_layout
@@ -656,8 +679,9 @@ fakturaci služeb.
 \begin_inset space ~
 \end_inset
 
-častým změnám, vytvořit komplexní účetní program, ale pouze systém úmožnící
- tvorbu podkladů pro účetní evidenci, které mohou být v
+častým změnám, vytvořit komplexní účetní program, ale pouze systém umožnící
+ efektivní práci s informacemi a tvorbu podkladů pro účetní evidenci, které
+ mohou být v
 \begin_inset space ~
 \end_inset
 
@@ -669,11 +693,9 @@ Obsah práce
 \end_layout
 
 \begin_layout Standard
-Ve druhé kapitole této práce je provedena analýza úlohy a
-\begin_inset space ~
-\end_inset
-
-jsou mimo jiné stanoveny požadavky na řešení.
+Nejdůležitější částí této práce je analýza úlohy a přesné stanovení požadavků
+ na řešení informačního systému konkrétního podniku, které jsou obsažené
+ ve druhé kapitole.
 \end_layout
 
 \begin_layout Standard
@@ -715,7 +737,7 @@ Pátá kapitola obsahuje programátorskou dokumentaci.
 \begin_inset space ~
 \end_inset
 
-jsou nastíněny některé problémy, které bylo při implementaci nutné řešit.
+jsou nastíněny některé problémy, které byly při implementaci nutné řešit.
 \end_layout
 
 \begin_layout Standard
@@ -740,12 +762,12 @@ Předposlední kapitola se zabývá popisem existujících implementací a
 \begin_inset space ~
 \end_inset
 
-jejich možným začleněním do informačního systému.
+jejich porovnáním s implementovaným systémem.
 \end_layout
 
 \begin_layout Standard
 V závěru jsou přehledně shrnuty výsledky, kterých bylo při vývoji systému
- dosaženo, a
+ dosaženo a
 \begin_inset space ~
 \end_inset
 
@@ -758,9 +780,9 @@ Analýza úlohy
 
 \begin_layout Standard
 V kapitole budou popsány základní pojmy používané při popisu požadavků klienta,
- specifické požadavky na systém a popis základních firemních procesů.
- Cílem je přiblížit čtenáři problematiku návrhu konkrétního informačního
- systému a možné problémy skrývajíci se ve zdánlivě jednoduchých úkolech.
+ specifické požadavky na systém a popis základních procesů.
+ Cílem je přiblížit problematiku konkrétního informačního systému a možné
+ problémy skrývajíci se ve zdánlivě jednoduchých úkolech.
 \end_layout
 
 \begin_layout Standard
@@ -776,8 +798,8 @@ Definice a upřesnění pojmů
 
 \begin_layout Standard
 Dále uvedené pojmy mívají v různých odvětvích mírně odlišné významy.
- Zde budou přeneseny a vysvětleny v oblasti firem zabývající se jazykovou
- přípravou, překlady a tlumočením.
+ Zde budou přeneseny a vysvětleny v oblasti podniků zabývající se jazykovou
+ výukou, překlady a tlumočením.
 \end_layout
 
 \begin_layout Subsection
@@ -803,7 +825,7 @@ poslední zmiňované oblasti.
 \end_layout
 
 \begin_layout Standard
-Jazyková agentura je útvar zajišťující služby spojené s
+Jazyková agentura je podnik zajišťující služby spojené s
 \begin_inset space ~
 \end_inset
 
@@ -890,7 +912,7 @@ Produkt
 \end_layout
 
 \begin_layout Standard
-Produktem bude rozuměno pořádání jazykové výuky pro danou skupinu lidí,
+Produktem bude rozuměno pořádání jazykové výuky pro danou skupinu lidí (kurz),
  dále tlumočení, překlady a
 \begin_inset space ~
 \end_inset
@@ -912,8 +934,19 @@ spojení služeb, jejichž výsledkem je znalost cizího jazyka - tedy nehmotný
 předmětů vzniklých lidskou prací - překladů.
 \end_layout
 
+\begin_layout Subsection
+Uživatelé
+\end_layout
+
+\begin_layout Standard
+Uživateli jsou myšleny všechny osoby podílející se na zajišťování i realizaci
+ produktů.
+ Patří mezi ně nejen dodavatelé, odběratelé, studenti, ale i samotná agentura
+ a administrativní pracovníci.
+\end_layout
+
 \begin_layout Section
-Požadavky klienta
+Analýza požadavků klienta
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Požadavky-klienta"
@@ -924,7 +957,7 @@ name "sec:Požadavky-klienta"
 \end_layout
 
 \begin_layout Standard
-Základním úkolem popisované jazykové agentury je zajišťovat služby v
+Základním úkolem jazykové agentury je zajišťovat služby v
 \begin_inset space ~
 \end_inset
 
@@ -932,27 +965,25 @@ oblasti jazykového vzdělání, překladů a
 \begin_inset space ~
 \end_inset
 
-tlumočení především pro široké spektrum firemních i
-\begin_inset space ~
-\end_inset
-
-individuálních zákazníků.
+tlumočení především pro široké spektrum odběratelů, tj.
+ podniků a individuálních zákazníků.
 \end_layout
 
 \begin_layout Standard
 Podniky posílají poptávky bez ohledu na nabídku konkrétních kurzů.
  Manažer vyřizuje zakázku elektronickou poštou, telefonicky nebo osobně.
  Všechny získané informace musí být schopen zaznamenat pro pozdější zajišťování
- vhodných dodavatelů a kalkulaci nákladů.
+ vhodných dodavatelů (lektorů) a kalkulaci nákladů.
  
 \end_layout
 
 \begin_layout Standard
-Veřejnost posílá zápisové listy s
+Individuální zákazníci, tj.
+ veřejnost posílá zápisové listy s
 \begin_inset space ~
 \end_inset
 
-ohledem na nabídku kurzů pro veřejnost.
+ohledem na nabídku konkrétních kurzů určených pro veřejnost.
  Manažer sestavuje skupiny podle zápisových listů a
 \begin_inset space ~
 \end_inset
@@ -966,7 +997,7 @@ cenu výuky.
 \end_layout
 
 \begin_layout Standard
-Na začátku vývoje stála rovněž žádost zjednodušit proces zpracování měsíčních
+Na začátku vývoje byl rovněž požadavek zjednodušit proces zpracování měsíčních
  výkazů lektorů, překladatelů a
 \begin_inset space ~
 \end_inset
@@ -1044,11 +1075,8 @@ V
 \begin_inset space ~
 \end_inset
 
-průběhu měsíce vkládá administrátor zadané překlady a
-\begin_inset space ~
-\end_inset
-
-nově zahájené kurzy.
+průběhu měsíce vkládá administrátor zadané překlady, nově zahájené kurzy
+ a individuální výuku.
 \end_layout
 
 \begin_layout Itemize
@@ -1165,7 +1193,7 @@ Se vzrůstajícím objemem překladů a
 \end_inset
 
 odučených hodin přestávalo být únosné ruční vytváření měsíčních přehledů
- pro zákazníky.
+ realizované výuky pro zákazníky.
  Ti si přáli být informování nejen o
 \begin_inset space ~
 \end_inset
@@ -1195,7 +1223,8 @@ Před fakturací pro klienta si administrátor může sestavit seznam položek
 \begin_inset space ~
 \end_inset
 
-fakturaci.
+fakturaci, tzv.
+ přílohu faktury.
  
 \end_layout
 
@@ -1218,13 +1247,13 @@ Správa lektorů a překladatelů
 \end_layout
 
 \begin_layout Standard
-Práce agentury spočívá i ve shromažďování kontaktů na osoby zabývající se
- výukou, překlady a
+Pro agenturu je důležité shromažďování kontaktů na osoby zabývající se výukou,
+ překlady a
 \begin_inset space ~
 \end_inset
 
 tlumočením.
- Musí být úmožněno rychlé vyhledání a
+ Musí být umožněno rychlé vyhledání a
 \begin_inset space ~
 \end_inset
 
@@ -1278,7 +1307,8 @@ News
 \end_inset
 
  by měly být v systému přístupné pro lektory i překladatele, protože obsahují
- přílohy platné pro celý rok.
+ přílohy platné pro celý rok, např.
+ formuláře k evidenci docházky.
 \end_layout
 
 \begin_layout Subsection
@@ -1297,36 +1327,14 @@ Při vytváření produktu manažer zvolí poskytovatele služeb podle potřeb z
 \end_layout
 
 \begin_layout Subsection
-Vícejazyková podpora
+Podpora jazykových verzí
 \end_layout
 
 \begin_layout Standard
 Systém je určen primárně pro jazykové agentury, kde se počítá s komunikací
  se zákazníky i v jiném než českém jazyce.
- K tomu bylo potřeba přizpůsobit systém již od počátku.
-\end_layout
-
-\begin_layout Itemize
-Uživatelé by měli mít možnost si jednoduše vybrat mezi několika jazykovými
- variantami.
-\end_layout
-
-\begin_layout Subsection
-Úzká provázanost s webem
-\end_layout
-
-\begin_layout Standard
-Na webových stránkách se zobrazuje aktuální rozvh veřejných kurzů, jenž
- je i
-\begin_inset space ~
-\end_inset
-
-jinak dostupný na
-\begin_inset space ~
-\end_inset
-
-dveřích učeben.
- Ostatní rozvh individuální výuky bude dostupný po přihlášení do systému.
+ K tomu bylo potřeba přizpůsobit systém již od počátku, aby měli uživatelé
+ možnost si jednoduše vybrat mezi několika jazykovými variantami.
 \end_layout
 
 \begin_layout Chapter
@@ -1342,10 +1350,13 @@ popis jeho napojení na
 \begin_inset space ~
 \end_inset
 
-existující data ve firmě.
+existující podniková data.
  Pro ukládání dat byla vybrána relační databáze.
- Ta poskytuje prostředky pro vytvoření, čtení, změnu a smazání uložených
- informací
+ Ta poskytuje prostředky pro vytvoření, čtení, změnu a
+\begin_inset space ~
+\end_inset
+
+smazání uložených informací
 \begin_inset Foot
 status collapsed
 
@@ -1381,7 +1392,11 @@ delete
 \end_inset
 
 tomto případě se jeví jako nejlepší volba z různým variant ukládání dat
- v souborech.
+ v
+\begin_inset space ~
+\end_inset
+
+souborech.
  Předpokládá se nutnost přístupu k řádově stovek až tisíců produktu a
 \begin_inset space ~
 \end_inset
@@ -1415,16 +1430,12 @@ souboru a
 \begin_inset space ~
 \end_inset
 
-zpracovávanho pomocí jazyka XPath, XQuery nebo XSLT.
+zpracovávané pomocí jazyka XPath, XQuery nebo XSLT.
  Výsledky byly dobré při zpracování omezeného množství dat a
 \begin_inset space ~
 \end_inset
 
-jednouživatelském přístupu k
-\begin_inset space ~
-\end_inset
-
-datům.
+jednouživatelském přístupu.
  Se
 \begin_inset space ~
 \end_inset
@@ -1440,7 +1451,7 @@ rozdělení dat do
 \end_inset
 
 více souborů.
- Alernativu tvoří některé specializované XML databáze nebo relační databáze
+ Alternativu tvoří některé specializované XML databáze nebo relační databáze
  s
 \begin_inset space ~
 \end_inset
@@ -1459,7 +1470,7 @@ Návrh dobře strukturované relační databáze vyžaduje předevších pochope
 \begin_inset space ~
 \end_inset
 
-procesů fungování firmy, která ji bude využívat.
+procesů fungování podniku, který ji bude využívat.
  Problémem s
 \begin_inset space ~
 \end_inset
@@ -1525,12 +1536,16 @@ Ne všechny informace o
 \end_inset
 
 daných produktech je potřeba udržovat jako speciální atributy.
- Zvítězila proto varianta jedné tabulky s
+ Byla proto přijata varianta jedné tabulky s
 \begin_inset space ~
 \end_inset
 
 minimem položek pro produkt.
- V budoucí rozšiřovaní by mělo být realizováno pomocí tabulek se specifikými
+ V
+\begin_inset space ~
+\end_inset
+
+budoucnu by rozšiřovaní mělo být realizováno pomocí tabulek se specifikými
  informacemi nebo pomocí strukturovaných poznámek.
 \end_layout
 
@@ -1565,16 +1580,8 @@ Kategorie
 \emph on
 Poskytovatel
 \emph default
- produktu je subjekt (uživatel), který se stará o
-\begin_inset space ~
-\end_inset
-
-jeho realizaci.
- Hledá dodavatele i
-\begin_inset space ~
-\end_inset
-
-odběratele a vystavuje faktury.
+ produktu je podnik (uživatel), který realizuje produkty, tj.
+ zajišťuje dodavatele a vystavuje faktury zákazníkovi.
 \end_layout
 
 \begin_layout Itemize
@@ -1619,6 +1626,58 @@ Jednotka
  a 
 \emph on
 jednotková cena
+\emph default
+ slouží zákazníkovi pro informaci
+\end_layout
+
+\begin_layout Subsection*
+Přihlášky (objednávky)
+\end_layout
+
+\begin_layout Standard
+Tabulka slouží k evidenci zákazníků (plátců) a produktů, které si objednali.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Produkt,
+\emph default
+ ke kterému se přihláška vztahuje.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Zákazník
+\emph default
+ vybraný z tabulky uživatelů je plátcem produktu.
+\end_layout
+
+\begin_layout Itemize
+Evidence plateb.
+\end_layout
+
+\begin_layout Subsection*
+Účastníci
+\end_layout
+
+\begin_layout Standard
+Účastníci jsou přiřazeni k danému produktu přes přihlášku s uvedením plátcem.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Přihláška
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Účastník
+\emph default
+ vybraný z tabulky uživatelů.
 \end_layout
 
 \begin_layout Subsection*
@@ -1626,7 +1685,7 @@ Smlouvy
 \end_layout
 
 \begin_layout Standard
-V návrhu se dobudoucna počítá s kontrolou maximálního počtu odpracovaných
+V návrhu se do budoucna počítá s kontrolou maximálního počtu odpracovaných
  jednotek.
  Některé možnosti nastavení typu smluv jsou pevně zakomponované a
 \begin_inset space ~
@@ -1710,12 +1769,8 @@ danému datu.
 \begin_inset space ~
 \end_inset
 
-velmi důležitá data, měla by jejich kontrola prováděna i
-\begin_inset space ~
-\end_inset
-
-na databázové úrovni pomocí triggeru, pokud to bude daná databáze bude podporova
-t.
+velmi důležitá data, měla by být jejich kontrola prováděna na databázové
+ úrovni pomocí triggeru, pokud to bude daná databáze bude podporovat.
 \end_layout
 
 \begin_layout Itemize
@@ -1809,57 +1864,6 @@ Datum
 Místo
 \emph default
  vybrané z číselníku.
-\end_layout
-
-\begin_layout Subsection*
-Přihlášky (objednávky)
-\end_layout
-
-\begin_layout Standard
-Tabulka slouží k evidenci zákazníků a produktů, které si objednali.
-\end_layout
-
-\begin_layout Itemize
-
-\emph on
-Produkt,
-\emph default
- ke kterému se přihláška vztahuje.
-\end_layout
-
-\begin_layout Itemize
-
-\emph on
-Zákazník
-\emph default
- vybraný z tabulky uživatelů je plátcem produktu.
-\end_layout
-
-\begin_layout Itemize
-Evidence plateb.
-\end_layout
-
-\begin_layout Subsection*
-Účastníci
-\end_layout
-
-\begin_layout Standard
-Účastníci jsou přiřazeni k danému produktu, přes přihlášku, kde je definován
- plátce.
-\end_layout
-
-\begin_layout Itemize
-
-\emph on
-Přihláška
-\end_layout
-
-\begin_layout Itemize
-
-\emph on
-Účastník
-\emph default
- vybraný z tabulky uživatelů.
 \end_layout
 
 \begin_layout Subsection*
@@ -2053,7 +2057,7 @@ produktům.
 
 produktu.
  Zákazníci jsou evidováni přes přihlášku se seznamem účastníků.
- Záznam docházky je relalizovan tabulkou 
+ Záznam docházky je realizován tabulkou 
 \emph on
 participators_events
 \emph default
@@ -2192,7 +2196,7 @@ UNIQUE
 FAIL('chyba')
 \emph default
 .
- Ta se pokusí naplnit tabulku dvěma indentickými záznami, což poruší omezení
+ Ta se pokusí naplnit tabulku dvěmi indentickými záznamy, což poruší omezení
  na jedinečnost záznamu ve sloupci a vyvolaná vyjímka zabrání potvrzení
  transakce.
  Uvedené řešení je pouze náhradou za 
@@ -2327,7 +2331,7 @@ reference "cha:Databázové-schéma"
 
 \end_inset
 
- simuluje firemní procesy velice přesně a úmožňuje uchovávat všechna potřebná
+ simuluje firemní procesy velice přesně a umožňuje uchovávat všechna potřebná
  data.
  Problémem může být náročnější způsob výpočtu ceny pro zákazníka.
  Pokud se totiž cena odvíjí od množství vykázaných jednotek dodavateli,
@@ -2433,12 +2437,16 @@ zároveň se podílejí na vývoji, a tak se snaží přispět k jeho větší v
 \end_layout
 
 \begin_layout Standard
-Vývoj jazyka sebou nese i stinné stránky.
- Po létech vývoje dochází k
+Vývoj jazyka sebou nese i
 \begin_inset space ~
 \end_inset
 
-úpravavám API
+stinné stránky.
+ Po letech vývoje dochází k
+\begin_inset space ~
+\end_inset
+
+úpravám API
 \begin_inset Foot
 status collapsed
 
@@ -2453,7 +2461,11 @@ Application Programming Interface
 
 \end_inset
 
- některých vestavěných funkcí a změna syntaxe.
+ některých vestavěných funkcí a
+\begin_inset space ~
+\end_inset
+
+změna syntaxe.
  To může zapříčinit, že po aktualizaci interpretu jazyka, přestanou fungovat
  některé části nebo celá aplikace.
 \end_layout
@@ -2762,7 +2774,7 @@ key "ORM"
  dat.
  Ať už jde o různé relačními databáze (MySQL, PostgreSQL, Oracle, MSSQL)
  nebo dokonce vlastní definováné zdroje dat.
- Mezi ty můžou patřit formátované soubory (CSV, XML, JSON) nebo síťové služby
+ Mezi ty mohou patřit formátované soubory (CSV, XML, JSON) nebo síťové služby
  poskytující informace skrze veřejné API (LDAP, Twitter, IMAP a další).
 \end_layout
 
@@ -3091,7 +3103,7 @@ key "MySQL"
 \end_layout
 
 \begin_layout Standard
-Těší velké oblibě hlavně mezi vývojáři webových aplikací, kde je součástí
+Těší se velké oblibě hlavně mezi vývojáři webových aplikací, kde je součástí
  platformy označované jako 
 \emph on
 LAMP
@@ -3261,7 +3273,7 @@ z anglických slov
 \emph on
 Graphical User Interface
 \emph default
-, uživatelské prostředí, jenž úmožnuje uživateli ovládat aplikaci pomocí
+, uživatelské prostředí, jenž umožnuje uživateli ovládat aplikaci pomocí
  grafických ovládacích prvků
 \end_layout
 
@@ -3815,7 +3827,7 @@ V základní výbavě CakePHP je obsaženo rozšíření
 \emph on
 Containable
 \emph default
-, které úmožnuje dynamicky přidávat asociované modely bez omezení hloubky
+, které umožňuje dynamicky přidávat asociované modely bez omezení hloubky
  rekurze
 \begin_inset Foot
 status collapsed
@@ -3848,7 +3860,7 @@ bindModel()
 \emph on
 unbindModel()
 \emph default
-, které úmožnují přidávat a odebírat asociace příslušící danému modelu.
+, které umožňují přidávat a odebírat asociace příslušící danému modelu.
  
 \emph on
 Containtable
@@ -4332,7 +4344,7 @@ zadaném poli určuje položky tabulky, kterých se mají podmínky týkat.
 \begin_inset space ~
 \end_inset
 
-řadiče produktů, kde má být zákazníkům úmožněno vyhledávat pouze v produktech,
+řadiče produktů, kde má být zákazníkům umožněno vyhledávat pouze v produktech,
  které se jich přímo týkají.
 \end_layout
 
@@ -4503,7 +4515,7 @@ vygenerování podmínek pro vyhledávání.
 
 \begin_layout Description
 Email Slouží k odesílání emailů.
- Lze používat šablony, HTML zprávy a
+ Lze používat šablony a
 \begin_inset space ~
 \end_inset
 
@@ -4973,8 +4985,12 @@ Uživatelská dokumentace
 \end_layout
 
 \begin_layout Standard
-Uživatelská dokumentace si klade za cíl stručně přiblížit čtenáři výhody
- informačního systému a jeho základními způsoby ovládání.
+Cílem kapitoly uživatelská dokumentace je stručně přiblížit výhody informačního
+ systému a
+\begin_inset space ~
+\end_inset
+
+jeho základními způsoby ovládání.
  V jednotlivých částech je vysvětleno, jak má správce postupovat od úvodní
  instalace, přes inicializaci databáze, uložení informací o uživatelích,
  přidání produktů až po tisk účetních podkladů.
@@ -4996,7 +5012,7 @@ Instalace serveru
 \end_layout
 
 \begin_layout Standard
-Pro běh serverové aplikace je nutné mít program, který úmožnuje zpracování
+Pro běh serverové aplikace je nutné mít program, který umožnuje zpracování
  zdrojových kódů a
 \begin_inset space ~
 \end_inset
@@ -5018,7 +5034,7 @@ target "http://httpd.apache.org"
 
 \end_inset
 
-, který úmožnuje pomocí modulů přidat podporu pro jazyk PHP nutný k běhu
+, který umožnuje pomocí modulů přidat podporu pro jazyk PHP nutný k běhu
  IS.
  Následující postupy jsou pouze orientační a mohou se lišit podle operačního
  systému a jeho verze.
@@ -5139,7 +5155,7 @@ name "sub:Stažení-a-instalace"
 \end_layout
 
 \begin_layout Standard
-Při instalaci MySQL serveru postupujte obdobně jako s instalací Apache.
+Při instalaci MySQL serveru se postupuje obdobně jako s instalací Apache.
  Nejprve ověřte zda se balík nenachází v repozitářích.
  Pokud tomu tak není, je potřeba stáhnout instalační soubory z
 \begin_inset space ~
@@ -5156,8 +5172,19 @@ target "http://dev.mysql.com/downloads/"
 
 
 \emph default
- a postupovat podle návodu uvedeného v dokumentaci dostupné rovněž z výše
- uvedeného odkazu.
+ a
+\begin_inset space ~
+\end_inset
+
+postupovat podle návodu uvedeného v
+\begin_inset space ~
+\end_inset
+
+dokumentaci dostupné rovněž z
+\begin_inset space ~
+\end_inset
+
+výše uvedeného odkazu.
 \end_layout
 
 \begin_layout Standard
@@ -5174,9 +5201,20 @@ root
 \emph on
 mysql
 \emph default
- a heslem zadaným při instalaci) a je vhodné vytvořit novou databázi a uživatele
- pro potřeby informačního systému.
- K tomu poslouží následující skript.
+ a
+\begin_inset space ~
+\end_inset
+
+heslem zadaným při instalaci) a je vhodné vytvořit novou databázi a
+\begin_inset space ~
+\end_inset
+
+uživatele pro potřeby informačního systému.
+ K
+\begin_inset space ~
+\end_inset
+
+tomu poslouží následující skript.
 \end_layout
 
 \begin_layout Standard
@@ -5244,20 +5282,30 @@ isa_database
 \emph on
 isa_admin
 \emph default
-) i heslo (
+) i
+\begin_inset space ~
+\end_inset
+
+heslo (
 \emph on
 isa_password
 \emph default
 ) je doporučeno změnit podle vlastních zvyklostí.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Umístění aplikace
 \end_layout
 
 \begin_layout Standard
 Pokud máme server správně nakonfigurovaný, zkopírujeme složku s aplikací
- do adresáře určeného konfigurací Apache (obvykle /var/www či C:
+ do adresáře zvoleného v konfiguraci Apache (obvykle 
+\emph on
+/var/www
+\emph default
+ nebo 
+\emph on
+C:
 \backslash
 
 \backslash
@@ -5265,36 +5313,24 @@ Program Files
 \backslash
 apache2
 \backslash
-www - budeme označovat 
-\emph on
-ROOT
+www
 \emph default
 ).
- Pro větší bezpečnost je doporučeno změnit 
-\begin_inset Quotes pld
-\end_inset
-
-webroot
-\begin_inset Quotes prd
-\end_inset
-
- v konfiguraci apache na složku 
+ Pro větší bezpečnost je doporučeno doplnit volbu 
 \emph on
-ROOT
+DocumentRoot
 \emph default
-/app/webroot.
- Dále je potřeba nastavit přihlašovací údaje k databázi podle 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sub:Stažení-a-instalace"
-
-\end_inset
-
-předchozí části v souboru 
+ v konfiguraci Apache o 
 \emph on
-ROOT
+/app/webroot
 \emph default
-/app/config/database.php .
+.
+ Dále je potřeba nastavit přihlašovací údaje k databázi podle předchozí
+ části v souboru 
+\emph on
+app/config/database.php
+\emph default
+.
 \end_layout
 
 \begin_layout Section
@@ -5915,14 +5951,6 @@ Dodavatel
 \begin_layout Standard
 Dodavatel má přístup, ke všem produktům, kde měl přiřazen alespoň jeden
  výkaz.
-\end_layout
-
-\begin_layout Standard
-zadávání výkazu,
-\end_layout
-
-\begin_layout Standard
-evidence docházky do kurzů
 \end_layout
 
 \begin_layout Chapter
@@ -6761,6 +6789,7 @@ v
 
 neposlední řadě přispěl k tlaku na dodavatele, aby ve vlastním zájmu svou
  činnost vykazovali včas a přesně.
+ Optimalizace procesů a minimalizace chyb přinesly zvýšenou důvěru ...
 \end_layout
 
 \begin_layout Standard
