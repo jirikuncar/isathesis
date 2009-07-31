@@ -1960,8 +1960,8 @@ Logický návrh
 \end_layout
 
 \begin_layout Standard
-Dále budou popsány tři nejdůležitější skupiny souvisejících tabulek, které
- jsou součástí hlavního schématu.
+Dále budou popsány tři hlavní skupiny souvisejících tabulek, které jsou
+ součástí hlavního schématu.
  Nejdůležitější část se týká správy uživatelů, kde všechny informace o
 \begin_inset space ~
 \end_inset
@@ -2199,7 +2199,118 @@ FAIL('chyba')
 \emph on
 RAISE EXCEPTION
 \emph default
- známé třeba z PostgreSQL.
+ známé třeba z PostgreSQL, která nemá omezení na místo odkud může být vyvolána
+ vyjímka.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+-- Tabulka s unikátním klíčem na sloupci `message`
+\end_layout
+
+\begin_layout Plain Layout
+
+CREATE TABLE `error` (
+\end_layout
+
+\begin_layout Plain Layout
+
+  `id` int(10) unsigned NOT NULL auto_increment,
+\end_layout
+
+\begin_layout Plain Layout
+
+  `message` varchar(128) default NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+  `created` timestamp NOT NULL default CURRENT_TIMESTAMP 
+\end_layout
+
+\begin_layout Plain Layout
+
+    on update CURRENT_TIMESTAMP,
+\end_layout
+
+\begin_layout Plain Layout
+
+  PRIMARY KEY  (`id`),
+\end_layout
+
+\begin_layout Plain Layout
+
+  UNIQUE KEY `message_index` (`message`) 
+\end_layout
+
+\begin_layout Plain Layout
+
+) ENGINE=MEMORY  
+\end_layout
+
+\begin_layout Plain Layout
+
+  DEFAULT CHARSET=utf8 COLLATE=utf8_bin 
+\end_layout
+
+\begin_layout Plain Layout
+
+  ROW_FORMAT=FIXED
+\end_layout
+
+\begin_layout Plain Layout
+
+  AUTO_INCREMENT=1 ;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+-- Fuknce pro vyvolání vyjímky.
+\end_layout
+
+\begin_layout Plain Layout
+
+DELIMITER $$
+\end_layout
+
+\begin_layout Plain Layout
+
+CREATE PROCEDURE fail(_Message VARCHAR(128)) 
+\end_layout
+
+\begin_layout Plain Layout
+
+BEGIN
+\end_layout
+
+\begin_layout Plain Layout
+
+  INSERT INTO error (message) VALUES (_Message);
+\end_layout
+
+\begin_layout Plain Layout
+
+  INSERT INTO error (message) VALUES (_Message);
+\end_layout
+
+\begin_layout Plain Layout
+
+END$$
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2216,7 +2327,8 @@ reference "cha:Databázové-schéma"
 
 \end_inset
 
- simuluje firemní procesy velice přesně.
+ simuluje firemní procesy velice přesně a úmožňuje uchovávat všechna potřebná
+ data.
  Problémem může být náročnější způsob výpočtu ceny pro zákazníka.
  Pokud se totiž cena odvíjí od množství vykázaných jednotek dodavateli,
  je potřeba spojit více tabulek a
@@ -2264,7 +2376,7 @@ tohoto využití vznikla i zkratka z anglických slov
 \emph on
 Personal Home Page
 \emph default
-.
+ (osobní domácí stránka).
  Později byly nahrazeny slovy 
 \emph on
 PHP: Hypertext Preprocessor
@@ -2331,7 +2443,7 @@ Vývoj jazyka sebou nese i stinné stránky.
 status collapsed
 
 \begin_layout Plain Layout
-anglická zkratka 
+
 \emph on
 Application Programming Interface
 \emph default
@@ -2375,7 +2487,7 @@ verzích jazyka.
 \begin_inset space ~
 \end_inset
 
-cenu zpomalení některých částí aplikace, díky kontroly verze překladače
+cenu zpomalení některých částí aplikace, díky kontrole verze překladače
  a
 \begin_inset space ~
 \end_inset
@@ -2388,13 +2500,17 @@ Při výběru frameworku byl kladen důraz hlavně na
 \begin_inset space ~
 \end_inset
 
-kvalitní dokumentaci, rozšířitelnost a možnost práce s
+kvalitní dokumentaci, rozšířitelnost a
+\begin_inset space ~
+\end_inset
+
+možnost práce s
 \begin_inset space ~
 \end_inset
 
 různými relačními databázemi.
- Frameworky, které splňují vetšinu požadavků jsou Zend, Prado, Symfony a
- CakePHP, který navíc ve
+ Frameworky splňující vetšinu požadavků jsou Zend, Prado, Symfony a CakePHP,
+ který navíc ve
 \begin_inset space ~
 \end_inset
 
@@ -2417,14 +2533,8 @@ CakePHP
 \end_layout
 
 \begin_layout Standard
-CakePHP je open source framework
-\begin_inset CommandInset citation
-LatexCommand cite
-key "CakePHP"
-
-\end_inset
-
-, který poskytuje většinu nástrojů pro snadný vývoj webové aplikace a
+CakePHP je open source framework, který poskytuje většinu nástrojů pro snadný
+ vývoj webové aplikace a
 \begin_inset space ~
 \end_inset
 
@@ -2432,7 +2542,14 @@ dává větší příležitost věnovat se návrhu schématu a
 \begin_inset space ~
 \end_inset
 
-logiky aplikace.
+logiky aplikace 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CakePHP"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Description
@@ -2502,7 +2619,7 @@ name "fig:Diagram-MVC-dotazu"
 
 \end_inset
 
-Diagram MVC dotazu
+Diagram MVC dotazu 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "MVC"
@@ -2540,15 +2657,26 @@ status collapsed
 \emph on
 Uniform Resource Locator
 \emph default
+ (jednotný lokátor zdrojů) popisuje sémantiku a
+\begin_inset space ~
+\end_inset
 
+syntaxi řetězce znaků sloužící k
+\begin_inset space ~
+\end_inset
+
+přesné specifikaci zdroje informací v
+\begin_inset space ~
+\end_inset
+
+prostředí Internetu 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "RFC1738"
 
 \end_inset
 
-(jednotný lokátor zdrojů) popisuje sémantiku a syntaxi řetězce znaků sloužící
- k přesné specifikaci zdroje informací v prostředí Internetu.
+.
 \end_layout
 
 \end_inset
@@ -2722,7 +2850,11 @@ pomocníci
 \emph on
 helpers
 \emph default
-), kteří daný kód generují.
+) a komponenty (
+\emph on
+components
+\emph default
+).
  Při potřebě změny je lze snadno upravit, bez potřeby zásahu do míst odkud
  jsou voláni.
 \end_layout
@@ -2918,11 +3050,7 @@ MySQL je multiplatformní systém pro řízení báze dat (DBMS, zkráceně data
 \end_layout
 
 \begin_layout Itemize
-indexy
-\end_layout
-
-\begin_layout Itemize
-fultextové vyhledávání
+indexy, fulltext
 \end_layout
 
 \begin_layout Itemize
@@ -3080,7 +3208,7 @@ key "ECMA-262"
 
 \begin_layout Standard
 S XHTML a CSS prohlížeče problémy nemívají.
- Horší je to, ale s implementacemi Javascriptu, které se mezi prohlížeči
+ Horší je to, ale s implementacemi javascriptu, které se mezi prohlížeči
  dost liší.
  Tento problém byl vyřešen díky provázanosti CakePHP a javascriptového framework
 u Prototype
@@ -3194,11 +3322,8 @@ třídami a
 \end_inset
 
 metody použitých tříd.
-\end_layout
-
-\begin_layout Standard
-Pro kompletní dokumentaci všech metod a plné pochopení fungování frameworku
- CakePHP je vhodné si nejprve nastudovat 
+ Pro kompletní dokumentaci všech jaderných metod a plné pochopení fungování
+ frameworku CakePHP je vhodné si nejprve nastudovat 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "CakePHP"
@@ -3219,7 +3344,7 @@ jaderných metodách frameworku.
 \begin_inset space ~
 \end_inset
 
-dispozici na přiloženém CD.
+dispozici na přiloženém CD-ROMu.
 \end_layout
 
 \begin_layout Section
@@ -3228,6 +3353,19 @@ Adresářová struktura
 
 \begin_layout Standard
 Kód aplikace je logicky rozčleněn podle původu do 3 hlavních složek.
+ Při pojmenovávání souborů ve složkách je dobré se řídit zavedenými konvencemi
+ v
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CakePHP"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Itemize
@@ -3324,7 +3462,7 @@ webroot
 \begin_inset space ~
 \end_inset
 
-obrázky použité při prezentaci dat
+obrázky
 \end_layout
 
 \end_deeper
@@ -3342,18 +3480,6 @@ cake
 vendors
 \emph default
  - knihovny třetích stran použité v systému (TCPDF, CssTidy, JsMin)
-\end_layout
-
-\begin_layout Standard
-Pro pojmenování souborů ve složkách je dobré se řídit zavedenými konvencemi
- uvedenými v manuálu 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "CakePHP"
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Section
@@ -3560,7 +3686,7 @@ h modelů.
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "basicstyle={\small},tabsize=4"
+lstparams "basicstyle={\small\ttfamily},tabsize=2"
 inline false
 status open
 
@@ -3596,7 +3722,7 @@ array(
 
 \begin_layout Plain Layout
 
-	'order' => array('Model.created', 'Model.field3 DESC'),
+	'order' => array('Model.created', 'Model.field3' => 'DESC'),
 \end_layout
 
 \begin_layout Plain Layout
@@ -3677,7 +3803,7 @@ V systému, kde je potřeba vyhledávat sdružovat data podle modelů, jenž jso
 \end_layout
 
 \begin_layout Subsection
-Rozšíření chování (
+Rozšíření chování modelů (
 \emph on
 Behaviors
 \emph default
@@ -3769,35 +3895,34 @@ key "linkable"
 
 \end_inset
 
-, které má obdobnou syntaxi nastavení, ale vytváří jeden SQL dotaz za pomocí
- klauzují JOIN.
+, které má obdobnou syntaxi nastavení, ale vytváří pouze jeden SQL dotaz
+ za pomocí klauzují JOIN.
 \end_layout
 
 \begin_layout Standard
-Pro usnadnění práce s relacemi typu M:N přes tabulku s klíči je použito
- rozšíření 
+Pro usnadnění práce s relacemi typu M:N přes tabulku s
+\begin_inset space ~
+\end_inset
+
+klíči je použito rozšíření 
 \emph on
-
-\begin_inset Quotes pld
-\end_inset
-
 Extend Associations
-\begin_inset Quotes prd
-\end_inset
-
-
+\emph default
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "ExtendAssoc"
 
 \end_inset
 
+.
+ To umožňuje jednoduché přidání nebo smazání asociací, bez ovlivnění již
+ existujících záznamů.
+ K
+\begin_inset space ~
+\end_inset
 
-\emph default
- .
- To umožňuje jednoduché přidání nebo smazání asociací, bez ovlivnění ostatních
- již existujících.
- K tomu slouží nově definovaná sada metod:
+tomu slouží nově definovaná sada metod:
 \end_layout
 
 \begin_layout Itemize
@@ -3946,7 +4071,7 @@ onError()
 \emph default
 , která je volána pokaždé, když metoda 
 \emph on
-DboSouce::execute()
+DboSource::execute()
 \emph default
  vrátí chybu.
  V
@@ -4004,12 +4129,25 @@ databázi, posílání emailů nebo validaci uživatelských formulářů.
 Komponenty
 \end_layout
 
+\begin_layout Standard
+Komponenty se v CakePHP obecně používají ke sdílení logiky (kódu) mezi různými
+ řadiči tak, aby byla zachována filozofie 
+\emph on
+DRY
+\emph default
+.
+\end_layout
+
 \begin_layout Description
 Auth/Authmd5 Standardní knihovna přidává k heslu řetězec definovaný v
 \begin_inset space ~
 \end_inset
 
-app/config/core.php v
+
+\emph on
+app/config/core.php
+\emph default
+ v
 \begin_inset space ~
 \end_inset
 
@@ -4027,8 +4165,11 @@ systému na obtíž, hlavně kvůli přenositelnosti již zadaných hesel v
 \end_inset
 
 předchozí aplikaci.
- Proto byla vytvořena komponenta Authmd5, která nepřidává zabezpečovací
- řetězec k
+ Proto byla vytvořena komponenta 
+\emph on
+Authmd5
+\emph default
+, která nepřidává zabezpečovací řetězec k
 \begin_inset space ~
 \end_inset
 
@@ -4362,7 +4503,7 @@ vygenerování podmínek pro vyhledávání.
 
 \begin_layout Description
 Email Slouží k odesílání emailů.
- Lze používat šablony, HTML zprávy a
+ Lze používat šablony a
 \begin_inset space ~
 \end_inset
 
@@ -4374,7 +4515,7 @@ Request
 \begin_inset space ~
 \end_inset
 
-Handler Detekuje typ požadavku podle odeslané hlavičky nebo přípony.
+Handler Detekuje typ požadavku podle odeslané hlavičky.
 \end_layout
 
 \begin_layout Subsection
