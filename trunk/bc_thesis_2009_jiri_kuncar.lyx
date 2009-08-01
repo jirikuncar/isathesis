@@ -670,7 +670,7 @@ prostředí Internetu.
 
 \begin_layout Standard
 Implementovaný systém bude mimo jiné obsahovat prostředky pro správu uživatelů,
- evidenci zakázek, kalkulaci nákladů na výplaty a
+ evidenci zakázek, kalkulaci nákladů na mzdy a
 \begin_inset space ~
 \end_inset
 
@@ -4706,8 +4706,7 @@ admin_payment() Na základě filtru vybere odpovídající smlouvy a
 \begin_inset space ~
 \end_inset
 
-vygeneruje přehled pro sestavení výplat a kontrolu přijatých faktur od dodavatel
-ů.
+vygeneruje přehled pro sestavení mezd a kontrolu přijatých faktur od dodavatelů.
  Základní schéma výpočtu pro rok 2008 bylo následující:
 \begin_inset listings
 lstparams "basicstyle={\ttfamily},breaklines=true,tabsize=2"
@@ -4716,17 +4715,17 @@ status open
 
 \begin_layout Plain Layout
 
-if typ služby == služba then
+if typ_služby == služba then
 \end_layout
 
 \begin_layout Plain Layout
 
-	if způsob platby == hotově then
+	if způsob_platby == hotově then
 \end_layout
 
 \begin_layout Plain Layout
 
-		zaokrouhli výplatu na 50 haléřů
+		zaokrouhli mzdu na 50 haléřů
 \end_layout
 
 \begin_layout Plain Layout
@@ -4741,12 +4740,12 @@ else if plátce daně then
 
 \begin_layout Plain Layout
 
-		if výplata > 5000 then
+		if mzda > 5000 then
 \end_layout
 
 \begin_layout Plain Layout
 
-			zálohová daň := 15% z výplaty
+			zálohová_daň := 15% ze mzdy
 \end_layout
 
 \begin_layout Plain Layout
@@ -4756,7 +4755,7 @@ else if plátce daně then
 
 \begin_layout Plain Layout
 
-			srážková daň := 15% z výplaty
+			srážková_daň := 15% ze mzdy
 \end_layout
 
 \begin_layout Plain Layout
@@ -4940,8 +4939,23 @@ Asset
 \end_layout
 
 \begin_layout Standard
-Modul využívá kódu projektů JsMin a CssTidy pro komprimaci javascriptu a
- kaskádových stylů.
+Modul využívá projektů 
+\emph on
+JsMin
+\emph default
+ a
+\emph on
+
+\begin_inset space ~
+\end_inset
+
+CssTidy
+\emph default
+ pro komprimaci javascriptu a
+\begin_inset space ~
+\end_inset
+
+kaskádových stylů.
  Vybere všechny soubory, které byly do stránky vloženy voláním 
 \emph on
 $javascript->link(nazev)
@@ -4985,12 +4999,11 @@ Uživatelská dokumentace
 \end_layout
 
 \begin_layout Standard
-Cílem kapitoly uživatelská dokumentace je stručně přiblížit výhody informačního
- systému a
+Cílem kapitoly je stručně přiblížit výhody informačního systému a
 \begin_inset space ~
 \end_inset
 
-jeho základními způsoby ovládání.
+jeho základním způsobem ovládání.
  V jednotlivých částech je vysvětleno, jak má správce postupovat od úvodní
  instalace, přes inicializaci databáze, uložení informací o uživatelích,
  přidání produktů až po tisk účetních podkladů.
@@ -5298,8 +5311,15 @@ Umístění aplikace
 \end_layout
 
 \begin_layout Standard
-Pokud máme server správně nakonfigurovaný, zkopírujeme složku s aplikací
- do adresáře zvoleného v konfiguraci Apache (obvykle 
+Pokud máme server správně nakonfigurovaný, zkopírujeme složku s
+\begin_inset space ~
+\end_inset
+
+aplikací do adresáře zvoleného v
+\begin_inset space ~
+\end_inset
+
+konfiguraci Apache (obvykle 
 \emph on
 /var/www
 \emph default
@@ -5316,11 +5336,19 @@ apache2
 www
 \emph default
 ).
- Pro větší bezpečnost je doporučeno doplnit volbu 
+ Pro větší bezpečnost je doporučeno doplnit proměnnou 
 \emph on
 DocumentRoot
 \emph default
- v konfiguraci Apache o 
+ v
+\begin_inset space ~
+\end_inset
+
+konfiguraci Apache o
+\begin_inset space ~
+\end_inset
+
+
 \emph on
 /app/webroot
 \emph default
@@ -5333,17 +5361,45 @@ app/config/database.php
 .
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Inicializace databáze
 \end_layout
 
 \begin_layout Standard
 V souboru 
 \emph on
-ROOT
+app/config/sql/isa_init.sql
 \emph default
-/app/config/sql/isa_init.sql se nachází MySQL 5.2+ kompatibilní skript, který
- vytvoří tabulky a naplní je daty nutnými k prvnímu přihlášení administrátora.
+ se nachází MySQL 5.2+ kompatibilní skript, který vytvoří tabulky a
+\begin_inset space ~
+\end_inset
+
+naplní je daty nutnými k
+\begin_inset space ~
+\end_inset
+
+prvnímu přihlášení administrátora.
+ Spuštění skriptu lze provést následujícím příkazem z adresáře se skriptem.
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+shell> mysql --user=isa_admin --password=isa_password 
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+       isa_database < isa_init.sql
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -5351,8 +5407,8 @@ Upřesňující informace
 \end_layout
 
 \begin_layout Standard
-Pro další čtení manuálu je potřeba upřesnit několik důležitých pojmů, které
- se budou dále vyskytovat.
+Pro další čtení manuálu je potřeba upřesnit několik důležitých, které se
+ budou dále vyskytovat.
 \end_layout
 
 \begin_layout Description
@@ -5361,10 +5417,6 @@ Systémová
 \end_inset
 
 skupina je nutná pro správné fungování IS.
-\end_layout
-
-\begin_layout Standard
-Tato sekce je rozdělena podle rolí definovaných v IS.
 \end_layout
 
 \begin_layout Description
@@ -5397,7 +5449,7 @@ pod jednou střechou
 \end_layout
 
 \begin_layout Description
-Účastníci: studenti jednotlivých kurzu.
+Účastníci: studenti jednotlivých kurzů.
  
 \end_layout
 
@@ -5407,7 +5459,7 @@ Výše popsané role mohou být změněny či zakázány administrátorem systé
 \end_layout
 
 \begin_layout Description
-Poznámka: Text u odkazu na zobrazení, editaci nebo smazání záznamu mohou
+Poznámka: Texty u odkazu na zobrazení, editaci nebo smazání záznamu mohou
  být nahrazeny po řadě obrázky: 
 \begin_inset Graphics
 	filename more.gif
@@ -5433,12 +5485,15 @@ Poznámka: Text u odkazu na zobrazení, editaci nebo smazání záznamu mohou
 \end_layout
 
 \begin_layout Section
-Správce (hlavní manažer)
+Správce
 \end_layout
 
 \begin_layout Standard
 Má standardně nastavena veškerá přístupová práva ke všem modulům systému.
- 
+ Jedná se o roli manažera agentury rozhodujícím o přístupech k jednotlivým
+ modulů a nastavujícím práva k systému.
+ Může delegovat část oprávnění na další skupiny např.
+ administrativních pracovníků nebo lektorů s přístupem ke tvorbě testů.
 \end_layout
 
 \begin_layout Subsection
@@ -5475,8 +5530,11 @@ uživatelů
 \begin_inset space ~
 \end_inset
 
-[/admin/Users/index]: V horní části se nachází odkazy na akce související
- s uživateli.
+
+\emph on
+/admin/Users/index
+\emph default
+: V horní části se nachází odkazy na akce související s uživateli.
  Filtry pro práci se seznamem uživatelů jsou umístěny nad hlavní tabulkou
  a v hlavičce tabulky s funkcí 
 \begin_inset Quotes pld
@@ -5953,6 +6011,10 @@ Dodavatel má přístup, ke všem produktům, kde měl přiřazen alespoň jeden
  výkaz.
 \end_layout
 
+\begin_layout Section
+Zákazníci (studenti)
+\end_layout
+
 \begin_layout Chapter
 Existující implementace
 \end_layout
@@ -5987,8 +6049,8 @@ Offline
 \end_inset
 
 zpracování Server vygeneruje statické HTML před samotnou publikací.
- Proto takové systémy nepořebují, aby server aplikoval šablony na data při
- každém požadavku.
+ Proto takové systémy nepotřebují, aby server aplikoval šablony na data
+ při každém požadavku.
  Výhody jsou zjevné pro vytížené CMS používané převážně pro čtení dat.
  Naopak při častých změnách dat mohou být tyto systémy pomalé nebo neaktuální,
  proto je nutné si jejich nasazení řádně rozmyslet.
@@ -6287,7 +6349,7 @@ Wordpress je propracovaným publikačním nástrojem, jehož rozhraní je velice
 \end_inset
 
 přehledné.
- Funkcionalitu lze rozšířit pomocí pluginů a
+ Funkcionalitu lze rozšířit pomocí zásuvných modulů a
 \begin_inset space ~
 \end_inset
 
@@ -6343,7 +6405,7 @@ videa.
 \begin_inset space ~
 \end_inset
 
-pluginů přes administrátorské rozhraní.
+modulů přes administrátorské rozhraní.
 \end_layout
 
 \begin_layout Standard
@@ -6477,7 +6539,7 @@ V posledních letech zažívají tyto systémy bouřlivý vývoj.
 \end_layout
 
 \begin_layout Standard
-Důležitým faktorem pro práci s e-learningovými systémi je dodržování standardů
+Důležitým faktorem pro práci s e-learningovými systémy je dodržování standardů
  tak, aby bylo možné rychle a snadno začlenit již existující výukový materiál,
  který mohl vzniknout již před samotným nasazením systému.
  Mezi tyto standardy patří SCORM
@@ -6776,8 +6838,12 @@ Závěr
 \end_layout
 
 \begin_layout Standard
-Implementovaný systém po několika měsících ostrého provozu mnohonásobně
- zkrátil dobu potřebnou k přípravě výplat a kontrole faktur.
+Implementovaný systém po někfolika měsících ostrého provozu v
+\begin_inset space ~
+\end_inset
+
+jazykové agentuře mnohonásobně zkrátil dobu potřebnou k evidenci kurzů,
+ zákazníků, studentů, přípravě mezd a kontrole faktur.
  Došlo ke zefektivnění a zrychlení práce při vyřizování zakázek.
  Byly odstraněny duplicitní činnosti a
 \begin_inset space ~
@@ -6787,27 +6853,175 @@ v
 \begin_inset space ~
 \end_inset
 
-neposlední řadě přispěl k tlaku na dodavatele, aby ve vlastním zájmu svou
- činnost vykazovali včas a přesně.
- Optimalizace procesů a minimalizace chyb přinesly zvýšenou důvěru ...
+neposlední řadě přispěl k
+\begin_inset space ~
+\end_inset
+
+tlaku na dodavatele, aby ve vlastním zájmu svou činnost vykazovali včas,
+ přesně a
+\begin_inset space ~
+\end_inset
+
+podle daných pravidel.
+ Navržený obsah všech modulů se osvědčil a
+\begin_inset space ~
+\end_inset
+
+umožnil jednoduše zpřístupňovat části IS různým skupinám uživatelů.
+ Optimalizace procesů a minimalizace chyb přinesly zvýšenou důvěru zákazníků
+ v agenturu.
+ Významný je rovněž přínos IS ke
+\begin_inset space ~
+\end_inset
+
+správnosti a
+\begin_inset space ~
+\end_inset
+
+přehlednosti dat pro účetní evidenci nákladů a
+\begin_inset space ~
+\end_inset
+
+výnosů dle typů produktů.
 \end_layout
 
 \begin_layout Standard
 Ukázalo se, že existuje mnoho kvalitních open source nástrojů, frameworků
- i jejich doplňků, které usnadily a urychlily vývoj systému.
- Další rozvoj systému by měl směřovat k implementaci některého ze správců
- webového obsahu a nástroje pro podporu výuky popsaných v předcházející
- kapitole.
- Zavedení informačního systému do praxe poukázalo rovněž i na některé nedostatky
- v jeho implementaci i použitých nástrojích.
- 
+ a
+\begin_inset space ~
+\end_inset
+
+jejich doplňků usnadňujících a urychlujích vývoj systémů.
+ Zavedení informačního systému do praxe ale poukázalo i
+\begin_inset space ~
+\end_inset
+
+na
+\begin_inset space ~
+\end_inset
+
+některé nedostatky v
+\begin_inset space ~
+\end_inset
+
+jeho implementaci a
+\begin_inset space ~
+\end_inset
+
+použitých nástrojích.
+ Jde především o
+\begin_inset space ~
+\end_inset
+
+málo strukturované přístupové práva k
+\begin_inset space ~
+\end_inset
+
+záznamům v
+\begin_inset space ~
+\end_inset
+
+tabulkách, jejichž rozdělení je přímo začleněné v kódu, a
+\begin_inset space ~
+\end_inset
+
+spolupráci s
+\begin_inset space ~
+\end_inset
+
+externími aplikacemi.
+ V
+\begin_inset space ~
+\end_inset
+
+případě použitého databázového systému MySQL se jedná o
+\begin_inset space ~
+\end_inset
+
+horší podporu fultextového vyhledávání a
+\begin_inset space ~
+\end_inset
+
+práci s
+\begin_inset space ~
+\end_inset
+
+aplikačními vyjímkami.
 \end_layout
 
 \begin_layout Standard
-Na vývoj systému je nutné ještě dále pracovat a přizpůsobovat ho aktuálním
- trendům v oblasti komunikace.
+Na vývoji systému je nutné ještě dále pracovat a
+\begin_inset space ~
+\end_inset
+
+přizpůsobovat ho aktuálním trendům v
+\begin_inset space ~
+\end_inset
+
+oblasti komunikace.
  Rovněž vývoj použitých frameworků přináší k menší či větší změny, které
  promítají do funkcionality, výkonu a bezpečnosti aplikace.
+ Další rozvoj systému by měl směřovat k
+\begin_inset space ~
+\end_inset
+
+implementaci některého ze správců webového obsahu a
+\begin_inset space ~
+\end_inset
+
+nástroje pro podporu výuky popsaných v
+\begin_inset space ~
+\end_inset
+
+předcházející kapitole.
+ V oblasti bezpečnosti je potřeba se zaměřit 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Sklar-2003"
+
+\end_inset
+
+Sklar D., Trachtenberg A.
+ (2003): 
+\emph on
+PHP Cookbook
+\emph default
+, O'Reilly, ISBN: 156592681
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Hugh-2004"
+
+\end_inset
+
+Hugh E.
+ W, Lane D.
+ (2004): 
+\emph on
+Web Database Applications with PHP and MySQL
+\emph default
+, 2nd.
+ ed., O'Reilly, ISBN: 0596000413 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Welling-2005"
+
+\end_inset
+
+Welling L., Thomson L.
+ (2005): 
+\emph on
+MySQL: Průvodce základy databázového systému
+\emph default
+, Computer Press, Praha, ISBN: 8025106713
 \end_layout
 
 \begin_layout Bibliography
