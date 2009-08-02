@@ -354,13 +354,13 @@ Cílem práce je navrhnout a implementovat modulární informační systém pro
 \end_inset
 
 překlady.
- Práce obsahuje důkladnou analýzu podnikových procesů a
+ Práce obsahuje analýzu podnikových procesů a
 \begin_inset space ~
 \end_inset
 
 řešení problémů při návrhu databázového schématu.
- Součástí vytvořeného systému jsou zejména moduly pro evidenci kurzů, správu
- uživatelů a tvorbu účetních podkladů.
+ Hlavní součásti vytvořeného systému zahrnují moduly pro evidenci kurzů,
+ správu uživatelů a tvorbu účetních podkladů.
  Systém je realizován za pomoci technologie PHP a frameworku CakePHP s využítím
  MySQL databáze pro ukládání strukturovaných dat.
  V práci jsou rozebrány výhody používání frameworků při vývoji webových
@@ -412,56 +412,18 @@ Supervisor's e-mail address: Miroslav.Spousta@mff.cuni.cz
 
 \begin_layout Standard
 \noindent
-Abstract: The goal of the thesis is to design and implement a modular informatio
-n system for a company involved in teaching of foreign languages.
-\end_layout
-
-\begin_layout Standard
-\noindent
-The main parts of the information system will include, particularly: 
-\end_layout
-
-\begin_layout Standard
-\noindent
-- a module for offer and sale of courses to the public and individuals,
- language training for businesses, translation and interpretation 
-\end_layout
-
-\begin_layout Standard
-\noindent
-- a module of products (teaching, translation and interpretation), training
- (individual training courses for the public, language classes for businesses)
- 
-\end_layout
-
-\begin_layout Standard
-\noindent
-- a module for News (sending bulk mail), the schedule of teaching, class
- books, study material 
-\end_layout
-
-\begin_layout Standard
-\noindent
-- a module of suppliers (contracts with teachers, translators, interpreters,
- monthly class-sheets, monthly reports on the cost of staff translators
- and interpreters) 
-\end_layout
-
-\begin_layout Standard
-\noindent
-- a module of customers (registration in courses, orders, contracts, supplements
- to invoices for "from-to" periods) 
-\end_layout
-
-\begin_layout Standard
-\noindent
-- a module for testing of knowledge levels (a simple testing environment)
- 
-\end_layout
-
-\begin_layout Standard
-\noindent
-- a module for managing the IS (users, their rights and a summary of changes)
+The goal of the thesis is to design and implement a modular information
+ system for a company particularly involved in teaching of foreign languages,
+ interpreting and translating.
+ The work includes analysis of business processes and solve problems in
+ the design of the database schema.
+ The main parts of the system includes modules of courses, users administration
+ and the creation of accounting documents.
+ The system is implemented with the help of technology PHP and framework
+ CakePHP using the MySQL database to store structured data.
+ The thesis analyzed the benefits of application frameworks in the development
+ of web applications and the potential usage of existing content management
+ systems.
 \begin_inset Newline newline
 \end_inset
 
@@ -470,7 +432,7 @@ The main parts of the information system will include, particularly:
 
 \begin_layout Standard
 \noindent
-Keywords: information system, PHP, MySQL
+Keywords: information system, PHP, MySQL, CakePHP
 \end_layout
 
 \begin_layout Standard
