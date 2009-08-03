@@ -2916,7 +2916,30 @@ odlišnými zdroji dat.
 různé relačními databáze (MySQL, PostgreSQL, Oracle, MS-SQL) nebo dokonce
  vlastní definované zdroje dat.
  Mezi ty mohou patřit formátované soubory (CSV, XML, JSON) nebo síťové služby
- poskytující informace skrze veřejné API (LDAP, Twitter, IMAP a
+ poskytující informace skrze veřejné API (LDAP
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+Lightweight Directory Access Protocol
+\emph default
+, 
+\begin_inset Quotes pld
+\end_inset
+
+odlehčený
+\begin_inset Quotes prd
+\end_inset
+
+ protokol pro ukládání a přístup k datům na adresářovém serveru odvozený
+ od X.500
+\end_layout
+
+\end_inset
+
+, Twitter, IMAP a
 \begin_inset space ~
 \end_inset
 
@@ -5792,6 +5815,11 @@ konfiguraci Apache o
 app/config/database.php
 \emph default
 .
+ Dále je potřeba se ujistit, že složka 
+\emph on
+/app/tmp
+\emph default
+ má nastavena taková práva, aby do něj mohly PHP skripty zapisovat.
 \end_layout
 
 \begin_layout Subsection
@@ -5882,8 +5910,7 @@ Správce: pověřený uživatel s plnými právy ke všem modulům systému.
 \end_layout
 
 \begin_layout Description
-Dodavatelé: zaměstnanec, brigádník či jiný subjekt vykonávající zadanou
- práci.
+Dodavatelé: zaměstnanec, brigádník nebo podnik vykonávající zadanou práci.
 \end_layout
 
 \begin_layout Description
@@ -5931,6 +5958,27 @@ Texty u odkazu na zobrazení, editaci nebo smazání záznamu mohou být nahraze
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Subsection
+První přihlášení
+\end_layout
+
+\begin_layout Standard
+Pro první přihlášení použijte přihlašovací jméno 
+\emph on
+admin
+\emph default
+ a heslo 
+\emph on
+isa2009
+\emph default
+.
+ Následně je doporučeno změnit si heslo kliknutím na odkaz 
+\emph on
+Změnit heslo
+\emph default
+ nacházející se v pravém horním rohu.
 \end_layout
 
 \begin_layout Subsection
@@ -6477,8 +6525,8 @@ V menu nebo produktech klikněte na
 Zobrazit výkazy
 \emph default
 .
- V horní tabulce je možné zaškrtnou pouze některé kategorie produktů, ke
- kterým byly výkazy přidány.
+ V horní tabulce je možné zaškrtnou kategorie produktů, ke kterým byly výkazy
+ přidány.
 \end_layout
 
 \begin_layout Subsubsection
@@ -7558,7 +7606,6 @@ Možnosti integrace systémů
 Při integraci libovolného CMS a LMS bude potřeba řešit sdílení uživatelských
  účtů.
  Vhodným řešením je využití LDAP, které bylo pro tyto účely navrženo.
- Jednotlivé uživatelské účty tak bude možné sdílet mezi jednotlivými systémy.
  Použité technologie a
 \begin_inset space ~
 \end_inset
@@ -7575,12 +7622,11 @@ key "LDAP"
 
 \end_inset
 
- pro získávání a
-\begin_inset space ~
-\end_inset
+ pro komunikaci s LDAP serverem.
+\end_layout
 
-ukládání dat na LDAP server.
- 
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Chapter
@@ -7642,22 +7688,6 @@ přehlednosti dat pro účetní evidenci nákladů a
 \end_inset
 
 výnosů dle typů produktů.
-\end_layout
-
-\begin_layout Standard
-Ukázalo se, že existuje mnoho kvalitních open source nástrojů, frameworků
- a
-\begin_inset space ~
-\end_inset
-
-jejich doplňků usnadňujících a urychlujících návrh i samotnou implementaci
- podnikových informačních systémů.
- Vývoj použitých nástrojů přináší menší či větší změny, které se promítají
- do funkcionality, výkonu a
-\begin_inset space ~
-\end_inset
-
-bezpečnosti aplikace.
  
 \end_layout
 
@@ -7724,7 +7754,9 @@ aplikačními výjimkami.
 \end_layout
 
 \begin_layout Standard
-Další rozvoj systému by měl směřovat k
+Ukázalo se, že existují kvalitní open source nástroje usnadňující a urychlující
+ návrh i samotnou implementaci podnikových informačních systémů.
+ Další rozvoj systému by měl směřovat k
 \begin_inset space ~
 \end_inset
 
@@ -7758,12 +7790,6 @@ datům na úrovni tabulek, řádků nebo jednotlivých položek.
  Oproti provádění stejného úkonu na aplikační úrovni odpadá nutnost opakované
  implementace pro jinou aplikaci, která by mohla přistupovat k uloženým
  datům.
-\end_layout
-
-\begin_layout Standard
-Chybí také pokročilejší správa verzí editovaných záznamů včetně možnosti
- jednoduchého vrácení uložených revizí.
- Rozvíjena by měla být také oblast on-line komunikace a sociálních sítí.
 \end_layout
 
 \begin_layout Bibliography
