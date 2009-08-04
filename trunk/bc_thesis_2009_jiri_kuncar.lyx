@@ -3392,14 +3392,7 @@ největších open source společností na světě.
 \begin_inset space ~
 \end_inset
 
-plnou technickou podporou 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "MySQL"
-
-\end_inset
-
-.
+plnou technickou podporou.
  
 \end_layout
 
@@ -5940,14 +5933,6 @@ Správce: pověřený uživatel s plnými právy ke všem modulům systému.
 \end_layout
 
 \begin_layout Description
-Dodavatelé: zaměstnanec, brigádník nebo podnik vykonávající zadanou práci.
-\end_layout
-
-\begin_layout Description
-Odběratelé: zákazníci, kteří si objednali libovolný produkt.
-\end_layout
-
-\begin_layout Description
 Poskytovatelé: podniky, které jsou vedeny 
 \begin_inset Quotes pld
 \end_inset
@@ -5956,7 +5941,19 @@ pod jednou střechou
 \begin_inset Quotes prd
 \end_inset
 
- a sdílí část informací.
+ a
+\begin_inset space ~
+\end_inset
+
+sdílí část informací.
+\end_layout
+
+\begin_layout Description
+Dodavatelé: zaměstnanec, brigádník nebo podnik vykonávající zadanou práci.
+\end_layout
+
+\begin_layout Description
+Odběratelé: uživatelé, kteří si objednali libovolný produkt.
 \end_layout
 
 \begin_layout Description
@@ -6037,12 +6034,16 @@ IS.
 í s uživateli.
 \end_layout
 
-\begin_layout Description
+\begin_layout Subsubsection
 Seznam
 \begin_inset space ~
 \end_inset
 
-uživatelů: V horní části se nachází odkazy na akce související s
+uživatelů
+\end_layout
+
+\begin_layout Standard
+V horní části se nachází odkazy na akce související s
 \begin_inset space ~
 \end_inset
 
@@ -6072,12 +6073,16 @@ našeptávače
  
 \end_layout
 
-\begin_layout Description
+\begin_layout Subsubsection
 Přidání
 \begin_inset space ~
 \end_inset
 
-uživatele: Odkaz na formulář je hlavním menu a
+uživatele
+\end_layout
+
+\begin_layout Standard
+Odkaz na formulář je hlavním menu a
 \begin_inset space ~
 \end_inset
 
@@ -6121,12 +6126,16 @@ zadal správnou kombinaci uživatelského jména a
 hesla.
 \end_layout
 
-\begin_layout Description
+\begin_layout Subsubsection
 Editace
 \begin_inset space ~
 \end_inset
 
-uživatele: Uživatele vyhledejte přes filtr seznamů uživatelů a
+uživatele 
+\end_layout
+
+\begin_layout Standard
+Uživatele vyhledejte přes filtr seznamů uživatelů a
 \begin_inset space ~
 \end_inset
 
@@ -6156,7 +6165,7 @@ Uložit
 případě chybového hlášení zkontrolujte všechny skupiny údajů.
 \end_layout
 
-\begin_layout Description
+\begin_layout Subsubsection
 Nastavení
 \begin_inset space ~
 \end_inset
@@ -6169,7 +6178,11 @@ změna
 \begin_inset space ~
 \end_inset
 
-hesla: V profilu uživatele klikněte na odkaz 
+hesla
+\end_layout
+
+\begin_layout Standard
+V profilu uživatele klikněte na odkaz 
 \emph on
 změnit heslo
 \emph default
@@ -6201,7 +6214,12 @@ Skupiny a oprávnění
 \begin_inset space ~
 \end_inset
 
-mazat uživatelské skupiny a jejich oprávnění.
+mazat uživatelské skupiny a
+\begin_inset space ~
+\end_inset
+
+jejich oprávnění.
+ Každá skupina může může mít přiřazeno více definovaných oprávnění.
  Pro zachování správného fungování systému nemažte tyto systémové skupiny:
  
 \emph on
@@ -6227,8 +6245,15 @@ admin
 \end_layout
 
 \begin_layout Standard
-Při implicitním nastavení má každá ze systémových skupin definované a přiřazené
- oprávnění k prefixovaným akcím jednotlivých modulů.
+Při implicitním nastavení má každá ze systémových skupin definované a
+\begin_inset space ~
+\end_inset
+
+přiřazené oprávnění k
+\begin_inset space ~
+\end_inset
+
+prefixovaným akcím všech modulů.
  Tato oprávnění jsou definována následujícím způsobem: 
 \emph on
 *:customers_*, *:employees_*, *:providers_*, *:students_*, *:admin_*
@@ -6292,11 +6317,6 @@ view
 Uživatelé
 \noun default
 ).
-\end_layout
-
-\begin_layout Standard
-Každá skupina může může mít přiřazeno více definovaných oprávnění a je na
- správci, jak s nimi bude zacházet.
 \end_layout
 
 \begin_layout Subsection
@@ -6745,7 +6765,7 @@ name "místa"
 \end_layout
 
 \begin_layout Description
-Jednotky 
+Jednotky upřesňují způsob účtování produktů a vykázaných jednotek.
 \end_layout
 
 \begin_layout Description
@@ -6862,8 +6882,50 @@ Moje přihlášky
  přihlášce.
 \end_layout
 
+\begin_layout Section
+Studenti
+\end_layout
+
+\begin_layout Standard
+Pro zobrazení produktů, kterých se účastníte, klikněte na položku v hlavním
+ menu s
+\begin_inset space ~
+\end_inset
+
+popisem 
+\emph on
+Účastním se
+\emph default
+.
+ V detailu daného produktu je možné zkontrolovat zaznamenanou docházku a
+ přečíst si hodnocení vypracované lektorem.
+\end_layout
+
+\begin_layout Subsection
+Testování slovní zásoby
+\end_layout
+
+\begin_layout Standard
+V menu vyberte položku 
+\emph on
+Moje testy
+\emph default
+.
+ Pokud nebyly vyčerpány všechny pokusy u testu, můžete vytvořit nový pokus
+ kliknutím na stejnojmenný odkaz.
+ V dalším kroku se zobrazí formulář s názvem testu a časovým limitem.
+ Od potvrzení stiskem tlačítka 
+\emph on
+Pokračovat
+\emph default
+ se začíná měřit čas.
+ Na stránce vyplňujte odpovědi na otázky.
+ Odpovědi můžete ukládat kdykoliv, ovšem pokud odznačíte odpovědi jako finální,
+ test bude vyhodnocen a odpovědi již nepůjdou měnit.
+\end_layout
+
 \begin_layout Chapter
-Existující implementace
+Existující systémy
 \end_layout
 
 \begin_layout Standard
@@ -7719,12 +7781,15 @@ key "LDAP"
 \end_inset
 
  pro komunikaci s LDAP serverem.
+ Popisované systémy měly podporu pro LDAP buď přímo v
+\begin_inset space ~
+\end_inset
+
+jádře nebo byla možná přidat pomocí zásuvných modulů.
 \end_layout
 
 \begin_layout Standard
-Samotná integrace by měla být provedena pomocí modelů definujících zdroje
- dat v jednotlivých systémech.
- Jedním z možných problémů je předávání informací o
+Dalším z možných problémů je předávání informací o
 \begin_inset space ~
 \end_inset
 
@@ -8464,23 +8529,6 @@ http://github.com/mcurry/url_cache
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-key "MySQL"
-
-\end_inset
-
-
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.mysql.com/"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
 key "ECMA-262"
 
 \end_inset
@@ -8506,6 +8554,10 @@ target "http://www.ecma-international.org/publications/standards/Ecma-262.htm"
 \begin_layout Chapter
 \start_of_appendix
 Obsah přiloženého CD
+\end_layout
+
+\begin_layout Description
+
 \end_layout
 
 \begin_layout Description
