@@ -6,10 +6,12 @@
 \usepackage{listings}
 \setcounter{secnumdepth}{1}
 \setcounter{tocdepth}{1}
-\usepackage{babel}
+\usepackage{czech}
 
 \usepackage{varioref}
 \usepackage{float}
+\usepackage{amsthm}
+\usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[unicode=true, pdfusetitle,
  bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
@@ -20,11 +22,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
 \newcommand{\noun}[1]{\textsc{#1}}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\theoremstyle{plain}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
 \usepackage{a4wide}
-\usepackage[left=4cm]{geometry}
+\usepackage{geometry}
+\frenchspacing
 
 \begin{document}
+\oddsidemargin 15mm 
+\evensidemargin 15mm
+\sloppy
 \begin{titlepage}\vspace{15mm}
 
 
@@ -79,17 +88,18 @@
 
 
 \noindent Děkuji panu RNDr. Miroslavu Spoustovi za pomoc, připomínky,
-cenné rady a za odborné vedení bakalářské práce. Dále bych rád poděkoval
-firmě Primalingua s.r.o. za poskytnutí prostředků na vývoj aplikace.
-Speciální poděkování patří především paní majitelce Mgr. Miluši Psotové
-a paní RNDr. Jitce Kunčarové, která vývoj informačního systému iniciovala.
+cenné rady a~za~odborné vedení bakalářské práce. Dále bych rád poděkoval
+společnosti Prima~Lingua~s.r.o. za poskytnutí informací a~podkladů
+k~vývoji aplikace. Speciální poděkování patří především paní majitelce
+Mgr. Miluši Psotové a~paní RNDr. Jitce Kunčarové, která vývoj informačního
+systému iniciovala.
 
 \vfill{}
 
 
 \noindent Prohlašuji, že jsem svou bakalářskou práci napsal samostatně
-a výhradně s použitím citovaných pramenů. Souhlasím se zapůjčováním
-práce a jejím zveřejňováním.\bigskip{}
+a~výhradně s~použitím citovaných pramenů. Souhlasím se zapůjčováním
+práce a~jejím zveřejňováním.\bigskip{}
 
 
 \noindent V Praze dne 6.8.2009 \hfill{}Jiří Kunčar
@@ -105,34 +115,19 @@ Vedoucí bakalářské práce: RNDr. Miroslav Spousta\\
 e-mail vedoucího: Miroslav.Spousta@mff.cuni.cz\\
 
 
-\noindent Abstrakt: Cílem práce je navrhnout a implementovat modulární
-informační systém pro firmu zabývající se výukou jazyků.
-
-\noindent Součástí informačního systému bude zejména:
-
-\noindent - modul pro nabídku a prodej kurzů pro veřejnost, individuální
-výuku, jazykovou výuku pro podniky, překlady a tlumočení 
-
-\noindent - modul produkty (výuka, překlady, tlumočení), výuka (individuální
-výuka, kurzy pro veřejnost, jazyková výuka pro podniky) 
-
-\noindent - modul pro News (hromadné rozesílání mailem), rozvrh výuky,
-třídní knihy, studijní materiály 
-
-\noindent - modul dodavatelé (smlouvy s lektory, překladateli, tlumočníky,
-měsíční výkazy odpracovaných hodin, měsíční přehledy nákladů na lektory,
-překladatele, tlumočníky) 
-
-\noindent - modul odběratelé (zápisy do kurzů pro veřejnost, objednávky,
-smlouvy, přílohy faktur za období od-do) 
-
-\noindent - modul pro testování znalostí (jednoduché testovací prostředí) 
-
-\noindent - modul pro správu IS (uživatelé, jejich práva, přehled
-změn).\\
+\noindent Cílem práce je navrhnout a~implementovat modulární informační
+systém pro podnik zabývající se zejména výukou jazyků, tlumočením
+a~překlady. Práce obsahuje analýzu podnikových procesů a~řešení
+problémů při~návrhu databázového schématu. Hlavní součásti vytvořeného
+systému zahrnují moduly pro evidenci kurzů, správu uživatelů a~tvorbu
+účetních podkladů. Systém je realizován za~pomoci technologie PHP
+a frameworku CakePHP s využitím MySQL databáze pro ukládání strukturovaných
+dat. V práci jsou rozebrány výhody používání frameworku při~vývoji
+webových aplikací a~možné využití existujících systému pro správu
+obsahu.\\
 
 
-\noindent Klíčová slova: informační systém, PHP, MySQL 
+\noindent Klíčová slova: informační systém, PHP, MySQL, CakePHP 
 
 \vspace{10mm}
 
@@ -145,227 +140,228 @@ Supervisor: RNDr. Miroslav Spousta
 \noindent Supervisor's e-mail address: Miroslav.Spousta@mff.cuni.cz\\
 
 
-\noindent Abstract: The goal of the thesis is to design and implement
-a modular information system for a company involved in teaching of
-foreign languages.
-
-\noindent The main parts of the information system will include, particularly: 
-
-\noindent - a module for offer and sale of courses to the public and
-individuals, language training for businesses, translation and interpretation 
-
-\noindent - a module of products (teaching, translation and interpretation),
-training (individual training courses for the public, language classes
-for businesses) 
-
-\noindent - a module for News (sending bulk mail), the schedule of
-teaching, class books, study material 
-
-\noindent - a module of suppliers (contracts with teachers, translators,
-interpreters, monthly class-sheets, monthly reports on the cost of
-staff translators and interpreters) 
-
-\noindent - a module of customers (registration in courses, orders,
-contracts, supplements to invoices for \textquotedbl{}from-to\textquotedbl{}
-periods) 
-
-\noindent - a module for testing of knowledge levels (a simple testing
-environment) 
-
-\noindent - a module for managing the IS (users, their rights and
-a summary of changes)\\
+\noindent The goal of the thesis is to design and implement a~modular
+information system for a~company particularly involved in teaching
+of~foreign languages, interpreting and~translating. The work includes
+analysis of business processes and solves problems in~the~design
+of the database scheme. The main parts of the system include modules
+for course records, users administration and the creation of accounting
+documents. The system is implemented with the help of technology PHP
+and framework CakePHP using the MySQL database to store structured
+data. The thesis analysed the benefits of frameworks in the development
+of web applications and the potential usage of existing content management
+systems.\\
 
 
-\noindent Keywords: information system, PHP, MySQL
+\noindent Keywords: information system, PHP, MySQL, CakePHP
 
 \newpage{}
 
 
 \chapter{Úvod}
 
-Informační systémy hrají v~rychle se rozvíjejícím prostředí svou
-nepostradatelou roli. Internet, který se stal dostupným pro širokou
-veřejnost, jim poskytl výbornou platformu k dalšímu rozvoji. Ve dříve
-nepříliš využívaném virtuálním prostředí umožňují tyto systémy rychlé
-a snadné zpracování, vyhledávání a publikovaní informací, které se
-tak stávají dostupné pro širší spektrum zákazníků, dodavatelů i samotných
-zaměstanců. 
+Informační systémy hrají v~rychle se rozvíjející společnosti svou
+nepostradatelnou roli. Internet, který se stal v posledních letech
+dostupným pro širokou veřejnost, jim poskytl výbornou platformu k
+dalšímu rozvoji. Ve dříve nepříliš využívaném virtuálním prostředí
+umožňují rychlou a~snadnou distribuci, zpracování a~vyhledávání
+informací. Díky globálnímu dosahu Internetu se tak stávají dostupné
+pro~širší spektrum zákazníků, dodavatelů i~samotných zaměstnanců.
+A~právě takto nabízené informace o~\emph{aktuální} nabídce umožňují
+snadno a~efektivně oslovovat nové zákazníky, kteří postupně začínají
+převažovat nad zákazníky oslovenými jinými komunikačními kanály.
 
-S využíváním Internetu zároveň rostou nároky na bezpečnost a dostupnost
-uložených informací. Ty jsou životně důležité pro chod firem a~bývají
-jejich nejcenějším majetkem. Zvyšují se požadavky kladou tlak na nástroje
-použité při implementaci systému a~jejich robustnost. Jelikož i malá
-chyba může zapříčinit únik citlivých dat a jejich zneužití v globálním
-měřítku, které nelze vrátit zpět.
+S využíváním Internetu zároveň rostou nároky na bezpečnost a~dostupnost
+uložených informací. Ty jsou důležité pro~správu podniků a~bývají
+jejich nejcennějším majetkem. Zvyšující se požadavky vyžadují kvalitní
+nástroje použité při~implementaci systému a~jejich robustnost, jelikož
+i~malá chyba může zapříčinit únik citlivých dat a~jejich zneužití
+v~globálním měřítku, které nelze vrátit zpět.
 
-Před zaváděním informačního systému je nutné stanovit, čeho chce firma
-s jeho využitím v~daném čase dosáhnout. Tomu by měla pomoci důkladná
-analýza firemních procesů a~jejich optimalizace.
+Před zaváděním informačního systému je nutné stanovit, čeho chce podnik
+s~jeho využitím v~daném čase dosáhnout. Tomu by měla pomoci důkladná
+analýza procesů a~jejich optimalizace.
 
 \begin{center}
-\textit{,,Kdo nepozná vlastní firemní procesy, nemůže je zlepšovat.''}\textit{\emph{\cite{informační systémy}}}
+\textit{,,Kdo nepozná vlastní firemní procesy, nemůže je zlepšovat.''}\textit{\emph{
+\cite{informační systémy}}}
 \par\end{center}
 
-Změna zavedených procesů bývá náročná, jak z finančního hlediska,
-tak z hlediska její vlastní realizace. Důležitou roli zde hraje plánování
-časového hramonogramu a jeho dodržování.
+Změna zavedených procesů bývá náročná, jak z~finančního hlediska,
+tak z~hlediska její vlastní realizace. Důležitou roli zde hraje plánování
+časového harmonogramu a~jeho dodržování.
 
-Zlepšení výsledků činnosti firmy se nemusí dostavit okamžitě po spuštění
-nového systému, ale až po adaptaci všech zúčastněných stran. Výhodou
-je pokud byl daný systém navržen v souladu se zaběhnutými a fungujícími
-firemními procesy. Proto bude práce věnovaná především jejich důkladnému
-popisu, na kterém bude dále stavět.
+Zlepšení výsledků činnosti podniku se nemusí dostavit okamžitě po
+spuštění nového systému, ale až po adaptaci všech zúčastněných stran.
+Výhodou je, pokud byl daný systém navržen v~souladu se zaběhnutými
+a~fungujícími procesy. Proto bude práce věnovaná především jejich
+důkladnému popisu, na kterém bude dále stavět.
 
 
-\section*{Cíle práce}
+\section{Cíle práce}
 
-Cílem práce je návrh a základní implementace webového informačního
-systému, usnadňující činnost a spolupráci více nezávislých subjektů.
+Cílem práce je návrh a~základní implementace webového informačního
+systému, usnadňující činnost a~spolupráci více nezávislých podniků.
 Implementace bude provedena pomocí vhodných open source technologií
-a frameworků v použitých programovacích jazycích. V práci budou rozebrány
-funkce systémů pro správu, uržování a sdílení informací v prostředí
+a~frameworků pro~vývoj webových aplikací. V~práci budou rozebrány
+funkce systémů pro správu, udržování a~sdílení informací v~prostředí
 Internetu.
 
 Implementovaný systém bude mimo jiné obsahovat prostředky pro správu
-uživatelů, evidenci zakázek, výpočet výplat a fakturaci služeb. Cílem
-práce není, vzhledem k náročným právním úpravám a častým změnám, vytvořit
-komplexní účetní program, ale pouze systém úmožnící tvorbu podkladů
-pro účetní evidenci, které mohou být v~budoucnu zavedeny do některého
-již existujícího účetního programu.
+uživatelů, evidenci zakázek, kalkulaci nákladů na mzdy a~fakturaci
+služeb. Cílem práce není, vzhledem k náročným právním úpravám a~častým
+změnám, vytvořit komplexní účetní program, ale pouze systém umožňující
+efektivní práci s~informacemi a~tvorbu podkladů pro~účetní evidenci,
+které mohou být v~budoucnu zavedeny do~některého již existujícího
+účetního programu.
 
 
-\section*{Obsah práce}
+\section{Obsah práce}
 
-Ve druhé kapitole této práce je provedena analýza úlohy a jsou mimo
-jiné stanoveny požadavky na řešení.
+Nejdůležitější částí této práce je analýza úlohy a~přesné stanovení
+požadavků na~řešení informačního systému konkrétního podniku, které
+jsou obsažené ve~druhé kapitole.
 
-Ve třetí kapitole jsou stručně popsány technologie dále používané
-v této práci a je ukázáno jejich použití.
+Třetí kapitola popisuje návrh vlastní implementace s~ohledem na~požadavky
+stanovené v~kapitole druhé. Jsou zde základní návrhová rozhodnutí
+a~důvody pro~volbu konkrétních řešení.
 
-Čtvrtá kapitola popisuje návrh vlastní implementace s ohledem na požadavky
-stanovené v kapitole druhé. Jsou zde základní návrhová rozhodnutí
-a důvody pro volbu konkrétních řešení.
+Ve čtvrté kapitole jsou stručně popsány technologie dále používané
+v~této práci a~je ukázáno jejich použití.
 
 Pátá kapitola obsahuje programátorskou dokumentaci. Je zde popsáno
-technické řešení implementace a jsou nastíněny některé problémy, které
-bylo při implementaci nutné řešit.
+technické řešení implementace a~jsou nastíněny některé problémy,
+které byly při implementaci nutné řešit.
 
-Uživatelská dokumentace je obsažena v šesté kapitole. Popisuje uživatelské
-rozhraní vytvořených aplikací a ukazuje jejich použití na konkrétních
+Uživatelská dokumentace je obsažena v~šesté kapitole. Popisuje uživatelské
+rozhraní vytvořených modulů a~ukazuje jejich použití na~konkrétních
 příkladech.
 
+Předposlední kapitola se zabývá popisem existujících systémů pro správu
+obsahu a podporu výuky. Následně jsou probrány možnostmi jejich integrace
+do~vytvořeného systému. 
+
 V závěru jsou přehledně shrnuty výsledky, kterých bylo při vývoji
-systému dosaženo, a jsou naznačeny možnosti dalšího rozšíření.
+systému dosaženo a~jsou naznačeny možnosti dalšího rozšíření.
 
 
 \chapter{Analýza úlohy}
 
-V kapitole budou popsány základní pojmy používané při popisu požadavků
-klienta, specifické požadavky na systém a popis základních firemních
-procesů. Cílem je přiblížit čtenáři problematiku návrhu konkrétního
-informačního systému a možné problémy skrývajíci se ve zdánlivě jednoduchých
-úkolech.
+V kapitole jsou definovány základní pojmy používané při popisu požadavků
+klienta. Dále obsahuje seznam specifických požadavků na systém a~popis
+základních procesů. Cílem je přiblížit problematiku konkrétního informačního
+systému a~možné problémy skrývající se ve zdánlivě jednoduchých úkolech.
 
-Analýza úlohy vychází z informací získaných při rozhovorech s klientem
-a jím dodaných materiálů. Snaží se je co nepřesněji interpretovat
-pro použití v dalších fázích návrhu a implementace.
+Analýza úlohy vychází z informací získaných z~materiálů dodaných
+klientem a~snaží se je co nepřesněji interpretovat pro použití v
+dalších fázích návrhu a~implementace.
 
 
 \section{Definice a upřesnění pojmů}
 
 Dále uvedené pojmy mívají v různých odvětvích mírně odlišné významy.
-Zde budou přeneseny a vysvětleny v oblasti firem zabývající se jazykovou
-přípravou, překlady a tlumočením.
+Zde budou přeneseny a~vysvětleny v~oblasti podniků zabývající se
+jazykovou výukou, překlady a~tlumočením.
 
 
 \subsection{Agentura}
 
-Pojem agentura se můžeme setkat v oblastech cestovního ruchu, reklamy,
-personalistiky, bezpečnosti a jazykových služeb. Dále v práci bude
-pojem agentury používán právě v poslední zmiňované oblasti.
+S pojmem agentura se můžeme setkat převážně v~oblastech cestovního
+ruchu, reklamy, personalistiky, bezpečnosti a~jazykových služeb.
+Dále v~práci bude pojem agentury používán právě v~poslední zmiňované
+oblasti.
 
-Jazyková agentura je útvar zajišťující služby spojené s výukou jazyků,
-tlumočením a překlady. Je prostředníkem při jejich realizaci, popřípadě
-usnadňuje zákazníkům orientaci na trhu s uvedenými službami.
+Jazyková agentura je podnik zajišťující služby spojené s~výukou jazyků,
+tlumočením a~překlady. Je prostředníkem při~jejich realizaci, popřípadě
+usnadňuje zákazníkům orientaci na trhu s~uvedenými službami.
 
 
-\subsection{Infomační systém}
+\subsection{Informační systém}
 
-Informační systém (IS) je dosti široký pojem, který se postupem let
-vyvíjí a nabírá nové významy. Z dřívějších papírových kartoték, telefonních
-seznamů a další firemní evidence, které se velice obtížně sdílely
-s více suběkty, se vyvinuly systémy, jenž poskytují firmám prostředí
-pro efektivnější práci a komunikaci.
+Informační systém (\emph{IS}) je dosti široký pojem, který se postupem
+let vyvíjí a~nabírá nové významy. Z~dřívějších papírových kartoték,
+telefonních seznamů a~další firemní evidence, které se velice obtížně
+sdílely s~více subjekty, se~vyvinuly systémy poskytující firmám
+prostředí pro efektivnější práci a~komunikaci.
 
-Informačním systémem rozumíme prostředí pro sběr, udržování, zpracování
-a~poskytování informací\cite{wikipedia}, ve kterém by měla zůstat
+Informačním systémem rozumíme ,,prostředí pro sběr, udržování, zpracování
+a~poskytování informací'' \cite{wikipedia}, ve kterém by měla zůstat
 zachována důvěrnost a~integrita uložených dat.
 
 
 \subsection{Produkt}
 
 Produktem bude rozuměno pořádání jazykové výuky pro danou skupinu
-lidí, dále tlumočení, překlady a překlady s ověřením. Jedná se tedy
-o spojení služeb, jejichž výsledkem je znalost cizího jazyka - tedy
-nehmotný výrobek, a předmětů vzniklých lidskou prací - překladů.
+lidí (kurz), dále tlumočení, překlady a~překlady s~ověřením. Jedná
+se tedy o~spojení služeb, jejichž výsledkem je znalost cizího jazyka
+- tedy nehmotný výrobek, a~předmětů vzniklých lidskou prací - překladů.
 
 
-\section{Požadavky klienta\label{sec:Po=00017Eadavky-klienta}}
+\subsection{Uživatelé}
 
-Základním úkolem popisované jazykové agentury je zajišťovat služby
-v oblasti jazykového vzdělání, překladů a tlumočení především pro
-široké spektrum firemních i individuálních zákazníků.
+Uživateli jsou myšleny všechny osoby podílející se na zajišťování
+i realizaci produktů. Patří mezi ně nejen dodavatelé, odběratelé,
+studenti, ale i samotná agentura a administrativní pracovníci.
+
+
+\section{Analýza požadavků klienta\label{sec:Po=00017Eadavky-klienta}}
+
+Základním úkolem jazykové agentury je zajišťovat služby v~oblasti
+jazykového vzdělávání, překladů a~tlumočení především pro široké
+spektrum odběratelů, tj.~podniků a individuálních zákazníků.
 
 Podniky posílají poptávky bez ohledu na nabídku konkrétních kurzů.
 Manažer vyřizuje zakázku elektronickou poštou, telefonicky nebo osobně.
 Všechny získané informace musí být schopen zaznamenat pro pozdější
-zajišťování vhodných dodavatelů . 
+zajišťování vhodných dodavatelů (lektorů) a kalkulaci nákladů. 
 
-Veřejnost posílá zápisové listy s ohledem na nabídku kurzů pro veřejnost.
-Manažer sestavuje skupiny podle zápisových listů a potvrzuje místo,
-termíny a cenu výuky. Současně probíhá proces zajišťování lektorů.
+Individuální zákazníci, tj. veřejnost, posílá zápisové listy s~ohledem
+na nabídku konkrétních kurzů určených pro veřejnost. Manažer sestavuje
+skupiny podle zápisových listů a~potvrzuje místo, termíny a~cenu
+výuky. Současně probíhá proces zajišťování lektorů.
 
-Na začátku vývoje rovněž stála žádost zjednodušit proces zpracování
-měsíčních výkazů lektorů, překladatelů a tlumočníků tvořících podklady
-pro mzdy a fakturaci služeb. Tyto měsíční výkazy neměly jednotný vzor
-a ani nebylo jednoduše možné, bez znalostí místních poměrů přiřadit
-vykázanou činnost k jednotlivým produktům. Na základě vytyčených požadavků
-byl zpracován následující návrh.
+Na začátku vývoje byl rovněž požadavek zjednodušit proces zpracování
+měsíčních výkazů lektorů, překladatelů a~tlumočníků tvořících podklady
+pro mzdy a~fakturaci služeb. Tyto měsíční výkazy neměly jednotný
+vzor a~ani nebylo jednoduše možné, bez znalostí místních poměrů,
+přiřadit vykázanou činnost k~jednotlivým produktům. Na~základě vytyčených
+požadavků byl zpracován následující návrh.
 
 
 \subsection{Zavedení jednotných identifikátorů}
 
-Kvůli výše uvedným problémům se začalo s postupným zaváděním jednotných
+Kvůli výše uvedeným problémům se začalo s~postupným zaváděním jednotných
 identifikátorů závazných pro všechny zúčastněné strany. Tento nepopulární
-krok byl ze začátku velmi těžce příjmán a trvalo několik měsíců, než
-se proces tvorby ustálil a začal být všemi akceptován.
+krok byl ze~začátku velmi těžce přijímán a~trvalo několik měsíců,
+než se proces tvorby ustálil a~začal být všemi akceptován.
 \begin{itemize}
-\item Z identikátoru musí být zřejmé o jakou kategorii produktu se jedná,
-pro koho je určen a kdy byl zaveden, aby se předešlo kolizím jmen
-v budoucnu.
-\item V~průběhu měsíce vkládá administrátor zadané překlady a nově zahájené
-kurzy.
+\item Z identifikátoru musí být zřejmé, o~jakou kategorii produktu se jedná,
+pro~koho je určen a~kdy byl zaveden, aby se předešlo kolizím jmen
+v~budoucnu.
+\item V~průběhu měsíce vkládá administrátor zadané překlady, nově zahájené
+kurzy a individuální výuku.
 \item U produktu vloží poskytovatele, přiřadí zákazníka, studenty, lektora
-nebo překladatele a dále cenu za jednotku. 
-\item U lektora či překladatele vloží jeho sazbu za jednotku. 
-\item U kurzů vloží předpokládaný rozvh, kde jsou uvedeny dny, čas, lektor
-a učebna. Tento rozvrh slouží zároveň jako pomůcka pro stanovení předběžných
-nákladů v budoucích měsících. 
+nebo překladatele. Dále cenu za~jednotku a~způsob kalkulace ceny
+pro zákazníka. 
+\item U lektora či překladatele stanoví sazbu za jednotku. 
+\item U kurzů vloží předpokládaný rozvrh, kde je uvedena učebna, lektor,
+den a~čas. Tento rozvrh slouží zároveň jako pomůcka pro~stanovení
+předběžných nákladů v~budoucích měsících. 
 \end{itemize}
 
 \subsection{Měsíční výkazy}
 
 Po zavedení identifikátorů bylo potřeba sjednotit formuláře měsíčních
-výkazů a připravit dodavatele na možnost jejich elektronického vyplňování.
-Papírové formuláře budou do systému vkládány administrativním pracovníkem
-a elektronické budou potvrzeny a uzamčeny.
+výkazů a~připravit dodavatele na~možnost jejich elektronického vyplňování.
+Papírové formuláře budou do~systému vkládány administrativním pracovníkem
+a~elektronické budou zkontrolovány a uzamčeny.
 \begin{itemize}
-\item Každý měsíc si administrátor může z výkazů odpracovaných jednotek
-lektora, překladatele a tlumočníka zobrazit a vytiskout přehled, kde
-je souhrn toho, kolik jednotek opracoval v jednotlivých dnech a celkem
-u jednotlivých produktů. 
+\item Každý měsíc si administrátor může z~výkazů odpracovaných jednotek
+lektora, překladatele a~tlumočníka zobrazit a~vytisknout přehled,
+kde je souhrn toho, kolik jednotek opracoval v jednotlivých dnech
+a celkem u jednotlivých produktů. 
 \item Systém musí zobrazit varování při překročení stanoveného počtu vykázaných
-odpracovaných hodin nebo přeložených normostran.
+odpracovaných hodin nebo přeložených normostran na danou smlouvu.
 \item Podle potřeby potřebuje administrátor rychle řešit suplování a změny
 lektorů, k~tomu potřebuje aktuální stav. Příležitostně je třeba zjistit
 vytížení překladatelů.
@@ -376,133 +372,149 @@ výuky jsou pohyblivé, lektoři musí vědět, kdy je v učebnách volno.
 
 \subsection{Podklady pro fakturaci}
 
-Se vzrůstajícím objemem překladů a odučených hodin přestávalo být
-únosné ruční vytváření měsíčních přehledů pro zákazníky. Ti si přáli
-být informování nejen o počtu odučených hodin, ale i o všech změnách
-zavedeném měsíčním rozvrhu a případném suplování. Zárověn musely být
-v systému zachyceny vazby mezi produktem, zákazníkem a vlastními účastníky
-tak, aby bylo možné stanovit výslednou cenu zakázky, která může být
-závislá nejen od počtu odučených hodin či přeložených stran, ale i
-od počtu účastníků.
+Se vzrůstajícím objemem překladů a~odučených hodin přestávalo být
+únosné ruční vytváření měsíčních přehledů realizované výuky pro zákazníky.
+Ti si přáli být informování nejen o~počtu odučených hodin, ale i~o~všech
+změnách v~zavedeném měsíčním rozvrhu a~případném suplování. Zároveň
+musely být v~systému zachyceny vazby mezi produktem, zákazníkem a~vlastními
+účastníky tak, aby bylo možné stanovit výslednou cenu zakázky, která
+může být závislá jak na počtu odučených hodin či přeložených stran,
+tak na počtu účastníků.
 \begin{itemize}
 \item Před fakturací pro klienta si administrátor může sestavit seznam položek
-k fakturaci. 
-\item Příloha za překlady a výuku se liší. U překladů není uvedeno jméno
-překladatele.
+k~fakturaci, tzv. přílohu faktury. 
+\item Příloha za překlady a~výuku se liší. U~překladů není uvedeno jméno
+překladatele z důvodu zabránění navázání přímého kontaktu.
 \end{itemize}
 
 \subsection{Správa lektorů a překladatelů}
 
-Práce agentury spočívá mimo jiné i ve shromažďování kontaktů na osoby
-zabývající se výukou, překlady a tlumočením. Musí být úmožněno rychlé
-vyhledání a jednoduchá editace.
+Pro agenturu je důležité shromažďování kontaktů na osoby zabývající
+se výukou, překlady a~tlumočením. Musí být umožněno rychlé vyhledání
+a~jednoduchá editace.
 \begin{itemize}
 \item V~průběhu měsíce průběžně administrátor vkládá nové dodavatele tj.
-zájemce o spolupráci a aktualizuje změny u stávajících.
+zájemce o~spolupráci a~aktualizuje změny u~stávajících.
 \item Jedenkrát měsíčně odesílá administrátor minibuletin ,,News'' vybraným
-lektorům a překladatelům. 
+lektorům a~překladatelům. 
 \item ,,News'' by měly být v systému přístupné pro lektory i překladatele,
-protože obsahují přílohy platné pro celý rok.
+protože obsahují přílohy platné pro celý rok, např. formuláře k evidenci
+docházky.
 \end{itemize}
 
 \subsection{Oddělení správy dat více agentur}
 
-Vzhledem ke složitým poměrům v agentuře bylo potřeba oddělit evidenci
-zakázek vyřizovaných manažerem pro různé agentury a fyzické osoby,
-jenž s agenturami úzce spolupracují. 
+Vzhledem ke~zvyklostem v~agentuře bylo potřeba oddělit evidenci
+zakázek vyřizovaných manažerem pro různé podniky (tj. poskytovatele),
+které s~agenturou úzce spolupracují. 
 \begin{itemize}
 \item Při vytváření produktu manažer zvolí poskytovatele služeb podle potřeb
 zákazníka.
 \end{itemize}
 
-\subsection{Vícejazyková podpora}
+\subsection{Podpora jazykových verzí}
 
-Systém je určen primárně pro jazykové agentury, kde se počítá s komunikací
-se zákazníky i v jiném než českém jazyce. K tomu bylo potřeba přizpůsobit
-systém již od počátku.
-\begin{itemize}
-\item Uživatelé by měli mít možnost si jednoduše vybrat mezi několika jazykovými
-variantami.
-\end{itemize}
-
-\subsection{Úzká provázanost s webem}
-
-Na webových stránkách se zobrazuje aktuální rozvh veřejných kurzů,
-jenž je i jinak dostupný na dveřích učeben. Ostatní rozvh individuální
-výuky bude dostupný po přihlášení do systému.
+Systém je určen primárně pro jazykové agentury, kde se počítá s~komunikací
+se~zákazníky i~v~jiném než českém jazyce. K~tomu bylo potřeba
+přizpůsobit systém již od počátku, aby měli uživatelé možnost si jednoduše
+vybrat mezi několika jazykovými variantami.
 
 
 \chapter{Návrh řešení}
 
-Na základě požadavků bylo vytvořeno databázové schéma a popis jeho
-napojení na existující data ve firmě. Ukládání dat bude realizováno
-v relační databázi. Ta poskytuje funkce pro vytvoření, čtení, změnu
-a smazání uložených informací%
-\footnote{Někdy je používaní zkratka \emph{CRUD} z anglických slov \emph{create},
+Na základě požadavků bylo vytvořeno databázové schéma a~popis jeho
+napojení na~existující podniková data. Pro ukládání dat byla vybrána
+relační databáze, která poskytuje prostředky pro vytvoření, čtení,
+změnu a~smazání uložených informací%
+\footnote{Někdy je používaná zkratka \emph{CRUD} z anglických slov \emph{create},
 \emph{read}, \emph{update}, \emph{delete}.%
-} a v tomto případě se jeví jako nejlepší ze způsobů ukládání dat.
+}. V~tomto případě se jeví jako nejlepší volba z~různých variant
+ukládání dat v~souborech. Předpokládá se nutnost přístupu k~řádově
+stovkám až tisícům produktů a~přibližně stejnému množství uživatelů.
+Zároveň je nutné evidovat až několik tisíc jednotlivých záznamů měsíčně
+o~vykázané činnosti.
 
 V rámci vývoje a testování vybrané technologie byl rovněž vytvořen
 návrh zjednodušené verze XML%
 \footnote{\emph{Extensible Markup Language} - standardní formát pro výměnu informací
-a popis stuktury dokumentu%
-} databáze uchovávané v souboru a zpracovávanho pomocí jazyka XPath,
+a popis struktury dokumentu%
+} databáze uchovávané v~souboru a~zpracovávané pomocí jazyka XPath,
 XQuery nebo XSLT. Výsledky byly dobré při zpracování omezeného množství
-dat a jednouživatelském přístupu k datům. Se vzrůstajícím objemem
-uložených dat se začala projevovat prostorová náročnost použitého
-značkovacího jazyka. Proto bylo nutné použít kompresi a rozdělení
-dat do více souborů. Alernativu tvoří některé specializované XML databáze
-nebo relační databáze s podporou XML. Toto řešení, ale nakonec nebylo
-implementováno ani v rámci testování. Protože ačkoliv jsou XML databáze
-v komerčních produktech na velmi dobré úrovni, jejich implementace
-ve volně dostupných aplikacích mírně zaostává.
+dat a~jednouživatelském přístupu. Se~vzrůstajícím objemem uložených
+dat se začala projevovat prostorová náročnost použitého značkovacího
+jazyka. Proto bylo nutné použít kompresi a~rozdělení dat do~více
+souborů. Alternativu tvoří některé specializované XML databáze (např.
+MonetDB, Sedna, BaseX, Xindice, eXist-db) nebo relační databáze s~podporou
+XML (Oracle, MS-SQL). Toto řešení, ale nakonec nebylo implementováno
+ani v~rámci testování.
 
-Návrh dobře strukturované relační databáze vyžaduje předevších pochopení
-vztahů a~procesů fungování firmy, která ji bude využívat. Problémem
-s optimalizací navrženého modelu pomáhají řešit algoritmy logického
-návrhu relační databáze, které se snaží zajistit, aby navžená databáze
-byla prostorově efektivní, eliminovala vznik anomálií a zároveň umožňovala
+Návrh dobře strukturované relační databáze vyžaduje především pochopení
+vztahů a~procesů fungování podniku, který ji bude využívat. Problémem
+s~optimalizací navrženého modelu pomáhají řešit algoritmy logického
+návrhu relační databáze, které se snaží zajistit, aby navržená databáze
+byla prostorově efektivní, eliminovala vznik anomálií a~zároveň umožňovala
 rychlé zpracování uživatelských požadavků. Celý proces návrhu můžeme
-rozdělit na čtyři základní fáze\cite{soukupova 2004}: analýza požadavků
-a specifikace, konceptuální návrh, logický návrh a fyzický návrh.
-Analýza požadavků a specifikace byla definována v předcházející kapitole.
+rozdělit na~čtyři základní fáze: analýza požadavků a~specifikace,
+konceptuální návrh, logický návrh a~fyzický návrh \cite{soukupova 2004}.
+Analýza požadavků a~specifikace byla provedena v~předcházející kapitole.
 
 
 \section{Konceptuální návrh}
 
 Zpracováním požadavků vznikl prvotní model budoucí databáze, který
-by měl pokrývat všechny důležité vazby a informace.
+by měl pokrývat všechny důležité vazby a~informace.
 
 
 \subsection*{Produkty }
 
-Ne všechny specifické informace o daných produktech je potřeba udržovat
-jako speciální atributy. Zvítězila proto varianta jedné tabulky s
-minimem položek pro produkt. V budoucí rozšiřovaní by mělo být realizováno
-pomocí tabulek se specifikými informacemi nebo pomocí strukturovaných
+Ne všechny informace o~daných produktech je potřeba udržovat jako
+speciální atributy. Byla proto přijata varianta jedné tabulky s~minimem
+položek pro produkt. V~budoucnu by rozšiřovaní mělo být realizováno
+pomocí tabulek se specifickými informacemi nebo pomocí strukturovaných
 poznámek.
 \begin{itemize}
-\item \emph{Identifikátor} obsahuje infomace o jazycích, typu produktu a
-stručný jednoznačný popisek.
+\item \emph{Identifikátor} obsahuje informace o~jazycích, typu produktu
+a~stručný jednoznačný popis.
 \item \emph{Kategorie} určuje zařazení produktu do skupin. Některé skupiny
 produktů mohou být veřejnosti online nabízeny na webových stránkách.
-\item \emph{Poskytovatel} produktu je subjekt (uživatel), který se stará
-o jeho realizaci. Hledá dodavatele i odběratele a jsou na něj vystaveny
-faktury.
+\item \emph{Poskytovatel} produktu je podnik (uživatel), který realizuje
+produkty, tj. zajišťuje dodavatele a vystavuje faktury zákazníkovi.
 \item \emph{Časové informace} jsou používány dle potřeb pro určení doby
 konání kurzů, tlumočení nebo upřesnění požadavků na vyhotovení překladu.
-\item \emph{Popis} je veřejná informace k produktu pro všechny zúčastněné
+\item \emph{Popis} je veřejná informace k~produktu pro všechny zúčastněné
 strany.
-\item \emph{Nastavení způsobu účtování} pro správné stanovení ceny produktu
-(započítat množství, započítat počet účastníků na přihlášce).
-\item \emph{Jednotka} a \emph{jednotková cena}
+\item \emph{Jednotka} a \emph{jednotková cena} slouží zákazníkovi pro informace
+o~účtování produktu.
+\item \emph{Nastavení způsobu účtování} slouží pro~správné stanovení způsobu
+výpočtu výsledné ceny produktu. Možné je započítat množství odpracovaných
+jednotek nebo počet účastníků na~přihlášce.
+\end{itemize}
+
+\subsection*{Přihlášky (objednávky)}
+
+Tabulka slouží k evidenci zákazníků (plátců) a~produktů, které si
+objednali.
+\begin{itemize}
+\item \emph{Produkt,} ke~kterému se přihláška vztahuje.
+\item \emph{Zákazník} vybraný z tabulky uživatelů je plátcem produktu.
+\item \emph{Evidence plateb} je zajištěna samostatným schématem sdružujícím
+jednotlivé platební položky na účetním dokladu.
+\end{itemize}
+
+\subsection*{Účastníci}
+
+Účastníci jsou přiřazeni k danému produktu přes přihlášku s uvedením
+plátcem.
+\begin{itemize}
+\item \emph{Přihláška}
+\item \emph{Účastník} vybraný z tabulky uživatelů.
 \end{itemize}
 
 \subsection*{Smlouvy}
 
-V návrhu se počítá s kontrolou maximálního počtu odpracovaných jednotek.
-Některé možnosti nastavení jsou pevně zakomponované a půjde je změnit
-pouze zásahem do zdrojových kódů nebo databáze.
+V návrhu se do budoucna počítá s kontrolou maximálního počtu odpracovaných
+jednotek. Některé možnosti nastavení typu smluv jsou pevně zakomponované
+a~půjde je změnit pouze zásahem do zdrojových kódů nebo databáze.
 \begin{itemize}
 \item \emph{Dodavatel} je smluvním partnerem jazykové agentury - \emph{poskytovatele
 }jazykových služeb
@@ -513,18 +525,18 @@ přehledů.
 
 \subsection*{Výkazy}
 
-Tabulka výkazů se nedrží papírové podoby, která je pro ukládání v
-databázi nevhodná z důvodu malé hustoty záznamů (obvykle 5-10 záznamů
-za měsíc na jeden produkt). Jednotlivé záznamy budou ukládány v oddělené
-tabulce s dalšími upřesňujícími informacemi.
+Tabulka výkazů se nedrží papírové podoby, která je pro ukládání v~databázi
+nevhodná z~důvodu malé hustoty záznamů (obvykle 5-10 záznamů za měsíc
+na~jeden produkt). Jednotlivé záznamy budou ukládány v~oddělené
+tabulce s~dalšími upřesňujícími informacemi.
 
-Z požadavků rovněž vyplívá potřeba uzamykání výkazu k danému datu.
-Jelikož se jedná o velmi důležitá data, měla by jejich kontrola prováděna
-i na databázové úrovni pomocí triggeru, pokud to bude daná databáze
-bude podporovat.
+Z~požadavků rovněž vyplývá potřeba uzamykání výkazu k~danému datu.
+Jelikož se jedná o~velmi důležitá data, měla by být jejich kontrola
+prováděna na databázové úrovni pomocí triggeru, pokud to bude daná
+databáze bude podporovat.
 \begin{itemize}
 \item \emph{Produkt}, ke kterému se výkaz vztahuje.
-\item \emph{Sazba za jednotku} a \emph{jednotka}, jenž náleží dodavateli,
+\item \emph{Sazba za jednotku} a \emph{jednotka}, jež náleží dodavateli,
 jako odměna.
 \item \emph{Smlouva} na níž je prováděna daná činnost.
 \item \emph{Datum} před kterým již není možné přidávat, editovat nebo mazat
@@ -533,8 +545,8 @@ odpracované jednotky.
 
 \subsection*{Události}
 
-Seznam událostí je přiřazen k výkazu a každá událost je doplněna o
-upřesňující informace.
+Seznam událostí je přiřazen k~výkazu a~každá událost je doplněna
+o~upřesňující informace.
 \begin{itemize}
 \item \emph{Výkaz}, ke kterému se událost vztahuje.
 \item \emph{Počet jednotek} typu uvedeného v přiřazeném výkazu.
@@ -543,28 +555,10 @@ pro tvorbu rozvrhu hodin.
 \item \emph{Místo} vybrané z číselníku.
 \end{itemize}
 
-\subsection*{Přihlášky (objednávky)}
-
-Tabulka slouží k evidenci zákazníků a produktů, které si objednali.
-\begin{itemize}
-\item \emph{Produkt,} ke kterému se přihláška vztahuje.
-\item \emph{Zákazník} vybraný z tabulky uživatelů je plátcem produktu.
-\item Evidence plateb.
-\end{itemize}
-
-\subsection*{Účastníci}
-
-Účastníci jsou přiřazeni k danému produktu, přes přihlášku, kde je
-definován plátce.
-\begin{itemize}
-\item \emph{Přihláška}
-\item \emph{Účastník} vybraný z tabulky uživatelů.
-\end{itemize}
-
 \subsection*{Uživatelé}
 
 O všech uživatelích systému je potřeba vést obdobné informace. Proto
-jsou uloženi v jedné tabulce a o jejich specifikaci je rozhodnuto
+jsou uloženi v~jedné tabulce a~o~jejich specifikaci je rozhodnuto
 až přiřazením do skupiny. Každý uživatel může být ve více skupinách.
 \begin{itemize}
 \item \emph{Osobní údaje} - jméno, příjmení, titul a zobrazované jméno
@@ -573,45 +567,49 @@ až přiřazením do skupiny. Každý uživatel může být ve více skupinách.
 \item Ostatní nečleněné informace
 \end{itemize}
 
+\subsection*{Testování slovní zásoby}
+
+Tvorba testů je závislá na vytvořených slovnících se slovní zásobou.
+Jednotlivé slovníky pomohou oddělit tématické celky ve výuce cizích
+jazyků a~mají definován zdrojový a cílový jazyk.
+\begin{itemize}
+\item \emph{Počet pokusů}, který může student vykonat. Větší počet pokusů
+je vhodný pro tréninkové účely.
+\item \emph{Časový limit} na odeslání odpovědí od vytvoření nového pokusu.
+\end{itemize}
+
 \subsection*{Číselníky}
 
-Byly navrhnuty pro zjednodušení práce s vyplňováním formulářů a odstranění
+Byly navrhnuty pro zjednodušení práce s vyplňováním formulářů a~odstranění
 duplicit v tabulkách.
-\begin{itemize}
-\item \emph{Místa}
-\item \emph{Kategorie}
-\item \emph{Jednotky}
-\item \emph{Daně}
-\item \emph{Skupiny}
-\item \emph{Oprávnění}
-\end{itemize}
+
+Patří zde \emph{Místa, Kategorie, Jednotky, Daně, Skupiny, Oprávnění}
+a \emph{Jazyky}.
+
 
 \section{Logický návrh}
 
-Celý návrh byl rozdělen do několika menších schémat, ke které byly
-důkladněji propracovány. Nejdůležitější část se týká správy uživatelů,
-kde všechny informace o uživateli jsou uloženy v jedné tabulce. Dekompozice
-na adresy a profilové informace je do budoucna možná. Pro zachycení
-kardinality vztahu M:N mezi skupinami a uživateli stejně jako mezi
-skupinami a oprávněními byly vytvořeny vazební tabulky \emph{groups\_users}
-a \emph{groups\_permissions}.%
+Dále budou popsány tři hlavní skupiny souvisejících tabulek, které
+jsou součástí hlavního schématu. Nejdůležitější část se týká správy
+uživatelů, kde všechny informace o~uživateli jsou uloženy v jedné
+tabulce. Dekompozice na adresy a~profilové informace je do~budoucna
+možná, ale v~době návrhu nebylo potřeba data dále strukturovat. Pro
+zachycení kardinality vztahu M:N mezi skupinami a~uživateli stejně
+jako mezi skupinami a~oprávněními byly vytvořeny vazební tabulky
+\emph{groups\_users} a~\emph{groups\_permissions}.%
 \begin{figure}[h]
-\begin{centering}
-\includegraphics[scale=0.35]{uzivatele-schema}\caption{Schéma uživatelů, skupin a oprávnění}
-
-\par\end{centering}
-
+\centering{}\includegraphics[scale=0.35]{uzivatele-schema}\caption{Schéma uživatelů, skupin a oprávnění}
 
 \end{figure}
 
 
 Schéma na obrázku \ref{fig:Sch=0000E9ma-produkt=00016F} zachycuje
-vztahy uživatelů k produktům. Dodavatelé mají vytvořenou smlouvu,
-ke které je přidán výkaz odpracovaných účtovacích jednotek na produktu.
+vztahy uživatelů k~produktům. Dodavatelé mají vytvořenou smlouvu,
+ke které je přidán výkaz odpracovaných účtovacích jednotek na~produktu.
 Zákazníci jsou evidováni přes přihlášku se seznamem účastníků. Záznam
-docházky je relalizovan tabulkou \emph{participators\_events}, kde
-existence záznamu s víceatributovým klíčem složeného s \emph{id} účastníka
-a \emph{id} události implikuje přítomnost osoby ve výuce.%
+docházky je realizován tabulkou \emph{participators\_events}, kde
+existence záznamu s~víceatributovým klíčem složeného s~\emph{id}
+účastníka a~\emph{id} události indikuje přítomnost osoby ve výuce.%
 \begin{figure}
 \begin{centering}
 \includegraphics[scale=0.35]{produkty}\caption{\label{fig:Sch=0000E9ma-produkt=00016F}Schéma produktů a vazeb na
@@ -623,323 +621,381 @@ uživatele}
 \end{figure}
 
 
-Evidence plateb je svázána s přihláškami, aby bylo možné snadno určit,
-za které služby již bylo zaplaceno. Spolu s informací o DPH mohou
-být platby sdruženy do jednoho účetního dokladu, jehož schéma je zobrazeno
-na obrázku \ref{fig:Evidence-plateb}.%
+Evidence plateb je svázána s přihláškami, aby bylo možné snadno a
+rychle určit, za které služby již bylo zaplaceno. Spolu s informací
+o DPH mohou být platby sdruženy do jednoho účetního dokladu, jehož
+schéma je zobrazeno na obrázku \ref{fig:Evidence-plateb}.%
 \begin{figure}
-
-
 \centering{}\includegraphics[scale=0.35]{doklady}\caption{\label{fig:Evidence-plateb}Evidence plateb}
 
 \end{figure}
 
 
-@todo clanky a testy
-
 
 \section{Fyzický návrh}
 
-V uvedeném návrhu je potřeba zajistit integritu dat a optimalizace
-pro rychlejší přístup k datům. K tomu slouží vytvořené cizí klíče,
-triggery a indexy. Jejich seznam a definice lze nalést v na přiloženém
-CD.
+V uvedeném návrhu \eqref{cha:Datab=0000E1zov=0000E9-sch=0000E9ma}
+je potřeba zajistit integritu dat a optimalizace pro rychlejší přístup
+k datům. K tomu slouží vytvořené cizí klíče, triggery a indexy. Jejich
+seznam a definice lze nalézt na přiloženém CD v~souboru \emph{/app/config/sql\_init.sql}.
 
 Při vytváření triggerů pro MySQL verze 5.2 nastal problém s vyvoláním
-vyjímky, pokud vkládaný objekt nesplňoval zadaná kritéria. Řešení
-spočívá ve vytvoření tabulky s integritním omezením \emph{UNIQUE}
-na jednom sloupci a funkce \emph{FAIL('chyba')}. Ta se pokusí naplnit
-tabulku dvěma indentickými záznami, což poruší omezení na jedinečnost
-záznamu ve sloupci a vyvolaná vyjímka zabrání potvrzení transakce.
+výjimky uvnitř triggeru, pokud vkládaný, editovaný či odstraňovaný
+objekt nesplňoval zadaná kritéria. Řešení spočívá ve vytvoření tabulky
+s integritním omezením \emph{UNIQUE} na jednom sloupci a funkce \emph{FAIL('chyba')}.
+Ta se pokusí naplnit tabulku dvěmi identickými záznamy, což poruší
+omezení na jedinečnost záznamu ve sloupci a vyvolaná výjimka zabrání
+potvrzení transakce. Uvedené řešení je pouze náhradou za \emph{RAISE
+EXCEPTION} známé třeba z~PostgreSQL, která nemá omezení na~místo
+odkud může být vyvolána výjimka.
 
-V poslední fázi bylo schéma doplněno o tabulky pro správu menu, vyhledávání,
-tokenů, logů a emailových příloh.@todo
+\inputencoding{latin2}
+\begin{lstlisting}[basicstyle={\small\ttfamily}]
+-- Tabulka s unik�tn�m kl��em na sloupci `message`
+CREATE TABLE `error` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `message` varchar(128) default NULL,
+  `created` timestamp NOT NULL default CURRENT_TIMESTAMP 
+    on update CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `message_index` (`message`) 
+) ENGINE=MEMORY  
+  DEFAULT CHARSET=utf8 COLLATE=utf8_bin 
+  ROW_FORMAT=FIXED
+  AUTO_INCREMENT=1 ;
+-- Fuknce pro vyvol�n� vyj�mky.
+DELIMITER $$
+CREATE PROCEDURE fail(_Message VARCHAR(128)) 
+BEGIN
+  INSERT INTO error (message) VALUES (_Message);
+  INSERT INTO error (message) VALUES (_Message);
+END$$
+\end{lstlisting}
+\inputencoding{utf8}
+
+Při návrhu databáze byly použity sloupce typu ENUM, které by se musely
+pro~použití v~jiném databázovém systému přepsat pomocí integritních
+omezení.
+
+V poslední fázi bylo schéma doplněno o~tabulky pro~správu menu,
+vyhledávání, tokenů, logů a~emailových příloh. Také přibylo schéma
+pro~správu článků a~testů.
+
+Celkově schéma \eqref{cha:Datab=0000E1zov=0000E9-sch=0000E9ma} simuluje
+firemní procesy velice přesně a umožňuje uchovávat všechna potřebná
+data. Problémem může být náročnější způsob výpočtu ceny pro zákazníka.
+Pokud se totiž cena odvíjí od množství vykázaných jednotek dodavateli,
+je potřeba spojit více tabulek a~použít agregační funkci \emph{SUM()}
+na počty odpracovaných jednotek v jednotlivých událostech.
 
 
 \chapter{Použité technologie a frameworky}
 
-Použité technologie byly částečně determinovány požadavy klienta.
-Systém využívá výhradně open source technologie tak, aby nebyly zvyšovány
+Použité technologie byly částečně determinovány požadavky klienta.
+Systém tak využívá výhradně open source technologie, aby nebyly zvyšovány
 náklady na nákup licencí.
 
 
 \section{Server}
 
-Tento webový informační systém využívá technologi PHP (jazyk, interpret
-a knihovny), která vychází se skriptovacího víceúčelového jazyka,
-jenž byl původně vyvinut pro tvorbu dynamických webových stránek.
-Z tohoto využití vznikla i zkatka z anglických slov \emph{Personal
-Home Page}, které byly nahrazeny slovy \emph{PHP: Hypertext Preprocessor}
-dající vznik rekurzivní zkratce%
+Informační systém využívá technologii PHP - jazyk, interpret a~knihovny.
+PHP vychází se skriptovacího víceúčelového jazyka, který byl původně
+vyvinut pro~tvorbu dynamických webových stránek. Z~tohoto využití
+vznikla i zkratka z anglických slov \emph{Personal Home Page} (osobní
+domácí stránka). Později byly nahrazeny slovy \emph{PHP: Hypertext
+Preprocessor}, které daly vznik rekurzivní zkratce%
 \footnote{http://cs.wikipedia.org/wiki/Rekurzivní\_zkratka%
 }.
 
 Výhodou použití PHP je existence interpretu pro různé operační systémy
-a podobnost jeho syntaxe s C, Javou.
-
-Nevýhodou, která brzdí další rozvoj a rozšíření, je absence normy.
-Jazyk je tak de facto standardizovaný interpretem a množstvím lidí%
-\footnote{dle statistiky na http://www.php.net/usage.php%
-}, kteří jej využívají. I když existují mnohé polemiky a živé diskuze
-mezi jeho zastánci a odpůrci o jeho výkonnosti, bezpečnosti a vhodnosti
-pro velké projekty, existují vyjímky%
+a~podobnost jeho syntaxe s~C, Javou. Nevýhodou, která brzdí další
+rozvoj a~rozšíření, je absence normy. Jazyk je tak de~facto standardizovaný
+interpretem a~množstvím lidí%
+\footnote{viz statistiky na http://www.php.net/usage.php%
+}, kteří jej využívají. I~když existují mnohé polemiky a~živé diskuze
+mezi jeho zastánci a~odpůrci o~jeho výkonnosti, bezpečnosti a~vhodnosti
+pro~velké projekty. Existují ovšem výjimky%
 \footnote{Facebook, YouTube, Wikipedia (MediaWiki) a další%
-}, které tyto názory vyvrací a zároveň se podílejí na vývoji, a tak
-se snaží přispět k jeho větší výkonnosti a bezpečnosti.
+}, které tyto názory vyvrací a~zároveň se podílejí na vývoji, a~tak
+se snaží přispět k~jeho větší výkonnosti a bezpečnosti.
 
-Vývoj jazyka sebou nese i stinné stránky. Po létech vývoje dochází
-k~úpravavám API%
-\footnote{anglická zkratka \emph{Application Programming Interface}, označuje
-sadu funkcí, procedur či tříd programu či knihovny, jenž mohou být
-využívány programátorem %
-} některých vestavěných funkcí a změna syntaxe. To může zapříčinit,
-že po aktualizaci interpretu jazyka, přestanou fungovat některé části
+Vývoj jazyka sebou nese i~stinné stránky. Po~letech vývoje dochází
+k~úpravám API%
+\footnote{\emph{Application Programming Interface}, označuje sadu funkcí, procedur
+nebo tříd programu popřípadě knihovny, které mohou být využívány programátorem %
+} některých vestavěných funkcí a~změna syntaxe. To může zapříčinit,
+že po~aktualizaci interpretu jazyka, přestanou fungovat některé části
 nebo celá aplikace.
 
-Nesporná výhoda používání frameworků spočívá jednodušším vývoji aplikací
-a minimalizací rizika chyb v jinak ručně psaném jádru aplikace. Toto
-platí pouze za předpokladu, že je dostupná kvalitní dokumentace a
-vývoj včetně testování je zastřešen silnou komunitou nebo společností.
-Některé frameworky rovněž dokáží do jisté míry zakrýt rozdíly mezi
-ve verzích jazyka. Děje se tak, za cenu zpomalení některých částí
-aplikace, díky kontroly verze překladače a vykonáním alternativního
+Nesporná výhoda používání frameworků spočívá v~jednodušším vývoji
+aplikací a~minimalizací rizika chyb v~jinak ručně psaném jádru aplikace.
+Toto platí pouze za~předpokladu, že je dostupná kvalitní dokumentace
+a~vývoj včetně testování je zastřešen silnou komunitou nebo společností.
+Některé frameworky rovněž dokáží do~jisté míry zakrýt rozdíly mezi
+ve~verzích jazyka. Děje se tak, za~cenu mírného zpomalení některých
+částí aplikace, díky kontrole verze překladače a~vykonáním alternativního
 kódu.
 
-Při výběru frameworku byl kladen důraz hlavně na kvalitní dokumentaci,
-rozšířitelnost a možnost práce s různými relačními databázemi. Frameworky,
-které splňují vetšinu požadavků jsou Zend, Prado, Symfony a CakePHP,
-který navíc ve výkonnostních testech podle \cite{root-testy} dopadl
-velmi dobře, a tak byl vybrán pro vývoj informačního systému.
+Při výběru frameworku byl kladen důraz hlavně na~kvalitní dokumentaci,
+rozšířitelnost a~možnost práce s~různými relačními databázemi. Frameworky
+splňující vetšinu požadavků jsou Zend, Prado, Symfony a~CakePHP,
+který navíc ve~výkonnostních testech podle \cite{root-testy} dopadl
+velmi dobře, a~tak byl vybrán pro vývoj informačního systému.
 
 
 \subsection{CakePHP}
 
-CakePHP je open source framework\cite{CakePHP}, který poskytuje většinu
-nástrojů pro snadný vývoj webové aplikace a dává větší příležitost
-věnovat se návrhu schématu a logiky aplikace.
+CakePHP je open source framework, který poskytuje většinu nástrojů
+pro~snadný vývoj webové aplikace a~dává větší příležitost věnovat
+se návrhu schématu a~logiky aplikace \cite{CakePHP}.
 \begin{description}
 \item [{MVC\label{mvc}}] \emph{Model-View-Controller} (Model-Pohled-Řadič)
-- softwarová architektura oddělující data, uživatelské rozhraní a
-logiku aplikace\cite{MVC}. Výsledný kód aplikace se stává přehlednějším
-a umožňuje změnu libovolné komponenty s minimálními dopady na ostatní
-části aplikace (např. změna databáze, výstup v XML či jiném formátu,
+- softwarová architektura oddělující data, uživatelské rozhraní a~logiku
+aplikace\cite{MVC}. Výsledný kód aplikace se stává přehlednějším
+a~umožňuje změnu libovolné komponenty s~minimálními dopady na~ostatní
+části aplikace (např. změna databáze, výstup v~XML či jiném formátu,
 ovládání přes webové rozhraní nebo konzoli).%
-\begin{figure}
+\begin{figure}[bh]
 \begin{description}
 \item [{\includegraphics[width=1\textwidth]{basic_mvc}}]~
 \end{description}
-\centering{}\caption{\label{fig:Diagram-MVC-dotazu}Diagram MVC dotazu\cite{MVC}}
+\centering{}\caption{\label{fig:Diagram-MVC-dotazu}Diagram MVC dotazu \cite{MVC}}
 
 \end{figure}
 \\
 Obrázek \ref{fig:Diagram-MVC-dotazu} zobrazuje základní schéma
 procesu zpracování požadavku klienta. Klient pošle (1) požadavek na
 URL%
-\footnote{\emph{Uniform Resource Locator}\cite{RFC1738}(jednotný lokátor zdrojů)
-popisuje sémantiku a syntaxi řetězce znaků sloužící k přesné specifikaci
-zdroje informací v prostředí Internetu.%
-}, které je plánovačem (\emph{Dispatcher}) zkontrolováno a předáno
-(2) správnému přepínači (\emph{Controller}). Ten se na základě parametrů,
-které obdrží od plánovače, rozhodne o spuštění správné akce a předání
-parametrů. V řadiči je obsažena vlastní aplikační logika (včetně např.
-kontroly přihlášení a práv uživatele), která může využívat modely
-pro přístup k uloženým datům a jejich modifikaci (3 a 4). Až řadič
-získá všechna potřebná data předá (5) je zbývající vrstvě - pohledu
-(\emph{View}). V té jsou data zformátována do požadované podoby a
-poslány (6) klientovi.
+\footnote{\emph{Uniform Resource Locator} (jednotný lokátor zdrojů) popisuje
+sémantiku a~syntaxi řetězce znaků sloužící k~přesné specifikaci
+zdroje informací v~prostředí Internetu \cite{RFC1738}.%
+}, které je plánovačem (\emph{Dispatcher}) zkontrolováno a~předáno
+(2) správnému přepínači (\emph{Controller}). Ten se na~základě parametrů,
+které obdrží od~plánovače, rozhodne o~spuštění správné akce a~předání
+parametrů. V~řadiči je obsažena vlastní aplikační logika (včetně
+např. kontroly přihlášení a~práv uživatele), která může využívat
+modely pro~přístup k~uloženým datům a~jejich modifikaci (3~a~4).
+Až řadič získá všechna potřebná data, předá (5) je zbývající vrstvě
+- pohledu (\emph{View}). V~té jsou data zformátována do~požadované
+podoby a~odeslána (6) klientovi.
 \item [{ORM}] \emph{Object-relational mapping} (objektově relační mapování)
 - programátorská technika určená pro konverzi dat mezi nekompatibilními
-systémy určenými pro ukládání dat a objektově orientovanými jazyky\cite{ORM}.
-Největší výhoda tedy spočívá v odstínění způsobu práce s odlišnými
-zdroji dat. Ať už jde o různé relačními databáze (MySQL, PostgreSQL,
-Oracle, MSSQL) nebo dokonce vlastní definováné zdroje dat. Mezi ty
-můžou patřit formátované soubory (CSV, XML, JSON) nebo síťové služby
-poskytující informace skrze veřejné API (LDAP, Twitter, IMAP a další).
+systémy určenými pro ukládání dat a~objektově orientovanými jazyky\cite{ORM}.
+Největší výhoda tedy spočívá v~odstínění způsobu práce s~odlišnými
+zdroji dat. Ať už jde o~různé relačními databáze (MySQL, PostgreSQL,
+Oracle, MS-SQL) nebo dokonce vlastní definované zdroje dat. Mezi ty
+mohou patřit formátované soubory (CSV, XML, JSON) nebo síťové služby
+poskytující informace skrze veřejné API (LDAP%
+\footnote{\emph{Lightweight Directory Access Protocol}, ,,odlehčený'' protokol
+pro ukládání a přístup k datům na adresářovém serveru odvozený od
+X.500%
+}, Twitter, IMAP a~další).
 \end{description}
 Mezi další výhody, které CakePHP nabízí, patří SEO optimalizace stránek,
 podpora i18n%
-\footnote{,,Příprava aplikace na podporu různých kulturních zvyklostí.''\cite{i18n}%
-} i l10n%
-\footnote{Jedná se o ,,doplnění aplikace o data specifická pro konkrétní národní/regionální
+\footnote{\noindent ,,Příprava aplikace na podporu různých kulturních zvyklostí.''\cite{i18n}%
+} i~l10n%
+\footnote{\noindent ,,Doplnění aplikace o data specifická pro konkrétní národní
 prostředí''\cite{l10n}%
-} pro tvorbu vícejazyčných aplikací. Kód je již zapracován do jádra
-frameworku a otestován komunitou, díky které není potřeba psát již
-jednou napsané části, ale možné šetřit lidské zdroje na vlastní vývoj
-aplikační logiky.
+} pro tvorbu vícejazyčných aplikací. Kód je již zapracován do~jádra
+frameworku a~otestován komunitou, díky které není potřeba psát již
+jednou napsané části, ale je možné šetřit lidské zdroje na~vlastní
+vývoj aplikační logiky.
 
 CakePHP zastává programátorskou filosofii \emph{DRY} - \emph{Don't
-Repeat Yourself}. Ta zdůrazňuje, že jednotlivé části kódu by se v
-programu neměly opakovat, jelikož se snižuje srozumitelnost kódu a
-při modifikaci se musí upravovat stejný kód na více místech, což často
-vede k nesnadno odhalitelným chybám programu. K tomuto účelu se používají
-,,pomocníci'' (\emph{helpers}), kteří daný kód generují. Při potřebě
-změny je lze snadno upravit, bez potřeby zásahu do míst odkud jsou
-voláni.
+Repeat Yourself} zdůrazňující, že jednotlivé části kódu by se v~programu
+neměly opakovat, jelikož se snižuje srozumitelnost kódu. Navíc se
+při modifikaci musí upravovat stejný kód na~více místech, což často
+vede k nesnadno odhalitelným chybám programu. K~tomuto účelu se používají
+,,pomocníci'' (\emph{helpers}) a~komponenty (\emph{components}).
+Při potřebě změny je lze snadno upravit, bez potřeby zásahu do míst
+odkud jsou voláni.
 
-Za největší přínos samotného frameworku v počátku návrhu aplikace
-považuji ,,pekárnu'' kódu (\emph{baker}) a podporu ,,lešení''
-(\emph{scaffolding}), které umožňuje pracovat s automaticky generovaným
+Za největší přínos samotného frameworku v~počátku návrhu aplikace
+je považována ,,pekárna'' kódu (\emph{baker}) a~podpora ,,lešení''
+(\emph{scaffolding}), které umožňují pracovat s~automaticky generovaným
 rozhraním podporujícím CRUD. ,,Pekárna'' kódu (\emph{bakery}) umí
-vygenerovat modely i s validačními kritérii, prezentační vrstvu a
-řadiče. Navíc sama najde relace mezi tabulkami a přidá tuto informaci
+vygenerovat modely i~s~validačními kritérii, prezentační vrstvu
+a~řadiče. Navíc sama najde relace mezi tabulkami a~přidá tuto informaci
 do odpovídajícího modelu.
 
 Hledání relací\label{Hled=0000E1n=0000ED-relac=0000ED} probíhá na
-základě názvů tabulkek a jejich atributů. Proto je doporučeno při
-práci s CakePHP dodržovat tyto konvence, které nejsou nijak závazné
-a jdou změnit ve specifikaci každého modelu.
+základě názvů tabulek a jejich atributů. Proto je doporučeno při práci
+s~CakePHP dodržovat následující konvence, které nejsou nijak závazné
+a jdou změnit v definici každého modelu.
 \begin{itemize}
 \item Názvy tabulek jsou pojmenované anglicky v plurálu. Nepravidelné skloňování
-nebo definice plurálu pro jiný jazyk lze nastavit v souboru \emph{app/config/inflections.php.}
-\item Cizí klíče se jmenují stejně jako tabulka v jednotném čísle a končí
+nebo definice plurálu pro jiný jazyk lze nastavit v~souboru \emph{app/config/inflections.php.}
+\item Cizí klíče se jmenují stejně jako tabulka v~jednotném čísle a~končí
 na ,,\_id''
 \item Primární klíč má název ,,id''.
 \end{itemize}
 Díky těmto úsporám je možné se zaměřit na ergonomii dané aplikace
-a její možnou optimalizaci, která je ovšem limitována výkonností použitého
-skriptovacího jazyka. Tato omezení lze, minimalizovat tzv. kešováním%
-\footnote{z anglického slova \emph{cache}, označuje vyrovnávací paměť%
+a~její možnou optimalizaci, která je bohužel limitována výkonností
+použitého skriptovacího jazyka. Tato omezení lze minimalizovat tzv.
+kešováním%
+\footnote{\emph{cache} {[}keš{]}, označuje vyrovnávací paměť%
 } částí zpracovaného zdrojového kódu v paměti, jeho předkompilací popřípadě
 jedná-li se o statické stránky lze ukládat výstup skriptu, který je
 při následujícím stejném požadavku vrácen klientovi.
 
 Další možnou optimalizací, která sice přímo nesouvisí s CakePHP, ale
 je v něm snadno implementovatelná, je snížení počtu požadavků na stránku.
-S používáním javascriptových frameworků a knihoven se snadno může
-stát, že počet vkládaných odkazů na skripty a kaskádové styly (CSS)
-se vyšplhá až k desítkám a začne se neúměrně prodlužovat doba potřebná
+S používáním JavaScriptových frameworků a knihoven se snadno může
+stát, že počet vkládaných odkazů na skripty a~kaskádové styly (CSS)
+se vyšplhá až k~desítkám a~začne se neúměrně prodlužovat doba potřebná
 na stažení všech potřebných částí. Zvyšuje se tak počet požadavků
 na server a díky režii protokolu HTTP%
-\footnote{\emph{Hypertext Transfer Protocol}, internetový protokol určený pro
+\footnote{\emph{HyperText Transfer Protocol}, internetový protokol určený pro
 výměnu dokumentů%
 } je ve výsledku stažen větší objem dat. Tento problém úspěšně řeší
-projekty \emph{jsMin}%
+projekty \emph{JSMin}%
 \footnote{\href{http://code.google.com/p/jsmin-php/}{http://code.google.com/p/jsmin-php/}%
 } a \emph{CSSTidy}%
 \footnote{\href{http://csstidy.sourceforge.net/}{http://csstidy.sourceforge.net/}%
 }.
 
 
+\subsubsection{JSMin}
+
+JSMin je optimalizátor JavaScriptového kódu používaný pro zmenšení
+velikosti. Odstraňuje všechny komentáře a nepotřebné bílé znaky, tj.
+mezery, tabulátory a konce řádek. Výsledný soubor použitý v této práci
+obvykle dosahuje 60-70\% původní velikosti. Jiné optimalizátory (např.
+JSMinPlus) používající ke své práci parser JavaScriptu mohou dosahovat
+lepších výsledků zkracováním jmen lokálních proměnných a funkcí (metod).
+
+
+\subsubsection{CSSTidy}
+
+CSSTidy je parser a~optimalizátor kaskádových stylů. Umožňuje formátování
+a~komprimaci CSS až do verze 2.1. Výhodou je, že na rozdíl od jiných
+optimalizátorů neodstraňuje pouze nadbytečné bílé znaky a komentáře,
+ale umí rovněž spojovat jednotlivé definice stylů (např. spojuje definované
+atributy pozadí do jednoho záznamu).
+
+
 \subsection{MySQL}
 
-MySQL je multiplatformní systém pro řízení báze dat (DBMS, zkáceně
+MySQL je multiplatformní systém pro řízení báze dat (DBMS, zkráceně
 databázový systém), který poskytuje všechny potřebné vlastnosti nutné
-pro běh tohoto informačního systému:
+pro~běh tohoto informačního systému:
 \begin{itemize}
-\item indexy
-\item fultextové vyhledávání
+\item indexy, fulltext
 \item cizí klíče (foreign-keys)
 \item poddotazy (subselect)
 \item pohledy (views)
 \item transakce
 \item triggery
 \end{itemize}
-Systém byl původně vyvinut Michaelem Wideniusem a Davidem Axmarkem
-v roce 1994, kteří se podíleli na založení firmy MySQL AB. Ta byla
-až do roku 2008, kdy byla provedena akvizice s firmou Sun Microsystems,
-jednou z největších open source společností na světě. MySQL je nabízeno
-jak pod bezplatnou licencí, tak pod komerční licencí s plnou technickou
-podporou \cite{MySQL}. 
+Systém byl původně vyvinut Michaelem Wideniusem a~Davidem Axmarkem
+v~roce 1994, kteří se podíleli na založení firmy MySQL AB. Ta byla
+až do~roku 2008, kdy byla provedena akvizice s~firmou Sun Microsystems,
+jednou z~největších open source společností na~světě. MySQL je nabízeno
+jak pod bezplatnou licencí, tak pod komerční licencí s~plnou technickou
+podporou. 
 
-Těší velké oblibě hlavně mezi vývojáři webových aplikací, kde je součástí
-platformy označované jako \emph{LAMP}, která obsahuje \emph{Linux},
-\emph{Apache}, \emph{MySQL} a \emph{PHP}. Obecně jednotlivé části
-mohou být zaměněny (např. PHP za Perl nebo Python, MySQL za Postgres)
-při zachování zkratky, která je zaužívaným označením pro operační
-systém, webový server, databázový systém a skriptovací jazyk sloužící
-k obsluze a generování webových stránek.
+Těší se velké oblibě hlavně mezi vývojáři webových aplikací, kde je
+součástí platformy označované jako \emph{LAMP}, která obsahuje \emph{Linux},
+\emph{Apache}, \emph{MySQL} a~\emph{PHP}. Obecně jednotlivé části
+mohou být zaměněny (např. PHP za Perl nebo Python, MySQL za PostgreSQL)
+při zachování zkratky, která je zaužívaným označením pro~operační
+systém, webový server, databázový systém a~skriptovací jazyk sloužící
+k~obsluze a generování webových stránek.
 
 
 \section{Klient}
 
 Pro vlastní běh aplikační logiky je možné se spolehnout na to, že
 serverová část aplikace bude zpracována jednou verzí PHP interpretu
-v uzavřeném, neměnném a otestovaném prostředí. Naproti tomu klientská
-část bude prezentována na odlišných operačních systémech v mnoha prohlížečích
-nejrůznějších verzích. Aplikace je primárně vyvíjena pro nejnovější
-verze nejpoužívanějších \emph{volně dostupných} prohlížečů dodžujících
-standardy (doporučení) konsorcia W3C. Mezi podprované prohlížeče patří
-Mozilla Firefox 3.5, Opera 9, Google Chrome, Safari a další založené
-na vykreslovacím jádře Webkit nebo Gecko.
+v uzavřeném, neměnném a~otestovaném prostředí. Naproti tomu klientská
+část bude prezentována na odlišných operačních systémech v~mnoha
+prohlížečích nejrůznějších verzích. 
+
+Aplikace je primárně vyvíjena pro nejnovější verze nejpoužívanějších
+\emph{volně dostupných} prohlížečů dodržujících standardy (doporučení)
+konsorcia W3C. Mezi podporované prohlížeče patří Mozilla Firefox 3.5,
+Opera 9, Google Chrome, Safari a~další založené na vykreslovacím
+jádře Webkit nebo Gecko.
 
 Základními požadavky kladené na prohlížeč jsou:
 \begin{itemize}
-\item XHTML 1.0%
+\item \emph{XHTML 1.0}%
 \footnote{\href{http://www.w3.org/TR/xhtml1/}{http://www.w3.org/TR/xhtml1/}%
 }
-\item CSS 2.1%
+\item \emph{CSS 2.1}%
 \footnote{\href{http://www.w3.org/TR/CSS2/}{http://www.w3.org/TR/CSS2/}%
 }
-\item JavaScript je dialektem ECMASriptu. Minimálním implementovaným standardem
-by měl být ECMA-262, revize 3\cite{ECMA-262}.
+\item \emph{JavaScript} je dialektem ECMAScriptu. Minimálním implementovaným
+standardem by měl být ECMA-262, revize 3 \cite{ECMA-262}.
 \end{itemize}
-S XHTML a CSS prohlížeče problémy nemívají. Horší je to, ale s implementacemi
-Javascriptu, které se mezi prohlížeči dost liší. Tento problém byl
-vyřešen díky provázanosti CakePHP a javascriptového frameworku Prototype%
-\footnote{Aktuální verzi naleznete na\href{http://www.prototypejs.org/}{http://www.prototypejs.org/}%
-} a jeho rozšíření Script.aculo.us%
+S XHTML a~CSS prohlížeče problémy nemívají. Horší je to, ale s~implementacemi
+JavaScriptu, které se mezi prohlížeči dost liší. Tento problém byl
+vyřešen díky provázanosti CakePHP s~JavaScriptovým frameworkem \emph{Prototype}%
+\footnote{Aktuální verzi naleznete na \href{http://www.prototypejs.org/}{http://www.prototypejs.org/}%
+} a~jeho rozšířením \emph{Scriptaculous}%
 \footnote{Knihovna se nachází na \href{http://script.aculo.us}{http://script.aculo.us}%
-}, které se dohromady snaží zakrýt rozdíly mezi prohlížeči a zpříjemnit
-uživateli pracovní prostředí pomocí vizuálních efektů.
+}. Dohromady snaží zakrýt rozdíly mezi prohlížeči a zpříjemnit uživateli
+pracovní prostředí pomocí vizuálních efektů.
 
-Prototype není jediným či nejlepším frameworkem. Existují i jiné,
-které mají rozsáhlejší schopnosti v oblasti používaní dotazovacího
-jazyka XPath nebo tvorby GUI%
-\footnote{z anglických slov \emph{Graphical User Interface}, uživatelské prostředí,
-jenž úmožnuje uživateli ovládat aplikaci pomocí grafických ovládacích
-prvků%
-}. Mezi hojně využívané patří JQuery, MooTools, Yahoo User Interface
-Library a Dojo. Nelze říct, že by jeden z nich byl o mnoho lepší,
-a proto si každý vývojář musí stanovit, co od frameworku očekává.
-Pomoci s výběrem může i několik výkonostních testů, jenž lze nalést
-v \cite{slicktest}.
 
-Jak už bylo zmíněno výše, Prototype je skvěle provázán s CakePHP,
-který tak programátorovi umožňuje psát kód pouze v jednom programovacím
-jazyce - PHP. Kromě Scipt.aculo.us, je v systému použita i knihovna
-Livepipe%
-\footnote{Dokumentace a stažení knihovny na \href{http://livepipe.net}{http://livepipe.net}%
-}, která se zaměřuje na tvorbu uživatelského rozhraní - záložky, okna
-a další prvky známé z klasických newebových aplikací.
+\subsection{Prototype}
+
+\emph{Prototype} není jediným či nejlepším frameworkem. Existují i~jiné,
+které mají rozsáhlejší schopnosti v~oblasti tvorby~GUI%
+\footnote{\emph{Graphical User Interface}, uživatelské prostředí umožňující
+uživateli ovládání aplikace pomocí grafických prvků.%
+} nebo používaní dotazovacího jazyka XPath. Mezi hojně využívané patří
+\emph{JQuery}, \emph{MooTools}, \emph{Yahoo User Interface Library}
+a~\emph{Dojo}. Nelze říct, že by jeden z nich byl o~mnoho lepší,
+a~proto si každý vývojář musí stanovit, co od frameworku sám očekává.
+Pomoci s~výběrem může několik výkonnostních testů, jenž lze nalézt
+v~\cite{slicktest}.
+
+Jak už bylo zmíněno výše, \emph{Prototype} je skvěle provázán s~CakePHP,
+který tak programátorovi umožňuje psát kód pouze v~jednom programovacím
+jazyce - PHP. Kromě rozšíření \emph{Scriptaculous}, je v~systému
+použita i~knihovna \emph{Livepipe}%
+\footnote{Dokumentace a stažení knihovny je možné z \href{http://livepipe.net}{http://livepipe.net}.%
+}, která se zaměřuje hlavně na tvorbu uživatelského rozhraní - záložky,
+okna a~další prvky známé z~klasických aplikací.
 
 
 \chapter{Programátorská dokumentace}
 
 V následující kapitole je popsána základní adresářová struktura projektu,
-propojení databázového schématu s třídami a metody použitých tříd.
-
-Pro plné pochopení fungování frameworku CakePHP a kompletní dokumentaci
-všech metod je vhodné se nejprve nastudovat \cite{CakePHP}. Dále
-jsou vysvětleny jen nejdůležitější části a změny v jaderných metodách
-frameworku.
+propojení databázového schématu s~třídami a~metody použitých tříd.
+Pro kompletní dokumentaci všech jaderných metod a plné pochopení fungování
+frameworku CakePHP je vhodné si nejprve nastudovat \cite{CakePHP}.
+Dále jsou vysvětleny jen nejdůležitější části a~změny v~jaderných
+metodách frameworku. Vygenerovaná dokumentace k~API je k~dispozici
+na přiloženém CD-ROMu.
 
 
 \section{Adresářová struktura}
 
-Kód aplikace je logicky rozčleněn podle původu do 3 hlavních složek.
+Kód aplikace je logicky rozčleněn podle původu do tří hlavních adresářů.
+Při pojmenovávání souborů v adresářích je dobré se řídit konvencemi
+uvedenými v~\cite{CakePHP}. Změnu názvu nebo umístění adresářů je
+možné provést úpravou konstant \emph{ROOT} (app/webroot), \emph{APP\_DIR}
+(app) a~\emph{CAKE\_CORE\_INCLUDE\_PATH} (cake).
 \begin{itemize}
-\item \emph{app} - vlastní kód systému
+\item \emph{app} - vlastní kód aplikace
 
 \begin{itemize}
-\item \emph{config} - konfigurační soubory (nastavení databáze, přepisování
-URL a ostatní konstanty)
+\item \emph{config} - konfigurační soubory
 \item \emph{controllers} - řadiče a komponenty
-\item \emph{locale} - obsahuje podadresáře s přeloženými řetězci použitými
-v aplikaci
-\item \emph{models} - modely, doplňková chování a definice zdrojů dat
-\item \emph{plugins} - doplňky a znovupoužitelné balíky
+\item \emph{locale} - obsahuje podadresáře s~přeloženými řetězci použitými
+v~aplikaci
+\item \emph{models} - modely, doplňková chování a~definice zdrojů dat
+\item \emph{plugins} - zásuvné moduly a znovupoužitelné balíky
 \item \emph{tmp} - zapisovatelná složka pro ukládání dočasných souborů
-\item \emph{views} - šablony, elementy a prezentační data
-\item \emph{webroot} - kaskádové styly, javascriptové knihovny a obrázky
-použité při prezentaci dat
+\item \emph{views} - šablony, elementy a~prezentační data
+\item \emph{webroot} - kaskádové styly, JavaScriptové knihovny a~obrázky
 \end{itemize}
 \item \emph{cake} - zdrojové kódy frameworku, do kterých by se nemělo zasahovat
-\item \emph{vendors} - knihovny třetích stran použité v systému (TCPDF,
-CssTidy, JsMin)
+\item \emph{vendors} - knihovny třetích stran použité v systému
 \end{itemize}
-Pro pojmenování souborů ve složkách je dobré se řídit zavedenými konvencemi
-uvedenými v manuálu \cite{CakePHP}.
-
 
 \section{Modely (\emph{Models})}
 
@@ -948,40 +1004,40 @@ je zakryta třídou \emph{Overloadable}. Ta je navržena tak, aby zakryla
 rozdíly mezi PHP verze 4 a 5. 
 
 Modely jsou částečně determinovány návrhem databáze. Relace mezi jednotlivými
-modely odpovídají relacím v databázi a je možné je upravovat ve vlastnostech
-dané třídy. Existují čtyři druhy relací, jenž jdou v CakePHP modelovat.
-Relace 1:1 (\emph{hasOne}), 1:N (\emph{hasMany}) a N:1 (\emph{belongsTo})
+modely odpovídají relacím v databázi a~je možné je upravovat ve~vlastnostech
+dané třídy. Existují čtyři druhy relací, jenž jdou v~CakePHP modelovat.
+Relace 1:1 (\emph{hasOne}), 1:N (\emph{hasMany}) a~N:1 (\emph{belongsTo})
 mají většinu nastavení společnou:
 \begin{description}
 \item [{className}] jméno třídy asociovaného modelu 
 \item [{foreignKey}] jméno cizího klíče v asociovaném modelu
 \item [{fields}] seznam polí, jenž mají být načteny při použití dané asociace
-\item [{order}] část SQL dotazu sloužící k definici pořadí výsledků
-\item [{conditions}] část SQL dotazu sloužící k filtraci nalezených výsledků
+\item [{order}] část SQL dotazu sloužící k~definici pořadí výsledků
+\item [{conditions}] část SQL dotazu sloužící k~filtraci nalezených výsledků
 \end{description}
 Při modelování relace M:N (\emph{hasAndBelongsToMany - HABTM}) je
-potřeba nadefinovat tabulku (\emph{joinTable}), přes kterou bude prováděno
-spojení nalezených dat, a cizí klíč do asociované tabulky (\emph{associationForeignKey}).
+potřeba definovat tabulku (\emph{joinTable}), přes kterou bude prováděno
+spojení nalezených dat, a~cizí klíč do asociované tabulky (\emph{associationForeignKey}).
 
 Při použití ,,pekárny'' kódu jsou relace vyhledány automaticky podle
 pravidel popsaných v \vref{Hled=0000E1n=0000ED-relac=0000ED}.
 
 Pro získání dat se používá metoda \emph{find(\$typ, \$parametry)}
 na příslušném modelu. První parametr určuje typ dotazu, který může
-být jedním z následujích:
+být jedním z~následujících:
 \begin{description}
-\item [{all}] najde všechny data splňující podmínky definované ve druhém
+\item [{all}] najde všechna data splňující podmínky definované ve druhém
 parametru
-\item [{first}] najde první záznam vyhovující podmínkám (liší se od předcházejícího
-ve struktuře vráceného pole)
+\item [{first}] najde první záznam vyhovující podmínkám (liší se od~předcházejícího
+ve~struktuře vráceného pole)
 \item [{count}] vrátí počet vyhovujících záznamů
 \item [{list}] vygeneruje pole s hodnotami ze sloupce tabulky definované
-v proměnné \emph{\$displayField} daného modelu indexované standardně
+v~atributu \emph{displayField} daného modelu indexované standardně
 primárním klíčem
 \item [{threaded}] vygeneruje vnořené pole podle zadaného intervalu (\emph{ltf
 }- \emph{rght})%
 \footnote{Detailní popis příkladu, jak uchovávat stromové struktury v relační
-můžete nalést na \href{http://dev.mysql.com/tech-resources/articles/hierarchical-data.html}{http://dev.mysql.com/tech-resources/articles/hierarchical-data.html}.%
+můžete nalézt na~\href{http://dev.mysql.com/tech-resources/articles/hierarchical-data.html}{http://dev.mysql.com/tech-resources/articles/hierarchical-data.html}.%
 }
 \item [{neighbors}] vrátí položku před (\emph{prev}) a za (\emph{next})
 položkou, která by byla nalezena pomocí \emph{find('first', \$podminky)}
@@ -991,14 +1047,14 @@ kde jsou uvedeny všechny základní možnosti. Další parametry mohou
 být přidávány pro doplňkové rozšíření chování jednotlivých modelů. 
 
 \inputencoding{latin2}
-\begin{lstlisting}[basicstyle={\small},tabsize=4]
+\begin{lstlisting}[basicstyle={\small\ttfamily},tabsize=2]
 array(
 	'conditions' => array('Model.field' => $thisValue), 
 	//vygeneruje klauzuli WHERE Model.field = $thisValue
 	'recursive' => 1, //int
 	'fields' => array('Model.field1'),
 	//sloupe�ky v dotazu SELECT
-	'order' => array('Model.created', 'Model.field3 DESC'),
+	'order' => array('Model.created', 'Model.field3' => 'DESC'),
 	//definice klauzule ORDER BY
 	'group' => array('Model.field'), 
 	//sloupe�ky pou�it� v klauzuli GROUP BY
@@ -1012,59 +1068,58 @@ array(
 \inputencoding{utf8}
 
 Zajímavým parametrem je \emph{recursive}, který určuje do jaké hloubky
-mají být načítána data. Pokud data z asociovaných modelů nejsou potřeba,
+mají být načítána data. Pokud data z~asociovaných modelů nejsou potřeba,
 je vhodné jej nastavit na \emph{-1}.
 
 V systému, kde je potřeba vyhledávat sdružovat data podle modelů,
-jenž jsou v řetězci asociací dále, bylo výchozí chování parametru
+které jsou v~řetězci asociací dále, bylo výchozí chování parametru
 nedostatečné. Naštěstí existují rozšiřující chování modelu, které
 takové činnosti umožňují.
 
 
-\subsection{Rozšíření chování (\emph{Behaviors})}
+\subsection{Rozšíření chování modelů (\emph{Behaviors})}
 
 V základní výbavě CakePHP je obsaženo rozšíření \emph{Containable},
-které úmožnuje dynamicky přidávat asociované modely bez omezení hloubky
+které umožňuje dynamicky přidávat asociované modely bez omezení hloubky
 rekurze%
 \footnote{Je ovšem potřeba vzít na vědomí, že CakePHP tak vygeneruje značné
-množství dotazů, které mohou mít vliv na výkon dané aplikace.%
-}. Je to ale pouze ,,syntaktický cukr'' k metodám \emph{bindModel()}
-a \emph{unbindModel()}, které úmožnují přidávat a odebírat asociace
+množství dotazů, které mohou mít negativní vliv na výkon dané aplikace.%
+}. Je to ale pouze ,,syntaktický cukr'' k~metodám \emph{bindModel()}
+a \emph{unbindModel()}, které umožňují přidávat a~odebírat asociace
 příslušící danému modelu. \emph{Containtable} přidává modelu metodu
-\emph{contain()}, jenž je volána i pokud je nalezen index ,,contain''
-v poli s vyhledávacími parametry metody \emph{find()}. Ta se postará
-o dynamickou asociaci potřebných modelů.
+\emph{contain()}, jenž je volána i~pokud je nalezen index ,,contain''
+v~poli s vyhledávacími parametry metody \emph{find()}. Ta se postará
+o~dynamickou asociaci potřebných modelů.
 
-Také výše zmíněné rozšíření má určité nedostatky a to hlavně pokud
-je potřeba filtrovat data podle modelů asociovaných ve větší hloubce.
-Proto je použité rozšíření \emph{Linkable}\cite{linkable}, které
-má obdobnou syntaxi nastavení, ale vytváří jeden SQL dotaz za pomocí
-klauzují JOIN.
+Také výše zmíněné rozšíření má určité nedostatky a~to~hlavně pokud
+je potřeba filtrovat data podle modelů asociovaných ve~větší hloubce.
+Proto je použité rozšíření \emph{Linkable} \cite{linkable}, které
+má obdobnou syntaxi nastavení, ale vytváří pouze jeden SQL dotaz za
+pomocí klauzulí JOIN.
 
-Pro usnadnění práce s relacemi typu M:N přes tabulku s klíči je použito
-rozšíření \emph{,,Extend Associations''\cite{ExtendAssoc}} . To
-umožňuje jednoduché přidání nebo smazání asociací, bez ovlivnění ostatních
-již existujících. K tomu slouží nově definovaná sada metod:
+Pro usnadnění práce s relacemi typu M:N přes tabulku s~klíči je použito
+rozšíření \emph{Extend Associations} \cite{ExtendAssoc}. To umožňuje
+jednoduché přidání nebo smazání asociací, bez ovlivnění již existujících
+záznamů. K~tomu slouží nově definovaná sada metod:
 \begin{itemize}
 \item \emph{habtmAdd(\&\$model,~\$assoc,~\$id,~\$assoc\_ids}) - přidá
-asociace k danému záznamu v modelu
+asociace k~danému záznamu v modelu
 \item \emph{habtmDelete(\&\$model,~\$assoc,~\$id,~\$assoc\_ids)} - smaže
-asociace s danou kombinací klíčů
-\item \emph{habtmDeleteAll(\&\$model,~\$assoc,~\$id)} - smaže včechny
-asociace k danému záznamu modelu
+asociace s~danou kombinací klíčů
+\item \emph{habtmDeleteAll(\&\$model,~\$assoc,~\$id)} - smaže všechny
+asociace k~danému záznamu modelu
 \end{itemize}
 Pro překlady do cizích jazyků bylo použito rozšíření \emph{Translate},
 které umožňuje nadefinovat seznam sloupců tabulky, které mají být
-překládány. Přeložená data jsou ukládána v oddělené tabulce (\emph{i18n}
-- lze změnit v konfiguraci pro každý model) a při dotazu je vytořeno
-spojení s touto tabulkou pomocí složeného klíče - jméno modelu, cizí
-klíč daného modelu a jméno překládaného sloupce.
+překládány. Přeložená data jsou ukládána v~oddělené tabulce (\emph{i18n}
+- lze změnit v~konfiguraci pro každý model) a~při dotazu je vytvořeno
+spojení s~touto tabulkou pomocí složeného klíče - jméno modelu, cizí
+klíč daného modelu a~jméno překládaného sloupce.
 
-A pro úplnost jsou zde uvedneny zbývající rozšíření použité v aplikaci,
+A pro úplnost jsou zde uvedeny zbývající rozšíření použité v~aplikaci,
 které zatím nejsou součástí základních knihoven frameworku.
 \begin{description}
-\item [{Slugable}] Vytváří texty použitelné v URL z definovaných sloupců
-tabulky.
+\item [{Slugable}] Vytváří texty použitelné v URL z~definovaných sloupců.
 \item [{Versionable}] Ukládá aktuální verzi záznamu před změnou či smazáním.
 \item [{Logable}] Zaznamenává akce uživatelů.
 \end{description}
@@ -1073,53 +1128,62 @@ tabulky.
 
 Jelikož je kontrola konzistence dat po přidání, smazání a editaci
 záznamu ponechána na databázi, bylo potřeba zajistit zpracování chybových
-hlášení z databáze. To se děje v metodě \emph{onError()}, která je
-volána pokaždé, když metoda \emph{DboSouce::execute()} vrátí chybu.
-V našem případě je chyba zpracována a chybové hlášení je uloženo pro
-pozdější prezentaci uživateli.
+hlášení z~databáze. To se děje v metodě \emph{onError()}, která je
+volána pokaždé, když metoda \emph{DboSource::execute()} vrátí chybu.
+V~našem případě je chyba zpracována a~chybové hlášení je uloženo
+pro pozdější prezentaci uživateli.
 
 Pro plnou lokalizaci aplikace bylo potřeba rozšířit metodu \emph{invalidate(\$záznam,
-\$chybovéHlášení)} o překlad chybového hlášení, pokud daný záznam
+\$chybovéHlášení)} o~překlad chybového hlášení, pokud daný záznam
 neprošel validací. Lokalizaci lze rovněž provádět při generování pohledu,
-ale to se z hlediska údržby kódu nejeví jako nejvhodnější řešení.
+ale to se z~hlediska údržby kódu nejeví jako nejvhodnější řešení.
 
 
 \section{Řadiče (\emph{Controllers})}
 
-Řadiče jsou používany ke správě aplikační logiky. Pro možnost používat
-stejný kus kódu v různých řadičích je vhodné používat komponenty.
-Tyto komponenty usnadňují autentifikaci, autorizaci uživatelů, vyhledávání
-v databázi, posílání emailů nebo validaci uživatelských formulářů.
+Řadiče jsou používané ke správě aplikační logiky. Pro možnost používat
+stejný kus kódu v~různých řadičích je vhodné používat komponenty.
+Tyto komponenty usnadňují autentizaci, autorizaci uživatelů, vyhledávání
+v~databázi, posílání emailů nebo validaci uživatelských formulářů.
 
 
 \subsection{Komponenty}
+
+Komponenty se v CakePHP obecně používají ke sdílení logiky (kódu)
+mezi různými řadiči tak, aby byla zachována filozofie \emph{DRY}.
 \begin{description}
-\item [{Auth/Authmd5}] Standardní knihovna přidává k heslu řetězec definovaný
-v app/config/core.php v interní proměnné Security.salt. Tato vlastnost
-byla v systému na obtíž, hlavně kvůli přenositelnosti již zadaných
-hesel v předchozí aplikaci. Proto byla vytvořena komponenta Authmd5,
-která nepřidává zabezpečovací řetězec k heslu. Další drobnou změnou
-oproti původní komponentě je automatické hashovaní hesla z formuláře
-i když není zadáno přihlašovací jméno.
-\item [{P28n}] Při načtení komponenty se zkontroluje zda si již uživatel
+\item [{Auth/Authmd5}] Standardní knihovna přidává k~heslu řetězec definovaný
+v~\emph{app/config/core.php} v~interní proměnné \emph{Security.salt}.
+Tato vlastnost byla v~systému na obtíž, hlavně kvůli přenositelnosti
+již zadaných hesel v~předchozí aplikaci. Zároveň je ale \emph{Security.salt}
+používán pro šifrování cookies%
+\footnote{Označení pro data v protokolu HTTP uložená v počítači uživatele, která
+prohlížeč obdržel od WWW serveru a~při každé další komunikaci je
+posílá zpět.%
+} a~sessions, takže by neměl zůstat prázdný. Proto byla vytvořena
+komponenta \emph{Authmd5}, která nepřidává zabezpečovací řetězec k~heslu.
+Další drobnou změnou oproti původní komponentě je automatické ,,hašovaní''
+hesla z~formuláře, i~když není zadáno přihlašovací jméno.
+\item [{P28n}] Při načtení komponenty se zkontroluje, zda si již uživatel
 někdy vybral vybral jazyk, který byl uložen do cookie pomocí metody
-\emph{change(\$lang)}. Pokud se jazyk v cookie nenachází zvolí se
+\emph{change(\$lang)}. Pokud se jazyk v~cookie nenachází, zvolí se
 výchozí jazyk aplikace podle proměnné \emph{HTTP\_ACCEPT\_LANGUAGE},
 pokud je prohlížečem nastavena. V opačném případě je použit jazyk
-definovaný v konstaně \emph{DEFAULT\_LANGUAGE} v souboru \emph{app/config/core.php}
+definovaný v konstantě \emph{DEFAULT\_LANGUAGE} v~souboru \emph{app/config/core.php}
 \cite{p28n}.
-\item [{Password~Helper}] Vygeneruje ,,hezké'' a bezpečné heslo zadané
-délky bez opakujících se znaků. Jednotlivé znaky jsou vybírány z atributu\emph{
+\item [{Password~Helper}] Vygeneruje ,,hezké'' a~bezpečné heslo zadané
+délky bez opakujících se znaků. Jednotlivé znaky jsou vybírány z~atributu\emph{
 possible} dané komponenty \cite{pass-gen}.
 \item [{Autocomplete}] Přidává metodu \emph{autocomplete()}, která zpracuje
-získaná data z formulářového prvku s atributem name ,,\emph{data{[}Model{]}{[}položka{]}}''.
-Následně vyhledá vyhovující záznamy a vygeneruje seznam s výsledky.
-Přidání doplňkových podmínek pro vyhledávání je možné v metodě \emph{beforeFilter()}
-daného řadiče nebo jeho předka. Děje se tak nastavením atributu \emph{handles},
-kde index v zadaném poli určuje položky tabulky, kterých se mají podmínky
-týkat. Následující příklad je vybrán z řadiče produktů, kde má být
-zákazníkům úmožněno vyhledávat pouze v produktech, které se jich přímo
-týkají.
+získaná data z~formulářového prvku s~atributem \emph{name} obsahujícím
+,,\emph{data{[}Model{]}{[}položka{]}}''. Následně vyhledá vyhovující
+záznamy a~vygeneruje seznam s~výsledky. Přidání doplňkových podmínek
+pro vyhledávání je možné v~metodě \emph{beforeFilter()} daného řadiče
+nebo jeho předka. Děje se tak nastavením atributu \emph{handles},
+kde index v~zadaném poli určuje položky tabulky, kterých se mají
+podmínky týkat. Následující příklad je vybrán z~řadiče produktů,
+kde má být zákazníkům umožněno vyhledávat pouze v produktech, které
+se jich přímo týkají.
 \end{description}
 \inputencoding{latin2}
 \begin{lstlisting}[basicstyle={\footnotesize\ttfamily},breaklines=true,tabsize=2]
@@ -1152,51 +1216,51 @@ function beforeFilter() {
 \inputencoding{utf8}
 \begin{description}
 \item [{Ajaxupdate}] Slouží pro usnadnění editace záznamů přes AJAX za
-podpory javascriptové knihovny \emph{control.js}, která je součástí
-balíku \emph{scriptaculous.js}.
-\item [{Filter}] Komponenta pro validaci vyhledávacích formulářů a vygenerování
+podpory JavaScriptové knihovny \emph{control.js}, která je součástí
+balíku \emph{Scriptaculous}.
+\item [{Filter}] Komponenta pro validaci vyhledávacích formulářů a~vygenerování
 podmínek pro vyhledávání.
-\item [{Email}] Slouží k odesílání emailů. Lze používat šablony, html zprávy
-a přidávat přílohy.
-\item [{Request~Handler}] Detekuje typ požadavku podle odeslané hlavičky
-nebo přípony.
+\item [{Email}] Slouží k odesílání emailů. Lze používat šablony a~přidávat
+přílohy.
+\item [{Request~Handler}] Detekuje typ požadavku podle odeslané hlavičky.
 \end{description}
 
 \subsection{Popis řadičů (\emph{Controllers})}
 
 V této části budou popsány \emph{nejdůležitější} části aplikační logiky.
-Při vytváření základní kostry byla použita ,,pekárna'' kódu, jejiž
+Při vytváření základní kostry byla použita ,,pekárna'' kódu, jejíž
 vygenerovaný kód byl posléze upraven.
 
 
-\subsubsection{Uživatelé}
+\subsubsection{Uživatelé (\emph{UsersController})}
 
 Nejdůležitějšími akcemi jsou bezpochyby přihlášení a odhlášení uživatele.
 Ty jsou zajištěny komponentou \emph{Auth}, která se nastavuje v metodě
 \emph{beforeFilter()} řadiče aplikace (\emph{AppController}) .
 \begin{description}
 \item [{login()}] Po přihlášení je aktualizována položka ,,poslední přihlášení''
-v databázi, nastavena zpráva uživateli a uživatel je přesměrován na
-požadovanou nebo výchozí stránku.
-\item [{logout()}] Smaže cookie, nastaví zprávu o úspěšném odhlášení a
-přesměruje na výchozí stránku.
-\item [{account()}] Slouží ke změně hesla uživatele. Pokud jsou poslány
-data a hesla projdou validací, je uživateli nastaveno nové heslo.
+v~databázi, nastavena zpráva uživateli a~uživatel je přesměrován
+na~požadovanou nebo výchozí stránku.
+\item [{logout()}] Smaže cookie, nastaví zprávu o úspěšném odhlášení a~přesměruje
+na~výchozí stránku.
+\item [{account()}] Slouží ke změně hesla uživatele. Pokud poslaná data
+z~formuláře projdou validací, je uživateli nastaveno nové heslo.
 \item [{recover()}] Uživatel si může nechat zaslat nové heslo po zadání
-emailu. Je vytvořen token s platností 1 den. V budoucnu by bylo dobré
-rozšířit možnost obnovy hesla o kontrolní otázku.
+emailu. Je vytvořen token s~platností 1 den. V budoucnu by bylo dobré
+rozšířit metodu o~možnost obnovy hesla po zadání odpovědi na kontrolní
+otázku.
 \item [{verify(\$token)}] Zkontroluje zda se zadaný token nachází v databázi
-a pokud ano, zašle uživateli nově vygenerované heslo.
+a~pokud ano, zašle uživateli nově vygenerované heslo.
 \item [{register()}] Jednoduchá registrace uživatele po jejímž dokončení
 je uživateli zaslán aktivační email.
 \end{description}
-Výše uvedené akce jsou povoleny i nepřihlášeným uživatelům pomocí
+Výše uvedené akce jsou povoleny i~nepřihlášeným uživatelům pomocí
 metody \emph{Auth::allow(\$akce)}.
 \begin{description}
 \item [{admin\_account(\$id)}] Umožní administrátorovi změnit heslo uživateli
 s daným id bez znalosti starého.
 \item [{admin\_reset\_password(\$id)}] Vygeneruje uživateli s daným id
-náhodné heslo a zašle ho uživateli na email zadaný při registraci.
+náhodné heslo a~zašle ho uživateli na~email zadaný při~registraci.
 \item [{admin\_invoiceattachment()}] Jakmile jsou vyplněny informace o
 poskytovateli, zákazníkovi a časovém období, je vygenerován seznam
 produktů, na kterých se v tomto období pracovalo. Provede spojení
@@ -1207,10 +1271,11 @@ o jednotlivých datech a množství vykázaných jednotek. Podle nastavení
 způsobu účtování je vypočítána výsledná cena bez DPH.
 \end{description}
 
-\subsubsection{Produkty}
+\subsubsection{Produkty (\emph{ProductsController})}
 
-Kromě běžných akcí pro fitrování, zobrazení, editování a smazání produktu
-administrátorem, jsou zde i metody pro export dat a tisk přehledů.
+Kromě běžných akcí pro filtrování, zobrazení, editování a smazání
+produktu administrátorem, jsou zde i metody pro export dat a tisk
+přehledů.
 \begin{description}
 \item [{admin\_export()}] Vygeneruje CSV soubor s nalezenými produkty podle
 vyplněného filtru.
@@ -1218,28 +1283,28 @@ vyplněného filtru.
 vyhledá dny v týdnu, ve kterých probíhá výuka a přidá informaci o
 časovém intervalu.
 \item [{admin\_schedulePdf()}] Použije výše uvedenou metodu k nalezení
-dat. Poté vygeneruje pdf soubor a nabídne jej uživateli ke stažení.
+dat. Poté vygeneruje PDF soubor a nabídne jej uživateli ke stažení.
 \end{description}
 
-\subsubsection{Smlouvy}
+\subsubsection{Smlouvy (\emph{ContractsController})}
 
 Řadič smluv definuje různý přístup k datům pro administrátora a dodavatele,
 kteří mohou nahlížet pouze na své smlouvy a nemohou je editovat (metody
-\emph{employees\_index()}, \emph{employess\_view(\$id)}). 
+\emph{employees\_index()}, \emph{employees\_view(\$id)}). 
 \begin{description}
 \item [{admin\_payment()}] Na základě filtru vybere odpovídající smlouvy
-a~vygeneruje přehled pro sestavení výplat a kontrolu přijatých faktur
+a~vygeneruje přehled pro sestavení mezd a kontrolu přijatých faktur
 od dodavatelů. Základní schéma výpočtu pro rok 2008 bylo následující:\inputencoding{latin2}
 \begin{lstlisting}[basicstyle={\ttfamily},breaklines=true,tabsize=2]
-if typ slu�by == slu�ba then
-	if zp�sob platby == hotov� then
-		zaokrouhli v�platu na 50 hal���
+if typ_slu�by == slu�ba then
+	if zp�sob_platby == hotov� then
+		zaokrouhli mzdu na 50 hal���
 	endif
 else if pl�tce dan� then
-		if v�plata > 5000 then
-			z�lohov� da� := 15% z v�platy
+		if mzda > 5000 then
+			z�lohov�_da� := 15% ze mzdy
 		else
-			sr�kov� da� := 15% z v�platy
+			sr�kov�_da� := 15% ze mzdy
 		endif
 endif
 \end{lstlisting}
@@ -1247,85 +1312,117 @@ endif
 sociálním a zdravotním pojištění placených zaměstnavatelem.
 \end{description}
 
-\subsubsection{Příjmové doklady}
+\subsubsection{Příjmové doklady (\emph{InvoicesController})}
 
-Pro zobrazení dokladu a vygenerování položek k zaplacení slouží metoda
+Pro zobrazení dokladu a vygenerování položek k~zaplacení slouží metoda
 \emph{admin\_view(\$id)}. Pro každý produkt se sečtou již zaplacené
-položky a celkový počet položek k zaplacení. Rozdíl těchto dvou mezivýsledků
-určuje nedoplatek popřípadě přeplatek na daném produktu. Jelikož je
-rozhraní pro přidávání a mazání položek z dokladu postaveno na AJAXu
-jsou vytvořeny dvě metody \emph{admin\_additem()} a \emph{admin\_delitem()},
-které po provedení akce vygenerují element s aktualizovanými položkami
+položky a~celkový počet položek k~zaplacení. Rozdíl těchto dvou
+mezivýsledků určuje nedoplatek popřípadě přeplatek na daném produktu.
+Jelikož je rozhraní pro přidávání a~mazání položek z~dokladu postaveno
+na AJAXu, jsou vytvořeny dvě metody \emph{admin\_additem()} a \emph{admin\_delitem()},
+které po~provedení akce vygenerují element s~aktualizovanými položkami
 dokladu.
 
 
-\subsubsection{Události v kalendáři}
+\subsubsection{Události v kalendáři (\emph{EventsController})}
 
-Pro přehledné zobrazení údálostí jsou na výběr dvě možnosti. Tou první
-je zobrazení všech událostí v daném měsíci v tabulce podobné kalendáři.
+Pro přehledné zobrazení událostí jsou na výběr dvě možnosti. Tou první
+je zobrazení všech událostí v daném měsíci v~tabulce podobné kalendáři.
 K tomuto účelu slouží metoda \emph{PREFIX\_calendar()}, kterou jsou
-získány všechny záznamy vyhovující filtru a pro generování pohledu
+získány všechny záznamy vyhovující filtru a~pro generování pohledu
 je použit pomocník třídy \emph{CalendarHelper::calendar()}.
 
 Druhou variantou je týdenní zobrazení včetně času. Data jsou nejdřív
-seřazena a vícedenní záznamy se rozdělí do několika jednodenních (např.
-událost 8.7.2009 16:00 - 9.7.2009 14:00 je rozdělena na 8.7.2009 16:00-24:00
-a 9.7-2009 00:00-14:00). Rozdělené záznamy jsou pak vykresleny pomocí
-metody \emph{CalendarHelper::week()}.
+seřazena a~vícedenní záznamy se rozdělí do několika jednodenních
+(např. událost 8.7.2009 16:00 - 9.7.2009 14:00 je rozdělena na~8.7.2009
+16:00-24:00 a~9.7-2009 00:00-14:00). Rozdělené záznamy jsou pak vykresleny
+pomocí metody \emph{CalendarHelper::week()}.
 
 
-\section{Doplňky (Pluginy)}
+\subsubsection{Testování slovní zásoby (\emph{VocabularyTestAnswersController})}
+
+Úpravou pro kontrolu a~ukládání dat pomocí AJAXu prošla metoda \emph{students\_add()}. 
+
+
+\section{Zásuvné moduly (\emph{Plugins})}
+
+V této části budou popsány moduly jiných autorů a jejich úpravy a
+vylepšení, které byly použity při implementaci systému.
 
 
 \subsection{Vyhledávací modul (\emph{Searchable})}
 
 Nejdůležitějším požadavkem na tento modul je rychlost. Jelikož byl
-vybrán databázový systém MySQL, který ve verzi 5.2 umožňuje fultextové
-vyhledánání pouze nad tabulkami typu MyISAM, bylo potřeba zajistit,
-že půjde rychle vyhledávat i data obsažená tabulkách typu InnoDB.
+vybrán databázový systém MySQL, který ve verzi 5.2 umožňuje fulltextové
+vyhledávání pouze nad tabulkami typu MyISAM, bylo potřeba zajistit,
+že půjde rychle vyhledávat i~data obsažená tabulkách typu InnoDB.
 
-@todo
+Idea spočívá ve vytvoření tabulky typu MyISAM, do které jsou uložena
+všechna data z textových sloupců indexované tabulky. Výhodou je, že
+lze prohledávat více tabulek jedním dotazem. Nalezené řádky jsou spojeny
+se záznamy v původní tabulce.
+
+Úpravy se dočkalo generování výstupu pro ,,našeptávač'' \eqref{fig:Na=000161ept=0000E1va=00010D},
+jinak vše zůstalo podle \cite{searchable}.
 
 
 \subsection{Komprimace skriptů a kaskádových stylů (\emph{Asset})}
 
+Modul \emph{Asset} \cite{asset} využívá projektů \emph{JSMin} a\emph{~CSSTidy}
+pro komprimaci JavaScriptu a~kaskádových stylů. Vybere všechny soubory,
+které byly do stránky vloženy voláním \emph{JavascriptHelper::link()}
+a \emph{HtmlHelper::css()}. Soubory jsou optimalizovány a komprimovány
+metodami JSMin::minify() a 
+
+
+\subsection{Optimalizace generování dotazů (\emph{Url\_cache})}
+
+Při optimalizaci výkonu bylo zjištěno, že na stránkách, kde je potřeba
+generovat větší množství odkazů, dochází k~výraznému zpomalení generování
+výstupu. Slabé místo bylo nalezeno v~metodě \emph{Router::url()},
+která je volána pro vytvoření URL podle nastaveného směrování v \emph{app/coufig/routes.php}.
+
+Tento modul zavádí ukládání vygenerovaných URL do vyrovnávací paměti
+a~odbourává nutnost neustálého volání výše zmíněné metody.
+
 
 \chapter{Uživatelská dokumentace}
 
-Uživatelská dokumentace si klade za cíl stručně přiblížit čtenáři
-výhody informačního systému a jeho základními způsoby ovládání. V
-jednotlivých částech je vysvětleno, jak má správce postupovat od úvodní
-instalace, přes inicializaci databáze, uložení informací o uživatelích,
-přidání produktů až po tisk účetních podkladů. 
+Cílem kapitoly je stručně přiblížit výhody informačního systému a~jeho
+základním způsobem ovládání. V jednotlivých částech je vysvětleno,
+jak má správce postupovat od úvodní instalace, přes inicializaci databáze,
+uložení informací o uživatelích, přidání produktů až po tisk účetních
+podkladů. 
 
 Dodavatelům a zaměstnancům je názorně předvedeno, jak správně vyplnit
-měsíční výkazy a jak vést evidenci docházky účastníků kurzů. 
-
-Zákazníkům je vysvětlen postup, kterým jednoduše zjistí, kolik z objednaných
+měsíční výkazy a jak vést evidenci docházky účastníků kurzů. Zákazníkům
+je vysvětlen postup, kterým jednoduše zjistí, kolik z objednaných
 služeb již bylo zaplaceno, zkontrolují průběh aktuálních kurzů či
-počet přeložených stran překladu.
-
-Studenti si mohou zobrazit rozvrh hodin na další týdny a zkontrolovat
-zaznamenanou docházku.
+počet přeložených stran překladu. Studenti si mohou zobrazit rozvrh
+hodin na další týdny a zkontrolovat zaznamenanou docházku.
 
 
 \section{Instalace serveru}
 
-Pro běh serverové aplikace je nutné mít program, který úmožnuje zpracování
-zdrojových kódů a prezentaci výstupu protokolem HTTP popřípadě HTTPS.
-Nejznámějším volně dostupným programem je Apache {[}http://httpd.apache.org/{]},
-který úmožnuje pomocí modulů {[}http://httpd.apache.org/modules/{]}
-přidat podporu pro jazyk PHP nutný k běhu IS.
+Pro běh serverové aplikace je nutné mít program, který umožňuje zpracování
+zdrojových kódů a~prezentaci výstupu protokolem HTTP popřípadě HTTPS.
+Nejznámějším volně dostupným programem je Apache%
+\footnote{\href{http://httpd.apache.org}{http://httpd.apache.org}%
+}, který umožňuje pomocí modulů přidat podporu pro jazyk PHP nutný
+k běhu IS. Následující postupy jsou pouze orientační a mohou se lišit
+podle operačního systému a jeho verze. Pokud je systém instalován
+na fungující server, je doporučeno vytvořit nejdříve zálohu a pak
+přejít rovnou na následující kapitolu.
 
 
 \subsection{Stažení a instalace Apache}
 
 Pokud je systém instalován na některou z~moderních linuxových distribucí,
-je doporučeno nejdříve prohledat její repozitáře. Ve většině případů
+je doporučeno nejdříve prohledat její repositáře. Ve většině případů
 se zde nachází již hotový balík upravený pro snadnější instalaci a~konfiguraci.
 
 \inputencoding{latin2}
-\begin{lstlisting}
+\begin{lstlisting}[basicstyle={\ttfamily}]
 # Debian a jeho derivace (Ubuntu, Kubuntu, ...):
 apt-get install apache2
 # Gentoo
@@ -1349,167 +1446,186 @@ a upravit konfiguraci stránek.
 
 \subsection{Stažení a instalace MySQL serveru\label{sub:Sta=00017Een=0000ED-a-instalace}}
 
-uživatelské jméno: isadb\\
-heslo: isapass
+Při instalaci MySQL serveru se postupuje obdobně jako s instalací
+Apache. Nejprve ověřte zda se balík nenachází v repositářích. Pokud
+tomu tak není, je potřeba stáhnout instalační soubory z~\emph{\href{http://dev.mysql.com/downloads/}{http://dev.mysql.com/downloads/}}
+a~postupovat podle návodu uvedeného v~dokumentaci dostupné rovněž
+z~výše uvedeného odkazu.
+
+Po nainstalováni serveru je potřeba vytvořit nového uživatele a~databázi
+pro~potřeby informačního systému. Po~připojení k~databázi jako
+správce (obvykle se jménem \emph{root} nebo \emph{mysql} a~heslem
+zadaným při~instalaci) můžete použít následující skript.
+
+\inputencoding{latin2}
+\begin{lstlisting}[basicstyle={\ttfamily}]
+-- Vytvo�en� datab�ze.
+CREATE DATABASE isa_database;
+-- Vytvo�en� u�ivatele s heslem.
+CREATE USER 'isa_admin'@'localhost'
+IDENTIFIED BY 'isa_password';
+-- P�id�n� v�ech opr�vn�n� k datab�zi.
+GRANT ALL PRIVILEGES
+ON isa_database.*  TO 'isa_admin'@'localhost' 
+WITH GRANT OPTION;
+\end{lstlisting}
+\inputencoding{utf8}
+
+Jméno databáze (\emph{isa\_database}), uživatele (\emph{isa\_admin})
+i~heslo (\emph{isa\_password}) je doporučeno změnit podle vlastních
+zvyklostí.
 
 
-\section{Umístění aplikace}
+\subsection{Umístění aplikace}
 
-Pokud máme server správně nakonfigurovaný, zkopírujeme složku s aplikací
-do adresáře určeného konfigurací Apache (obvykle /var/www či C:\textbackslash{}\textbackslash{}Program
-Files\textbackslash{}apache2\textbackslash{}www - budeme označovat
-\emph{ROOT}). Pro větší bezpečnost je doporučeno změnit ,,webroot''
-v konfiguraci apache na složku \emph{ROOT}/app/webroot. Dále je potřeba
-nastavit přihlašovací údaje k databázi podle \ref{sub:Sta=00017Een=0000ED-a-instalace}předchozí
-části v souboru \emph{ROOT}/app/config/database.php .
-
-
-\section{Inicializace databáze}
-
-V souboru \emph{ROOT}/app/config/sql/isa\_init.sql se nachází MySQL
-5.0+ kompatibilní skript, který vytvoří tabulky a naplní je daty nutnými
-k prvnímu přihlášení administrátora.
+Pokud je server správně nakonfigurovaný, zkopírujte složku s~aplikací
+do~adresáře zvoleného v~konfiguraci Apache (obvykle \emph{/var/www}
+nebo \emph{C:\textbackslash{}\textbackslash{}Program Files\textbackslash{}apache2\textbackslash{}www}).
+Pro větší bezpečnost je doporučeno doplnit proměnnou \emph{DocumentRoot}
+v~konfiguraci Apache o~\emph{/app/webroot}. Dále je potřeba nastavit
+přihlašovací údaje k databázi podle předchozí části v souboru \emph{app/config/database.php}.
+Dále je potřeba se ujistit, že složka \emph{app/tmp/} má nastavena
+taková práva, aby do~něj mohly PHP skripty zapisovat.
 
 
-\section{Upřesňující informace}
+\subsection{Inicializace databáze}
 
-Pro další čtení manuálu je potřeba upřesnit několik důležitých pojmů,
-které se budou dále vyskytovat.
+V souboru \emph{app/config/sql/isa\_init.sql} se nachází MySQL 5.2+
+kompatibilní skript, který vytvoří tabulky a~naplní je daty nutnými
+k~prvnímu přihlášení administrátora. Import skriptu lze provést pomocí
+příkazové řádky následujícím příkazem z~adresáře s~uvedeným skriptem.\inputencoding{latin2}
+\begin{lstlisting}[basicstyle={\small\ttfamily},breaklines=true]
+shell> mysql --user=isa_admin --password=isa_password \
+       isa_database < isa_init.sql
+\end{lstlisting}
+\inputencoding{utf8}
+
+
+\section{Správce}
+
+Správce má standardně nastavena veškerá přístupová práva ke všem modulům
+systému. Jedná se o~roli manažera agentury rozhodujícím o~definici
+přístupových práv k~jednotlivým modulům. Může delegovat část oprávnění
+na další skupiny např. administrativních pracovníků nebo lektorů s
+přístupem ke tvorbě testů.
+
+
+\subsection{Upřesňující informace}
+
+Pro další čtení manuálu je potřeba upřesnit několik důležitých pojmů
+potřebných pro správné pochopení.
 \begin{description}
 \item [{Systémová~skupina}] je nutná pro správné fungování IS.
-\end{description}
-Tato sekce je rozdělena podle rolí definovaných v IS.
-\begin{description}
 \item [{Správce:}] pověřený uživatel s plnými právy ke všem modulům systému.
-\item [{Editor:}] osoba s omezenými právy k editaci vybraných modulů.
-\item [{Dodavatelé:}] zaměstnanec, brigádník či jiný subjekt vykonávající
-zadanou práci.
-\item [{Odběratelé:}] zákazníci, kteří si objednali libovolný produkt.
-\item [{Poskytovatelé:}] subjekty, které jsou vedeny ,,pod jednou střechou''
-a sdílí část informací.
-\item [{Účastníci:}] studenti jednotlivých kurzu. 
+\item [{Poskytovatelé:}] podniky, které jsou vedeny ,,pod jednou střechou''
+a~sdílí část informací.
+\item [{Dodavatelé:}] zaměstnanec, brigádník nebo podnik vykonávající zadanou
+práci.
+\item [{Odběratelé:}] uživatelé, kteří si objednali libovolný produkt.
+\item [{Účastníci:}] studenti jednotlivých kurzů. 
 \end{description}
-Výše popsané role mohou být změněny či zakázány administrátorem systému.
-Čtenáři je doporučeno číst pouze části, jenž se ho týkají.
-\begin{description}
-\item [{Poznámka:}] Text u odkazu na zobrazení, editaci nebo smazání záznamu
-mohou být nahrazeny po řadě obrázky: \includegraphics[scale=0.8]{more},\includegraphics[scale=0.8]{edit}
+Texty u odkazu na zobrazení, editaci nebo smazání záznamu mohou být
+nahrazeny po řadě obrázky: \includegraphics[scale=0.8]{more},\includegraphics[scale=0.8]{edit}
 a \includegraphics[scale=0.8]{delete}.
-\end{description}
-
-\section{Správce (hlavní manažer)}
-
-Má standardně nastavena veškerá přístupová práva ke všem modulům systému. 
 
 
-\subsection{Správa IS}
+\subsection{První přihlášení}
 
-Tento modul obsahuje moduly pro nastavení jednotlivých částí systému,
-správu uživatelů, skupin, práv a ostatních číselníků (daně, místnosti,
-kategorie produktů).
+Pro první přihlášení použijte přihlašovací jméno \emph{admin} a~heslo
+\emph{isa2009}. Následně je doporučeno změnit si heslo kliknutím na
+odkaz \emph{Změnit heslo} nacházející se v~pravém horním rohu.
 
 
-\subsubsection{Uživatelé (Users)\label{sub:U=00017Eivatel=0000E9-(Users)}}
+\subsection{Uživatelé\label{sub:U=00017Eivatel=0000E9-(Users)}}
 
-Modul \noun{Uživatelé} nabízí veškeré nastavení potřebné pro definování
-možností při užívání systému osobami majícími vztah k IS. Dále jsou
-zde uchovány veškeré osobní informace důvěrného charakteru.
-\begin{description}
-\item [{Filtr~seznam~uživatelů~{[}/admin/Users/index{]}:}] V horní části
-se nachází odkazy na akce související s uživately. Filtry pro práci
-se seznamem uživatelů jsou umístěny nad hlavní tabulkou a v hlavičce
-tabulky s funkcí ,,našeptávače'' a jejich zm
-\item [{Přidání~uživatele~{[}/admin/Users/add{]}:}] Odkaz na formulář
-je hlavním menu a v částech, které na uživatelích závisí. Jedinnou
-povinnou položkou je \emph{zobrazované jméno}, která slouží jako popisek
-ve všech výběrových filtrech. Ostatní položky je možné vyplnit až
-při jejich potřebě ve výpisu. Volba \emph{Aktivní} slouží k aktivaci
+Modul \noun{Uživatelé} nabízí veškeré nastavení potřebné pro~definování
+možností při~užívání systému osobami majícími vztah k~IS. Dále jsou
+zde uchovány veškeré osobní informace důvěrného charakteru související
+s~uživateli.
+
+
+\subsubsection{Seznam~uživatelů}
+
+V horní části se nachází odkazy na akce související s~uživateli.
+Filtry pro práci se~seznamem uživatelů jsou umístěny nad~hlavní
+tabulkou a~dále v~hlavičce tabulky s~funkcí ,,našeptávače''. 
+
+
+\subsubsection{Přidání~uživatele}
+
+Odkaz na formulář je hlavním menu a~v~částech, které na~uživatelích
+závisí. Povinnou položkou je \emph{zobrazované jméno}, která slouží
+jako popisek ve všech filtrech. Ostatní položky je možné vyplnit až
+při jejich potřebě ve výpisu. Volba \emph{,,aktivní''} slouží k~aktivaci
 uživatelského účtu. Uživatel je schopen se přihlásit pouze pokud je
-jeho účet aktivní.
-\item [{Editace~uživatele:}] Uživatele lze vyhledat přes filtr seznamů
-uživatelů nebo přes formulář rychlého hledání. V prním případě klikněte
-na Vyberte odpovídající skupinu k editaci a pro uložení změn použijte
-tlačítko \emph{Uložit}. V případě chybového hlášení zkontrolujte všechny
-skupiny údajů.
-\item [{Zobrazení~uživatele:}] @todo
-\item [{Nastavení~či~změna~hesla:}] V profilu uživatele klikněte na
-odkaz Změnit heslo a vyplňte nové heslo do obou kolonek. Správce může
-editovat hesla všem uživatelům a měl by je o této změně informovat
-zabezpečeným kanálem{[}@todo definovat zabezpeceny kanal{]}, aby se
-předešlo zneužití jejich účtu.
-\end{description}
+jeho účet takto označen a~zadal správnou kombinaci uživatelského
+jména a~hesla.
+
+
+\subsubsection{Editace~uživatele }
+
+Uživatele vyhledejte přes filtr seznamů uživatelů a~klikněte na odkaz
+\emph{editovat}. Jednotlivé údaje jsou rozděleny do skupin se souvisejícími
+údaji. Vyberte odpovídající skupinu k~editaci a~pro uložení změn
+použijte tlačítko \emph{Uložit}. V~případě chybového hlášení zkontrolujte
+všechny skupiny údajů.
+
+
+\subsubsection{Nastavení~či~změna~hesla}
+
+V profilu uživatele klikněte na~odkaz \emph{změnit heslo} a~vyplňte
+nové heslo do~obou kolonek. Správce může editovat hesla všem uživatelům.
+Měl by je o~této změně informovat. Případně může použít automatické
+generování hesla s~odeslaním na~uživatelův email.
+
 
 \subsubsection{Skupiny a oprávnění}
 
-V tomto modulu můžete přidávat a mazat uživatelské skupiny a oprávnění.
-Pro zachování správného fungování systému nemažte tyto systémové skupiny:
-customers, employees, providers, students a admin.
+V podmodulu \noun{Skupiny a oprávnění} můžete přidávat a~mazat uživatelské
+skupiny a~jejich oprávnění. Každá skupina může může mít přiřazeno
+více definovaných oprávnění. Pro zachování správného fungování systému
+nemažte tyto systémové skupiny: \emph{customers}, \emph{employees},
+\emph{providers}, \emph{students} a \emph{admin}.
 
-Při implicitní nastavení má každá ze systémových skupin práva definované
-a přiřazené oprávnění k prefixovaným akcím jednotlivých modulů. Tyto
-oprávnění jsou definovány tímto způsobem: \emph{{*}:customers\_{*},
-{*}:employees\_{*}, {*}:providers\_{*}, {*}:students\_{*}, {*}:admin\_{*}}
-a říkají, že daná skupina může v libovolném modulu spouštět akce začínajícím
-jejich jménem. V příkladu byl použit expanzní znak ,,{*}'', který
-je možné používat k nahrazení libovoného počtu libovolných znaků,
-a ,,:'', jenž určuje hranici mezi modulem a akcí (např. oprávnění
-\emph{Users:{*}\_view} umožní zobrazit všechny prefixované akce \emph{view}
-v modulu \noun{Uživatelé}).
+Při implicitním nastavení má každá ze systémových skupin definované
+a~přiřazené oprávnění k~prefixovaným akcím všech modulů. Tato oprávnění
+jsou definována následujícím způsobem: \emph{{*}:customers\_{*}, {*}:employees\_{*},
+{*}:providers\_{*}, {*}:students\_{*}, {*}:admin\_{*}} a~umožňují
+dané skupině v~libovolném modulu spouštět akce začínající jménem
+skupiny. V~příkladu byl použit expanzní znak ,,{*}'', který je
+možné používat k~nahrazení libovolného počtu libovolných znaků a~,,:''~určuje
+hranici mezi modulem a~akcí (např. oprávnění \emph{Users:{*}\_view}
+umožní zobrazit všechny prefixované akce \emph{view} v modulu \noun{Uživatelé}).
 
-Každá skupina může může mít přiřazeno více definovaných oprávnění
-a je na správci, jak s nimi bude zacházet.
-
-
-\subsubsection{Číselníky}
-
-V této části se seznámíme se všemi číselníky, jejich funkcemi v systému
-a možností editace. Všechy dále uvedené moduly obsahují automaticky
-generovaný číselný identifikátor (dále jen \emph{id}), který slouží
-pro interní potřeby systému a není možné ho změnit. Dále je potřeba
-upozornit na fakt, že vytvořené položky v číselníku, které již byly
-v systému přizazeny nějakým záznamům, nelze vymazat. Vymazání je umožněno
-až když je číselník u daných záznamů změněn.
-\begin{description}
-\item [{Kategorie\label{kategorie}}] obsahuje název, zkratku, jednoduchý
-slovní popis a zašktávací políčko určující, zda se produkty v této
-kategorii považují za veřejné a má se zobrazovat jejich rozvh na webových
-stránkách. Účel číselníku spočíva v rozčlenění množství produktů do
-skupin, podle kterých lze vytvářet tiskové sestavy (přílohy faktur,
-rozvrhy, měsíční přehledy nákladů, ...).
-\item [{Místa\label{m=0000EDsta}}] obsahují název a adresu. Slouží k odkazu
-na místo v událostech.
-\item [{Štítky\label{st=0000EDtky}}] obsahují název a odkaz na nadřazený
-štítek, pro možnost tvorby hierarchické struktury článků.
-\end{description}
 
 \subsection{Produkty}
 
 Modul \noun{Produkty} je závislý na správně rozdělených uživatelích
-do systémových skupin. Rovněž je doporučeno předvyplnit číselník kategorií
-produktů.
+do~systémových skupin. Rovněž je doporučeno předvyplnit číselník
+kategorií produktů a~účtovacích jednotek.
 
 
-\subsubsection{Vytvoření nového produktu (jednoduchá verze)}
+\subsubsection{Vytvoření nového produktu}
 
-Vyberte kategorii a poskytovatele. Dále vyplňte název produktu a infomaci
-o datu zahájení a předpokládaném či žádaném datu ukončení prací. Dále
-si řekněme, jak se vypočítá výsledná cena (bez DPH) pro zákazníka.
-Od toho se bude odvíjet další vyplňování formuláře.
+Vyberte kategorii a poskytovatele. Dále vyplňte název produktu a~informaci
+o~datu zahájení a předpokládaném či žádaném datu ukončení prací.
+Výsledná cena pro~zákazníka se bude odvíjet od~dalšího nastavení
+ve formuláři.
 
-Stanovte si, jak budete daný produkt nabízet a od čeho se odvíjí náklady.
-V~případě, že se náklady odvíjí od počtu zúčastněných osob zašrtněte
-možnost \emph{Počítat účastníky}. Pokud nevíte dopředu kolik hodin
-bude odučeno či kolik normostran bude účtováno a náklady na ně nejsou
-fixní, zaškrtněte možnost \emph{Počítat množství}. Celková cena bude
-spočítána takto:
+Stanovte si, jak budete daný produkt nabízet a~od čeho se odvíjí
+náklady. V~případě, že se náklady odvíjí od počtu zúčastněných osob,
+zaškrtněte možnost \emph{Počítat účastníky}. Pokud nevíte dopředu,
+kolik hodin bude odučeno nebo kolik normostran bude účtováno a~náklady
+na ně nejsou fixní, zaškrtněte možnost \emph{Počítat množství}. Celková
+cena bude spočítána takto:
 \begin{itemize}
-\item Jednotková cena je vynásobena počtem účastníků pokud byla odpovídající
-volba zaškrtnuta
-\item Mezisoučet je vynásoben součtem odpracovaných jednotek v událostech
-ve výkazech přiřazených v produktu pokud byla volba \emph{počítat
+\item Jednotková cena je vynásobena počtem účastníků, byla-li odpovídající
+volba zaškrtnuta.
+\item Mezisoučet je vynásoben součtem odpracovaných jednotek v~událostech
+ve~výkazech přiřazených k~produktu, pokud byla volba \emph{počítat
 množství} zaškrtnuta.
 \end{itemize}
-Teď už zbývá doplnit zbývající povinné položky a to jednotku a jednotkovou
+Teď už zbývá doplnit zbývající povinné položky a~to jednotku a~jednotkovou
 cenu.
 
 
@@ -1517,7 +1633,7 @@ cenu.
 
 Pro filtrování produktů můžete použít ,,našeptávač'' u jednotlivých
 polí. Vyplněním části hledaného výrazu, se zobrazí seznam položek,
-které tento výraz obsahují (obrázek\vref{fig:Na=000161ept=0000E1va=00010D}).%
+které tento výraz obsahují (viz. obrázek\vref{fig:Na=000161ept=0000E1va=00010D}).%
 \begin{figure}
 \noindent \begin{centering}
 \includegraphics{autocomplete}
@@ -1535,125 +1651,221 @@ Odstranění produktu není povoleno, pokud obsahuje výkazy nebo přihlášky.
 Nejprve je nutné zkontrolovat, že jednotlivé položky na výkazech nebyly
 zaúčtovány a ty pak následně vymazat. Další problém může nastat, pokud
 již byl vydán příjmový doklad. V tom případě z něj musíte stornovat
-příslušté položky vztahující se k danému produktu. Při splnění všech
+příslušné položky vztahující se k danému produktu. Při splnění všech
 těchto podmínek bude smazání umožněno.
 
 
+\subsection{Smlouvy}
+
+Modul \noun{Smlouvy} slouží k evidenci dodavatelů a~výpočtu mezd.
+V~přehledu smluv se zobrazují upozornění na překročený limit odpracovaných
+jednotek na smlouvu. Je možné rovněž filtrovat smlouvy podle uživatele,
+poskytovatele, typu smlouvy, typu platby a~stavu limitu.
+
+
+\subsubsection{Vytvoření nové smlouvy}
+
+Při vytváření smluv vyplňte následující údaje, aby bylo možné správně
+generovat podklady pro mzdy.
+\begin{itemize}
+\item \emph{Typ~smlouvy} určuje způsob výpočtu mezd. Typ \emph{služba}
+určuje smlouvy, které její účastník fakturuje agentuře. U ostatních
+typů se generují zálohové a srážkové daně, pokud je u smlouvy zaškrtnuto,
+že je uživatel plátcem daně.
+\item \emph{Způsob platby} nastavený na hotově způsobí zaokrouhlování na
+50 haléřů.
+\item \emph{Uživatel} a \emph{poskytovatel} určují smluvní strany.
+\item \emph{Maximání počet jednotek} nastavený na kladné číslo upozorní
+ve výpisu na smlouvy s~překročeným limitem odpracovaných jednotek.
+\end{itemize}
+
 \subsection{Výkazy}
+
+V modulu \noun{Výkazy} se evidují dodavatelé produktů a jimi vykázané
+jednotky.
 
 
 \subsubsection{Vyhledání a filtrování výkazů}
 
 V menu nebo produktech klikněte na \emph{Zobrazit výkazy}. V horní
-tabulce je možné zaškrtnou pouze některé kategorie produktů, ke kterým
-byly výkazy přidány.
+tabulce je možné zaškrtnou kategorie produktů, ke kterým byly výkazy
+přidány. Výkazy je rovněž možné filtrovat podle jednotlivých produktů,
+poskytovatelů, dodavatelů nebo aktuálního stavu. Pokud chcete zobrazit
+pouze výkazy za určité období vyplňte ve~filtru datum začátku a~konce.
 
 
 \subsubsection{Vytvoření~a~přiřazení~výkazu~k~produktu }
 
-Vytvoření a přiřazení výkazu k produktu provádějte pouze pokud je
-produkt, ke kterému chcete přidat výkaz, již vytvořen. 
+Vytvoření a přiřazení výkazu k~produktu provádějte pouze pokud je
+produkt, ke~kterému chcete přidat výkaz, již vytvořen. 
 
-V menu klikněte na položku \emph{Přidat výkaz} a vyplňte následný
-formulář. U dodavatele se rozlišuje se i typ smlouvy uvedený v závorce.
-Sazba a jednotka jsou rovněž povinné položky.
+V menu klikněte na~položku \emph{Přidat výkaz} a~vyplňte následný
+formulář. U~dodavatele se rozlišuje se i~typ smlouvy uvedený v závorce.
+Sazba a~jednotka jsou rovněž povinné položky.
 
-Další možností, jak přiřadit nový výkaz, je přes modul \noun{Produkty}
-(nebo přes ,,rychlé hledání''), kde lze snadno vyhledat daný produkt.
-Zobrazte si detaily nalezeného produktu a ve skupině \emph{Přiřazené
-výkazy} klikněte na odkaz \emph{Přidat výkaz}.
+Další možností, jak přiřadit nový výkaz, je přes modul \noun{Produkty},
+kde lze snadno vyhledat daný produkt. Zobrazte si detaily nalezeného
+produktu a~ve skupině \emph{Přiřazené výkazy} klikněte na odkaz \emph{Přidat
+výkaz}.
 
 
-\subsubsection{Přidání události k výkazu}
+\subsubsection{Přidání událostí k výkazu}
 
-Vyhledejte a zobrazte výkaz.
+Vyhledejte, zobrazte požadovaný výkaz a~klikněte na~\emph{Hromadně
+přidat události}. Vyplňte povinné položky měsíc a rok. Pokud je známé
+místo a čas je možné ho rovněž nastavit.
 
+
+\subsection{Číselníky}
+
+V této části jsou stručně popsány použité číselníky, jejich funkce
+v~systému a~možnosti editace. Všechny obsahují automaticky generovaný
+číselný identifikátor (dále jen \emph{id}), který slouží pro interní
+potřeby systému a není možné ho změnit. Dále je potřeba upozornit
+na fakt, že vytvořené položky v~číselníku, které již byly v~systému
+přiřazeny nějakým záznamům, nelze vymazat. Vymazání je umožněno až
+když je číselník u~daných záznamů změněn nebo je celý uvedený záznam
+odstraněn.
+\begin{description}
+\item [{Kategorie\label{kategorie}}] obsahuje název, zkratku, jednoduchý
+slovní popis a~zaškrtávací políčko určující, zda se produkty v~této
+kategorii považují za veřejné a~má se zobrazovat jejich rozvrh na~webových
+stránkách. Účel číselníku spočívá v~rozčlenění množství produktů
+do skupin, podle kterých lze vytvářet tiskové sestavy, tj. přílohy
+faktur, rozvrhy, měsíční přehledy nákladů.
+\item [{Místa\label{m=0000EDsta}}] obsahují název a adresu. Slouží k odkazu
+na~místo v~událostech.
+\item [{Jednotky}] upřesňují způsob účtování produktů a~vykázaných jednotek.
+\item [{Jazyky}] slouží pro nastavení slovníků použitých při testování
+slovní zásoby.
+\item [{Štítky\label{st=0000EDtky}}] obsahují název a odkaz na nadřazený
+štítek, pro možnost tvorby hierarchické struktury článků.
+\end{description}
 
 \subsection{Tipy na urychlení práce}
 
 Zvláštní formulář na přidání produktu spolu se zákazníkem i dodavatelem
-umožní rychlejší zadávání většího množství nových produktů.
+umožní rychlejší zadávání většího množství nových produktů. Je standardně
+dostupný přes hlavní menu nebo na adrese \emph{/admin/products/addall}.
 
 
 \section{Dodavatel}
 
-Dodavatel má přístup, ke všem produktům, kde měl přiřazen alespoň
-jeden výkaz.
-
-zadávání výkazu,
-
-evidence docházky do kurzů
+Dodavatel má přístup ke svým výkazům, smlouvám a~dokumentům ke stažení
+přes položku v menu.
 
 
-\chapter{Existující implementace}
+\subsection{Výkazy}
 
-Existujicí implementace lze rozdělit na několik skupin. Žádná však
-nepokrývá veškeré požadavky v plném rozsahu vzhledem ke specifickým
-požadavkům na způsob vedení evidence a účtování služeb. Oblastmi,
-kde by využití existujících systému připadalo v úvahu jsou správa
-obsahu pro prezentaci na Internetu a podpora on-line vzdělávání. První
-skupina systémů je označována anglickou zkratkou CMS%
+Pro zobrazení seznamu výkazu klikněte v menu na \emph{Moje výkazy}.
+Nalezená data lze filtrovat podle kategorie přiřazeného produktu,
+jeho stavu, poskytovatele a~typu smlouvy. Systém rovněž počítá součty
+odpracovaných jednotek podle zadaného období. Kliknutím na daný výkaz
+zobrazíte jeho detaily, kde se nachází kalendář vykázaných jednotek
+a~seznam studentů.
+\begin{description}
+\item [{Přidání~odpracovaných~jednotek}] provedete kliknutím na odkaz
+Hromadně přidat událost. Poté se zobrazí formulář, kde vyplňte místo,
+měsíc, rok a~čas výuky. V~tabulce se dny v~měsíci doplňte počty
+odpracovaných jednotek v~jednotlivých dnech.
+\item [{Evidence~docházky}] studenta, který byl přítomen ve výuce, se
+provede kliknutím na ,,-'' v~řádku s~datem výuky a~ve~sloupci
+se jménem studenta. Znak ,,X'' značí přítomnost studenta ve~výuce
+a~zároveň je možné účast zrušit obdobným způsobem.
+\end{description}
+
+\section{Zákazníci}
+
+Kliknutím v menu na \emph{Moje přihlášky}, zobrazíte seznam všech
+přiřazených produktů. Jednotlivé produkty můžete filtrovat podle jména,
+kategorie, poskytovatele a aktuálního stavu. Po vybrání produktu se
+zobrazí přehled lektorů a studentů přiřazených k přihlášce.
+
+
+\section{Studenti}
+
+Pro zobrazení produktů, kterých se účastníte, klikněte na položku
+v hlavním menu s~popisem \emph{Účastním se}. V detailu daného produktu
+je možné zkontrolovat zaznamenanou docházku a přečíst si hodnocení
+vypracované lektorem.
+
+
+\subsection{Testování slovní zásoby}
+
+V menu vyberte položku \emph{Moje testy}. Pokud nebyly vyčerpány všechny
+pokusy u testu, můžete vytvořit nový pokus kliknutím na stejnojmenný
+odkaz. V dalším kroku se zobrazí formulář s názvem testu a časovým
+limitem. Od potvrzení stiskem tlačítka \emph{Pokračovat} se začíná
+měřit čas. Na stránce vyplňujte odpovědi na otázky. Odpovědi můžete
+ukládat kdykoliv, ovšem pokud odznačíte odpovědi jako finální, test
+bude vyhodnocen a odpovědi již nepůjdou měnit.
+
+
+\chapter{Existující systémy}
+
+Existující implementace systémů podobného zaměření jako vytvořený
+systém lze rozdělit na několik skupin. Žádná však nepokrývá veškeré
+požadavky v~plném rozsahu vzhledem ke specifickým způsobům vedení
+evidence a~účtování služeb. Byla proto zvolena varianta informačního
+systému ,,na míru'' s~možností budoucího napojení na některý z~existujících
+systému pro správu webového obsahu a~podporu on-line vzdělávání.
+Cílem kapitoly je stručný popis nejpoužívanějších systémů vhodných
+pro budoucí propojení s~IS.
+
+
+\section{Správci obsahu (\emph{CMS})}
+
+Skupina systémů pro správu obsahu je označována anglickou zkratkou
+CMS%
 \footnote{\emph{Content Management System} - systém pro správu obsahu%
-} nebo WCMS a lze ji rozdělit do podskupin podle způsobu, jakým prezentují
-uložená data.
+} a lze ji rozdělit do podskupin podle způsobu, jakým prezentují uložená
+data.
 \begin{description}
 \item [{Offline~zpracování}] Server vygeneruje statické HTML před samotnou
-publikací. Proto takové systémy nepořebují, aby server aplikoval šablony
-na data při každém požadavku. Výhody jsou zjevné pro vytížené CMS
-používané převážně pro čtení dat. Naopak při častých změnách dat mohou
-být tyto systémy pomalé nebo neaktuální, proto je nutné si jejich
+publikací. Proto takové systémy nepotřebují, aby server aplikoval
+šablony na~data při~každém požadavku. Výhody jsou zjevné pro vytížené
+CMS používané převážně pro čtení dat. Naopak při častých změnách dat
+mohou být tyto systémy pomalé nebo neaktuální, proto je nutné si jejich
 nasazení řádně rozmyslet. Příkladem takového systému je například
 Vignette CMS.
-\item [{Online~zpracování}] Server generuje prezentační data až na základě
+\item [{Online~zpracování}] Server generuje prezentační data až na~základě
 požadavků klienta. To znamená, že server má daleko více práce. Proto
-je vhodné, aby vygenerovaná data uložil do vyrovnávací paměti a při
-dalším stejném dotazu vrátil požadovaná data přímo z ní. Mezi nejznámější
+je vhodné, aby vygenerovaná data uložil do~vyrovnávací paměti a~při~dalším
+stejném dotazu vrátil požadovaná data přímo z ní. Mezi nejznámější
 open source systémy patří Joomla, Drupal, WordPress, TangoCMS, DotNetNuke
-a Zope. Pokročilé systémy umožňují i úpravy základních šablon, bez
-zásahu do zdrojových kódu pomocí nástrojů WYSIWYG%
-\footnote{Akronym vzniklý z anglické věty ,,What You See Is What You Get, označuje
-způsob editace, při kterém je dokument na obrazovce totožný s výslednou
-verzí\cite{wysiwyg}.%
-}.
+a~Zope. Pokročilé systémy umožňují také úpravy základních šablon,
+bez~zásahu do~zdrojových kódu.
 \item [{Hybridní}] Jak již název napovídá, tyto systémy kombinují oba předchozí
 přístupy. Příkladem takového systému je Blosxom, který se dočkal mnoha
 implementací v různých programovacích jazycích.
 \end{description}
-
-\section{CMS}
-
 Systému pro správu obsahu existuje celá řada. Zde si stručně představíme
 nejznámější trojici open source správců webového obsahu napsaných
-v PHP. Celkově se systémy moc neodlišují a všechny mají silnou komunitu,
-která se stará o vývoj a rozšíření.
-
-Je možné, že při dalším vývoji informačního systému, bude některý
-z těchto správců nahradí primitivní publikační systém, jenž byl v
-systému implementován.
+v~PHP. Celkově se systémy moc neodlišují a~všechny mají silnou komunitu
+uživatelů, kteří se starají o vývoj a~rozšíření.
 
 
 \subsection{Joomla!}
 
-Systém Joomla! je vyvíjen od roku 2005 a vznikl odštěpením části vývojářů
-od projektu Mamboo. Joomla ve verzi 1.5 a vyšší nabízí kompletní lokalizaci,
-blogy, fóra, hlasování, kalendář, indexaci stránek, RSS kanály a různá
-témata.
-
-Pro Joomlu je napsáno přes 3000 open source doplňků a existují i komerční
-doplňky například pro e-learning%
-\footnote{\href{http://www.joomlalms.com/}{http://www.joomlalms.com/}%
-}. Snadno lze vytvořit také internetové obchody, rezervační systémy
-a další vlastní aplikace díky snadno rozšířitelné \emph{MVC} architektuře.
-
-V neprospěch Joomly nahrává málo strukturované rozdělení práv uživatelů
-k jednotlivým článkům a obsahu, což se má ale s verzí 1.7 změnit.
-
-%
-\begin{figure}[!h]
+Systém Joomla! je vyvíjen od roku 2005 a~vznikl odštěpením části
+vývojářů od~projektu Mamboo. Joomla ve~verzi 1.5 a~vyšší nabízí
+kompletní lokalizaci, různá témata, blogy, fóra, hlasování, kalendář,
+indexaci stránek, RSS kanály a~podporu pro~LDAP.%
+\begin{figure}[H]
 \centering{}\includegraphics[width=1\textwidth]{joomla}\caption{Joomla! - administrátorské rozhraní}
 
 \end{figure}
 
+
+Pro Joomlu je napsáno přes 3000 open source doplňků a existují i~komerční
+doplňky například pro e-learning%
+\footnote{\href{http://www.joomlalms.com/}{http://www.joomlalms.com/}%
+}. Snadno lze vytvořit také internetové obchody, rezervační systémy
+a~další vlastní aplikace díky snadno rozšířitelné \emph{MVC} architektuře.
+Nevýhodou může být málo strukturované rozdělení práv uživatelů k jednotlivým
+článkům a obsahu, což se ale má s~verzí 1.7 změnit. Velikost základní
+instalace dosahuje 13,8~MB. Budoucí napojení by mohlo z výhodou používat
+výše zmíněnou kompatibilní architekturu \emph{MVC}.
 
 
 \subsection{Drupal}
@@ -1661,19 +1873,25 @@ k jednotlivým článkům a obsahu, což se má ale s verzí 1.7 změnit.
 Drupal se stal open source projektem v roce 2001. Nabízí propracované
 rozhraní pro správu uživatelů, statistiku přístupů, blogy, fóra a
 další moduly včetně překladů do mnoha jazyků. V systému je dbáno hlavně
-na bezpečnost. Proto mohou být administrátoři automaticky upozorněni
-na aktualizace jak jádra aplikace, tak přidaných modulů. Navíc lze
+na~bezpečnost. Proto mohou být administrátoři automaticky upozorněni
+na~aktualizace jak jádra aplikace, tak přídavných modulů. Navíc lze
 přístup do systému jednoduše omezit podle IP adresy.
 
-Nejzajímavějším rozšířením s ohledem na cíl této práce je DrupalEd.
-Umožnuje tvorbu a správu výukových materiálů, rozdělení uživatelů
-do skupin (tříd) s možností nastavení přístupových práv k jednotlivých
-stránkám.
+Nejzajímavějším rozšířením, s~ohledem na cíl této práce, je \emph{DrupalEd}.
+Umožňuje tvorbu a~správu výukových materiálů, rozdělení uživatelů
+do~skupin (tříd) s~možností nastavení přístupových práv k~jednotlivých
+stránkám. 
 
-Občas je ale Drupalu vyčítano, že je oproti Joomle, v některých nasazeních
-pomalejší. Přesto se jedná o velmi dobrý produkt vhodný i pro větší
-projekty, který s přicházející verzí 7 tyto nedostatky postupně odstraňuje.%
-\begin{figure}[p]
+Občas je Drupalu vyčítáno, že je oproti Joomle, v~některých nasazeních
+pomalejší. Přesto se jedná o~velmi dobrý produkt vhodný i~pro větší
+projekty, který s~přicházející verzí 7 tyto nedostatky postupně odstraňuje.
+
+Z pohledu vývojáře může být překážkou trochu zastaralý neobjektový
+přístup. Kladně je naopak přijímána velikost základní instalace, která
+se pohybuje kolem 4,8~MB.
+
+%
+\begin{figure}[h]
 \centering{}\includegraphics[width=1\textwidth]{drupal}\caption{Drupal - nastavení rolí v systému}
 
 \end{figure}
@@ -1683,24 +1901,27 @@ projekty, který s přicházející verzí 7 tyto nedostatky postupně odstraňu
 \subsection{Wordpress}
 
 Wordpress je propracovaným publikačním nástrojem, jehož rozhraní je
-velice intuitivní a přehledné. Funkcionalitu lze rozšířit pomocí pluginů
-a na postranní panel lze přidávat widgety%
+velice intuitivní a~přehledné. Funkcionalitu lze rozšířit pomocí
+zásuvných modulů a~na~postranní panel lze přidávat widgety%
 \footnote{prvek na stránce zobrazující doplňkové informace%
-}, které lze v administrátorském prostředí nastavit \emph{drag-and-drop}%
+}, které lze v~administrátorském prostředí nastavit \emph{drag-and-drop}%
 \footnote{způsob práce s elementy, které lze přesouvat mezi jednotlivými aplikacemi
 či jejich částmi%
 } akcemi.
 
 Na velice dobré úrovni je podpora třídění článků pomocí kategorií
-a štítků, kde je také umožněno vytvoření trvalého odkazu na článek
+a~štítků, kde je také umožněno vytvoření trvalého odkazu na článek
 pro případ změny zařazení do kategorií. K článkům lze přidávat fotogalerie,
-odkazy i videa. S verzí 2.7 rovněž přibyla možnost stahovaní aktualizací
-a pluginů přes administrátorské rozhraní.
+odkazy i~videa. S~verzí 2.7 rovněž přibyla možnost stahovaní aktualizací
+a~modulů přes administrátorské rozhraní.
 
-Tento nástroj se zatím jeví jako vhodná alternativa k předešlým dvěma
-komplexním správcům, pro jednoduché publikování s malými nároky na
-studium administrátorského prostředí.%
-\begin{figure}
+Tento nástroj se zatím jeví jako vhodná alternativa k~předešlým dvěma
+komplexním správcům, pro jednoduché publikování s~minimálními nároky
+na~studium administrátorského prostředí. Také velikost projektu odpovídá
+jeho schopnostem, když po~rozbalení archívu má instalace velikost
+6,9~MB. Je ovšem nutné podotknout, že samotné JavaScriptové knihovny
+zabírají třetinu místa. %
+\begin{figure}[h]
 \centering{}\includegraphics[width=1\textwidth]{wordpress}\caption{Wordpress - správa widgetů}
 
 \end{figure}
@@ -1709,45 +1930,45 @@ studium administrátorského prostředí.%
 
 \section{E-Learning}
 
-Samotnou kategorii představují různé specializované systémy pro e-learning,
-evidenci kurzů a prodej produktů. Pro tyto systémy se nejčasteji užívají
-tyto názvy:
+Samotnou kategorii představují specializované open source systémy
+pro~e-learning, evidenci kurzů a~jejich prodej. Při popisu těchto
+systémů je možné se setkat s~následujícími výrazy:
 \begin{itemize}
-\item Course~Management~System~(CMS%
+\item \emph{Course~Management~System~(CMS}%
 \footnote{Zkratka je v tomto případě shodná se systémy pro správu obsahu, která
-bude dále v textu upřednotňována.%
-}) - systém pro správu kurzů
-\item Learning Management System (LMS) - systém pro řízení výuky
-\item Virtual Learning Enviroment (VLE) - virtuální výukové prostředí
+bude dále v~textu upřednostňována.%
+}\emph{)} - systém pro správu kurzů
+\item \emph{Learning Management System (LMS)} - systém pro řízení výuky
+\item \emph{Virtual Learning Environment (VLE)} - virtuální výukové prostředí
 \end{itemize}
 V posledních letech zažívají tyto systémy bouřlivý vývoj. Vznikají
 buď jako naprosto nové systémy, nebo jako rozšíření do stávajících
 CMS. 
 
-Důležitým faktorem pro práci s e-learningovými systémi je dodržování
+Důležitým faktorem pro práci s e-learningovými systémy je dodržování
 standardů tak, aby bylo možné rychle a snadno začlenit již existující
 výukový materiál, který mohl vzniknout již před samotným nasazením
 systému. Mezi tyto standardy patří SCORM%
-\footnote{\emph{Shareable Content Object Reference Model @todo}%
-}. Jedná se o soubor specifikací, jenž by měl daný systém podporovat,
-aby v něm bylo možné provozovat libovolný kompatibilní výukový obsah.
-
-Při vývoji informačního systému byla této části věnovaná nejmenší
-pozornost z důvodů existence kvalitních open source řešení. Implementace
-jednoduchého testování slovní zásoby se nemůže s následujícími produkty
-rovnat.
+\footnote{\emph{Shareable Content Object Reference Model }- referenční model
+sdílitelných obsahových objektů%
+}. Jedná se o~soubor specifikací, jenž by měl daný systém podporovat,
+aby v~něm bylo možné provozovat libovolný kompatibilní výukový obsah.
 
 
 \subsection{Moodle}
 
 Open source implementace e-learningových systému jsou již dnes hojně
-využívány. Příkladem je \emph{Moodle}, který je rozšířen v mnoha zemích
-včetně České republiky a je využíván i na několika našich univerzitách,
-například: UK , ČVUT a ČZU. Podle oficiálních stránek\cite{Moodle.cz}
-umožňuje či podporuje snadnou publikaci studijních materiálů, zakládání
-diskusních fór, sběr a hodnocení elektronicky odevzdávaných úkolů,
-tvorbu online testů a řadu dalších činností sloužících pro podporu
-výuky.%
+využívány. Příkladem je \emph{Moodle}, který je rozšířen v~mnoha
+zemích včetně České republiky a~je využíván i~na několika zdejších
+univerzitách. Mezi ty největší patří UK, ČVUT a ČZU. 
+
+Podle \cite{Moodle.cz} umožňuje či podporuje snadnou publikaci studijních
+materiálů, zakládání diskusních fór, sběr a~hodnocení elektronicky
+odevzdávaných úkolů, tvorbu online testů a~řadu dalších činností
+sloužících pro podporu výuky. Podporuje i~napojení na jiné služby
+jako je LDAP nebo IMAP.
+
+%
 \begin{figure}
 \centering{}\includegraphics[width=1\textwidth]{moodle}\caption{Moodle - rozhraní pro učitele}
 
@@ -1758,29 +1979,14 @@ výuky.%
 \subsection{ATutor}
 
 ATutor je navržen s maximálním ohledem na přístupnost dle standardu
-W3C WCAG 1.0. Při správě výukového obsahu se můžete spolehnou na kompatibilitu
-s SCORM 1.2, pokročilou správu práv uživatelů a kurzů. Lze v něm vytvářet
-blogy, fóra, testy a~vést evidenci o studijních výsledcích.
+W3C WCAG 1.0. Při~správě výukového obsahu se můžete spolehnou na
+kompatibilitu se~SCORM 1.2, pokročilou správu práv uživatelů a~kurzů. 
 
-Systém je snadno přizpůsobitelný pomocí témat a výhodou je možnost
-instalovat aktualizace a~opravy přímo z~webového prohlížeče.%
+Lze v~něm vytvářet blogy, fóra, testy a~vést evidenci o~studijních
+výsledcích. Systém je snadno přizpůsobitelný pomocí témat a~výhodou
+je možnost instalovat aktualizace a~opravy přímo z~webového prohlížeče.%
 \begin{figure}
 \centering{}\includegraphics[width=1\textwidth]{atutor-patcher}\caption{ATutor - instalátor aktualizací a oprav}
-
-\end{figure}
-
-
-
-\subsection{Claroline}
-
-Claroline má jednoduché a přehledné rozhraní. Studenti mohou využívat
-chat, diskuzní fóra a wiki. Učitelé mají možnost vytvářet úkoly nebo
-cvičení a zobrazit si jejich statistiky. 
-
-Dále systém umožnuje import kurzů ve formátu SCORM 1.2 a nastavení
-přístupu k~jednotlivým stránkách podle příslušnoti ke skupinám.%
-\begin{figure}
-\centering{}\includegraphics[width=1\textwidth]{claroline}\caption{Claroline - rozhraní pro vedoucího kurzu}
 
 \end{figure}
 
@@ -1789,58 +1995,115 @@ přístupu k~jednotlivým stránkách podle příslušnoti ke skupinám.%
 \subsection{eFront}
 
 EFront je vysoce propracovaný systém postavený na technologii AJAX
-s~atraktivním designem. Samozřejmostí je podpora vícejazyková podpora
-a~SCORM. Pro větší firmy může být přínosem spolupráce s LDAP.
+s~atraktivním designem. Samozřejmostí už je podpora SCORM a vícejazykového
+uživatelského rozhraní. Pro větší firmy může být přínosem spolupráce
+s~LDAP. Navíc má již v~základní instalaci integrován platební nástroj
+PayPal.
 
-Výčet všech funkcí by byl velmi obsáhlý, proto jsou zde uvedeny pouze
-nejzajímavější:
-\begin{itemize}
-\item správa uživatelů, lekcí, kurzů a kategorií
-\item správce souborů a digitální knihovny
-\item tvorba testů
-\item fóra, chat, kalendář
-\item pokrokové stopování (informace o pokroku uživatele v lekcích), historie
-akcí
-\item tvorba vlastních certifikátů
-\item platební nástroj - Paypal%
-\begin{figure}[H]
+%
+\begin{figure}
 \begin{centering}
 \includegraphics[width=1\textwidth]{efront}\caption{eFront - úvodní administrátorská obrazovka}
-. Velkou 
+
 \par\end{centering}
 
 
 \end{figure}
 
-\end{itemize}
+
+
+\subsection{Claroline}
+
+Claroline má jednoduché a~přehledné rozhraní. Studenti mohou využívat
+chat, diskuzní fóra a wiki. Učitelé mají možnost vytvářet úkoly nebo
+cvičení a~zobrazit si jejich statistiky. Při vytváření obsahu je
+možné se přepnout do jiné role a~zkontrolovat, jak se data zobrazují
+dané skupině uživatelů.
+
+Dále systém umožňuje import kurzů ve formátu SCORM 1.2 a~nastavení
+přístupu k~jednotlivým stránkách podle příslušnosti ke~skupinám.
+Administrátor si může zobrazit statistiky aktivit jednotlivých uživatelů
+a~jednoduše spravovat jimi vytvořena data. %
+\begin{figure}[H]
+\centering{}\includegraphics[width=1\textwidth]{claroline}\caption{Claroline - rozhraní pro vedoucího kurzu}
+
+\end{figure}
+
+
+
+\section{Možnosti integrace systémů}
+
+Při integraci libovolného CMS a LMS bude potřeba řešit sdílení uživatelských
+účtů. Vhodným řešením je využití LDAP, které bylo pro tyto účely navrženo.
+Použité technologie a~framework CakePHP jsou k~takovému způsobu
+napojení přizpůsobeny. Pro CakePHP již existuje hotový modul \cite{LDAP}
+pro komunikaci s~LDAP serverem. Popisované systémy měly podporu pro
+LDAP buď přímo v~jádře nebo byla možná přidat pomocí zásuvných modulů.
+
+Dalším z možných problémů je předávání informací o~přístupových právech
+k~modulům v~různých systémech. Například zajištění uživatelského
+přístupu k~výukovým materiálům uložených v LMS studenům zapsaným
+do produktu v~IS. Všechny záznamy používané napříč databázemi by
+měly mít jednoznačné identifikátory tzv. UUID, aby bylo možné efektivně
+provádět potřebné databázové operace.
+
 
 \chapter{Závěr}
 
-Implementovaný systém po několika měsících ostrého provozu mnohonásobně
-zkrátil dobu potřebnou k přípravě výplat a kontrole faktur. Došlo
-ke zefektivnění a zrychlení práce při vyřizování zakázek. Byly odstraněny
-duplicitní činnosti a v neposlední řadě přispěl k tlaku na dodavatele,
-aby svou činnost vykazovali včas a přesně.
+Implementovaný systém se po několika měsících ostrého provozu v~jazykové
+agentuře ukázal jako provozuschopný a~splňuje všechny stanovené cíle.
+Mnohonásobně zkrátil dobu potřebnou k evidenci kurzů, zákazníků, studentů,
+přípravě mezd a~kontrole faktur. Došlo ke zefektivnění a zrychlení
+práce při vyřizování zakázek. Byly odstraněny duplicitní činnosti
+a~v~neposlední řadě přispěl k~tlaku na~dodavatele, aby ve vlastním
+zájmu svou činnost vykazovali včas, přesně a~podle daných pravidel.
+Navržený obsah všech modulů se osvědčil a~umožnil jednoduše zpřístupňovat
+části IS různým skupinám uživatelů. Optimalizace procesů a minimalizace
+chyb přinesly zvýšenou důvěru zákazníků v agenturu, což se projevilo
+prokazatelným nárůstem jejich počtu. Významný je rovněž přínos IS
+ke~správnosti a~přehlednosti dat pro účetní evidenci nákladů a~výnosů
+dle typů produktů. 
 
-Ukázalo se, že existuje mnoho kvalitních open source nástrojů, frameworků
-i jejich doplňků, které usnadily a urychlily vývoj systému. Další
-rozvoj systému by měl směřovat k implementaci některého ze správců
-webového obsahu a nástroje pro podporu výuky popsaných v předcházející
-kapitole. Zavedení informačního systému do praxe poukázalo rovněž
-i na některé nedostatky v jeho implementaci i použitých nástrojích. 
+Zavedení informačního systému do praxe ale poukázalo i~na~některé
+nedostatky v~jeho implementaci a~použitých nástrojích. Jde především
+o~málo strukturované přístupové práva k~záznamům v~tabulkách, jejichž
+rozdělení je přímo začleněné v~kódu, a~spolupráci s~externími aplikacemi.
+V~případě databázového systému MySQL se jedná o~horší podporu fulltextového
+vyhledávání a~práci s~aplikačními výjimkami.
 
-Na vývoj systému je nutné ještě dále pracovat a přizpůsobovat ho aktuálním
-trendům v oblasti komunikace. Rovněž vývoj použitých frameworků přináší
-k menší či větší změny, které promítají do funkcionality, výkonu a
-bezpečnosti aplikace.
-\begin{thebibliography}{21}
-\bibitem{informační systémy}\href{http://www.informacny-system.sk}{http://www.informacny-system.sk}
+Ukázalo se, že existují kvalitní open source nástroje usnadňující
+a~urychlující návrh i~samotnou implementaci podnikových informačních
+systémů. Další rozvoj systému by měl směřovat k~integraci některého
+ze~správců webového obsahu a~nástroje pro podporu výuky, popsaných
+v~předcházející kapitole. Mohla by být přidána podpora on-line komunikace
+a~přihlašování pomocí jednotné sdílené univerzální identity (např.
+Open~ID). V~oblasti bezpečnosti je potřeba se zaměřit na~možnost
+definování přístupu uživatelů k~datům na~úrovni tabulek, řádků nebo
+jednotlivých položek. Nejlepší možnou variantou by bylo řízení přístupu
+na úrovni databáze. Oproti provádění stejného úkonu na aplikační úrovni
+odpadá nutnost opakované implementace pro jinou aplikaci, která by
+mohla přistupovat k uloženým datům.
+\begin{thebibliography}{27}
+\bibitem{Sklar-2003}Sklar D., Trachtenberg A.: \emph{PHP Cookbook},
+O'Reilly, 2003, ISBN: 156592681
 
-\bibitem{wikipedia}Wikipedia: \emph{Informační systém}, \\
+\bibitem{Hugh-2004}Hugh E. W, Lane D.: \emph{Web Database Applications
+with PHP and MySQL}, 2nd. ed., O'Reilly, 2004, ISBN: 0596000413 
+
+\bibitem{Welling-2005}Welling L., Thomson L.: \emph{MySQL: Průvodce
+základy databázového systému}, Computer Press, Praha, 2005, ISBN:
+8025106713
+
+\bibitem{informační systémy} \emph{Čo predchádza výberu informačného
+systému?}\\
+\href{http://www.informacny-system.sk}{http://www.informacny-system.sk}
+
+\bibitem{wikipedia}Wikipedia: \emph{Informační systém}, 2009\\
 \href{http://cs.wikipedia.org/wiki/Informační_systém}{http://cs.wikipedia.org/wiki/Informační\_{}systém}
 
 \bibitem{soukupova 2004}Dana Soukupová: \emph{Algoritmy logického
-návrhu relační databáze}, 2004
+návrhu relační databáze}, 2004 \\
+bakalářská práce MFF UK
 
 \bibitem{wysiwyg}Wikipedia: WYSIWYG, Červenec 2009\\
 \href{http://cs.wikipedia.org/wiki/WYSIWYG}{http://cs.wikipedia.org/wiki/WYSIWYG}
@@ -1853,7 +2116,7 @@ návrhu relační databáze}, 2004
 2007\\
 \href{http://mootools.net/slickspeed/}{http://mootools.net/slickspeed/}
 
-\bibitem{Moodle.cz}Moodle: úvodní stránka\\
+\bibitem{Moodle.cz}Moodle: úvodní stránka, Červen 2009\\
 \href{http://moodle.cz/}{http://moodle.cz/}
 
 \bibitem{CakePHP}Cake Software Foundation: \emph{The Cookbook}\\
@@ -1865,6 +2128,9 @@ návrhu relační databáze}, 2004
 \bibitem{MVC}Wikipedia: \emph{Model-view-controller}\\
 \href{http://en.wikipedia.org/wiki/Model-view-controller}{http://en.wikipedia.org/wiki/Model-view-controller}
 
+\bibitem{LDAP}\emph{LDAP datasource for cakePHP}, Červenec 2007\\
+http://bakery.cakephp.org/articles/view/ldap-datasource-for-cakephp
+
 \bibitem{RFC1738}Berners-Lee, Masinter \& McCahill: Uniform Resource
 Locators (URL), \emph{RFC1738}, Prosinec 1994\\
 \href{http://www.ietf.org/rfc/rfc1738.txt}{http://www.ietf.org/rfc/rfc1738.txt}
@@ -1873,10 +2139,12 @@ Locators (URL), \emph{RFC1738}, Prosinec 1994\\
 \emph{\href{http://en.wikipedia.org/wiki/O-RM}{http://en.wikipedia.org/wiki/O-RM}}
 
 \bibitem{i18n}\emph{I18n - Internacionalizace}\\
-\href{http://kore.fi.muni.cz:5080/wiki/index.php/I18n_-_Internacionalizace}{http://kore.fi.muni.cz:5080/wiki/index.php/I18n\_{}-\_{}Internacionalizace}
+http://kore.fi.muni.cz:5080/wiki/index.php/\\
+I18n\_-\_Internacionalizace
 
 \bibitem{l10n}\emph{PV168/Lokalizace a internacionalizace}\\
-\href{http://kore.fi.muni.cz:5080/wiki/index.php/PV168/Lokalizace_a_internacionalizace}{http://kore.fi.muni.cz:5080/wiki/index.php/PV168/Lokalizace\_{}a\_{}internacionalizace}
+http://kore.fi.muni.cz:5080/wiki/index.php/PV168/\\
+Lokalizace\_a\_internacionalizace
 
 \bibitem{p28n}Jason Chow: \emph{P28n, the top to bottom persistent
 internationalization tutorial}\\
@@ -1900,16 +2168,39 @@ Květen 2007\\
 \bibitem{apache2}\emph{Apache HTTP Server Version 2.0 Documentation}\\
 \href{http://httpd.apache.org/docs/2.0/}{http://httpd.apache.org/docs/2.0/}
 
-\bibitem{MySQL}\href{http://www.mysql.com/}{http://www.mysql.com/}
+\bibitem{searchable}\emph{Searchable behaviour for CakePHP 1.2}\\
+http://code.google.com/p/searchable-behaviour-for-cakephp/
 
-\bibitem{ECMA-262}\href{http://www.ecma-international.org/publications/standards/Ecma-262.htm}{http://www.ecma-international.org/publications/standards/Ecma-262.htm}
+\bibitem{asset}Matt Curry: \emph{Asset Packer CakePHP Plugin}, 2009\\
+http://github.com/mcurry/asset
+
+\bibitem{url-cache}Matt Curry: \emph{Asset Packer CakePHP Plugin},
+2009\\
+http://github.com/mcurry/url\_cache
+
+\bibitem{ECMA-262} \emph{ECMAScript Language Specification}\\
+\href{http://www.ecma-international.org/publications/standards/Ecma-262.htm}{http://www.ecma-international.org/publications/standards/Ecma-262.htm}
 
 \end{thebibliography}
 \appendix
 
 \chapter{Obsah přiloženého CD}
 \begin{description}
-\item [{Bakalářká~práce}] tisknutelný PDF soubor s textem této práce.
+\item [{doc}] Automaticky generovaná dokumentace API.
+\item [{sources}] Informační systém jazykové agentury
+
+\begin{description}
+\item [{app}] Zdrojové kódy informačního systému.
+\item [{cake}] Framework CakePHP 1.2.3.8166.
+\item [{docs}] Licence ke CakePHP.
+\item [{vendors}] Knihovny JSMin 1.1.1, CSSTidy 1.3 a TCPDF 4.0.016.
+\end{description}
+\item [{thesis}] PDF soubor s textem této práce.
 \end{description}
 
+\chapter{Databázové schéma\label{cha:Datab=0000E1zov=0000E9-sch=0000E9ma}}
+
+
+
+\includegraphics[height=0.5\paperheight]{jednoduche-schema}
 \end{document}

@@ -1,0 +1,93 @@
+\contentsline {chapter}{\numberline {1}\IeC {\'U}vod}{6}{chapter.1}
+\contentsline {section}{\numberline {1.1}C\IeC {\'\i }le pr\IeC {\'a}ce}{7}{section.1.1}
+\contentsline {section}{\numberline {1.2}Obsah pr\IeC {\'a}ce}{7}{section.1.2}
+\contentsline {chapter}{\numberline {2}Anal\IeC {\'y}za \IeC {\'u}lohy}{8}{chapter.2}
+\contentsline {section}{\numberline {2.1}Definice a up\IeC {\v r}esn\IeC {\v e}n\IeC {\'\i } pojm\IeC {\r u}}{8}{section.2.1}
+\contentsline {subsection}{Agentura}{8}{section*.2}
+\contentsline {subsection}{Informa\IeC {\v c}n\IeC {\'\i } syst\IeC {\'e}m}{8}{section*.3}
+\contentsline {subsection}{Produkt}{9}{section*.4}
+\contentsline {subsection}{U\IeC {\v z}ivatel\IeC {\'e}}{9}{section*.5}
+\contentsline {section}{\numberline {2.2}Anal\IeC {\'y}za po\IeC {\v z}adavk\IeC {\r u} klienta}{9}{section.2.2}
+\contentsline {subsection}{Zaveden\IeC {\'\i } jednotn\IeC {\'y}ch identifik\IeC {\'a}tor\IeC {\r u}}{10}{section*.6}
+\contentsline {subsection}{M\IeC {\v e}s\IeC {\'\i }\IeC {\v c}n\IeC {\'\i } v\IeC {\'y}kazy}{10}{section*.7}
+\contentsline {subsection}{Podklady pro fakturaci}{11}{section*.8}
+\contentsline {subsection}{Spr\IeC {\'a}va lektor\IeC {\r u} a p\IeC {\v r}ekladatel\IeC {\r u}}{11}{section*.9}
+\contentsline {subsection}{Odd\IeC {\v e}len\IeC {\'\i } spr\IeC {\'a}vy dat v\IeC {\'\i }ce agentur}{11}{section*.10}
+\contentsline {subsection}{Podpora jazykov\IeC {\'y}ch verz\IeC {\'\i }}{11}{section*.11}
+\contentsline {chapter}{\numberline {3}N\IeC {\'a}vrh \IeC {\v r}e\IeC {\v s}en\IeC {\'\i }}{12}{chapter.3}
+\contentsline {section}{\numberline {3.1}Konceptu\IeC {\'a}ln\IeC {\'\i } n\IeC {\'a}vrh}{13}{section.3.1}
+\contentsline {section}{\numberline {3.2}Logick\IeC {\'y} n\IeC {\'a}vrh}{16}{section.3.2}
+\contentsline {section}{\numberline {3.3}Fyzick\IeC {\'y} n\IeC {\'a}vrh}{18}{section.3.3}
+\contentsline {chapter}{\numberline {4}Pou\IeC {\v z}it\IeC {\'e} technologie a frameworky}{19}{chapter.4}
+\contentsline {section}{\numberline {4.1}Server}{19}{section.4.1}
+\contentsline {subsection}{CakePHP}{20}{section*.21}
+\contentsline {subsubsection}{JSMin}{22}{section*.22}
+\contentsline {subsubsection}{CSSTidy}{22}{section*.23}
+\contentsline {subsection}{MySQL}{23}{section*.24}
+\contentsline {section}{\numberline {4.2}Klient}{23}{section.4.2}
+\contentsline {subsection}{Prototype}{24}{section*.25}
+\contentsline {chapter}{\numberline {5}Program\IeC {\'a}torsk\IeC {\'a} dokumentace}{25}{chapter.5}
+\contentsline {section}{\numberline {5.1}Adres\IeC {\'a}\IeC {\v r}ov\IeC {\'a} struktura}{25}{section.5.1}
+\contentsline {section}{\numberline {5.2}Modely (\emph {Models})}{26}{section.5.2}
+\contentsline {subsection}{Roz\IeC {\v s}\IeC {\'\i }\IeC {\v r}en\IeC {\'\i } chov\IeC {\'a}n\IeC {\'\i } model\IeC {\r u} (\emph {Behaviors})}{27}{section*.26}
+\contentsline {subsection}{\IeC {\'U}pravy z\IeC {\'a}kladn\IeC {\'\i }ch metod \emph {AppModel}}{28}{section*.27}
+\contentsline {section}{\numberline {5.3}\IeC {\v R}adi\IeC {\v c}e (\emph {Controllers})}{29}{section.5.3}
+\contentsline {subsection}{Komponenty}{29}{section*.28}
+\contentsline {subsection}{Popis \IeC {\v r}adi\IeC {\v c}\IeC {\r u} (\emph {Controllers})}{30}{section*.29}
+\contentsline {subsubsection}{U\IeC {\v z}ivatel\IeC {\'e} (\emph {UsersController})}{31}{section*.30}
+\contentsline {subsubsection}{Produkty (\emph {ProductsController})}{32}{section*.31}
+\contentsline {subsubsection}{Smlouvy (\emph {ContractsController})}{32}{section*.32}
+\contentsline {subsubsection}{P\IeC {\v r}\IeC {\'\i }jmov\IeC {\'e} doklady (\emph {InvoicesController})}{32}{section*.33}
+\contentsline {subsubsection}{Ud\IeC {\'a}losti v kalend\IeC {\'a}\IeC {\v r}i (\emph {EventsController})}{33}{section*.34}
+\contentsline {subsubsection}{Testov\IeC {\'a}n\IeC {\'\i } slovn\IeC {\'\i } z\IeC {\'a}soby (\emph {VocabularyTestAnswersController})}{33}{section*.35}
+\contentsline {section}{\numberline {5.4}Z\IeC {\'a}suvn\IeC {\'e} moduly (\emph {Plugins})}{33}{section.5.4}
+\contentsline {subsection}{Vyhled\IeC {\'a}vac\IeC {\'\i } modul (\emph {Searchable})}{33}{section*.36}
+\contentsline {subsection}{Komprimace skript\IeC {\r u} a kask\IeC {\'a}dov\IeC {\'y}ch styl\IeC {\r u} (\emph {Asset})}{34}{section*.37}
+\contentsline {subsection}{Optimalizace generov\IeC {\'a}n\IeC {\'\i } dotaz\IeC {\r u} (\emph {Url\_cache})}{34}{section*.38}
+\contentsline {chapter}{\numberline {6}U\IeC {\v z}ivatelsk\IeC {\'a} dokumentace}{35}{chapter.6}
+\contentsline {section}{\numberline {6.1}Instalace serveru}{35}{section.6.1}
+\contentsline {subsection}{Sta\IeC {\v z}en\IeC {\'\i } a instalace Apache}{35}{section*.39}
+\contentsline {subsection}{Konfigurace Apache}{36}{section*.40}
+\contentsline {subsection}{Sta\IeC {\v z}en\IeC {\'\i } a instalace MySQL serveru}{36}{section*.41}
+\contentsline {subsection}{Um\IeC {\'\i }st\IeC {\v e}n\IeC {\'\i } aplikace}{36}{section*.42}
+\contentsline {subsection}{Inicializace datab\IeC {\'a}ze}{37}{section*.43}
+\contentsline {section}{\numberline {6.2}Spr\IeC {\'a}vce}{37}{section.6.2}
+\contentsline {subsection}{Up\IeC {\v r}es\IeC {\v n}uj\IeC {\'\i }c\IeC {\'\i } informace}{37}{section*.44}
+\contentsline {subsection}{Prvn\IeC {\'\i } p\IeC {\v r}ihl\IeC {\'a}\IeC {\v s}en\IeC {\'\i }}{38}{section*.45}
+\contentsline {subsection}{U\IeC {\v z}ivatel\IeC {\'e}}{38}{section*.46}
+\contentsline {subsubsection}{Seznam\nobreakspace {}u\IeC {\v z}ivatel\IeC {\r u}}{38}{section*.47}
+\contentsline {subsubsection}{P\IeC {\v r}id\IeC {\'a}n\IeC {\'\i }\nobreakspace {}u\IeC {\v z}ivatele}{38}{section*.48}
+\contentsline {subsubsection}{Editace\nobreakspace {}u\IeC {\v z}ivatele }{38}{section*.49}
+\contentsline {subsubsection}{Nastaven\IeC {\'\i }\nobreakspace {}\IeC {\v c}i\nobreakspace {}zm\IeC {\v e}na\nobreakspace {}hesla}{38}{section*.50}
+\contentsline {subsubsection}{Skupiny a opr\IeC {\'a}vn\IeC {\v e}n\IeC {\'\i }}{39}{section*.51}
+\contentsline {subsection}{Produkty}{39}{section*.52}
+\contentsline {subsubsection}{Vytvo\IeC {\v r}en\IeC {\'\i } nov\IeC {\'e}ho produktu}{39}{section*.53}
+\contentsline {subsubsection}{Filtrov\IeC {\'a}n\IeC {\'\i } produkt\IeC {\r u}}{40}{section*.54}
+\contentsline {subsubsection}{Odstran\IeC {\v e}n\IeC {\'\i } produktu}{40}{section*.55}
+\contentsline {subsection}{Smlouvy}{40}{section*.56}
+\contentsline {subsubsection}{Vytvo\IeC {\v r}en\IeC {\'\i } nov\IeC {\'e} smlouvy}{40}{section*.57}
+\contentsline {subsection}{V\IeC {\'y}kazy}{41}{section*.58}
+\contentsline {subsubsection}{Vyhled\IeC {\'a}n\IeC {\'\i } a filtrov\IeC {\'a}n\IeC {\'\i } v\IeC {\'y}kaz\IeC {\r u}}{41}{section*.59}
+\contentsline {subsubsection}{Vytvo\IeC {\v r}en\IeC {\'\i }\nobreakspace {}a\nobreakspace {}p\IeC {\v r}i\IeC {\v r}azen\IeC {\'\i }\nobreakspace {}v\IeC {\'y}kazu\nobreakspace {}k\nobreakspace {}produktu }{41}{section*.60}
+\contentsline {subsubsection}{P\IeC {\v r}id\IeC {\'a}n\IeC {\'\i } ud\IeC {\'a}lost\IeC {\'\i } k v\IeC {\'y}kazu}{41}{section*.61}
+\contentsline {subsection}{\IeC {\v C}\IeC {\'\i }seln\IeC {\'\i }ky}{42}{section*.62}
+\contentsline {subsection}{Tipy na urychlen\IeC {\'\i } pr\IeC {\'a}ce}{42}{section*.63}
+\contentsline {section}{\numberline {6.3}Dodavatel}{42}{section.6.3}
+\contentsline {subsection}{V\IeC {\'y}kazy}{42}{section*.64}
+\contentsline {section}{\numberline {6.4}Z\IeC {\'a}kazn\IeC {\'\i }ci}{43}{section.6.4}
+\contentsline {section}{\numberline {6.5}Studenti}{43}{section.6.5}
+\contentsline {subsection}{Testov\IeC {\'a}n\IeC {\'\i } slovn\IeC {\'\i } z\IeC {\'a}soby}{43}{section*.65}
+\contentsline {chapter}{\numberline {7}Existuj\IeC {\'\i }c\IeC {\'\i } syst\IeC {\'e}my}{44}{chapter.7}
+\contentsline {section}{\numberline {7.1}Spr\IeC {\'a}vci obsahu (\emph {CMS})}{44}{section.7.1}
+\contentsline {subsection}{Joomla!}{45}{section*.66}
+\contentsline {subsection}{Drupal}{46}{section*.67}
+\contentsline {subsection}{Wordpress}{47}{section*.68}
+\contentsline {section}{\numberline {7.2}E-Learning}{48}{section.7.2}
+\contentsline {subsection}{Moodle}{48}{section*.69}
+\contentsline {subsection}{ATutor}{48}{section*.70}
+\contentsline {subsection}{eFront}{50}{section*.71}
+\contentsline {subsection}{Claroline}{50}{section*.72}
+\contentsline {section}{\numberline {7.3}Mo\IeC {\v z}nosti integrace syst\IeC {\'e}m\IeC {\r u}}{51}{section.7.3}
+\contentsline {chapter}{\numberline {8}Z\IeC {\'a}v\IeC {\v e}r}{52}{chapter.8}
+\contentsline {chapter}{\numberline {A}Obsah p\IeC {\v r}ilo\IeC {\v z}en\IeC {\'e}ho CD}{56}{appendix.A}
+\contentsline {chapter}{\numberline {B}Datab\IeC {\'a}zov\IeC {\'e} sch\IeC {\'e}ma}{57}{appendix.B}
