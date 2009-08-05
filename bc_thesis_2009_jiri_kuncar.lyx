@@ -1558,10 +1558,10 @@ existující podniková data.
 
 smazání uložených informací
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
-Někdy je používaná zkratka 
+Někdy je používána zkratka 
 \emph on
 CRUD
 \emph default
@@ -3297,11 +3297,19 @@ Don't Repeat Yourself
 \end_inset
 
 programu neměly opakovat, jelikož se snižuje srozumitelnost kódu.
- Navíc se při modifikaci musí upravovat stejný kód na
+ Navíc se při
 \begin_inset space ~
 \end_inset
 
-více místech, což často vede k nesnadno odhalitelným chybám programu.
+modifikaci musí upravovat stejný kód na
+\begin_inset space ~
+\end_inset
+
+více místech, což často vede k
+\begin_inset space ~
+\end_inset
+
+nesnadno odhalitelným chybám programu.
  K
 \begin_inset space ~
 \end_inset
@@ -5882,7 +5890,7 @@ csstidy::parse()
 \begin_inset space ~
 \end_inset
 
-dvou souborů pojmenovaných podle jmeno vstupních souborů stejného typu.
+dvou souborů pojmenovaných podle jmen vstupních souborů stejného typu.
 \end_layout
 
 \begin_layout Subsection
@@ -7933,7 +7941,11 @@ Pro Joomlu je napsáno přes 3000 open source doplňků a existují i
 \begin_inset space ~
 \end_inset
 
-komerční doplňky například pro e-learning
+komerční doplňky například pro
+\begin_inset space ~
+\end_inset
+
+e-learning
 \begin_inset Foot
 status collapsed
 
@@ -7959,8 +7971,15 @@ další vlastní aplikace díky snadno rozšířitelné
 MVC
 \emph default
  architektuře.
- Nevýhodou může být málo strukturované rozdělení práv uživatelů k jednotlivým
- článkům a obsahu, což se ale má s
+ Nevýhodou může být málo strukturované rozdělení práv uživatelů k
+\begin_inset space ~
+\end_inset
+
+jednotlivým článkům a
+\begin_inset space ~
+\end_inset
+
+obsahu, což se ale má s
 \begin_inset space ~
 \end_inset
 
@@ -7970,8 +7989,11 @@ verzí 1.7 změnit.
 \end_inset
 
 MB.
- Budoucí napojení by mohlo z výhodou používat výše zmíněnou kompatibilní
- architekturu 
+ Budoucí napojení by mohlo s
+\begin_inset space ~
+\end_inset
+
+výhodou používat výše zmíněnou kompatibilní architekturu 
 \emph on
 MVC
 \emph default
@@ -7996,7 +8018,11 @@ bezpečnost.
 \end_inset
 
 aktualizace jak jádra aplikace, tak přídavných modulů.
- Navíc lze přístup do systému jednoduše omezit podle IP adresy.
+ Navíc lze přístup do
+\begin_inset space ~
+\end_inset
+
+systému jednoduše omezit podle IP adresy.
 \end_layout
 
 \begin_layout Standard
@@ -8150,8 +8176,16 @@ Na velice dobré úrovni je podpora třídění článků pomocí kategorií a
 \end_inset
 
 štítků, kde je také umožněno vytvoření trvalého odkazu na článek pro případ
- změny zařazení do kategorií.
- K článkům lze přidávat fotogalerie, odkazy i
+ změny zařazení do
+\begin_inset space ~
+\end_inset
+
+kategorií.
+ K
+\begin_inset space ~
+\end_inset
+
+článkům lze přidávat fotogalerie, odkazy i
 \begin_inset space ~
 \end_inset
 
