@@ -375,8 +375,11 @@ Cílem práce je navrhnout a
 \begin_inset space ~
 \end_inset
 
-implementovat modulární informační systém pro podnik zabývající se zejména
- výukou jazyků, tlumočením a
+implementovat modulární informační systém pro
+\begin_inset space ~
+\end_inset
+
+podnik zabývající se zejména výukou jazyků, tlumočením a
 \begin_inset space ~
 \end_inset
 
@@ -390,8 +393,11 @@ překlady.
 \end_inset
 
 návrhu databázového schématu.
- Hlavní součásti vytvořeného systému zahrnují moduly pro evidenci kurzů,
- správu uživatelů a
+ Hlavní součásti vytvořeného systému zahrnují moduly pro
+\begin_inset space ~
+\end_inset
+
+evidenci kurzů, správu uživatelů a
 \begin_inset space ~
 \end_inset
 
@@ -400,9 +406,24 @@ tvorbu účetních podkladů.
 \begin_inset space ~
 \end_inset
 
-pomoci technologie PHP a frameworku CakePHP s využitím MySQL databáze pro
- ukládání strukturovaných dat.
- V práci jsou rozebrány výhody používání frameworku při
+pomoci technologie PHP a
+\begin_inset space ~
+\end_inset
+
+frameworku CakePHP s
+\begin_inset space ~
+\end_inset
+
+využitím MySQL databáze pro
+\begin_inset space ~
+\end_inset
+
+ukládání strukturovaných dat.
+ V
+\begin_inset space ~
+\end_inset
+
+práci jsou rozebrány výhody používání frameworku při
 \begin_inset space ~
 \end_inset
 
@@ -410,7 +431,11 @@ vývoji webových aplikací a
 \begin_inset space ~
 \end_inset
 
-možné využití existujících systému pro správu obsahu.
+možné využití existujících systému pro
+\begin_inset space ~
+\end_inset
+
+správu obsahu.
 \begin_inset Newline newline
 \end_inset
 
@@ -484,12 +509,35 @@ the
 \end_inset
 
 design of the database scheme.
- The main parts of the system include modules for course records, users
- administration and the creation of accounting documents.
- The system is implemented with the help of technology PHP and framework
- CakePHP using the MySQL database to store structured data.
- The thesis analysed the benefits of frameworks in the development of web
- applications and the potential usage of existing content management systems.
+ The main parts of the
+\begin_inset space ~
+\end_inset
+
+system include modules for course records, users administration and the
+ creation of
+\begin_inset space ~
+\end_inset
+
+accounting documents.
+ The system is implemented with the help of
+\begin_inset space ~
+\end_inset
+
+technology PHP and
+\begin_inset space ~
+\end_inset
+
+framework CakePHP using the MySQL database to store structured data.
+ The thesis analysed the benefits of
+\begin_inset space ~
+\end_inset
+
+frameworks in the development of
+\begin_inset space ~
+\end_inset
+
+web applications and the potential usage of existing content management
+ systems.
 \begin_inset Newline newline
 \end_inset
 
@@ -1580,7 +1628,15 @@ status collapsed
 \emph on
 Extensible Markup Language
 \emph default
- - standardní formát pro výměnu informací a popis struktury dokumentu
+, standardní formát pro
+\begin_inset space ~
+\end_inset
+
+výměnu informací a
+\begin_inset space ~
+\end_inset
+
+popis struktury dokumentu
 \end_layout
 
 \end_inset
@@ -1614,8 +1670,9 @@ rozdělení dat do
 \end_inset
 
 více souborů.
- Alternativu tvoří některé specializované XML databáze (např.
- MonetDB, Sedna, BaseX, Xindice, eXist-db) nebo relační databáze s
+ Jinou alternativou by bylo použití některé ze specializovaných XML databází
+ (např.
+ MonetDB, Sedna, BaseX, Xindice, eXist-db) nebo relačních databází s
 \begin_inset space ~
 \end_inset
 
@@ -4733,7 +4790,7 @@ Pro překlady do cizích jazyků bylo použito rozšíření
 \emph on
 Translate
 \emph default
-, které umožňuje nadefinovat seznam sloupců tabulky, které mají být překládány.
+, které umožňuje nadefinovat seznam sloupců tabulky určených k překladu.
  Přeložená data jsou ukládána v
 \begin_inset space ~
 \end_inset
@@ -4852,12 +4909,13 @@ Controllers
 \end_inset
 
 různých řadičích je vhodné používat komponenty.
- Tyto komponenty usnadňují autentizaci, autorizaci uživatelů, vyhledávání
+ Jednotlivé komponenty usnadňují autentizaci, autorizaci uživatelů, vyhledávání
  v
 \begin_inset space ~
 \end_inset
 
-databázi, posílání emailů nebo validaci uživatelských formulářů.
+databázi, posílání emailů, validaci uživatelských formulářů nebo jinou opakovano
+u činnost.
 \end_layout
 
 \begin_layout Subsection
@@ -5616,8 +5674,12 @@ dokladu postaveno na AJAXu, jsou vytvořeny dvě metody
 \emph on
 admin_additem()
 \emph default
- a 
+ a
 \emph on
+
+\begin_inset space ~
+\end_inset
+
 admin_delitem()
 \emph default
 , které po
@@ -5790,12 +5852,37 @@ kaskádových stylů.
 \emph on
 JavascriptHelper::link()
 \emph default
- a 
+ a
 \emph on
+
+\begin_inset space ~
+\end_inset
+
 HtmlHelper::css()
 \emph default
 .
- Soubory jsou optimalizovány a komprimovány metodami JSMin::minify() a 
+ Soubory jsou optimalizovány a
+\begin_inset space ~
+\end_inset
+
+komprimovány metodami 
+\emph on
+JSMin::minify()
+\emph default
+ a
+\emph on
+
+\begin_inset space ~
+\end_inset
+
+csstidy::parse()
+\emph default
+.
+ Výstup je pak spojen do
+\begin_inset space ~
+\end_inset
+
+dvou souborů pojmenovaných podle jmeno vstupních souborů stejného typu.
 \end_layout
 
 \begin_layout Subsection
@@ -6941,12 +7028,34 @@ Odstranění produktu
 
 \begin_layout Standard
 Odstranění produktu není povoleno, pokud obsahuje výkazy nebo přihlášky.
- Nejprve je nutné zkontrolovat, že jednotlivé položky na výkazech nebyly
- zaúčtovány a ty pak následně vymazat.
+ Nejprve je nutné zkontrolovat, že jednotlivé položky na
+\begin_inset space ~
+\end_inset
+
+výkazech nebyly zaúčtovány a
+\begin_inset space ~
+\end_inset
+
+ty pak následně vymazat.
  Další problém může nastat, pokud již byl vydán příjmový doklad.
- V tom případě z něj musíte stornovat příslušné položky vztahující se k
- danému produktu.
- Při splnění všech těchto podmínek bude smazání umožněno.
+ V
+\begin_inset space ~
+\end_inset
+
+tom případě z
+\begin_inset space ~
+\end_inset
+
+něj musíte stornovat příslušné položky vztahující se k
+\begin_inset space ~
+\end_inset
+
+danému produktu.
+ Při
+\begin_inset space ~
+\end_inset
+
+splnění všech těchto podmínek bude smazání umožněno.
 \end_layout
 
 \begin_layout Subsection
@@ -6983,7 +7092,11 @@ Vytvoření nové smlouvy
 
 \begin_layout Standard
 Při vytváření smluv vyplňte následující údaje, aby bylo možné správně generovat
- podklady pro mzdy.
+ podklady pro
+\begin_inset space ~
+\end_inset
+
+mzdy.
 \end_layout
 
 \begin_layout Itemize
@@ -7001,8 +7114,19 @@ smlouvy
 služba
 \emph default
  určuje smlouvy, které její účastník fakturuje agentuře.
- U ostatních typů se generují zálohové a srážkové daně, pokud je u smlouvy
- zaškrtnuto, že je uživatel plátcem daně.
+ U
+\begin_inset space ~
+\end_inset
+
+ostatních typů se generují zálohové a
+\begin_inset space ~
+\end_inset
+
+srážkové daně, pokud je u
+\begin_inset space ~
+\end_inset
+
+smlouvy zaškrtnuto, že je uživatel plátcem daně.
 \end_layout
 
 \begin_layout Itemize
@@ -7010,7 +7134,15 @@ služba
 \emph on
 Způsob platby
 \emph default
- nastavený na hotově způsobí zaokrouhlování na 50 haléřů.
+ nastavený na hotově způsobí zaokrouhlování na
+\begin_inset space ~
+\end_inset
+
+50
+\begin_inset space ~
+\end_inset
+
+haléřů.
 \end_layout
 
 \begin_layout Itemize
@@ -7030,7 +7162,19 @@ poskytovatel
 \emph on
 Maximání počet jednotek
 \emph default
- nastavený na kladné číslo upozorní ve výpisu na smlouvy s
+ nastavený na
+\begin_inset space ~
+\end_inset
+
+kladné číslo upozorní ve
+\begin_inset space ~
+\end_inset
+
+výpisu na
+\begin_inset space ~
+\end_inset
+
+smlouvy s
 \begin_inset space ~
 \end_inset
 
@@ -7046,7 +7190,11 @@ V modulu
 \noun on
 Výkazy
 \noun default
- se evidují dodavatelé produktů a jimi vykázané jednotky.
+ se evidují dodavatelé produktů a
+\begin_inset space ~
+\end_inset
+
+jimi vykázané jednotky.
 \end_layout
 
 \begin_layout Subsubsection
@@ -7059,7 +7207,11 @@ V menu nebo produktech klikněte na
 Zobrazit výkazy
 \emph default
 .
- V horní tabulce je možné zaškrtnou kategorie produktů, ke kterým byly výkazy
+ V
+\begin_inset space ~
+\end_inset
+
+horní tabulce je možné zaškrtnou kategorie produktů, ke kterým byly výkazy
  přidány.
  Výkazy je rovněž možné filtrovat podle jednotlivých produktů, poskytovatelů,
  dodavatelů nebo aktuálního stavu.
@@ -7458,17 +7610,40 @@ V menu vyberte položku
 Moje testy
 \emph default
 .
- Pokud nebyly vyčerpány všechny pokusy u testu, můžete vytvořit nový pokus
- kliknutím na stejnojmenný odkaz.
- V dalším kroku se zobrazí formulář s názvem testu a časovým limitem.
+ Pokud nebyly vyčerpány všechny pokusy u
+\begin_inset space ~
+\end_inset
+
+testu, můžete vytvořit nový pokus kliknutím na stejnojmenný odkaz.
+ V
+\begin_inset space ~
+\end_inset
+
+dalším kroku se zobrazí formulář s
+\begin_inset space ~
+\end_inset
+
+názvem testu a
+\begin_inset space ~
+\end_inset
+
+časovým limitem.
  Od potvrzení stiskem tlačítka 
 \emph on
 Pokračovat
 \emph default
  se začíná měřit čas.
- Na stránce vyplňujte odpovědi na otázky.
+ Na
+\begin_inset space ~
+\end_inset
+
+stránce vyplňujte odpovědi na otázky.
  Odpovědi můžete ukládat kdykoliv, ovšem pokud odznačíte odpovědi jako finální,
- test bude vyhodnocen a odpovědi již nepůjdou měnit.
+ test bude vyhodnocen a
+\begin_inset space ~
+\end_inset
+
+odpovědi již nepůjdou měnit.
 \end_layout
 
 \begin_layout Section
@@ -7478,14 +7653,56 @@ Zákazník
 \begin_layout Standard
 Kliknutím v menu na 
 \emph on
-Moje přihlášky
+Moje produkty
 \emph default
 , zobrazíte seznam všech přiřazených produktů.
  Jednotlivé produkty můžete filtrovat podle jména, kategorie, poskytovatele
- a aktuálního stavu.
- Po vybrání produktu se zobrazí přehled lektorů a studentů přiřazených k
- přihlášce.
- U každé události je možné také zkontrolovat účast studentů.
+ a
+\begin_inset space ~
+\end_inset
+
+aktuálního stavu.
+ Po
+\begin_inset space ~
+\end_inset
+
+vybrání produktu se zobrazí přehled lektorů a
+\begin_inset space ~
+\end_inset
+
+studentů přiřazených k přihlášce.
+ U
+\begin_inset space ~
+\end_inset
+
+každé události je možné také zkontrolovat účast studentů.
+\end_layout
+
+\begin_layout Subsection
+Zjištění stavu zaplacených služeb
+\end_layout
+
+\begin_layout Standard
+V menu vyberte položku 
+\emph on
+Přihlášky
+\emph default
+.
+ Zobrazí se přehledná tabulka se seznamem produktů, kde jsou informace o
+\begin_inset space ~
+\end_inset
+
+počtu zaplacených jednotek.
+ Dále jsou zde uvedeny počty budoucích naplánovaných událostí a
+\begin_inset space ~
+\end_inset
+
+jejich celkový počet.
+ Uvedené informace lze filtrovat podle stavu produktu a
+\begin_inset space ~
+\end_inset
+
+jeho kategorie.
 \end_layout
 
 \begin_layout Chapter
@@ -8088,9 +8305,17 @@ V posledních letech zažívají tyto systémy bouřlivý vývoj.
 \end_layout
 
 \begin_layout Standard
-Důležitým faktorem pro práci s e-learningovými systémy je dodržování standardů
- tak, aby bylo možné rychle a snadno začlenit již existující výukový materiál,
- který mohl vzniknout již před samotným nasazením systému.
+Důležitým faktorem pro práci s
+\begin_inset space ~
+\end_inset
+
+e-learningovými systémy je dodržování standardů tak, aby bylo možné rychle
+ a
+\begin_inset space ~
+\end_inset
+
+snadno začlenit již existující výukový materiál, který mohl vzniknout již
+ před samotným nasazením systému.
  Mezi tyto standardy patří SCORM
 \begin_inset Foot
 status collapsed
@@ -8140,7 +8365,11 @@ je využíván i
 \end_inset
 
 na několika zdejších univerzitách.
- Mezi ty největší patří UK, ČVUT a ČZU.
+ Mezi ty největší patří UK, ČVUT a
+\begin_inset space ~
+\end_inset
+
+ČZU.
  
 \end_layout
 
@@ -8166,7 +8395,11 @@ hodnocení elektronicky odevzdávaných úkolů, tvorbu online testů a
 \begin_inset space ~
 \end_inset
 
-napojení na jiné služby jako je LDAP nebo IMAP.
+napojení na
+\begin_inset space ~
+\end_inset
+
+jiné služby jako je LDAP nebo IMAP.
 \end_layout
 
 \begin_layout Standard
@@ -8206,17 +8439,32 @@ ATutor
 \end_layout
 
 \begin_layout Standard
-ATutor je navržen s maximálním ohledem na přístupnost dle standardu W3C
- WCAG 1.0.
+ATutor je navržen s
+\begin_inset space ~
+\end_inset
+
+maximálním ohledem na
+\begin_inset space ~
+\end_inset
+
+přístupnost dle standardu W3C WCAG 1.0.
  Při
 \begin_inset space ~
 \end_inset
 
-správě výukového obsahu se můžete spolehnou na kompatibilitu se
+správě výukového obsahu je možné se spolehnout na
 \begin_inset space ~
 \end_inset
 
-SCORM 1.2, pokročilou správu práv uživatelů a
+kompatibilitu se
+\begin_inset space ~
+\end_inset
+
+SCORM 1.2 a
+\begin_inset space ~
+\end_inset
+
+pokročilou správu práv uživatelů a
 \begin_inset space ~
 \end_inset
 
@@ -8292,7 +8540,11 @@ EFront je vysoce propracovaný systém postavený na technologii AJAX s
 \end_inset
 
 atraktivním designem.
- Samozřejmostí už je podpora SCORM a vícejazykového uživatelského rozhraní.
+ Samozřejmostí už je podpora SCORM a
+\begin_inset space ~
+\end_inset
+
+vícejazykového uživatelského rozhraní.
  Pro větší firmy může být přínosem spolupráce s
 \begin_inset space ~
 \end_inset
@@ -8357,7 +8609,11 @@ přehledné rozhraní.
 \end_inset
 
 zobrazit si jejich statistiky.
- Při vytváření obsahu je možné se přepnout do jiné role a
+ Při vytváření obsahu je možné se přepnout do
+\begin_inset space ~
+\end_inset
+
+jiné role a
 \begin_inset space ~
 \end_inset
 
