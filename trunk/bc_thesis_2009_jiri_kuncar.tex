@@ -6,7 +6,7 @@
 \usepackage{listings}
 \setcounter{secnumdepth}{1}
 \setcounter{tocdepth}{1}
-\usepackage{czech}
+\usepackage{babel}
 
 \usepackage{varioref}
 \usepackage{float}
@@ -116,14 +116,14 @@ e-mail vedoucího: Miroslav.Spousta@mff.cuni.cz\\
 
 
 \noindent Cílem práce je navrhnout a~implementovat modulární informační
-systém pro podnik zabývající se zejména výukou jazyků, tlumočením
+systém pro~podnik zabývající se zejména výukou jazyků, tlumočením
 a~překlady. Práce obsahuje analýzu podnikových procesů a~řešení
 problémů při~návrhu databázového schématu. Hlavní součásti vytvořeného
-systému zahrnují moduly pro evidenci kurzů, správu uživatelů a~tvorbu
+systému zahrnují moduly pro~evidenci kurzů, správu uživatelů a~tvorbu
 účetních podkladů. Systém je realizován za~pomoci technologie PHP
-a frameworku CakePHP s využitím MySQL databáze pro ukládání strukturovaných
-dat. V práci jsou rozebrány výhody používání frameworku při~vývoji
-webových aplikací a~možné využití existujících systému pro správu
+a~frameworku CakePHP s~využitím MySQL databáze pro~ukládání strukturovaných
+dat. V~práci jsou rozebrány výhody používání frameworku při~vývoji
+webových aplikací a~možné využití existujících systému pro~správu
 obsahu.\\
 
 
@@ -144,12 +144,12 @@ Supervisor: RNDr. Miroslav Spousta
 information system for a~company particularly involved in teaching
 of~foreign languages, interpreting and~translating. The work includes
 analysis of business processes and solves problems in~the~design
-of the database scheme. The main parts of the system include modules
-for course records, users administration and the creation of accounting
-documents. The system is implemented with the help of technology PHP
-and framework CakePHP using the MySQL database to store structured
-data. The thesis analysed the benefits of frameworks in the development
-of web applications and the potential usage of existing content management
+of the database scheme. The main parts of the~system include modules
+for course records, users administration and the creation of~accounting
+documents. The system is implemented with the help of~technology
+PHP and~framework CakePHP using the MySQL database to store structured
+data. The thesis analysed the benefits of~frameworks in the development
+of~web applications and the potential usage of existing content management
 systems.\\
 
 
@@ -426,7 +426,7 @@ Na základě požadavků bylo vytvořeno databázové schéma a~popis jeho
 napojení na~existující podniková data. Pro ukládání dat byla vybrána
 relační databáze, která poskytuje prostředky pro vytvoření, čtení,
 změnu a~smazání uložených informací%
-\footnote{Někdy je používaná zkratka \emph{CRUD} z anglických slov \emph{create},
+\footnote{Někdy je používána zkratka \emph{CRUD} z anglických slov \emph{create},
 \emph{read}, \emph{update}, \emph{delete}.%
 }. V~tomto případě se jeví jako nejlepší volba z~různých variant
 ukládání dat v~souborech. Předpokládá se nutnost přístupu k~řádově
@@ -436,17 +436,17 @@ o~vykázané činnosti.
 
 V rámci vývoje a testování vybrané technologie byl rovněž vytvořen
 návrh zjednodušené verze XML%
-\footnote{\emph{Extensible Markup Language} - standardní formát pro výměnu informací
-a popis struktury dokumentu%
+\footnote{\emph{Extensible Markup Language}, standardní formát pro~výměnu informací
+a~popis struktury dokumentu%
 } databáze uchovávané v~souboru a~zpracovávané pomocí jazyka XPath,
 XQuery nebo XSLT. Výsledky byly dobré při zpracování omezeného množství
 dat a~jednouživatelském přístupu. Se~vzrůstajícím objemem uložených
 dat se začala projevovat prostorová náročnost použitého značkovacího
 jazyka. Proto bylo nutné použít kompresi a~rozdělení dat do~více
-souborů. Alternativu tvoří některé specializované XML databáze (např.
-MonetDB, Sedna, BaseX, Xindice, eXist-db) nebo relační databáze s~podporou
-XML (Oracle, MS-SQL). Toto řešení, ale nakonec nebylo implementováno
-ani v~rámci testování.
+souborů. Jinou alternativou by bylo použití některé ze specializovaných
+XML databází (např. MonetDB, Sedna, BaseX, Xindice, eXist-db) nebo
+relačních databází s~podporou XML (Oracle, MS-SQL). Toto řešení,
+ale nakonec nebylo implementováno ani v~rámci testování.
 
 Návrh dobře strukturované relační databáze vyžaduje především pochopení
 vztahů a~procesů fungování podniku, který ji bude využívat. Problémem
@@ -805,9 +805,9 @@ vývoj aplikační logiky.
 CakePHP zastává programátorskou filosofii \emph{DRY} - \emph{Don't
 Repeat Yourself} zdůrazňující, že jednotlivé části kódu by se v~programu
 neměly opakovat, jelikož se snižuje srozumitelnost kódu. Navíc se
-při modifikaci musí upravovat stejný kód na~více místech, což často
-vede k nesnadno odhalitelným chybám programu. K~tomuto účelu se používají
-,,pomocníci'' (\emph{helpers}) a~komponenty (\emph{components}).
+při~modifikaci musí upravovat stejný kód na~více místech, což často
+vede k~nesnadno odhalitelným chybám programu. K~tomuto účelu se
+používají ,,pomocníci'' (\emph{helpers}) a~komponenty (\emph{components}).
 Při potřebě změny je lze snadno upravit, bez potřeby zásahu do míst
 odkud jsou voláni.
 
@@ -977,8 +977,7 @@ na přiloženém CD-ROMu.
 Kód aplikace je logicky rozčleněn podle původu do tří hlavních adresářů.
 Při pojmenovávání souborů v adresářích je dobré se řídit konvencemi
 uvedenými v~\cite{CakePHP}. Změnu názvu nebo umístění adresářů je
-možné provést úpravou konstant \emph{ROOT} (app/webroot), \emph{APP\_DIR}
-(app) a~\emph{CAKE\_CORE\_INCLUDE\_PATH} (cake).
+možné provést úpravou konstant popsaných v~souboru \emph{app/webroot/index.php}.
 \begin{itemize}
 \item \emph{app} - vlastní kód aplikace
 
@@ -1087,7 +1086,7 @@ množství dotazů, které mohou mít negativní vliv na výkon dané aplikace.%
 }. Je to ale pouze ,,syntaktický cukr'' k~metodám \emph{bindModel()}
 a \emph{unbindModel()}, které umožňují přidávat a~odebírat asociace
 příslušící danému modelu. \emph{Containtable} přidává modelu metodu
-\emph{contain()}, jenž je volána i~pokud je nalezen index ,,contain''
+\emph{contain()}, jenž je volána i~pokud je nalezen index \emph{,,contain''}
 v~poli s vyhledávacími parametry metody \emph{find()}. Ta se postará
 o~dynamickou asociaci potřebných modelů.
 
@@ -1102,17 +1101,17 @@ rozšíření \emph{Extend Associations} \cite{ExtendAssoc}. To umožňuje
 jednoduché přidání nebo smazání asociací, bez ovlivnění již existujících
 záznamů. K~tomu slouží nově definovaná sada metod:
 \begin{itemize}
-\item \emph{habtmAdd(\&\$model,~\$assoc,~\$id,~\$assoc\_ids}) - přidá
+\item \emph{habtmAdd($\&$\$model,~\$assoc,~\$id,~\$assoc\_ids}) - přidá
 asociace k~danému záznamu v modelu
-\item \emph{habtmDelete(\&\$model,~\$assoc,~\$id,~\$assoc\_ids)} - smaže
-asociace s~danou kombinací klíčů
-\item \emph{habtmDeleteAll(\&\$model,~\$assoc,~\$id)} - smaže všechny
+\item \emph{habtmDelete($\&$\$model,~\$assoc,~\$id,~\$assoc\_ids)} -
+smaže asociace s~danou kombinací klíčů
+\item \emph{habtmDeleteAll($\&$\$model,~\$assoc,~\$id)} - smaže všechny
 asociace k~danému záznamu modelu
 \end{itemize}
 Pro překlady do cizích jazyků bylo použito rozšíření \emph{Translate},
-které umožňuje nadefinovat seznam sloupců tabulky, které mají být
-překládány. Přeložená data jsou ukládána v~oddělené tabulce (\emph{i18n}
-- lze změnit v~konfiguraci pro každý model) a~při dotazu je vytvořeno
+které umožňuje nadefinovat seznam sloupců tabulky určených k překladu.
+Přeložená data jsou ukládána v~oddělené tabulce (\emph{i18n} - lze
+změnit v~konfiguraci pro každý model) a~při dotazu je vytvořeno
 spojení s~touto tabulkou pomocí složeného klíče - jméno modelu, cizí
 klíč daného modelu a~jméno překládaného sloupce.
 
@@ -1143,8 +1142,9 @@ ale to se z~hlediska údržby kódu nejeví jako nejvhodnější řešení.
 
 Řadiče jsou používané ke správě aplikační logiky. Pro možnost používat
 stejný kus kódu v~různých řadičích je vhodné používat komponenty.
-Tyto komponenty usnadňují autentizaci, autorizaci uživatelů, vyhledávání
-v~databázi, posílání emailů nebo validaci uživatelských formulářů.
+Jednotlivé komponenty usnadňují autentizaci, autorizaci uživatelů,
+vyhledávání v~databázi, posílání emailů, validaci uživatelských formulářů
+nebo jinou opakovanou činnost.
 
 
 \subsection{Komponenty}
@@ -1215,14 +1215,16 @@ function beforeFilter() {
 \end{lstlisting}
 \inputencoding{utf8}
 \begin{description}
+\item [{Filter}] Komponenta pro validaci vyhledávacích formulářů a~vygenerování
+podmínek pro vyhledávání. Do původního skriptu Nika Chankova byla
+přidána podpora pro vyhledávání podle více hodnot najednou a~uchovávání
+hledaného výrazu v~URL.
 \item [{Ajaxupdate}] Slouží pro usnadnění editace záznamů přes AJAX za
 podpory JavaScriptové knihovny \emph{control.js}, která je součástí
 balíku \emph{Scriptaculous}.
-\item [{Filter}] Komponenta pro validaci vyhledávacích formulářů a~vygenerování
-podmínek pro vyhledávání.
 \item [{Email}] Slouží k odesílání emailů. Lze používat šablony a~přidávat
 přílohy.
-\item [{Request~Handler}] Detekuje typ požadavku podle odeslané hlavičky.
+\item [{RequestHandler}] Detekuje typ požadavku podle odeslané hlavičky.
 \end{description}
 
 \subsection{Popis řadičů (\emph{Controllers})}
@@ -1319,7 +1321,7 @@ Pro zobrazení dokladu a vygenerování položek k~zaplacení slouží metoda
 položky a~celkový počet položek k~zaplacení. Rozdíl těchto dvou
 mezivýsledků určuje nedoplatek popřípadě přeplatek na daném produktu.
 Jelikož je rozhraní pro přidávání a~mazání položek z~dokladu postaveno
-na AJAXu, jsou vytvořeny dvě metody \emph{admin\_additem()} a \emph{admin\_delitem()},
+na AJAXu, jsou vytvořeny dvě metody \emph{admin\_additem()} a\emph{~admin\_delitem()},
 které po~provedení akce vygenerují element s~aktualizovanými položkami
 dokladu.
 
@@ -1337,11 +1339,6 @@ seřazena a~vícedenní záznamy se rozdělí do několika jednodenních
 (např. událost 8.7.2009 16:00 - 9.7.2009 14:00 je rozdělena na~8.7.2009
 16:00-24:00 a~9.7-2009 00:00-14:00). Rozdělené záznamy jsou pak vykresleny
 pomocí metody \emph{CalendarHelper::week()}.
-
-
-\subsubsection{Testování slovní zásoby (\emph{VocabularyTestAnswersController})}
-
-Úpravou pro kontrolu a~ukládání dat pomocí AJAXu prošla metoda \emph{students\_add()}. 
 
 
 \section{Zásuvné moduly (\emph{Plugins})}
@@ -1371,8 +1368,10 @@ jinak vše zůstalo podle \cite{searchable}.
 Modul \emph{Asset} \cite{asset} využívá projektů \emph{JSMin} a\emph{~CSSTidy}
 pro komprimaci JavaScriptu a~kaskádových stylů. Vybere všechny soubory,
 které byly do stránky vloženy voláním \emph{JavascriptHelper::link()}
-a \emph{HtmlHelper::css()}. Soubory jsou optimalizovány a komprimovány
-metodami JSMin::minify() a 
+a\emph{~HtmlHelper::css()}. Soubory jsou optimalizovány a~komprimovány
+metodami \emph{JSMin::minify()} a\emph{~csstidy::parse()}. Výstup
+je pak spojen do~dvou souborů pojmenovaných podle jmen vstupních
+souborů stejného typu.
 
 
 \subsection{Optimalizace generování dotazů (\emph{Url\_cache})}
@@ -1648,11 +1647,11 @@ které tento výraz obsahují (viz. obrázek\vref{fig:Na=000161ept=0000E1va=0001
 \subsubsection{Odstranění produktu}
 
 Odstranění produktu není povoleno, pokud obsahuje výkazy nebo přihlášky.
-Nejprve je nutné zkontrolovat, že jednotlivé položky na výkazech nebyly
-zaúčtovány a ty pak následně vymazat. Další problém může nastat, pokud
-již byl vydán příjmový doklad. V tom případě z něj musíte stornovat
-příslušné položky vztahující se k danému produktu. Při splnění všech
-těchto podmínek bude smazání umožněno.
+Nejprve je nutné zkontrolovat, že jednotlivé položky na~výkazech
+nebyly zaúčtovány a~ty pak následně vymazat. Další problém může nastat,
+pokud již byl vydán příjmový doklad. V~tom případě z~něj musíte
+stornovat příslušné položky vztahující se k~danému produktu. Při~splnění
+všech těchto podmínek bude smazání umožněno.
 
 
 \subsection{Smlouvy}
@@ -1666,28 +1665,27 @@ poskytovatele, typu smlouvy, typu platby a~stavu limitu.
 \subsubsection{Vytvoření nové smlouvy}
 
 Při vytváření smluv vyplňte následující údaje, aby bylo možné správně
-generovat podklady pro mzdy.
+generovat podklady pro~mzdy.
 \begin{itemize}
 \item \emph{Typ~smlouvy} určuje způsob výpočtu mezd. Typ \emph{služba}
-určuje smlouvy, které její účastník fakturuje agentuře. U ostatních
-typů se generují zálohové a srážkové daně, pokud je u smlouvy zaškrtnuto,
+určuje smlouvy, které její účastník fakturuje agentuře. U~ostatních
+typů se generují zálohové a~srážkové daně, pokud je u~smlouvy zaškrtnuto,
 že je uživatel plátcem daně.
-\item \emph{Způsob platby} nastavený na hotově způsobí zaokrouhlování na
-50 haléřů.
+\item \emph{Způsob platby} nastavený na hotově způsobí zaokrouhlování na~50~haléřů.
 \item \emph{Uživatel} a \emph{poskytovatel} určují smluvní strany.
-\item \emph{Maximání počet jednotek} nastavený na kladné číslo upozorní
-ve výpisu na smlouvy s~překročeným limitem odpracovaných jednotek.
+\item \emph{Maximání počet jednotek} nastavený na~kladné číslo upozorní
+ve~výpisu na~smlouvy s~překročeným limitem odpracovaných jednotek.
 \end{itemize}
 
 \subsection{Výkazy}
 
-V modulu \noun{Výkazy} se evidují dodavatelé produktů a jimi vykázané
+V modulu \noun{Výkazy} se evidují dodavatelé produktů a~jimi vykázané
 jednotky.
 
 
 \subsubsection{Vyhledání a filtrování výkazů}
 
-V menu nebo produktech klikněte na \emph{Zobrazit výkazy}. V horní
+V menu nebo produktech klikněte na \emph{Zobrazit výkazy}. V~horní
 tabulce je možné zaškrtnou kategorie produktů, ke kterým byly výkazy
 přidány. Výkazy je rovněž možné filtrovat podle jednotlivých produktů,
 poskytovatelů, dodavatelů nebo aktuálního stavu. Pokud chcete zobrazit
@@ -1774,15 +1772,7 @@ se jménem studenta. Znak ,,X'' značí přítomnost studenta ve~výuce
 a~zároveň je možné účast zrušit obdobným způsobem.
 \end{description}
 
-\section{Zákazníci}
-
-Kliknutím v menu na \emph{Moje přihlášky}, zobrazíte seznam všech
-přiřazených produktů. Jednotlivé produkty můžete filtrovat podle jména,
-kategorie, poskytovatele a aktuálního stavu. Po vybrání produktu se
-zobrazí přehled lektorů a studentů přiřazených k přihlášce.
-
-
-\section{Studenti}
+\section{Student}
 
 Pro zobrazení produktů, kterých se účastníte, klikněte na položku
 v hlavním menu s~popisem \emph{Účastním se}. V detailu daného produktu
@@ -1793,12 +1783,30 @@ vypracované lektorem.
 \subsection{Testování slovní zásoby}
 
 V menu vyberte položku \emph{Moje testy}. Pokud nebyly vyčerpány všechny
-pokusy u testu, můžete vytvořit nový pokus kliknutím na stejnojmenný
-odkaz. V dalším kroku se zobrazí formulář s názvem testu a časovým
+pokusy u~testu, můžete vytvořit nový pokus kliknutím na stejnojmenný
+odkaz. V~dalším kroku se zobrazí formulář s~názvem testu a~časovým
 limitem. Od potvrzení stiskem tlačítka \emph{Pokračovat} se začíná
-měřit čas. Na stránce vyplňujte odpovědi na otázky. Odpovědi můžete
+měřit čas. Na~stránce vyplňujte odpovědi na otázky. Odpovědi můžete
 ukládat kdykoliv, ovšem pokud odznačíte odpovědi jako finální, test
-bude vyhodnocen a odpovědi již nepůjdou měnit.
+bude vyhodnocen a~odpovědi již nepůjdou měnit.
+
+
+\section{Zákazník}
+
+Kliknutím v menu na \emph{Moje produkty}, zobrazíte seznam všech přiřazených
+produktů. Jednotlivé produkty můžete filtrovat podle jména, kategorie,
+poskytovatele a~aktuálního stavu. Po~vybrání produktu se zobrazí
+přehled lektorů a~studentů přiřazených k přihlášce. U~každé události
+je možné také zkontrolovat účast studentů.
+
+
+\subsection{Zjištění stavu zaplacených služeb}
+
+V menu vyberte položku \emph{Přihlášky}. Zobrazí se přehledná tabulka
+se seznamem produktů, kde jsou informace o~počtu zaplacených jednotek.
+Dále jsou zde uvedeny počty budoucích naplánovaných událostí a~jejich
+celkový počet. Uvedené informace lze filtrovat podle stavu produktu
+a~jeho kategorie.
 
 
 \chapter{Existující systémy}
@@ -1858,14 +1866,14 @@ indexaci stránek, RSS kanály a~podporu pro~LDAP.%
 
 
 Pro Joomlu je napsáno přes 3000 open source doplňků a existují i~komerční
-doplňky například pro e-learning%
+doplňky například pro~e-learning%
 \footnote{\href{http://www.joomlalms.com/}{http://www.joomlalms.com/}%
 }. Snadno lze vytvořit také internetové obchody, rezervační systémy
 a~další vlastní aplikace díky snadno rozšířitelné \emph{MVC} architektuře.
-Nevýhodou může být málo strukturované rozdělení práv uživatelů k jednotlivým
-článkům a obsahu, což se ale má s~verzí 1.7 změnit. Velikost základní
-instalace dosahuje 13,8~MB. Budoucí napojení by mohlo z výhodou používat
-výše zmíněnou kompatibilní architekturu \emph{MVC}.
+Nevýhodou může být málo strukturované rozdělení práv uživatelů k~jednotlivým
+článkům a~obsahu, což se ale má s~verzí 1.7 změnit. Velikost základní
+instalace dosahuje 13,8~MB. Budoucí napojení by mohlo s~výhodou
+používat výše zmíněnou kompatibilní architekturu \emph{MVC}.
 
 
 \subsection{Drupal}
@@ -1875,7 +1883,7 @@ rozhraní pro správu uživatelů, statistiku přístupů, blogy, fóra a
 další moduly včetně překladů do mnoha jazyků. V systému je dbáno hlavně
 na~bezpečnost. Proto mohou být administrátoři automaticky upozorněni
 na~aktualizace jak jádra aplikace, tak přídavných modulů. Navíc lze
-přístup do systému jednoduše omezit podle IP adresy.
+přístup do~systému jednoduše omezit podle IP adresy.
 
 Nejzajímavějším rozšířením, s~ohledem na cíl této práce, je \emph{DrupalEd}.
 Umožňuje tvorbu a~správu výukových materiálů, rozdělení uživatelů
@@ -1911,7 +1919,7 @@ zásuvných modulů a~na~postranní panel lze přidávat widgety%
 
 Na velice dobré úrovni je podpora třídění článků pomocí kategorií
 a~štítků, kde je také umožněno vytvoření trvalého odkazu na článek
-pro případ změny zařazení do kategorií. K článkům lze přidávat fotogalerie,
+pro případ změny zařazení do~kategorií. K~článkům lze přidávat fotogalerie,
 odkazy i~videa. S~verzí 2.7 rovněž přibyla možnost stahovaní aktualizací
 a~modulů přes administrátorské rozhraní.
 
@@ -1945,8 +1953,8 @@ V posledních letech zažívají tyto systémy bouřlivý vývoj. Vznikají
 buď jako naprosto nové systémy, nebo jako rozšíření do stávajících
 CMS. 
 
-Důležitým faktorem pro práci s e-learningovými systémy je dodržování
-standardů tak, aby bylo možné rychle a snadno začlenit již existující
+Důležitým faktorem pro práci s~e-learningovými systémy je dodržování
+standardů tak, aby bylo možné rychle a~snadno začlenit již existující
 výukový materiál, který mohl vzniknout již před samotným nasazením
 systému. Mezi tyto standardy patří SCORM%
 \footnote{\emph{Shareable Content Object Reference Model }- referenční model
@@ -1960,12 +1968,12 @@ aby v~něm bylo možné provozovat libovolný kompatibilní výukový obsah.
 Open source implementace e-learningových systému jsou již dnes hojně
 využívány. Příkladem je \emph{Moodle}, který je rozšířen v~mnoha
 zemích včetně České republiky a~je využíván i~na několika zdejších
-univerzitách. Mezi ty největší patří UK, ČVUT a ČZU. 
+univerzitách. Mezi ty největší patří UK, ČVUT a~ČZU. 
 
 Podle \cite{Moodle.cz} umožňuje či podporuje snadnou publikaci studijních
 materiálů, zakládání diskusních fór, sběr a~hodnocení elektronicky
 odevzdávaných úkolů, tvorbu online testů a~řadu dalších činností
-sloužících pro podporu výuky. Podporuje i~napojení na jiné služby
+sloužících pro podporu výuky. Podporuje i~napojení na~jiné služby
 jako je LDAP nebo IMAP.
 
 %
@@ -1978,9 +1986,10 @@ jako je LDAP nebo IMAP.
 
 \subsection{ATutor}
 
-ATutor je navržen s maximálním ohledem na přístupnost dle standardu
-W3C WCAG 1.0. Při~správě výukového obsahu se můžete spolehnou na
-kompatibilitu se~SCORM 1.2, pokročilou správu práv uživatelů a~kurzů. 
+ATutor je navržen s~maximálním ohledem na~přístupnost dle standardu
+W3C WCAG 1.0. Při~správě výukového obsahu je možné se spolehnout
+na~kompatibilitu se~SCORM 1.2 a~pokročilou správu práv uživatelů
+a~kurzů. 
 
 Lze v~něm vytvářet blogy, fóra, testy a~vést evidenci o~studijních
 výsledcích. Systém je snadno přizpůsobitelný pomocí témat a~výhodou
@@ -1995,7 +2004,7 @@ je možnost instalovat aktualizace a~opravy přímo z~webového prohlížeče.%
 \subsection{eFront}
 
 EFront je vysoce propracovaný systém postavený na technologii AJAX
-s~atraktivním designem. Samozřejmostí už je podpora SCORM a vícejazykového
+s~atraktivním designem. Samozřejmostí už je podpora SCORM a~vícejazykového
 uživatelského rozhraní. Pro větší firmy může být přínosem spolupráce
 s~LDAP. Navíc má již v~základní instalaci integrován platební nástroj
 PayPal.
@@ -2017,7 +2026,7 @@ PayPal.
 Claroline má jednoduché a~přehledné rozhraní. Studenti mohou využívat
 chat, diskuzní fóra a wiki. Učitelé mají možnost vytvářet úkoly nebo
 cvičení a~zobrazit si jejich statistiky. Při vytváření obsahu je
-možné se přepnout do jiné role a~zkontrolovat, jak se data zobrazují
+možné se přepnout do~jiné role a~zkontrolovat, jak se data zobrazují
 dané skupině uživatelů.
 
 Dále systém umožňuje import kurzů ve formátu SCORM 1.2 a~nastavení
@@ -2038,7 +2047,8 @@ Při integraci libovolného CMS a LMS bude potřeba řešit sdílení uživatels
 Použité technologie a~framework CakePHP jsou k~takovému způsobu
 napojení přizpůsobeny. Pro CakePHP již existuje hotový modul \cite{LDAP}
 pro komunikaci s~LDAP serverem. Popisované systémy měly podporu pro
-LDAP buď přímo v~jádře nebo byla možná přidat pomocí zásuvných modulů.
+LDAP buď přímo v~jádře nebo ji bylo možné přidat pomocí zásuvných
+modulů.
 
 Dalším z možných problémů je předávání informací o~přístupových právech
 k~modulům v~různých systémech. Například zajištění uživatelského
@@ -2198,9 +2208,18 @@ http://github.com/mcurry/url\_cache
 \item [{thesis}] PDF soubor s textem této práce.
 \end{description}
 
-\chapter{Databázové schéma\label{cha:Datab=0000E1zov=0000E9-sch=0000E9ma}}
+\chapter{\noindent Databázové schéma\label{cha:Datab=0000E1zov=0000E9-sch=0000E9ma}}
+
+Databázové schéma bylo vygenerováno pomocí nástroje MySQL Workbench
+5.2.1 a~je zobrazeno na~další straně.
+
+%
+\begin{figure}
+\begin{raggedright}
+\includegraphics[height=0.95\paperwidth]{jednoduche-schema}
+\par\end{raggedright}
 
 
+\end{figure}
 
-\includegraphics[height=0.5\paperheight]{jednoduche-schema}
 \end{document}
